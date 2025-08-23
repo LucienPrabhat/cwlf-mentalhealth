@@ -2,7 +2,7 @@
   <section :class="$style.monthlyDonation">
     <div :class="$style.monthlyLevel">
       <div :class="$style.vectorParent">
-        <img :class="$style.frameChild" alt="" src="/rectangle-20.svg" />
+        <img :class="$style.frameChild" alt="" src="/frame-157.svg" />
         <div :class="$style.frame">
           <div :class="$style.wrapper">
             <h1 :class="$style.h1">捐款方案介紹</h1>
@@ -15,7 +15,7 @@
                     :class="$style.icon"
                     loading="lazy"
                     alt=""
-                    src="/--0001@2x.png"
+                    src="/--0001--2@2x.png"
                   />
                 </div>
                 <div :class="$style.frameDiv">
@@ -24,7 +24,7 @@
               </div>
               <FrameComponent
                 prop="回饋品｜年刊、鬧卡"
-                frame110="/frame-110.svg"
+                frame110="/frame-157.svg"
               />
               <div :class="$style.supportDetailsInner">
                 <div :class="$style.frameGroup">
@@ -49,7 +49,7 @@
                     :class="$style.frameItem"
                     loading="lazy"
                     alt=""
-                    src="/frame-114.svg"
+                    src="/frame-157.svg"
                   />
                 </div>
               </div>
@@ -64,7 +64,7 @@
                     :class="$style.icon1"
                     loading="lazy"
                     alt=""
-                    src="/--0000@2x.png"
+                    src="/--0001--2@2x.png"
                   />
                 </div>
               </div>
@@ -84,7 +84,7 @@
                     :class="$style.frameItem"
                     loading="lazy"
                     alt=""
-                    src="/frame-110.svg"
+                    src="/frame-157.svg"
                   />
                 </div>
               </div>
@@ -93,7 +93,7 @@
                 frameDivJustifyContent="center"
                 frameDivHeight="133px"
                 prop="回饋品｜年刊、療癒香氛蠟燭"
-                frame110="/frame-114.svg"
+                frame110="/frame-157.svg"
                 frameIconWidth="76px"
               />
             </section>
@@ -107,7 +107,7 @@
                       :class="$style.icon2"
                       loading="lazy"
                       alt=""
-                      src="/--0002@2x.png"
+                      src="/--0002--2@2x.png"
                     />
                   </div>
                   <div :class="$style.donationOption">
@@ -118,7 +118,7 @@
                     :class="$style.frameItem"
                     loading="lazy"
                     alt=""
-                    src="/frame-125.svg"
+                    src="/frame-157.svg"
                   />
                 </div>
               </div>
@@ -135,7 +135,7 @@
                 :class="$style.icon3"
                 loading="lazy"
                 alt=""
-                src="/-1-1@2x.png"
+                src="/-1@2x.png"
               />
               <div :class="$style.imageContainerTwo">
                 <h3 :class="$style.h31">服務年刊</h3>
