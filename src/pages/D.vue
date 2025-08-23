@@ -62,7 +62,7 @@
         </div>
       </section>
       <section :class="$style.frameSection">
-        <img :class="$style.frameChild" alt="" src="/frame-81.svg" />
+        <img :class="$style.frameChild" alt="" src="/frame-157.svg" />
         <div :class="$style.frameWrapper3">
           <div :class="$style.wrapper4">
             <h2 :class="$style.h22">捐款用途規劃</h2>

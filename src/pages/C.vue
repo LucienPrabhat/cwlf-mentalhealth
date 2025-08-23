@@ -56,13 +56,13 @@
             </h2>
           </div>
           <div :class="$style.groupDiv">
-            <img :class="$style.frameChild" alt="" src="/frame-602.svg" />
+            <img :class="$style.frameChild" alt="" src="/frame-157.svg" />
             <div :class="$style.avatarPerson">
               <img
                 :class="$style.icon"
                 loading="lazy"
                 alt=""
-                src="/1-1@2x.png"
+                src="/-3-1@2x.png"
               />
             </div>
           </div>
@@ -106,13 +106,13 @@
             </div>
           </section>
           <div :class="$style.frameParent3">
-            <img :class="$style.frameChild" alt="" src="/frame-602.svg" />
+            <img :class="$style.frameChild" alt="" src="/frame-157.svg" />
             <div :class="$style.avatarPersonB">
               <img
                 :class="$style.icon1"
                 loading="lazy"
                 alt=""
-                src="/3-1@2x.png"
+                src="/-3-1@2x.png"
               />
             </div>
           </div>
