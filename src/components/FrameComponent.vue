@@ -45,7 +45,7 @@
   })
   const frameDivStyle = computed(
     (): StyleValue => ({
-      padding: props.frameDivPadding,
+      padding: props.frameDivPadding as string | number,
     })
   )
   const frameDiv1Style = computed(
@@ -55,12 +55,12 @@
   )
   const frameDiv2Style = computed(
     (): StyleValue => ({
-      height: props.frameDivHeight,
+      height: props.frameDivHeight as string | number,
     })
   )
   const frameIconStyle = computed(
     (): StyleValue => ({
-      width: props.frameIconWidth,
+      width: props.frameIconWidth as string | number,
     })
   )
 </script>

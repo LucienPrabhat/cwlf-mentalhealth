@@ -9,7 +9,7 @@
           :class="$style.frameChild"
           loading="lazy"
           alt=""
-          src="/frame-47@2x.png"
+          src="/frame-46@2x.png"
         />
         <div :class="$style.frameContainer">
           <div :class="$style.frameDiv">
@@ -24,7 +24,7 @@
                   :class="$style.icon"
                   loading="lazy"
                   alt=""
-                  src="/02--1@2x.png"
+                  src="/--0001--2@2x.png"
                 />
               </div>
               <section :class="$style.frameSection">
@@ -69,7 +69,7 @@
                 :class="$style.icon1"
                 loading="lazy"
                 alt=""
-                src="/icon.svg"
+                src="/icon1.svg"
               />
             </div>
           </div>
@@ -90,17 +90,17 @@
           :class="$style.bottomRegionIcon"
           loading="lazy"
           alt=""
-          src="/frame-48@2x.png"
+          src="/frame-46@2x.png"
         />
       </div>
       <footer :class="$style.bottomContent">
-        <img :class="$style.bottomContentChild" alt="" src="/frame-50.svg" />
+        <img :class="$style.bottomContentChild" alt="" src="/frame-157.svg" />
         <div :class="$style.layer271Wrapper">
           <img
             :class="$style.layer271Icon"
             loading="lazy"
             alt=""
-            src="/--0003-layer27-1@2x.png"
+            src="/--0003-layer27-11@2x.png"
           />
         </div>
       </footer>

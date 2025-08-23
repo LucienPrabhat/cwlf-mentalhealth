@@ -16,7 +16,7 @@
   })
   const frameDivStyle = computed(
     (): StyleValue => ({
-      padding: props.frameDivPadding,
+      padding: props.frameDivPadding as string | number,
     })
   )
 </script>

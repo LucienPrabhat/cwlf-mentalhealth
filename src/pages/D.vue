@@ -73,7 +73,7 @@
             :class="$style.icon"
             loading="lazy"
             alt=""
-            src="/--0000-1-2@2x.png"
+            src="/--0001--2@2x.png"
           />
         </div>
       </section>
