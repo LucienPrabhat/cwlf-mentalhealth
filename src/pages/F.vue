@@ -353,7 +353,7 @@
     box-sizing: border-box;
     z-index: 1;
     font-size: var(--font-size-32);
-    color: var(--color-cadetblue-200);
+    color: var(--color-cadetblue-100);
   }
   .frameSection {
     width: 965px;
@@ -456,7 +456,7 @@
     max-width: 100%;
     text-align: center;
     font-size: var(--font-size-20);
-    color: var(--color-cadetblue-200);
+    color: var(--color-cadetblue-100);
     font-family: var(--font-gensenrounded2-tw);
   }
   .frameItem {
@@ -574,7 +574,7 @@
     justify-content: center;
     text-align: center;
     font-size: var(--font-size-20);
-    color: var(--color-cadetblue-300);
+    color: var(--color-cadetblue-200);
     font-family: var(--font-gensenrounded2-tw);
   }
   .frameContainer {
@@ -734,6 +734,110 @@
       box-sizing: border-box;
     }
   }
+  @media screen and (max-width: 1050px) {
+    .div {
+      font-size: 38px;
+      line-height: 64px;
+    }
+
+    .h2 {
+      font-size: var(--font-size-19);
+      line-height: 37px;
+    }
+
+    .div1 {
+      font-size: var(--font-size-16);
+      line-height: 25px;
+    }
+
+    .frameWrapper {
+      flex: 1;
+    }
+
+    .frameParent1 {
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .q {
+      height: auto;
+      gap: var(--gap-19);
+      padding-right: var(--padding-20);
+      box-sizing: border-box;
+    }
+
+    .div2 {
+      font-size: var(--font-size-16);
+      line-height: 30px;
+    }
+
+    .wrapper1 {
+      padding-left: var(--padding-20);
+      padding-right: var(--padding-20);
+      box-sizing: border-box;
+    }
+
+    .frameContainer {
+      gap: var(--gap-20);
+    }
+
+    .back {
+      padding-left: var(--padding-20);
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .div {
+      font-size: 38px;
+      line-height: 64px;
+    }
+
+    .h2 {
+      font-size: var(--font-size-19);
+      line-height: 37px;
+    }
+
+    .div1 {
+      font-size: var(--font-size-16);
+      line-height: 25px;
+    }
+
+    .frameWrapper {
+      flex: 1;
+    }
+
+    .frameParent1 {
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .q {
+      height: auto;
+      gap: var(--gap-19);
+      padding-right: var(--padding-20);
+      box-sizing: border-box;
+    }
+
+    .div2 {
+      font-size: var(--font-size-16);
+      line-height: 30px;
+    }
+
+    .wrapper1 {
+      padding-left: var(--padding-20);
+      padding-right: var(--padding-20);
+      box-sizing: border-box;
+    }
+
+    .frameContainer {
+      gap: var(--gap-20);
+    }
+
+    .back {
+      padding-left: var(--padding-20);
+      box-sizing: border-box;
+    }
+  }
   @media screen and (max-width: 800px) {
     .div {
       font-size: 38px;
@@ -814,7 +918,7 @@
     }
 
     .frameDiv {
-      gap: var(--gap-26);
+      gap: 26px;
     }
 
     .frameContainer {
@@ -826,6 +930,46 @@
       padding-right: var(--padding-32);
       padding-bottom: 138px;
       box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .pngIcon1 {
+      margin-left: 0;
+    }
+
+    .pngParent {
+      flex-wrap: wrap;
+    }
+
+    .frameWrapper {
+      flex: 1;
+      min-width: 100%;
+    }
+
+    .frameParent1 {
+      flex-wrap: wrap;
+    }
+
+    .q {
+      height: auto;
+      gap: 76px;
+      padding-right: 97px;
+      box-sizing: border-box;
+    }
+
+    .frameContainer {
+      gap: 81px;
+    }
+
+    .back {
+      height: auto;
+      padding-top: var(--padding-20);
+      padding-bottom: 213px;
+      box-sizing: border-box;
+    }
+
+    .f {
+      height: auto;
     }
   }
   @media screen and (max-width: 450px) {

@@ -10,6 +10,11 @@ import D from "./pages/D.vue";
 import E from "./pages/E.vue";
 import F from "./pages/F.vue";
 import G from "./pages/G.vue";
+import E111 from "./pages/E111.vue";
+import E1 from "./pages/E1.vue";
+import E2 from "./pages/E2.vue";
+import E3 from "./pages/E3.vue";
+import E4 from "./pages/E4.vue";
 import "./global.css";
 
 interface Route {
@@ -58,6 +63,31 @@ const routes: Route[] = [
     path: "/g",
     name: "G",
     component: G,
+  },
+   {
+    path: "/e1",
+    name: "E111",
+    component: E111,
+  },
+  {
+    path: "/e1",
+    name: "E1",
+    component: E1,
+  },
+  {
+    path: "/e2",
+    name: "E2",
+    component: E2,
+  },
+  {
+    path: "/e3",
+    name: "E3",
+    component: E3,
+  },
+  {
+    path: "/e4",
+    name: "E4",
+    component: E4,
   },
 ];
 

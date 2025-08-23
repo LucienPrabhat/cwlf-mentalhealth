@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.frameParent">
     <img :class="$style.frameChild" alt="" :src="frame193" />
-    <div :class="$style.wrapper" :style="frameDiv3Style">
+    <div :class="$style.wrapper" :style="frameDivStyle">
       <h3 :class="$style.h3">{{ prop }}</h3>
     </div>
   </div>
@@ -14,7 +14,7 @@
     prop: { type: String },
     frameDivPadding: { type: [Object, Array, String, Number, Boolean] },
   })
-  const frameDiv3Style = computed(
+  const frameDivStyle = computed(
     (): StyleValue => ({
       padding: props.frameDivPadding,
     })
@@ -64,11 +64,23 @@
     z-index: 2;
     text-align: center;
     font-size: var(--font-size-20);
-    color: var(--color-cadetblue-200);
+    color: var(--color-cadetblue-100);
     font-family: var(--font-gensenrounded2-tw);
   }
 
   @media screen and (max-width: 1150px) {
+    .h3 {
+      font-size: var(--font-size-16);
+      line-height: 25px;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .h3 {
+      font-size: var(--font-size-16);
+      line-height: 25px;
+    }
+  }
+  @media screen and (max-width: 1050px) {
     .h3 {
       font-size: var(--font-size-16);
       line-height: 25px;

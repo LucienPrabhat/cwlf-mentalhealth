@@ -23,9 +23,18 @@ body {
   --color-teal-300: #0e6e77;
   --color-teal-200: #367782;
   --color-teal-100: #3b837d;
+  --color-lemonchiffon: #fff9c4;
+  --color-darkolivegreen: #51613a;
+  --color-snow: #fbf7f3;
+  --color-teal: #2b757b;
+  --color-black: #000;
+  --color-cadetblue-200: #478b91;
+  --color-cadetblue-100: #5a9da3;
   --color-white: #fff;
 
   /* Gap */
+  --gap-1: 1px;
+  --gap-4: 4px;
   --gap-10: 10px;
   --gap-12: 12px;
   --gap-14: 14px;
@@ -41,6 +50,8 @@ body {
   --padding-2: 2px;
   --padding-3: 3px;
   --padding-4: 4px;
+  --padding-5: 5px;
+  --padding-6: 6px;
   --padding-8: 8px;
   --padding-10: 10px;
   --padding-11: 11px;
@@ -72,6 +83,7 @@ body {
   --font-size-22: 22px;
   --font-size-24: 24px;
   --font-size-26: 26px;
+  --font-size-28: 28px;
   --font-size-32: 32px;
   --font-size-36: 36px;
   --font-size-40: 40px;
