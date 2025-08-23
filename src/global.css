@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Tagalog:wght@400&display=swap");
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* Color */
+  --color-dimgray: #5c7678;
+  --color-whitesmoke: #f6f6f6;
+  --color-gray: #fbfbfb;
+  --color-darkkhaki: #afa261;
+  --color-olivedrab: #80a34e;
+  --color-lightseagreen: #48a195;
+  --color-gainsboro-200: rgba(217, 217, 217, 0);
+  --color-gainsboro-100: #d9d9d9;
+  --color-cadetblue-300: #478b91;
+  --color-cadetblue-200: #5a9da3;
+  --color-cadetblue-100: #56a3b0;
+  --color-black: #000;
+  --color-chocolate: #e47f44;
+  --color-teal-200: #367782;
+  --color-teal-100: #3b837d;
+  --color-white: #fff;
+
+  /* Gap */
+  --gap-10: 10px;
+  --gap-12: 12px;
+  --gap-15: 15px;
+  --gap-19: 19px;
+  --gap-20: 20px;
+
+  /* Padding */
+  --padding-3: 3px;
+  --padding-8: 8px;
+  --padding-10: 10px;
+  --padding-11: 11px;
+  --padding-16: 16px;
+  --padding-20: 20px;
+  --padding-22: 22px;
+  --padding-26: 26px;
+  --padding-28: 28px;
+  --padding-40: 40px;
+  --padding-60: 60px;
+  --padding-80: 80px;
+
+  /* BorderRadius */
+  --br-18: 18px;
+
+  /* Font */
+  --font-noto-sans-tagalog: Noto Sans Tagalog;
+  --font-gensenrounded2-tw: GenSenRounded2 TW;
+
+  /* FontSize */
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-19: 19px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+  --font-size-24: 24px;
+  --font-size-26: 26px;
+  --font-size-32: 32px;
+  --font-size-36: 36px;
+  --font-size-40: 40px;
+
+  /* Figma Variables */
+
+  /* Color */
+  --Icon-Default-Default: #1e1e1e;
+}
