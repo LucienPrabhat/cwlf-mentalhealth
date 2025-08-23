@@ -266,7 +266,7 @@
     justify-content: flex-start;
     padding: var(--padding-20) 0px;
     box-sizing: border-box;
-    gap: 14px;
+    gap: var(--gap-14);
     min-width: 456px;
     max-width: 100%;
     text-align: left;
@@ -335,7 +335,7 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-end;
-    padding: 2px 0px 0px;
+    padding: var(--padding-2) 0px 0px;
     box-sizing: border-box;
     line-height: normal;
     letter-spacing: normal;

@@ -189,7 +189,7 @@
     padding: 542px var(--padding-10) 204px;
     box-sizing: border-box;
     position: relative;
-    gap: 100px;
+    gap: var(--gap-100);
     flex-shrink: 0;
     max-width: 102%;
     margin-top: -306px;

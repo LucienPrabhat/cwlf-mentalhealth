@@ -3,10 +3,13 @@ import { createRouter, createWebHistory } from "vue-router";
 import App from "./App.vue";
 
 import A from "./pages/A.vue";
+import Root from "./pages/Root.vue";
 import B from "./pages/B.vue";
 import C from "./pages/C.vue";
 import D from "./pages/D.vue";
 import E from "./pages/E.vue";
+import F from "./pages/F.vue";
+import G from "./pages/G.vue";
 import "./global.css";
 
 interface Route {
@@ -20,6 +23,11 @@ const routes: Route[] = [
     path: "/",
     name: "A",
     component: A,
+  },
+  {
+    path: "/root",
+    name: "Root",
+    component: Root,
   },
   {
     path: "/b",
@@ -40,6 +48,16 @@ const routes: Route[] = [
     path: "/e",
     name: "E",
     component: E,
+  },
+  {
+    path: "/f",
+    name: "F",
+    component: F,
+  },
+  {
+    path: "/g",
+    name: "G",
+    component: G,
   },
 ];
 

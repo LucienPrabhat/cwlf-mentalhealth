@@ -19,6 +19,8 @@ body {
   --color-cadetblue-100: #56a3b0;
   --color-black: #000;
   --color-chocolate: #e47f44;
+  --color-darkslategray: #1e3648;
+  --color-teal-300: #0e6e77;
   --color-teal-200: #367782;
   --color-teal-100: #3b837d;
   --color-white: #fff;
@@ -26,22 +28,33 @@ body {
   /* Gap */
   --gap-10: 10px;
   --gap-12: 12px;
+  --gap-14: 14px;
   --gap-15: 15px;
+  --gap-16: 16px;
   --gap-19: 19px;
   --gap-20: 20px;
+  --gap-24: 24px;
+  --gap-26: 26px;
+  --gap-100: 100px;
 
   /* Padding */
+  --padding-2: 2px;
   --padding-3: 3px;
+  --padding-4: 4px;
   --padding-8: 8px;
   --padding-10: 10px;
   --padding-11: 11px;
+  --padding-14: 14px;
   --padding-16: 16px;
   --padding-20: 20px;
   --padding-22: 22px;
   --padding-26: 26px;
   --padding-28: 28px;
+  --padding-30: 30px;
+  --padding-32: 32px;
   --padding-40: 40px;
   --padding-60: 60px;
+  --padding-64: 64px;
   --padding-80: 80px;
 
   /* BorderRadius */

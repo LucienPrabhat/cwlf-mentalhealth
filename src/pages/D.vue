@@ -503,7 +503,7 @@
     }
 
     .frameGroup {
-      gap: 26px;
+      gap: var(--gap-26);
     }
 
     .h22 {

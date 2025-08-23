@@ -290,7 +290,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 16px;
+    gap: var(--gap-16);
     max-width: 100%;
   }
   .rectangleDiv {
