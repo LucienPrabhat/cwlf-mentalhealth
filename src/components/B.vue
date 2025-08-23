@@ -1,16 +1,15 @@
 <template>
   <section :class="$style.b">
-    <div :class="$style.bInner">
-      <div :class="$style.frameChild" />
-    </div>
     <div :class="$style.frameParent">
       <div :class="$style.frameGroup">
-        <img
-          :class="$style.frameItem"
-          loading="lazy"
-          alt=""
-          src="/frame-47@2x.png"
-        />
+        <div :class="$style.imageContainer">
+          <img
+            :class="$style.frameItem"
+            loading="lazy"
+            alt=""
+            src="/frame-47@2x.png"
+          />
+        </div>
         <div :class="$style.frameContainer">
           <div :class="$style.frameDiv">
             <div :class="$style.frameParent1">
@@ -89,12 +88,14 @@
             </div>
           </div>
         </div>
-        <img
-          :class="$style.frameIcon"
-          loading="lazy"
-          alt=""
-          src="/frame-48@2x.png"
-        />
+        <div :class="$style.imageContainer">
+          <img
+            :class="$style.frameIcon"
+            loading="lazy"
+            alt=""
+            src="/frame-48@2x.png"
+          />
+        </div>
       </div>
       <div :class="$style.frameParent4">
         <img :class="$style.frameChild2" alt="" src="/frame-50.svg" />
@@ -129,6 +130,12 @@
     justify-content: center;
     padding: var(--padding-10);
     box-sizing: border-box;
+  }
+  .imageContainer {
+    width: 201px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .frameItem {
     width: 120px;
@@ -371,7 +378,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 0px var(--padding-20);
     box-sizing: border-box;
     gap: 42px;
