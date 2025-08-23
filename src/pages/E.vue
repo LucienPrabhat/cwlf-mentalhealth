@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.e">
     <header :class="$style.content">
-      <img :class="$style.contentChild" alt="" src="/frame-90.svg" />
+      <img :class="$style.contentChild" alt="" src="/frame-157.svg" />
       <div :class="$style.layer252Wrapper">
         <img
           :class="$style.layer252Icon"
@@ -18,7 +18,7 @@
       <section :class="$style.optionContainer1">
         <div :class="$style.backgroundBlue" />
       </section>
-      <img :class="$style.optionIcon" alt="" src="/option.svg" />
+      <img :class="$style.optionIcon" alt="" src="/frame-157.svg" />
       <MonthlyDonation />
       <section :class="$style.frameParent">
         <div :class="$style.wrapper">
