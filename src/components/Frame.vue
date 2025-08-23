@@ -1,5 +1,5 @@
 <template>
-  <main :class="$style.frame">
+  <div :class="$style.frame">
     <div :class="$style.parent">
       <h2 :class="$style.h2">我只是想被看見、被聽見。</h2>
       <h2 :class="$style.h21">每次感到快無法呼吸時，我都不知道該怎麼辦...</h2>
@@ -17,9 +17,9 @@
         src="/--0001--2@2x.png"
       />
     </div>
-  </main>
+  </div>
 </template>
-<script setup lang="ts">
+<script setup>
   import Component1 from "./Component1.vue"
 </script>
 <style module>
@@ -133,7 +133,35 @@
     font-family: var(--font-gensenrounded2-tw);
   }
 
-  @media screen and (max-width: 1125px) {
+  @media screen and (max-width: 1411px) {
+    .group {
+      padding-left: 215px;
+      padding-right: 190px;
+      box-sizing: border-box;
+    }
+
+    .frame {
+      width: calc(100% - 40px);
+    }
+  }
+  @media screen and (max-width: 825px) {
+    .h2 {
+      font-size: var(--font-size-26);
+      line-height: 41px;
+    }
+
+    .h21 {
+      font-size: var(--font-size-26);
+      line-height: 41px;
+    }
+
+    .group {
+      padding-left: 107px;
+      padding-right: 95px;
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 450px) {
     .h2 {
       font-size: var(--font-size-19);
       line-height: 31px;
@@ -153,34 +181,6 @@
     .frame {
       padding-top: 81px;
       padding-bottom: 81px;
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .group {
-      padding-left: 215px;
-      padding-right: 190px;
-      box-sizing: border-box;
-    }
-
-    .frame {
-      width: calc(100% - 40px);
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .h2 {
-      font-size: var(--font-size-26);
-      line-height: 41px;
-    }
-
-    .h21 {
-      font-size: var(--font-size-26);
-      line-height: 41px;
-    }
-
-    .group {
-      padding-left: 107px;
-      padding-right: 95px;
       box-sizing: border-box;
     }
   }

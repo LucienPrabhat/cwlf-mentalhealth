@@ -1,5 +1,5 @@
 <template>
-  <section :class="$style.frameParent">
+  <div :class="$style.frameParent">
     <img
       :class="$style.frameChild"
       loading="lazy"
@@ -45,15 +45,15 @@
               <p :class="$style.p">當缺乏理解與支持，他們只能獨自面對風暴。</p>
             </span>
           </div>
-          <h1 :class="$style.h1">
+          <h2 :class="$style.h21">
             <span :class="$style.txt">
               在台灣，平均每 7 天就有一個孩子自殺。 
             </span>
-          </h1>
+          </h2>
         </div>
       </div>
     </section>
-  </section>
+  </div>
 </template>
 <style module>
   .frameChild {
@@ -82,7 +82,7 @@
   }
   .h2 {
     margin: 0;
-    height: 121px;
+    height: 95.8px;
     width: 635.6px;
     position: relative;
     font-size: inherit;
@@ -114,14 +114,13 @@
     align-items: center;
     filter: drop-shadow(0px 0px 10.8px rgba(0, 0, 0, 0.46));
   }
-  .h1 {
+  .h21 {
     margin: 0;
     width: 567px;
     height: 25.4px;
     position: relative;
     font-size: var(--font-size-26);
     letter-spacing: 0.04em;
-    line-height: 25.4px;
     text-transform: uppercase;
     font-weight: 400;
     font-family: inherit;
@@ -145,7 +144,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: 29.3px 0px 0px;
-    gap: 6.1px;
+    gap: 31.3px;
   }
   .groupWrapper {
     display: flex;
@@ -167,7 +166,26 @@
     gap: 38.5px;
   }
 
-  @media screen and (max-width: 1125px) {
+  @media screen and (max-width: 825px) {
+    .h2 {
+      font-size: var(--font-size-26);
+      line-height: 48px;
+    }
+
+    .group {
+      gap: var(--gap-16);
+    }
+
+    .groupWrapper {
+      padding-top: var(--padding-80);
+      box-sizing: border-box;
+    }
+
+    .frameParent {
+      gap: var(--gap-19);
+    }
+  }
+  @media screen and (max-width: 450px) {
     .h2 {
       font-size: var(--font-size-19);
       line-height: 36px;
@@ -178,29 +196,13 @@
       line-height: 35px;
     }
 
-    .h1 {
+    .h21 {
       font-size: 21px;
-      line-height: 20px;
     }
 
     .groupWrapper {
       padding-top: 52px;
       box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .h2 {
-      font-size: var(--font-size-26);
-      line-height: 48px;
-    }
-
-    .groupWrapper {
-      padding-top: var(--padding-80);
-      box-sizing: border-box;
-    }
-
-    .frameParent {
-      gap: var(--gap-19);
     }
   }
 </style>

@@ -20,9 +20,9 @@
     </div>
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
   defineProps({
-    property1: { type: String, default: "Frame 8" },
+    property1: { type: Number, default: "Frame 8" },
   })
 </script>
 <style module>

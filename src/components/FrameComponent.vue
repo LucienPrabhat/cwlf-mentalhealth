@@ -1,149 +1,226 @@
 <template>
-  <div :class="$style.supportDetailsInner" :style="frameDivStyle">
-    <div :class="$style.frameParent" :style="frameDiv1Style">
-      <div :class="$style.parent" :style="frameDiv2Style">
-        <div :class="$style.div">
-          <span>
-            <p :class="$style.p">
-              <span :class="$style.span">
-                <span :class="$style.span1">1000元</span>
-                <span :class="$style.span2"></span>
-              </span>
-            </p>
-            <p :class="$style.p">
-              <span :class="$style.span">
-                <span :class="$style.span2">資助孩子一次心理諮商</span>
-              </span>
-              <span :class="$style.span2">
-                <span :class="$style.span6">費</span>
-              </span>
-            </p>
-          </span>
-        </div>
-        <div :class="$style.div1">{{ prop }}</div>
+  <div :class="$style.frameParent">
+    <section :class="$style.frameGroup">
+      <div :class="$style.wrapper">
+        <h2 :class="$style.h2">初級預防</h2>
       </div>
-      <img
-        :class="$style.frameChild"
-        loading="lazy"
-        alt=""
-        :src="frame110"
-        :style="frameIconStyle"
-      />
+      <div :class="$style.container">
+        <div :class="$style.div">
+          <p :class="$style.p">
+            <span>兒福聯盟持續推動政策修法，並透過</span>
+            <span :class="$style.span">校園宣導</span>
+            <span :class="$style.span">、</span>
+          </p>
+          <p :class="$style.p">
+            <span :class="$style.span">教材及</span>
+            <span :class="$style.span">線上課程</span>
+            <span>與社群倡議等多元行動，致力於</span>
+          </p>
+          <p :class="$style.p">營造友善的兒少心理健康環境。</p>
+        </div>
+      </div>
+      <div :class="$style.wrapper">
+        <h2 :class="$style.h2">二級輔導</h2>
+      </div>
+      <div :class="$style.frameDiv">
+        <div :class="$style.div">
+          <p :class="$style.p">
+            <span :class="$style.span">同時，兒福聯盟提供免費</span>
+            <span :class="$style.span">「少年專線」</span>
+            <span>傾聽孩子</span>
+          </p>
+          <p :class="$style.p">
+            <span>煩惱、接住情緒，並於</span>
+            <span :class="$style.span">「少年+」</span>
+            <span>服務據點規劃</span>
+          </p>
+          <p :class="$style.p">多元活動、課程與營隊，搭配完善的空間設備與</p>
+          <p :class="$style.p">
+            社工陪伴輔導，為青少年打造溫暖支持的互動環境。
+          </p>
+        </div>
+      </div>
+    </section>
+    <div :class="$style.frameContainer">
+      <div :class="$style.wrapper1">
+        <h2 :class="$style.h22">
+          <span :class="$style.txt">
+            <p :class="$style.p">&nbsp;</p>
+            <p :class="$style.p">兒盟用行動陪伴</p>
+            <p :class="$style.p">困在花園的青少年</p>
+          </span>
+        </h2>
+      </div>
+      <div :class="$style.groupDiv">
+        <img :class="$style.frameChild" alt="" src="/frame-60.svg" />
+        <div :class="$style.wrapper2">
+          <img :class="$style.icon" loading="lazy" alt="" src="/1-1@2x.png" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
-<script setup lang="ts">
-  import { StyleValue, computed } from "vue"
-
-  const props = defineProps({
-    prop: { type: String },
-    frame110: { type: String },
-    frameDivPadding: { type: [Object, Array, String, Number, Boolean] },
-    frameDivJustifyContent: { type: String },
-    frameDivHeight: { type: [Object, Array, String, Number, Boolean] },
-    frameIconWidth: { type: [Object, Array, String, Number, Boolean] },
-  })
-  const frameDivStyle = computed(
-    (): StyleValue => ({
-      padding: props.frameDivPadding as string | number,
-    })
-  )
-  const frameDiv1Style = computed(
-    (): StyleValue => ({
-      justifyContent: props.frameDivJustifyContent,
-    })
-  )
-  const frameDiv2Style = computed(
-    (): StyleValue => ({
-      height: props.frameDivHeight as string | number,
-    })
-  )
-  const frameIconStyle = computed(
-    (): StyleValue => ({
-      width: props.frameIconWidth as string | number,
-    })
-  )
-</script>
 <style module>
-  .span1 {
-    font-size: var(--font-size-24);
-    font-family: var(--font-gensenrounded2-tw);
+  .h2 {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: inherit;
   }
-  .span2 {
-    white-space: pre-wrap;
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-10) 9px;
   }
   .span {
-    letter-spacing: 0.04em;
-    white-space: pre-wrap;
+    font-family: var(--font-gensenrounded2-tw);
   }
   .p {
     margin: 0;
   }
-  .span6 {
-    letter-spacing: 0.09em;
-  }
   .div {
-    align-self: stretch;
     position: relative;
-    line-height: 157.24%;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-  }
-  .div1 {
-    align-self: stretch;
-    position: relative;
-    font-size: var(--font-size-16);
     letter-spacing: 0.04em;
-    line-height: 157.24%;
+    line-height: 190%;
     text-transform: uppercase;
-    color: var(--color-cadetblue-200);
-    display: flex;
-    align-items: center;
   }
-  .parent {
-    height: 98.9px;
-    width: 270px;
+  .container {
+    align-self: stretch;
+    height: 162px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-10);
+    box-sizing: border-box;
+    font-size: var(--font-size-20);
+  }
+  .frameDiv {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-10) 9px;
+    font-size: var(--font-size-20);
+  }
+  .frameGroup {
+    width: 498px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-20) 0px;
+    box-sizing: border-box;
+    gap: var(--gap-10);
+    flex-shrink: 0;
+    text-align: left;
+    font-size: var(--font-size-32);
+    color: var(--color-black);
+    font-family: var(--font-gensenrounded2-tw);
+  }
+  .txt {
+    line-break: anywhere;
+    width: 100%;
+  }
+  .h22 {
+    margin: 0;
+    width: 415px;
+    position: relative;
+    font-size: inherit;
+    letter-spacing: 0.05em;
+    line-height: 157.24%;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .wrapper1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
+    padding: var(--padding-10);
   }
   .frameChild {
-    width: 96px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     max-height: 100%;
+    width: 100%;
+    height: 100%;
   }
-  .frameParent {
-    width: 372px;
-    height: 100px;
+  .icon {
+    width: 97px;
+    position: relative;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .wrapper2 {
+    position: absolute;
+    top: 540.7px;
+    left: 619px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    padding: var(--padding-10);
   }
-  .supportDetailsInner {
-    align-self: stretch;
-    height: 157px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: var(--br-18);
-    background-color: var(--color-gray);
-    border: 1px solid var(--color-cadetblue-100);
-    box-sizing: border-box;
+  .groupDiv {
+    width: 930.4px;
+    height: 930.4px;
+    position: relative;
+  }
+  .frameContainer {
+    width: 930.4px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 23px var(--padding-22);
-    text-align: left;
-    font-size: var(--font-size-20);
-    color: var(--color-cadetblue-300);
+    justify-content: flex-start;
+  }
+  .frameParent {
+    width: 1315px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: right;
+    font-size: var(--font-size-36);
+    color: var(--color-cadetblue-200);
     font-family: var(--font-gensenrounded2-tw);
   }
 
-  @media screen and (max-width: 1125px) {
+  @media screen and (max-width: 825px) {
+    .h2 {
+      font-size: var(--font-size-26);
+    }
+
+    .h22 {
+      font-size: 29px;
+      line-height: 45px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .h2 {
+      font-size: var(--font-size-19);
+    }
+
     .div {
       font-size: var(--font-size-16);
       line-height: 30px;
+    }
+
+    .h22 {
+      font-size: var(--font-size-22);
+      line-height: 34px;
     }
   }
 </style>
