@@ -116,7 +116,6 @@
     height: 1629px;
     position: relative;
     background: linear-gradient(180deg, #3B837D, #DFFAFF 99%);
-    display: none;
   }
   .bInner {
     position: absolute;
@@ -426,7 +425,7 @@
     align-self: stretch;
     height: 1836px;
     position: relative;
-    background-color: var(--color-white);
+    background: linear-gradient(180deg, #3B837D, #DFFAFF 99%);
     overflow: hidden;
     flex-shrink: 0;
     text-align: left;
