@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.e1">
     <section :class="$style.story">
-      <div :class="$style.frame">
+      <!-- <div :class="$style.frame">
         <div :class="$style.xuanStage">
           <div :class="$style.xuanButtonData" />
         </div>
@@ -40,15 +40,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <img
         :class="$style.yanPanelIcon"
         loading="lazy"
         alt=""
-        src="/frame-142.svg"
+        src="/icon_to_left.png"
       />
       <div :class="$style.frame2">
-        <div :class="$style.frameChild" />
         <div :class="$style.narrative">
           <img
             :class="$style.eventIcon"
@@ -87,9 +86,9 @@
         :class="$style.yanPanelIcon"
         loading="lazy"
         alt=""
-        src="/frame-142.svg"
+        src="/icon_to_right.png"
       />
-      <div :class="$style.yanPanel">
+      <!-- <div :class="$style.yanPanel">
         <div :class="$style.segmentParent">
           <img
             :class="$style.segmentIcon"
@@ -124,7 +123,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
   </div>
 </template>
@@ -171,11 +170,12 @@
     cursor: pointer;
     border: none;
     padding: 0;
-    background-color: var(--color-teal);
+    background-color: transparent; /* background comes from container to ensure full pill color */
     align-self: stretch;
-    height: 43px;
+    height: 100%;
+    width: 100%;
     position: relative;
-    border-radius: 21.5px;
+    border-radius: 31.5px;
   }
   .xuanButtonArea {
     width: 100%;
@@ -187,7 +187,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: var(--padding-10);
+    padding: 0;
     box-sizing: border-box;
     height: 100%;
     z-index: 0;
@@ -203,12 +203,16 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: var(--padding-10) 9px;
+    width: 100%;
     z-index: 1;
   }
   .xuanEventEnd {
-    width: 29px;
-    max-height: 100%;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 2;
   }
   .xuanPanel {
@@ -283,15 +287,16 @@
     gap: 13px;
     max-width: 100%;
     z-index: 1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 52px;
   }
   .frame2 {
     height: 341px;
     width: 765px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 23px 33px;
     box-sizing: border-box;
     position: relative;
@@ -312,16 +317,20 @@
     padding: var(--padding-10) 9px;
   }
   .segmentContainer {
-    width: 202px;
-    height: 63px;
+    width: 182px;
+    height: 43px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    padding: 7px var(--padding-14) 7px var(--padding-22);
+    justify-content: center;
+    padding: 0;
     box-sizing: border-box;
     position: relative;
     color: var(--color-white);
+    border-radius: 31.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    background-color: var(--color-cadetblue-200);
   }
   .frameParent {
     width: 411px;
@@ -724,6 +733,16 @@
       height: auto;
     }
   }
+  /* --- Force single-row carousel-style layout (no wrapping), center the row --- */
+  .story {
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow: visible;
+  }
+  .xuanPanel,
+  .xiaoYanEvent {
+    min-width: auto !important;
+  }
   @media screen and (max-width: 450px) {
     .xuanPanel {
       min-width: 100%;
@@ -740,5 +759,13 @@
     .e1 {
       height: auto;
     }
+  }
+  /* Center the story section inside the root container */
+  .e1 {
+    justify-content: center;
+  }
+  /* Cancel left offset so the section can be truly centered */
+  .story {
+    margin-left: 0 !important;
   }
 </style>

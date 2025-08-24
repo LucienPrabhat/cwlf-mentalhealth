@@ -228,7 +228,7 @@
           <h2 :class="$style.h2">更多個案故事</h2>
         </div>
         <div :class="$style.casesNavigateWrapper">
-          <div :class="$style.casesNavigate" />
+           <E111 />
         </div>
       </div>
     </div>
@@ -236,6 +236,7 @@
 </template>
 <script setup>
   import OfferParameters from "./OfferParameters.vue"
+  import E111 from "../pages/E111.vue"
 </script>
 <style module>
   .frameChild {
@@ -961,6 +962,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* clip outer overflow so side cards can cut off */
   }
   .externalBottomParent {
     display: flex;
