@@ -62,14 +62,14 @@
     z-index: 0;
   }
   .icon {
-    width: 447px;
-    position: absolute;
-    margin: 0 !important;
-    top: 466px;
-    left: 836px;
+    width: 25%;
     max-height: 100%;
     object-fit: contain;
     z-index: 0;
+    max-width: 100%;
+    height: auto;
+    flex: 1;
+    align-self: flex-start;
   }
   .frameChild {
     position: absolute;
@@ -82,7 +82,7 @@
     height: 100%;
   }
   .rectangleParent {
-    width: 472px;
+    width: 50%;
     height: 766px;
     position: relative;
     z-index: 1;
@@ -90,16 +90,16 @@
     font-size: var(--font-size-20);
     color: var(--color-white);
     font-family: var(--font-gensenrounded2-tw);
+    flex: 2;
   }
   .icon1 {
-    width: 447px;
-    position: absolute;
-    margin: 0 !important;
-    top: 0px;
-    left: 0px;
+    width: 25%;
     max-height: 100%;
     object-fit: cover;
     z-index: 2;
+    max-width: 100%;
+    height: auto;
+    flex: 1;
   }
   .group {
     width: 100%;
@@ -109,10 +109,10 @@
     top: 0px;
     left: 0px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding: 408px 381px 225px 430px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     box-sizing: border-box;
     z-index: 1;
   }
@@ -135,8 +135,6 @@
 
   @media screen and (max-width: 1411px) {
     .group {
-      padding-left: 215px;
-      padding-right: 190px;
       box-sizing: border-box;
     }
 
@@ -156,8 +154,6 @@
     }
 
     .group {
-      padding-left: 107px;
-      padding-right: 95px;
       box-sizing: border-box;
     }
   }

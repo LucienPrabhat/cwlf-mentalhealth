@@ -136,7 +136,7 @@
     letter-spacing: 0.05em;
     line-height: 157.24%;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: bold;
     font-family: inherit;
     display: flex;
     align-items: center;

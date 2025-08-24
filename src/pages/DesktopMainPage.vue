@@ -76,7 +76,6 @@
   }
   .frameGroup {
     align-self: stretch;
-    width: 1335px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
