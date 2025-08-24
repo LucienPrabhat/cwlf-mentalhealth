@@ -98,7 +98,10 @@
         </div>
       </div>
       <div :class="$style.frameParent4">
-        <img :class="$style.frameChild2" alt="" src="/frame-50.svg" />
+        <div :class="$style.newWrapper">
+          <img :class="$style.frameChild2" alt="" src="/frame-50.svg" />
+          <div :class="$style.whiteRectangle"></div>
+        </div>
         <div :class="$style.layer271Wrapper">
           <img
             :class="$style.layer271Icon"
@@ -385,11 +388,11 @@
     max-width: 100%;
   }
   .frameChild2 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    max-height: 100%;
-    width: 1470px;
+    width: 1500px;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-left: -15px;
   }
   .layer271Icon {
     align-self: stretch;
@@ -417,6 +420,19 @@
     height: 356px;
     position: relative;
     max-width: 102%;
+  }
+  .newWrapper {
+    width: 1470px;
+    height: 356px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .whiteRectangle {
+    width: 100%;
+    flex: 1;
+    background-color: white;
+    margin-top: -20px;
   }
   .frameParent {
     position: absolute;
