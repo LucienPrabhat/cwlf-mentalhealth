@@ -91,8 +91,8 @@
                       :class="$style.textInput"
                       v-model="inputText"
                       type="text"
-                      :maxlength="20"
-                      placeholder="輸入最多20字..."
+                      :maxlength="30"
+                      placeholder="輸入最多30字..."
                     />
                   </div>
                   <div :class="$style.inputIconArea" @click="onSend">
@@ -107,11 +107,13 @@
                 </div>
               </div>
             </section>
-            <div v-if="overlayVisible" :class="$style.overlayMask">
-              <div :class="$style.overlayContent">
-                <div ref="lottieContainer" :class="$style.lottieBox"></div>
+            <transition name="overlay-fade">
+              <div v-if="overlayVisible" :class="$style.overlayMask">
+                <div :class="$style.overlayContent">
+                  <div ref="lottieContainer" :class="$style.lottieBox"></div>
+                </div>
               </div>
-            </div>
+            </transition>
           </div>
         </div>
       </div>
@@ -279,8 +281,7 @@
   }
   .questionsBubble {
     position: absolute;
-    width: 128px;
-    height: 128px;
+    width: 25%;
     animation-name: floatY;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
@@ -295,13 +296,12 @@
   }
   .bubbleText {
     position: absolute;
-    left: 14%;
-    right: 14%;
-    top: 26%;
-    bottom: 18%;
-    color: #2b2b2b;
+    left: 15%;
+    right: 15%;
+    top: 30%;
+    color: var(--color-cadetblue-300);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.2;
     text-align: center;
     word-break: break-word;
@@ -349,14 +349,19 @@
     justify-content: center;
     z-index: 9999;
   }
-  .overlayContent img {
-    width: 260px;
-    height: 260px;
-    object-fit: contain;
+  /* fade transition */
+  .overlay-fade-enter-active,
+  .overlay-fade-leave-active {
+    transition: opacity 1200ms ease;
+  }
+  .overlay-fade-enter-from,
+  .overlay-fade-leave-to {
+    opacity: 0;
   }
   .lottieBox {
-    width: 260px;
-    height: 260px;
+    width: 50vw;
+    height: 50vw;
+    max-height: 90vh;
     pointer-events: none;
   }
   .pngIcon {
