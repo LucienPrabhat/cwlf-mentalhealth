@@ -9,7 +9,7 @@
           <div :class="$style.div">
             <p :class="$style.p">
               <span :class="$style.span">兒福聯盟透過</span>
-              <span :class="$style.span">「青少年心理健康服務」</span>
+              <span :class="[$style.span, $style.interactiveText]"  @mouseenter="handleHover('qingshaonianxinli.png')" @mouseleave="handleLeave" @click="handleClick('qingshaonianxinli.png')">「青少年心理健康服務」</span>
               <span>， 針對情緒困擾青少年及其家庭提供服務，由專業</span>
             </p>
             <p :class="$style.p">社工進行定期的訪視與陪伴，協助家庭修復親子</p>
@@ -17,7 +17,7 @@
             <p :class="$style.p">穩定身心狀況、重建生活節奏。</p>
             <p :class="$style.p">
               <span>同時，</span>
-              <span :class="$style.span">「兒童創傷療癒中心」</span>
+              <span :class="[$style.span, $style.interactiveText]"  @mouseenter="handleHoverErtongchuangshang" @mouseleave="handleLeave" @click="handleClickErtongchuangshang">「兒童創傷療癒中心」</span>
               <span :class="$style.span">針對曾經歷或目睹</span>
             </p>
             <p :class="$style.p">家庭暴力及其他創傷事件的兒少與照顧者，提供</p>
@@ -27,7 +27,9 @@
         </div>
       </section>
       <div :class="$style.frameContainer">
-        <img :class="$style.frameChild" alt="" src="/frame-60.svg" />
+        <div :class="$style.imageWrapper">
+          <img :class="$style.frameChild" alt="" :src="currentImage" />
+        </div>
         <div :class="$style.frame">
           <img :class="$style.icon" loading="lazy" alt="" src="/3-1@2x.png" />
         </div>
@@ -35,6 +37,48 @@
     </div>
   </div>
 </template>
+<script setup>
+  import { ref } from 'vue'
+
+  const currentImage = ref('/Ellipse.png')
+  const ertongchuangshangImages = ['/ertongchuangshang01.png', '/ertongchuangshang02.png', '/ertongchuangshang03.png']
+  let ertongchuangshangIndex = 0
+  let ertongchuangshangInterval = null
+
+  const handleHover = (imagePath) => {
+    currentImage.value = imagePath
+  }
+
+  const handleLeave = () => {
+    currentImage.value = '/Ellipse.png'
+    if (ertongchuangshangInterval) {
+      clearInterval(ertongchuangshangInterval)
+      ertongchuangshangInterval = null
+    }
+  }
+
+  const handleClick = (imagePath) => {
+    currentImage.value = imagePath
+  }
+
+  const handleHoverErtongchuangshang = () => {
+    ertongchuangshangIndex = 0
+    currentImage.value = ertongchuangshangImages[ertongchuangshangIndex]
+    ertongchuangshangInterval = setInterval(() => {
+      ertongchuangshangIndex = (ertongchuangshangIndex + 1) % ertongchuangshangImages.length
+      currentImage.value = ertongchuangshangImages[ertongchuangshangIndex]
+    }, 1000)
+  }
+
+  const handleClickErtongchuangshang = () => {
+    if (ertongchuangshangInterval) {
+      clearInterval(ertongchuangshangInterval)
+      ertongchuangshangInterval = null
+    }
+    ertongchuangshangIndex = (ertongchuangshangIndex + 1) % ertongchuangshangImages.length
+    currentImage.value = ertongchuangshangImages[ertongchuangshangIndex]
+  }
+</script>
 <style module>
   .h2 {
     margin: 0;
@@ -54,6 +98,15 @@
   }
   .span {
     font-family: var(--font-gensenrounded2-tw);
+  }
+  .interactiveText {
+    color: #1E9B9F;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .interactiveText:hover {
+    opacity: 0.8;
   }
   .p {
     margin: 0;
@@ -89,13 +142,21 @@
     color: var(--color-black);
     font-family: var(--font-gensenrounded2-tw);
   }
-  .frameChild {
+  .imageWrapper {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    max-height: 100%;
+    bottom: 0px;
+    right: 0px;
+    width: 90%;
+    height: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .frameChild {
     width: 100%;
     height: 100%;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
   }
   .icon {
     width: 87px;
@@ -105,8 +166,8 @@
   }
   .frame {
     position: absolute;
-    top: 531px;
-    left: 235px;
+    bottom: 0px;
+    left: 25%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -125,7 +186,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     row-gap: var(--gap-20);
     max-width: 100%;
   }

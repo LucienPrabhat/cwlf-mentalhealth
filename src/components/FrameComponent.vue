@@ -8,12 +8,12 @@
         <div :class="$style.div">
           <p :class="$style.p">
             <span>兒福聯盟持續推動政策修法，並透過</span>
-            <span :class="$style.span">校園宣導</span>
+            <span :class="[$style.span, $style.interactiveText]"  @mouseenter="handleHover('xiaoyuanxuandao.png')" @mouseleave="handleLeave" @click="handleClick('xiaoyuanxuandao.png')">校園宣導</span>
             <span :class="$style.span">、</span>
           </p>
           <p :class="$style.p">
             <span :class="$style.span">教材及</span>
-            <span :class="$style.span">線上課程</span>
+            <span :class="[$style.span, $style.interactiveText]"  @mouseenter="handleHover('xianshangkecheng.png')" @mouseleave="handleLeave" @click="handleClick('xianshangkecheng.png')">線上課程</span>
             <span>與社群倡議等多元行動，致力於</span>
           </p>
           <p :class="$style.p">營造友善的兒少心理健康環境。</p>
@@ -26,12 +26,12 @@
         <div :class="$style.div">
           <p :class="$style.p">
             <span :class="$style.span">同時，兒福聯盟提供免費</span>
-            <span :class="$style.span">「少年專線」</span>
+            <span :class="[$style.span, $style.interactiveText]"  @mouseenter="handleHover('shaonianzhuanxian.png')" @mouseleave="handleLeave" @click="handleClick('shaonianzhuanxian.png')">「少年專線」</span>
             <span>傾聽孩子</span>
           </p>
           <p :class="$style.p">
             <span>煩惱、接住情緒，並於</span>
-            <span :class="$style.span">「少年+」</span>
+            <span :class="[$style.span, $style.interactiveText]"  @mouseenter="handleHoverShaonianjia" @mouseleave="handleLeave" @click="handleClickShaonianjia">「少年+」</span>
             <span>服務據點規劃</span>
           </p>
           <p :class="$style.p">多元活動、課程與營隊，搭配完善的空間設備與</p>
@@ -52,7 +52,9 @@
         </h2>
       </div>
       <div :class="$style.groupDiv">
-        <img :class="$style.frameChild" alt="" src="/frame-60.svg" />
+        <div :class="$style.imageWrapper">
+          <img :class="$style.frameChild" alt="" :src="currentImage" />
+        </div>
         <div :class="$style.wrapper2">
           <img :class="$style.icon" loading="lazy" alt="" src="/1-1@2x.png" />
         </div>
@@ -60,6 +62,48 @@
     </div>
   </div>
 </template>
+<script setup>
+  import { ref } from 'vue'
+
+  const currentImage = ref('/Ellipse.png')
+  const shaonianjiaImages = ['/shaonianjia01.png', '/shaonianjia02.png', '/shaonianjia03.png']
+  let shaonianjiaIndex = 0
+  let shaonianjiaInterval = null
+
+  const handleHover = (imagePath) => {
+    currentImage.value = imagePath
+  }
+
+  const handleLeave = () => {
+    currentImage.value = '/Ellipse.png'
+    if (shaonianjiaInterval) {
+      clearInterval(shaonianjiaInterval)
+      shaonianjiaInterval = null
+    }
+  }
+
+  const handleClick = (imagePath) => {
+    currentImage.value = imagePath
+  }
+
+  const handleHoverShaonianjia = () => {
+    shaonianjiaIndex = 0
+    currentImage.value = shaonianjiaImages[shaonianjiaIndex]
+    shaonianjiaInterval = setInterval(() => {
+      shaonianjiaIndex = (shaonianjiaIndex + 1) % shaonianjiaImages.length
+      currentImage.value = shaonianjiaImages[shaonianjiaIndex]
+    }, 1000)
+  }
+
+  const handleClickShaonianjia = () => {
+    if (shaonianjiaInterval) {
+      clearInterval(shaonianjiaInterval)
+      shaonianjiaInterval = null
+    }
+    shaonianjiaIndex = (shaonianjiaIndex + 1) % shaonianjiaImages.length
+    currentImage.value = shaonianjiaImages[shaonianjiaIndex]
+  }
+</script>
 <style module>
   .h2 {
     margin: 0;
@@ -79,6 +123,15 @@
   }
   .span {
     font-family: var(--font-gensenrounded2-tw);
+  }
+  .interactiveText {
+    color: #1E9B9F;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .interactiveText:hover {
+    opacity: 0.8;
   }
   .p {
     margin: 0;
@@ -149,13 +202,21 @@
     justify-content: center;
     padding: var(--padding-10);
   }
-  .frameChild {
+  .imageWrapper {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    max-height: 100%;
+    bottom: 0px;
+    right: 0px;
+    width: 90%;
+    height: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .frameChild {
     width: 100%;
     height: 100%;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
   }
   .icon {
     width: 97px;
@@ -165,8 +226,8 @@
   }
   .wrapper2 {
     position: absolute;
-    top: 540.7px;
-    left: 619px;
+    bottom: 0px;
+    right: 25%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -186,12 +247,11 @@
     justify-content: flex-start;
   }
   .frameParent {
-    width: 1315px;
     flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     text-align: right;
     font-size: var(--font-size-36);
     color: var(--color-cadetblue-200);

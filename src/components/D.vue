@@ -383,7 +383,6 @@
     font-size: var(--font-size-20);
   }
   .frameParent2 {
-    width: 109px;
     height: 60px;
     display: flex;
     flex-direction: row;

@@ -80,7 +80,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 0px 0px 0px var(--padding-20);
+    padding: var(--padding-20);
     box-sizing: border-box;
     max-width: 100%;
   }
@@ -93,7 +93,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: center;
     padding: var(--padding-2) 0px 0px;
     box-sizing: border-box;
     max-width: 100%;
