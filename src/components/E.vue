@@ -1,7 +1,7 @@
 <template>
   <main :class="$style.e">
     <div :class="$style.frameParent">
-      <img :class="$style.frameChild" alt="" src="/frame-90.svg" />
+      <img :class="$style.frameChild" alt="" src="/white_wave.png" />
       <div :class="$style.layer252Wrapper">
         <img
           :class="$style.layer252Icon"
@@ -12,13 +12,11 @@
       </div>
     </div>
     <div :class="$style.offersParent">
-      <div :class="$style.offers">
-        <div :class="$style.offersChild" />
-      </div>
       <div :class="$style.offers1">
-        <div :class="$style.backgroundBlue" />
+        <div>
+          <img :class="$style.offerItemIcon" alt="" src="/offer-item.svg" />
+        </div>
       </div>
-      <img :class="$style.offerItemIcon" alt="" src="/offer-item.svg" />
       <div :class="$style.insidePlanWrapper">
         <div :class="$style.insidePlan">
           <div :class="$style.vectorParent">
@@ -240,12 +238,11 @@
 </script>
 <style module>
   .frameChild {
-    width: 110%;
+    width: 100%;
     margin: 0 !important;
     position: absolute;
-    right: -10px;
-    top: -10px;
-    left: -10px;
+    top: 0;
+    left: 0;
     max-width: 100%;
     overflow: hidden;
     max-height: 100%;
@@ -261,15 +258,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     padding: var(--padding-10);
     box-sizing: border-box;
     max-width: 100%;
     z-index: 1;
   }
   .frameParent {
-    margin-top: -178px;
-    margin-left: -10px;
     width: 1470px;
     display: flex;
     flex-direction: row;
@@ -306,15 +301,9 @@
     box-sizing: border-box;
     z-index: 0;
   }
-  .backgroundBlue {
-    height: 1785px;
-    width: 1440px;
-    position: relative;
-    background: linear-gradient(180deg, #dafeff, #b9f9fb);
-    display: none;
-  }
   .offers1 {
     width: 100%;
+    height: 50%;
     margin: 0 !important;
     position: absolute;
     right: 0px;
@@ -322,20 +311,19 @@
     left: 0px;
     background: linear-gradient(180deg, #dafeff, #b9f9fb);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding: var(--padding-10);
     box-sizing: border-box;
-    z-index: 1;
+    z-index: 0;
   }
   .offerItemIcon {
     width: 100%;
     margin: 0 !important;
     position: absolute;
-    right: 0px;
-    bottom: 1755px;
-    left: 0px;
+    left: -10px;
+    top: -10%;
     max-width: 100%;
     overflow: hidden;
     max-height: 100%;
@@ -738,7 +726,7 @@
   }
   .vectorParent {
     align-self: stretch;
-    border-radius: 38px;
+    border-radius: 38px 38px 0px 0px;
     background-color: var(--color-white);
     display: flex;
     flex-direction: row;
@@ -919,7 +907,6 @@
     padding: var(--padding-28) 203px;
     box-sizing: border-box;
     max-width: 100%;
-    margin-top: 50px;
     position: relative;
     color: var(--color-dimgray);
   }
@@ -973,23 +960,20 @@
     z-index: 4;
   }
   .offersParent {
-    margin-left: -12px;
-    height: 3989px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 542px var(--padding-10) 204px;
+    padding: 200px;
     box-sizing: border-box;
     position: relative;
     gap: var(--gap-100);
     flex-shrink: 0;
     max-width: 102%;
-    margin-top: -306px;
+    background: linear-gradient(180deg, #c0eb77, #f0ffc3 50%);
   }
   .e {
     align-self: stretch;
-    height: 4138px;
     background-color: var(--color-white);
     overflow: hidden;
     flex-shrink: 0;
@@ -997,7 +981,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 168px 0px 3664px;
     box-sizing: border-box;
     max-width: 100%;
     text-align: center;
@@ -1013,8 +996,6 @@
     }
 
     .e {
-      padding-top: 46px;
-      padding-bottom: 1006px;
       box-sizing: border-box;
     }
   }
@@ -1062,8 +1043,6 @@
     }
 
     .e {
-      padding-top: var(--padding-30);
-      padding-bottom: 654px;
       box-sizing: border-box;
     }
   }
@@ -1132,8 +1111,6 @@
     }
 
     .e {
-      padding-top: var(--padding-20);
-      padding-bottom: 425px;
       box-sizing: border-box;
     }
   }
