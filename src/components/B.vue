@@ -73,15 +73,8 @@
             </div>
           </div>
           <div :class="$style.frameParent3">
-            <div :class="$style.rectangleWrapper">
-              <v-btn
-                :class="$style.rectangleVbtn"
-                color="primary"
-                variant="flat"
-              />
-            </div>
-            <div :class="$style.wrapper1">
-              <div :class="$style.div3">
+            <div :class="$style.orangeButton">
+              <div :class="$style.buttonText">
                 <p :class="$style.blankLine">支持更多孩子</p>
                 <p :class="$style.blankLine">的復原之路</p>
               </div>
@@ -144,6 +137,7 @@
     width: 120px;
     max-height: 100%;
     object-fit: cover;
+    margin-bottom: 120px;
   }
   .blankLine {
     margin: 0;
@@ -295,7 +289,6 @@
     box-sizing: border-box;
   }
   .frameDiv {
-    width: 833px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -308,20 +301,28 @@
     height: 70px;
     position: relative;
   }
-  .rectangleWrapper {
-    width: 100%;
-    margin: 0 !important;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+  .orangeButton {
+    width: 216px;
+    height: 70px;
+    background-color: #E87C4A;
+    border-radius: 40px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: var(--padding-10);
-    box-sizing: border-box;
-    height: 100%;
-    z-index: 0;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .orangeButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .buttonText {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
   }
   .div3 {
     position: relative;
@@ -356,7 +357,6 @@
     font-family: var(--font-noto-sans-tagalog);
   }
   .frameContainer {
-    width: 833px;
     display: flex;
     flex-direction: column;
     align-items: center;
