@@ -240,12 +240,12 @@
 </script>
 <style module>
   .frameChild {
-    width: 100%;
+    width: 110%;
     margin: 0 !important;
     position: absolute;
-    right: 0px;
-    bottom: 54px;
-    left: 0px;
+    right: -10px;
+    top: -10px;
+    left: -10px;
     max-width: 100%;
     overflow: hidden;
     max-height: 100%;
@@ -281,6 +281,7 @@
     flex-shrink: 0;
     max-width: 103%;
     z-index: 2;
+    background-color: #C0EB77;
   }
   .offersChild {
     height: 2131px;
