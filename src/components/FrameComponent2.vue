@@ -67,15 +67,35 @@
                   </h2>
                 </div>
               </section>
-              <img :class="$style.qIcon" alt="" src="/q.svg" />
+              <div :class="$style.qiconAreaDiv">
+                <img :class="$style.qIcon" alt="" src="/q.svg" />
+                <img :class="$style.floatIcon" alt="" src="/questions.png" />
+                <img :class="$style.floatIcon2" alt="" src="/questions.png" />
+                <div
+                  v-for="(msg, idx) in messages"
+                  :key="msg.id"
+                  :class="$style.questionsBubble"
+                  :style="{ left: msg.left, bottom: msg.bottom, animationDuration: msg.duration + 's' }"
+                >
+                  <img alt="" src="/questions.png" />
+                  <div :class="$style.bubbleText">{{ msg.text }}</div>
+                </div>
+              </div>
             </div>
             <section :class="$style.type">
               <div :class="$style.inputField">
                 <div :class="$style.inputContent">
                   <div :class="$style.inputFieldWrapper">
                     <div :class="$style.inputBox" />
+                    <input
+                      :class="$style.textInput"
+                      v-model="inputText"
+                      type="text"
+                      :maxlength="20"
+                      placeholder="輸入最多20字..."
+                    />
                   </div>
-                  <div :class="$style.inputIconArea">
+                  <div :class="$style.inputIconArea" @click="onSend">
                     <img :class="$style.icon1" alt="" src="/icon-1.svg" />
                   </div>
                 </div>
@@ -87,12 +107,138 @@
                 </div>
               </div>
             </section>
+            <div v-if="overlayVisible" :class="$style.overlayMask">
+              <div :class="$style.overlayContent">
+                <div ref="lottieContainer" :class="$style.lottieBox"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+<script setup>
+  import { ref, watch, onBeforeUnmount, nextTick } from 'vue'
+
+  const inputText = ref('')
+  const overlayVisible = ref(false)
+  const messages = ref([])
+  const lottieContainer = ref(null)
+  let lottieInstance = null
+  let isSending = false
+
+  const formatNow = () => {
+    const d = new Date()
+    const pad = (n) => String(n).padStart(2, '0')
+    return `${d.getFullYear()}/${pad(d.getMonth() + 1)}/${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`
+  }
+
+  const addBubble = (text) => {
+    const leftPercent = 10 + Math.random() * 70
+    const bottomPercent = 5 + Math.random() * 25
+    const duration = 6 + Math.floor(Math.random() * 6)
+    messages.value.push({
+      id: Date.now() + Math.random(),
+      text,
+      left: leftPercent + '%',
+      bottom: bottomPercent + '%',
+      duration,
+    })
+  }
+
+  const playOverlay = () =>
+    new Promise((resolve) => setTimeout(resolve, 2100))
+
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-YhgnBmq0YvdyupPEJfs0hwBj4vjnuC-Yg9XGGZFXO9Q8mx5ffBdeIDFcs0LADnk9cQ/exec'
+
+  const sendToGoogle = async (message, timestamp) => {
+    if (!GOOGLE_SCRIPT_URL) return
+    // First try JSON with CORS; fall back to no-cors form encoded if blocked
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ time: timestamp, comment: message }),
+        mode: 'cors',
+      })
+    } catch (err) {
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+          body: new URLSearchParams({ time: timestamp, comment: message }).toString(),
+        })
+      } catch (e) {
+        console.error('Failed to send to Google:', e)
+      }
+    }
+  }
+
+  const onSend = async () => {
+    const text = inputText.value.trim()
+    if (!text || isSending) return
+    isSending = true
+    overlayVisible.value = true
+    const timestamp = formatNow()
+    await playOverlay()
+    addBubble(text)
+    inputText.value = ''
+    overlayVisible.value = false
+    isSending = false
+    sendToGoogle(text, timestamp)
+  }
+
+  const loadLottie = async () => {
+    try {
+      // dynamic import to avoid hard dependency if not installed yet
+      const mod = await import('lottie-web')
+      return mod.default || mod
+    } catch (e) {
+      console.warn('lottie-web not installed. Run: npm i lottie-web')
+      return null
+    }
+  }
+
+  const initLottie = async () => {
+    await nextTick()
+    if (!lottieContainer.value) return
+    const lottie = await loadLottie()
+    if (!lottie) return
+    // destroy previous instance if any
+    if (lottieInstance) {
+      lottieInstance.destroy()
+      lottieInstance = null
+    }
+    lottieInstance = lottie.loadAnimation({
+      container: lottieContainer.value,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: '/cwlf_mentalhealth_blossom_animate.json',
+    })
+  }
+
+  const destroyLottie = () => {
+    if (lottieInstance) {
+      try { lottieInstance.destroy() } catch {}
+      lottieInstance = null
+    }
+  }
+
+  watch(overlayVisible, (visible) => {
+    if (visible) {
+      initLottie()
+    } else {
+      destroyLottie()
+    }
+  })
+
+  onBeforeUnmount(() => {
+    destroyLottie()
+  })
+</script>
 <style module>
   .backgroundBlue {
     align-self: stretch;
@@ -101,6 +247,117 @@
     background: linear-gradient(180deg, #baf9fb, #f3ffd8);
     display: none;
     z-index: 0;
+  }
+  .qiconAreaDiv {
+    align-self: stretch;
+    position: relative;
+    max-width: 100%;
+    overflow: visible;
+  }
+  .floatIcon,
+  .floatIcon2 {
+    position: absolute;
+    width: 18%;
+    object-fit: contain;
+    opacity: 0.9;
+    animation-name: floatY;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    pointer-events: none;
+  }
+  .floatIcon {
+    left: 12%;
+    top: 50%;
+    animation-duration: 3s;
+  }
+  .floatIcon2 {
+    width: 22%;
+    right: 8%;
+    bottom: 18%;
+    animation-duration: 2s;
+  }
+  .questionsBubble {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    animation-name: floatY;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    pointer-events: none;
+  }
+  .questionsBubble > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .bubbleText {
+    position: absolute;
+    left: 14%;
+    right: 14%;
+    top: 26%;
+    bottom: 18%;
+    color: #2b2b2b;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    word-break: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  @keyframes floatY {
+    from { 
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-36px);
+      opacity: 0.5;
+    }
+  }
+  .textInput {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0px 60px;
+    padding-right: 80px;
+    box-sizing: border-box;
+    font-family: var(--font-gensenrounded2-tw);
+    font-size: var(--font-size-20);
+    color: var(--color-cadetblue-300);
+    z-index: 3;
+  }
+  .overlayMask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  .overlayContent img {
+    width: 260px;
+    height: 260px;
+    object-fit: contain;
+  }
+  .lottieBox {
+    width: 260px;
+    height: 260px;
+    pointer-events: none;
   }
   .pngIcon {
     width: 881px;
@@ -336,6 +593,7 @@
     max-width: 100%;
     overflow: hidden;
     max-height: 100%;
+    pointer-events: none;
   }
   .frameGroup {
     align-self: stretch;
@@ -369,7 +627,7 @@
     padding: var(--padding-10);
     box-sizing: border-box;
     height: 100%;
-    z-index: 0;
+    z-index: 2;
   }
   .icon1 {
     width: 34px;
@@ -378,14 +636,15 @@
   }
   .inputIconArea {
     height: 97px;
-    width: 536px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
     padding: 0px 25px;
     box-sizing: border-box;
-    z-index: 1;
+    position: relative;
+    z-index: 4;
+    cursor: pointer;
   }
   .inputContent {
     height: 97px;
