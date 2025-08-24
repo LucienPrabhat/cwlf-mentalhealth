@@ -1,22 +1,23 @@
 <template>
   <div :class="$style.e">
-    <img :class="$style.eChild" loading="lazy" alt="" src="/vector-18.svg" />
-    <img :class="$style.eItem" alt="" src="/vector-19.svg" />
-    <img :class="$style.icon" loading="lazy" alt="" src="/--0007--11@2x.png" />
+    <img :class="$style.eChild" loading="lazy" alt="" src="/frame-27@3x.png" />
+    <img :class="$style.eItem" alt="" src="/frame-27@3x.png" />
+    <img :class="$style.icon" loading="lazy" alt="" src="/frame-27@3x.png" />
     <div :class="$style.vectorParent">
-      <img :class="$style.frameChild" alt="" src="/vector-171.svg" />
+      <img :class="$style.frameChild" alt="" src="/frame-27@3x.png" />
+      
       <img
         :class="$style.icon1"
         loading="lazy"
         alt=""
-        src="/--0007--11@2x.png"
+        src="/frame-27@3x.png"
       />
     </div>
     <img
       :class="$style.layer252Icon"
       loading="lazy"
       alt=""
-      src="/--0002-layer25-2@2x.png"
+      src="/frame-27@3x.png"
     />
     <main :class="$style.frameParent">
       <section :class="$style.frameGroup">
@@ -26,7 +27,7 @@
             <p :class="$style.p">住在走廊的那個女孩 </p>
           </h1>
         </div>
-        <img :class="$style.icon2" alt="" src="/04@2x.png" />
+        <!-- <img :class="$style.icon2" alt="" src="/04@2x.png" /> -->
       </section>
       <section :class="$style.rectangleParent">
         <div :class="$style.frameItem" />
@@ -120,27 +121,29 @@
         </div>
       </section>
       <section :class="$style.img5144Parent">
+        
         <img
           :class="$style.img5144Icon"
           loading="lazy"
           alt=""
-          src="/img-5144@2x.png"
+          src="/frame-27@3x.png"
         />
         <img :class="$style.img5144Icon" loading="lazy" alt="" src="/@2x.png" />
         <img
           :class="$style.img5144Icon"
           loading="lazy"
           alt=""
-          src="/image-5-1@2x.png"
+          src="/frame-27@3x.png"
         />
         <img
           :class="$style.img5144Icon"
           loading="lazy"
           alt=""
-          src="/-11@2x-p.png"
+          src="/frame-27@3x.png"
         />
+       
       </section>
-      <button :class="$style.rectangleGroup">
+      <button :class="$style.rectangleGroup" @click="goBack">
         <div :class="$style.frameChild6" />
         <div :class="$style.iconWrapper">
           <img :class="$style.icon5" alt="" src="/icon1.svg" />
@@ -149,7 +152,7 @@
       </button>
     </main>
     <div :class="$style.parent">
-      <img :class="$style.icon6" alt="" src="/1@2x.png" />
+      <img :class="$style.icon6" alt="" src="/frame-27@3x.png" />
       <h3 :class="$style.h3">
         <p :class="$style.p">立即</p>
         <p :class="$style.p">行動</p>
@@ -157,6 +160,18 @@
     </div>
   </div>
 </template>
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+function goBack() {
+  if (window.history.length > 1) {
+    router.back();
+  } else {
+    router.push({ name: "DesktopMainPage" });
+  }
+}
+</script>
 <style module>
   .eChild {
     position: absolute;

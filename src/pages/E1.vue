@@ -1,9 +1,9 @@
 <template>
   <div :class="$style.e">
-    <img :class="$style.eChild" loading="lazy" alt="" src="/vector-17.svg" />
-    <img :class="$style.icon" loading="lazy" alt="" src="/--0008--1@2x.png" />
-    <img :class="$style.graphicIcon" alt="" src="/graphic.svg" />
-    <img :class="$style.icon1" loading="lazy" alt="" src="/--0007--1@2x.png" />
+    <img :class="$style.eChild" loading="lazy" alt="" src="/frame-27@3x.png" />
+    <img :class="$style.icon" loading="lazy" alt="" src="/frame-27@3x.png" />
+    <img :class="$style.graphicIcon" alt="" src="/frame-27@3x.png" />
+    <img :class="$style.icon1" loading="lazy" alt="" src="/frame-27@3x.png" />
     <main :class="$style.container">
       <section :class="$style.segment">
         <div :class="$style.holder">
@@ -16,7 +16,7 @@
                 </span>
               </h1>
             </div>
-            <img :class="$style.icon2" alt="" src="/05@2x.png" />
+            <img :class="$style.icon2" alt="" src="/frame-27@3x.png" />
           </section>
           <div :class="$style.collection">
             <div :class="$style.elements" />
@@ -125,24 +125,24 @@
               :class="$style.s11157513Icon"
               loading="lazy"
               alt=""
-              src="/s--11157513@2x.png"
+              src="/frame-27@3x.png"
             />
             <img
               :class="$style.s11157508Icon"
               loading="lazy"
               alt=""
-              src="/s--11157508@2x.png"
+              src="/frame-27@3x.png"
             />
             <img
               :class="$style.s11157513Icon"
               alt=""
-              src="/s--11157514@2x.png"
+              src="/frame-27@3x.png"
             />
           </div>
-          <button :class="$style.wrapper">
+          <button :class="$style.wrapper" @click="goBack">
             <div :class="$style.wrapperChild" />
             <div :class="$style.navigation">
-              <img :class="$style.icon3" alt="" src="/icon1.svg" />
+              <img :class="$style.icon3" alt="" src="/frame-27@3x.png" />
             </div>
             <div :class="$style.div1">回上頁</div>
           </button>
@@ -157,7 +157,19 @@
       </div>
     </main>
   </div>
-</template>
+ </template>
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+function goBack() {
+  if (window.history.length > 1) {
+    router.back();
+  } else {
+    router.push({ name: "DesktopMainPage" });
+  }
+}
+</script>
 <style module>
   .eChild {
     position: absolute;

@@ -2,8 +2,8 @@
   <div :class="$style.e">
     <main :class="$style.page">
       <section :class="$style.back">
-        <img :class="$style.backChild" alt="" src="/frame-242.svg" />
-        <img :class="$style.backItem" alt="" src="/frame-243.svg" />
+        <img :class="$style.backChild" alt="" src="/frame-27@3x.png" />
+        <img :class="$style.backItem" alt="" src="/frame-27@3x.png" />
       </section>
       <main :class="$style.main">
         <div :class="$style.mainInner">
@@ -12,7 +12,7 @@
               :class="$style.icon"
               loading="lazy"
               alt=""
-              src="/--0001--1@2x.png"
+              src="/frame-27@3x.png"
             />
           </div>
         </div>
@@ -29,12 +29,14 @@
                   </p>
                 </div>
               </div>
+              <!--
               <img
                 :class="$style.frameChild"
                 loading="lazy"
                 alt=""
                 src="/frame-245@2x.png"
               />
+              -->
             </div>
           </section>
           <div :class="$style.txtParent">
@@ -227,7 +229,7 @@
                   :class="$style.icon1"
                   loading="lazy"
                   alt=""
-                  src="/2-1@2x.png"
+                  src="/frame-27@3x.png"
                 />
               </div>
             </div>
@@ -238,7 +240,7 @@
                 :class="$style.d0067Icon"
                 loading="lazy"
                 alt=""
-                src="/d006-7@2x.png"
+                src="/frame-27@3x.png"
               />
             </div>
           </section>
@@ -256,7 +258,7 @@
                     src="/frame-280.svg"
                   />
                   <div :class="$style.backButton">
-                    <h2 :class="$style.h2">回上頁</h2>
+                    <h2 :class="$style.h2" @click="goBack">回上頁</h2>
                   </div>
                 </div>
               </div>
@@ -265,7 +267,7 @@
         </div>
       </main>
       <div :class="$style.wrapper4">
-        <img :class="$style.icon1" loading="lazy" alt="" src="/-1@2x.png" />
+        <!-- <img :class="$style.icon1" loading="lazy" alt="" src="/-1@2x.png" /> -->
       </div>
       <div :class="$style.actionArea">
         <h3 :class="$style.h3">
@@ -278,6 +280,18 @@
     </main>
   </div>
 </template>
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+function goBack() {
+  if (window.history.length > 1) {
+    router.back();
+  } else {
+    router.push({ name: "DesktopMainPage" });
+  }
+}
+</script>
 <style module>
   .backChild {
     align-self: stretch;

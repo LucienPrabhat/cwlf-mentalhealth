@@ -46,47 +46,54 @@
         loading="lazy"
         alt=""
         src="/icon_to_left.png"
+        @click="goPrev"
       />
       <div :class="$style.frame2">
-        <div :class="$style.narrative">
-          <img
-            :class="$style.eventIcon"
-            loading="lazy"
-            alt=""
-            src="/frame-149@2x.png"
-          />
-          <div :class="$style.xiaoYanEvent">
-            <div :class="$style.xuanNarrative">
-              <div :class="$style.div">
-                <p :class="$style.p">國中遭同學霸凌、被逼迫分手後，</p>
-                <p :class="$style.p">崩潰的小言開始自傷、拒學。高二時，</p>
-                <p :class="$style.p">連最親近的朋友都選擇離開後，小言再度</p>
-                <p :class="$style.p">陷入憂鬱與焦慮，從此推開所有人。</p>
-                <p :class="$style.p">直到那天，她第一次在社工面前落淚...</p>
+        <transition :name="transitionName" mode="out-in">
+          <div :key="activeCardKey" :class="$style.narrative">
+            <img
+              :class="$style.eventIcon"
+              loading="lazy"
+              alt=""
+              :src="`/${activeCard.image}`"
+            />
+            <div :class="$style.xiaoYanEvent">
+              <div :class="$style.xuanNarrative">
+                <div :class="$style.div">
+                  <p :class="$style.p"><strong>{{ activeCard.title }}</strong></p>
+                  <p
+                    v-for="(line, idx) in activeCard.contentLines"
+                    :key="idx"
+                    :class="$style.p"
+                  >
+                    {{ line }}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div :class="$style.segmentContainer">
-              <div :class="$style.xuanButtonArea">
-                <button :class="$style.xuanButtonDetails" />
+              <div :class="$style.segmentContainer" @click="onClickButton">
+                <div :class="$style.xuanButtonArea">
+                  <button :class="$style.xuanButtonDetails" />
+                </div>
+                <div :class="$style.wrapper">
+                  <div :class="$style.div1">{{ activeCard.btnText }}</div>
+                </div>
+                <img
+                  :class="$style.xuanEventEnd"
+                  loading="lazy"
+                  alt=""
+                  src="/frame-157.svg"
+                />
               </div>
-              <div :class="$style.wrapper">
-                <div :class="$style.div1">小言後來呢？</div>
-              </div>
-              <img
-                :class="$style.xuanEventEnd"
-                loading="lazy"
-                alt=""
-                src="/frame-157.svg"
-              />
             </div>
           </div>
-        </div>
+        </transition>
       </div>
       <img
         :class="$style.yanPanelIcon"
         loading="lazy"
         alt=""
         src="/icon_to_right.png"
+        @click="goNext"
       />
       <!-- <div :class="$style.yanPanel">
         <div :class="$style.segmentParent">
@@ -127,6 +134,88 @@
     </section>
   </div>
 </template>
+<script setup>
+import { ref, computed } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const cards = [
+  {
+    image: "03@2x.png",
+    title: "媽媽生病又入獄 我的世界崩潰了",
+    contentLines: [
+      "瘦瘦小小的阿馨，本該是準備升學考試、",
+      "和同學談天說地的年紀，卻要獨自面對媽媽",
+      "入獄、學業中斷的殘酷現實。",
+      "媽媽入獄的那一刻，她的世界瞬間崩塌了⋯⋯",
+    ],
+    btnText: "阿馨後來呢？",
+    routeName: "E2",
+    key: "card-e2",
+  },
+  {
+    image: "04@2x.png",
+    title: "從垃圾堆裡撿回自己的小雨",
+    contentLines: [
+      "國中就拒學的小雨，畢業後開始繭居在家。",
+      "因為情緒失控自傷被強制送醫，小雨曾住進",
+      "康復之家。回家後，因房間過於髒亂，",
+      "只能鋪地墊睡在走廊⋯⋯",
+    ],
+    btnText: "小雨後來呢？",
+    routeName: "E3",
+    key: "card-e3",
+  },
+  {
+    image: "frame-149@2x.png",
+    title: "「反正每個人最後都會離開我...」把心關上的小言",
+    contentLines: [
+      "國中遭同學霸凌、被逼迫分手後，崩潰的小言開始",
+      "自傷、拒學。高二時，連最親近的朋友都選擇離開",
+      "後，小言再度陷入憂鬱與焦慮，從此推開所有人。",
+      "直到那天，她第一次在社工面前落淚⋯⋯",
+    ],
+    btnText: "小言後來呢？",
+    routeName: "E4",
+    key: "card-e4",
+  },
+  {
+    image: "frame-170@2x.png",
+    title: "從陽台邊緣走回了人生的小波",
+    contentLines: [
+      "國中時的小波品學兼優、開朗活潑，",
+      "誰能想到，這個曾經是班上開心果的",
+      "女孩，有一天會想結束自己的生命⋯⋯",
+    ],
+    btnText: "小波後來呢",
+    routeName: "E1",
+    key: "card-e1",
+  },
+];
+
+const activeIndex = ref(2); // default to 小言卡片 (與目前畫面相符)
+const isForward = ref(true);
+
+const activeCard = computed(() => cards[activeIndex.value]);
+const activeCardKey = computed(() => activeCard.value.key);
+const transitionName = computed(() => (isForward.value ? "slide-left" : "slide-right"));
+
+function goPrev() {
+  isForward.value = false;
+  activeIndex.value = (activeIndex.value - 1 + cards.length) % cards.length;
+}
+
+function goNext() {
+  isForward.value = true;
+  activeIndex.value = (activeIndex.value + 1) % cards.length;
+}
+
+function onClickButton() {
+  const routeName = activeCard.value.routeName;
+  if (routeName) router.push({ name: routeName });
+}
+</script>
 <style module>
   .xuanButtonData {
     align-self: stretch;
@@ -767,5 +856,24 @@
   /* Cancel left offset so the section can be truly centered */
   .story {
     margin-left: 0 !important;
+  }
+  /* slide transitions */
+  :global(.slide-left-enter-active),
+  :global(.slide-left-leave-active),
+  :global(.slide-right-enter-active),
+  :global(.slide-right-leave-active) {
+    transition: transform 300ms ease, opacity 300ms ease;
+  }
+
+  :global(.slide-left-enter-from),
+  :global(.slide-right-leave-to) {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  :global(.slide-left-leave-to),
+  :global(.slide-right-enter-from) {
+    transform: translateX(-30px);
+    opacity: 0;
   }
 </style>

@@ -17,16 +17,16 @@
           </div>
         </div>
         <div :class="$style.container">
-          <img :class="$style.icon" loading="lazy" alt="" src="/03@2x.png" />
+          <img :class="$style.icon" loading="lazy" alt="" src="/frame-27@3x.png" />
         </div>
       </section>
       <header :class="$style.vectorParent">
-        <img :class="$style.frameChild" alt="" src="/vector-15.svg" />
+        <img :class="$style.frameChild" alt="" src="/frame-27@3x.png" />
         <img
           :class="$style.layer241Icon"
           loading="lazy"
           alt=""
-          src="/--0004-layer24-1@2x.png"
+          src="/frame-27@3x.png"
         />
       </header>
       <div :class="$style.parent">
@@ -38,12 +38,12 @@
       </div>
     </div>
     <div :class="$style.vectorGroup">
-      <img :class="$style.frameItem" alt="" src="/vector-16.svg" />
+      <img :class="$style.frameItem" alt="" src="/frame-27@3x.png" />
       <img
         :class="$style.maskGroupIcon"
         loading="lazy"
         alt=""
-        src="/mask-group@2x.png"
+        src="/frame-27@3x.png"
       />
     </div>
     <main :class="$style.eInner">
@@ -178,15 +178,10 @@
           <img :class="$style.icon2" loading="lazy" alt="" src="/-3-1@2x.png" />
         </div>
         <div :class="$style.frameWrapper">
-          <div :class="$style.rectangleGroup">
+          <div :class="$style.rectangleGroup" @click="goBack">
             <div :class="$style.rectangleDiv" />
             <div :class="$style.iconWrapper">
-              <img
-                :class="$style.icon3"
-                loading="lazy"
-                alt=""
-                src="/icon1.svg"
-              />
+              <img :class="$style.icon3" loading="lazy" alt="" src="/frame-27@3x.png" />
             </div>
             <h2 :class="$style.h2">回上頁</h2>
           </div>
@@ -195,6 +190,18 @@
     </main>
   </div>
 </template>
+<script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+function goBack() {
+  if (window.history.length > 1) {
+    router.back();
+  } else {
+    router.push({ name: "DesktopMainPage" });
+  }
+}
+</script>
 <style module>
   .page {
     width: 678px;
