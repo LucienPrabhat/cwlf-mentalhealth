@@ -4,6 +4,23 @@ body {
   margin: 0;
   line-height: normal;
 }
+/* ====== DELETE FOR RWD ====== */
+:root {
+  /* Fixed layout width */
+}
+
+/* Lock the app to 1440px and center it */
+html, body, #app {
+  width: 100%;
+}
+
+#app {
+  max-width: 1440px;
+  min-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ====== DELETE FOR RWD ====== */
 :root {
   /* Color */
   --color-dimgray: #5c7678;
