@@ -258,17 +258,7 @@
     font-family: var(--font-gensenrounded2-tw);
   }
 
-  @media screen and (max-width: 825px) {
-    .h2 {
-      font-size: var(--font-size-26);
-    }
-
-    .h22 {
-      font-size: 29px;
-      line-height: 45px;
-    }
-  }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 401px) {
     .h2 {
       font-size: var(--font-size-19);
     }

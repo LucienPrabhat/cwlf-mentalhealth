@@ -233,51 +233,36 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .title-text {
-    font-size: 2.5rem;
-  }
-  
-  .subtitle-text {
-    font-size: 1.2rem;
-  }
-  
-  .cta-button {
-    padding: 1.2rem 2.5rem;
-    font-size: 1.1rem;
-  }
-  
-  .logo-section {
-    top: 1rem;
-    right: 1rem;
-  }
-  
-  .logo {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .logo-text h3 {
-    font-size: 1rem;
-  }
-  
-  .logo-text p {
-    font-size: 0.7rem;
-  }
-}
-
-@media (max-width: 480px) {
+@media screen and (max-width: 401px) {
   .title-text {
     font-size: 2rem;
   }
-  
+
   .subtitle-text {
     font-size: 1rem;
   }
-  
+
   .cta-button {
     padding: 1rem 2rem;
     font-size: 1rem;
+  }
+
+  .logo-section {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-text h3 {
+    font-size: 0.9rem;
+  }
+
+  .logo-text p {
+    font-size: 0.65rem;
   }
 }
 </style>

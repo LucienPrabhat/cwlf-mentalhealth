@@ -5,12 +5,12 @@ body {
   line-height: normal;
 }
 /* ====== DELETE FOR RWD ====== */
-:root {
+/* :root { */
   /* Fixed layout width */
-}
+/* } */
 
 /* Lock the app to 1440px and center it */
-html, body, #app {
+/* html, body, #app {
   width: 100%;
 }
 
@@ -19,7 +19,7 @@ html, body, #app {
   min-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 /* ====== DELETE FOR RWD ====== */
 :root {
   /* Color */

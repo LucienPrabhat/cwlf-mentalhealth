@@ -448,28 +448,7 @@
     letter-spacing: normal;
   }
 
-  @media screen and (max-width: 1125px) {
-    .dash {
-      font-size: var(--font-size-32);
-    }
-
-    .h22 {
-      font-size: var(--font-size-26);
-    }
-
-    .frameParent {
-      gap: 137px;
-      padding-top: 49px;
-      box-sizing: border-box;
-    }
-
-    .d {
-      padding-left: var(--padding-40);
-      padding-right: var(--padding-40);
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 401px) {
     .dash {
       font-size: var(--font-size-24);
     }
@@ -512,12 +491,7 @@
 
     .frameParent {
       gap: 69px;
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .frameParent {
       height: auto;
-      gap: 275px;
       flex-wrap: wrap;
     }
   }

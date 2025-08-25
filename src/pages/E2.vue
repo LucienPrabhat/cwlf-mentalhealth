@@ -557,43 +557,7 @@ function goBack() {
     font-family: var(--font-gensenrounded2-tw);
   }
 
-  @media screen and (max-width: 1125px) {
-    .div {
-      font-size: var(--font-size-26);
-    }
-
-    .frameInner {
-      flex: 1;
-    }
-
-    .icon2 {
-      flex: 1;
-    }
-
-    .rectangleParent {
-      flex-wrap: wrap;
-    }
-
-    .h2 {
-      font-size: var(--font-size-26);
-      line-height: 43px;
-    }
-
-    .frameWrapper {
-      padding-left: 142px;
-      padding-right: 142px;
-      box-sizing: border-box;
-    }
-
-    .frameContainer {
-      gap: 59px;
-    }
-
-    .e {
-      gap: var(--gap-19);
-    }
-  }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 401px) {
     .div {
       font-size: var(--font-size-19);
     }
@@ -610,6 +574,7 @@ function goBack() {
 
     .rectangleParent {
       gap: 17px;
+      flex-wrap: wrap;
     }
 
     .h2 {
@@ -625,6 +590,10 @@ function goBack() {
 
     .frameContainer {
       gap: 29px;
+    }
+
+    .e {
+      gap: var(--gap-19);
     }
   }
 </style>

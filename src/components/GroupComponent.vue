@@ -166,26 +166,7 @@
     gap: 38.5px;
   }
 
-  @media screen and (max-width: 825px) {
-    .h2 {
-      font-size: var(--font-size-26);
-      line-height: 48px;
-    }
-
-    .group {
-      gap: var(--gap-16);
-    }
-
-    .groupWrapper {
-      padding-top: var(--padding-80);
-      box-sizing: border-box;
-    }
-
-    .frameParent {
-      gap: var(--gap-19);
-    }
-  }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 401px) {
     .h2 {
       font-size: var(--font-size-19);
       line-height: 36px;
@@ -203,6 +184,14 @@
     .groupWrapper {
       padding-top: 52px;
       box-sizing: border-box;
+    }
+
+    .group {
+      gap: var(--gap-16);
+    }
+
+    .frameParent {
+      gap: var(--gap-19);
     }
   }
 </style>

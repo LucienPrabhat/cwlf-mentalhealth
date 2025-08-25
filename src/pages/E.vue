@@ -66,7 +66,7 @@
   .content {
     margin-top: -178px;
     margin-left: -10px;
-    width: 1470px;
+    width: 1440px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -75,7 +75,7 @@
     box-sizing: border-box;
     position: relative;
     flex-shrink: 0;
-    max-width: 103%;
+    max-width: 100%;
     z-index: 2;
   }
   .optionContainerChild {
@@ -191,7 +191,7 @@
     position: relative;
     gap: var(--gap-100);
     flex-shrink: 0;
-    max-width: 102%;
+    max-width: 100%;
     margin-top: -306px;
   }
   .e {

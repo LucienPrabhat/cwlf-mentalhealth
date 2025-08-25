@@ -445,41 +445,7 @@
     font-family: var(--font-gensenrounded2-tw);
   }
 
-  @media screen and (max-width: 1411px) {
-    .frameParent {
-      height: auto;
-      gap: 275px;
-      flex-wrap: wrap;
-    }
-  }
-  @media screen and (max-width: 1200px) {
-    .d {
-      padding-top: 123px;
-      padding-bottom: 123px;
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 825px) {
-    .filler {
-      font-size: var(--font-size-32);
-    }
-
-    .h22 {
-      font-size: var(--font-size-26);
-    }
-
-    .frameParent {
-      gap: 137px;
-      padding-top: 49px;
-      box-sizing: border-box;
-    }
-
-    .d {
-      padding: var(--padding-80) var(--padding-40);
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 401px) {
     .filler {
       font-size: var(--font-size-24);
     }
@@ -522,6 +488,8 @@
 
     .frameParent {
       gap: 69px;
+      height: auto;
+      flex-wrap: wrap;
     }
   }
 </style>

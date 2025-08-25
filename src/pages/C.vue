@@ -341,13 +341,15 @@
     letter-spacing: normal;
   }
 
-  @media screen and (max-width: 1350px) {
+  @media screen and (max-width: 401px) {
     .frameSection {
       flex: 1;
+      min-width: 100%;
     }
 
     .frameParent3 {
       flex: 1;
+      min-width: 100%;
     }
 
     .frameParent2 {
@@ -361,27 +363,7 @@
     .c {
       height: auto;
     }
-  }
-  @media screen and (max-width: 1125px) {
-    .frameParent3 {
-      min-width: 100%;
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .h1 {
-      font-size: var(--font-size-26);
-    }
 
-    .h21 {
-      font-size: 29px;
-      line-height: 45px;
-    }
-
-    .frameSection {
-      min-width: 100%;
-    }
-  }
-  @media screen and (max-width: 450px) {
     .h1 {
       font-size: var(--font-size-19);
     }

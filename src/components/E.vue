@@ -265,7 +265,7 @@
     z-index: 1;
   }
   .frameParent {
-    width: 1470px;
+    width: 1440px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -274,7 +274,7 @@
     box-sizing: border-box;
     position: relative;
     flex-shrink: 0;
-    max-width: 103%;
+    max-width: 100%;
     z-index: 2;
     background-color: #C0EB77;
   }

@@ -10,7 +10,7 @@
             <p :class="$style.p">
               <span :class="$style.span">兒福聯盟透過</span>
               <span :class="[$style.span, $style.interactiveText]"  @mouseenter="handleHover('qingshaonianxinli.png')" @mouseleave="handleLeave" @click="handleClick('qingshaonianxinli.png')">「青少年心理健康服務」</span>
-              <span>， 針對情緒困擾青少年及其家庭提供服務，由專業</span>
+              <span>，針對情緒困擾青少年及其家庭提供服務，由專業</span>
             </p>
             <p :class="$style.p">社工進行定期的訪視與陪伴，協助家庭修復親子</p>
             <p :class="$style.p">關係，並串聯醫療、教育等外部資源，協助少年</p>
@@ -199,34 +199,19 @@
     max-width: 100%;
   }
 
-  @media screen and (max-width: 1411px) {
+  @media screen and (max-width: 401px) {
     .frameGroup {
-      flex: 1;
+      min-width: 100%;
     }
 
     .frameContainer {
-      flex: 1;
+      min-width: 100%;
     }
 
     .frameParent {
       flex-wrap: wrap;
     }
-  }
-  @media screen and (max-width: 1200px) {
-    .frameContainer {
-      min-width: 100%;
-    }
-  }
-  @media screen and (max-width: 825px) {
-    .h2 {
-      font-size: var(--font-size-26);
-    }
 
-    .frameGroup {
-      min-width: 100%;
-    }
-  }
-  @media screen and (max-width: 450px) {
     .h2 {
       font-size: var(--font-size-19);
     }

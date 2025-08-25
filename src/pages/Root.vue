@@ -48,7 +48,7 @@
   .backgroundWrapper {
     margin-top: -10px;
     margin-right: -9px;
-    width: 1460px;
+    width: 1440px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -56,7 +56,7 @@
     padding: var(--padding-10);
     box-sizing: border-box;
     flex-shrink: 0;
-    max-width: 102%;
+    max-width: 100%;
     z-index: 1;
   }
   .icon {
@@ -71,7 +71,7 @@
     position: absolute;
     top: 630px;
     left: -11px;
-    width: 1455px;
+    width: 1440px;
     height: 270px;
     z-index: 1;
   }
@@ -79,7 +79,7 @@
     position: absolute;
     top: 653px;
     left: -13px;
-    width: 1465px;
+    width: 1440px;
     height: 339px;
     object-fit: cover;
     z-index: 2;
@@ -171,7 +171,7 @@
   }
   .frameParent {
     margin-right: -12px;
-    width: 1465px;
+    width: 1440px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -180,7 +180,7 @@
     box-sizing: border-box;
     gap: 121px;
     flex-shrink: 0;
-    max-width: 102%;
+    max-width: 100%;
     z-index: 1;
     margin-top: -934px;
     position: relative;

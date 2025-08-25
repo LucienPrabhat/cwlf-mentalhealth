@@ -110,7 +110,7 @@
     font-family: var(--font-gensenrounded2-tw);
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 401px) {
     .a {
       font-size: var(--font-size-16);
       line-height: 32px;

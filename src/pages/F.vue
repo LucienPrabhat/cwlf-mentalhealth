@@ -625,7 +625,7 @@
     letter-spacing: normal;
   }
 
-  @media screen and (max-width: 1325px) {
+  @media screen and (max-width: 401px) {
     .pngIcon1 {
       margin-left: 0;
     }
@@ -641,273 +641,7 @@
 
     .frameParent1 {
       flex-wrap: wrap;
-    }
-
-    .q {
-      height: auto;
-      gap: 76px;
-      padding-right: 97px;
-      box-sizing: border-box;
-    }
-
-    .frameContainer {
-      gap: 81px;
-    }
-
-    .back {
-      height: auto;
-      padding-top: var(--padding-20);
-      padding-bottom: 213px;
-      box-sizing: border-box;
-    }
-
-    .f {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1200px) {
-    .frameWrapper {
-      flex: 1;
-    }
-
-    .frameParent1 {
-      flex-wrap: wrap;
-    }
-
-    .frameParent3 {
-      flex-wrap: wrap;
-    }
-
-    .q {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1150px) {
-    .div {
-      font-size: 38px;
-      line-height: 64px;
-    }
-
-    .h2 {
-      font-size: var(--font-size-19);
-      line-height: 37px;
-    }
-
-    .div1 {
-      font-size: var(--font-size-16);
-      line-height: 25px;
-    }
-
-    .frameWrapper {
-      flex: 1;
-    }
-
-    .frameParent1 {
       gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .q {
-      height: auto;
-      gap: var(--gap-19);
-      padding-right: var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .div2 {
-      font-size: var(--font-size-16);
-      line-height: 30px;
-    }
-
-    .wrapper1 {
-      padding-left: var(--padding-20);
-      padding-right: var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .frameContainer {
-      gap: var(--gap-20);
-    }
-
-    .back {
-      padding-left: var(--padding-20);
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 1050px) {
-    .div {
-      font-size: 38px;
-      line-height: 64px;
-    }
-
-    .h2 {
-      font-size: var(--font-size-19);
-      line-height: 37px;
-    }
-
-    .div1 {
-      font-size: var(--font-size-16);
-      line-height: 25px;
-    }
-
-    .frameWrapper {
-      flex: 1;
-    }
-
-    .frameParent1 {
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .q {
-      height: auto;
-      gap: var(--gap-19);
-      padding-right: var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .div2 {
-      font-size: var(--font-size-16);
-      line-height: 30px;
-    }
-
-    .wrapper1 {
-      padding-left: var(--padding-20);
-      padding-right: var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .frameContainer {
-      gap: var(--gap-20);
-    }
-
-    .back {
-      padding-left: var(--padding-20);
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 1050px) {
-    .div {
-      font-size: 38px;
-      line-height: 64px;
-    }
-
-    .h2 {
-      font-size: var(--font-size-19);
-      line-height: 37px;
-    }
-
-    .div1 {
-      font-size: var(--font-size-16);
-      line-height: 25px;
-    }
-
-    .frameWrapper {
-      flex: 1;
-    }
-
-    .frameParent1 {
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .q {
-      height: auto;
-      gap: var(--gap-19);
-      padding-right: var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .div2 {
-      font-size: var(--font-size-16);
-      line-height: 30px;
-    }
-
-    .wrapper1 {
-      padding-left: var(--padding-20);
-      padding-right: var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .frameContainer {
-      gap: var(--gap-20);
-    }
-
-    .back {
-      padding-left: var(--padding-20);
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .div {
-      font-size: 38px;
-      line-height: 64px;
-    }
-
-    .h2 {
-      font-size: var(--font-size-19);
-      line-height: 37px;
-    }
-
-    .div1 {
-      font-size: var(--font-size-16);
-      line-height: 25px;
-    }
-
-    .frameWrapper {
-      flex: 1;
-    }
-
-    .frameParent1 {
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .q {
-      height: auto;
-      gap: var(--gap-19);
-      padding-right: var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .div2 {
-      font-size: var(--font-size-16);
-      line-height: 30px;
-    }
-
-    .wrapper1 {
-      padding-left: var(--padding-20);
-      padding-right: var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .frameContainer {
-      gap: var(--gap-20);
-    }
-
-    .back {
-      padding-left: var(--padding-20);
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .div {
-      font-size: 51px;
-      line-height: 85px;
-    }
-
-    .h2 {
-      font-size: var(--font-size-26);
-      line-height: 49px;
-    }
-
-    .frameWrapper {
-      flex: 1;
-    }
-
-    .frameParent1 {
-      gap: 36px;
-      flex-wrap: wrap;
     }
 
     .q {
@@ -917,8 +651,30 @@
       box-sizing: border-box;
     }
 
-    .frameDiv {
-      gap: 26px;
+    .div {
+      font-size: 38px;
+      line-height: 64px;
+    }
+
+    .h2 {
+      font-size: var(--font-size-19);
+      line-height: 37px;
+    }
+
+    .div1 {
+      font-size: var(--font-size-16);
+      line-height: 25px;
+    }
+
+    .div2 {
+      font-size: var(--font-size-16);
+      line-height: 30px;
+    }
+
+    .wrapper1 {
+      padding-left: var(--padding-20);
+      padding-right: var(--padding-20);
+      box-sizing: border-box;
     }
 
     .frameContainer {
@@ -926,85 +682,10 @@
     }
 
     .back {
-      padding-left: 220px;
-      padding-right: var(--padding-32);
-      padding-bottom: 138px;
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .pngIcon1 {
-      margin-left: 0;
-    }
-
-    .pngParent {
-      flex-wrap: wrap;
-    }
-
-    .frameWrapper {
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .frameParent1 {
-      flex-wrap: wrap;
-    }
-
-    .q {
-      height: auto;
-      gap: 76px;
-      padding-right: 97px;
-      box-sizing: border-box;
-    }
-
-    .frameContainer {
-      gap: 81px;
-    }
-
-    .back {
       height: auto;
       padding-top: var(--padding-20);
       padding-bottom: 213px;
-      box-sizing: border-box;
-    }
-
-    .f {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .pngIcon1 {
-      margin-left: 0;
-    }
-
-    .pngParent {
-      flex-wrap: wrap;
-    }
-
-    .frameWrapper {
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .frameParent1 {
-      flex-wrap: wrap;
-    }
-
-    .q {
-      height: auto;
-      gap: 76px;
-      padding-right: 97px;
-      box-sizing: border-box;
-    }
-
-    .frameContainer {
-      gap: 81px;
-    }
-
-    .back {
-      height: auto;
-      padding-top: var(--padding-20);
-      padding-bottom: 213px;
+      padding-left: var(--padding-20);
       box-sizing: border-box;
     }
 

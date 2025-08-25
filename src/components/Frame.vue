@@ -133,31 +133,7 @@
     font-family: var(--font-gensenrounded2-tw);
   }
 
-  @media screen and (max-width: 1411px) {
-    .group {
-      box-sizing: border-box;
-    }
-
-    .frame {
-      width: calc(100% - 40px);
-    }
-  }
-  @media screen and (max-width: 825px) {
-    .h2 {
-      font-size: var(--font-size-26);
-      line-height: 41px;
-    }
-
-    .h21 {
-      font-size: var(--font-size-26);
-      line-height: 41px;
-    }
-
-    .group {
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 401px) {
     .h2 {
       font-size: var(--font-size-19);
       line-height: 31px;

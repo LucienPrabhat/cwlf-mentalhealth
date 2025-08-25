@@ -99,7 +99,7 @@
     max-width: 100%;
   }
   .desktopMainPage {
-    width: 100%;
+    width: 1440PX;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -109,9 +109,9 @@
     letter-spacing: normal;
   }
 
-  @media screen and (max-width: 825px) {
-    .frameParent {
-      gap: 23px;
+  @media screen and (max-width: 401px) {
+    .desktopMainPage {
+      width: 401px;
     }
   }
 </style>

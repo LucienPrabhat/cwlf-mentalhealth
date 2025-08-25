@@ -119,7 +119,7 @@
     top: -10px;
     left: -10px;
     background: linear-gradient(180deg, #3B837D, #DFFAFF 99%);
-    width: 1460px;
+    width: 1440px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -388,7 +388,7 @@
     max-width: 100%;
   }
   .frameChild2 {
-    width: 1500px;
+    width: 1440px;
     height: auto;
     object-fit: cover;
     flex-shrink: 0;
@@ -416,13 +416,13 @@
     max-width: 100%;
   }
   .frameParent4 {
-    width: 1470px;
+    width: 1440px;
     height: 356px;
     position: relative;
     max-width: 102%;
   }
   .newWrapper {
-    width: 1470px;
+    width: 1440px;
     height: 356px;
     position: relative;
     display: flex;
@@ -457,45 +457,16 @@
     font-family: var(--font-gensenrounded2-tw);
   }
 
-  @media screen and (max-width: 1411px) {
+  @media screen and (max-width: 401px) {
     .frameGroup {
       flex-wrap: wrap;
-    }
-  }
-  @media screen and (max-width: 1200px) {
-    .h2 {
-      flex: 1;
-    }
-
-    .icon {
-      flex: 1;
-    }
-
-    .parent {
-      flex-wrap: wrap;
-    }
-  }
-  @media screen and (max-width: 825px) {
-    .h2 {
-      font-size: 29px;
-      line-height: 45px;
-      min-width: 100%;
-    }
-
-    .iconWrapper {
-      padding-left: 139px;
-      padding-right: 139px;
-      box-sizing: border-box;
-    }
-
-    .frameGroup {
       gap: 21px;
     }
-  }
-  @media screen and (max-width: 450px) {
+
     .h2 {
       font-size: var(--font-size-22);
       line-height: 34px;
+      min-width: 100%;
     }
 
     .div {
