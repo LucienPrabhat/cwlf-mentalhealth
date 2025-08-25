@@ -167,6 +167,14 @@
   }
 
   @media screen and (max-width: 401px) {
+    .frameParent {
+      flex-direction: column;
+    }
+
+    .groupWrapper {
+      width: 100%;
+    }
+
     .h2 {
       font-size: var(--font-size-19);
       line-height: 36px;

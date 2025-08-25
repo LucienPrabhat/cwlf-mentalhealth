@@ -458,6 +458,10 @@
   }
 
   @media screen and (max-width: 401px) {
+    .b {
+      height: auto;
+    }
+
     .frameGroup {
       flex-wrap: wrap;
       gap: 21px;

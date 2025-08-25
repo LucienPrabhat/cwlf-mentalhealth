@@ -11,8 +11,8 @@
           </div>
           <div :class="$style.externalResourcesParent">
             <section :class="$style.externalResources">
-              <ExplorePanel prop="給想了解更多的你" />
-              <div :class="$style.component">
+              <ExplorePanel prop="給想了解更多的你" @toggle="showMore = !showMore" />
+              <div :class="$style.component" :data-open="showMore">
                 <div :class="$style.keyboardArrowDownParent">
                   <img
                     :class="$style.keyboardArrowDownIcon"
@@ -175,8 +175,8 @@
             </section>
             <div :class="$style.guidanceRow" />
             <section :class="$style.emergencyAccess">
-              <ExplorePanel explorePanelWidth="unset" prop="給需要幫助的你" />
-              <div :class="$style.component1">
+              <ExplorePanel explorePanelWidth="unset" prop="給需要幫助的你" @toggle="showHelp = !showHelp" />
+              <div :class="$style.component1" :data-open="showHelp">
                 <div :class="$style.group">
                   <div :class="$style.div2">
                     專線電話：0800-250585（愛我理我幫我）
@@ -250,12 +250,16 @@
   </section>
 </template>
 <script setup>
+  import { ref } from 'vue'
   import ExplorePanel from "./ExplorePanel.vue"
   import Book from "./Book.vue"
   import Volume from "./Volume.vue"
   import PlayCircle from "./PlayCircle.vue"
   import InnerElements from "./InnerElements.vue"
   import Home from "./Home.vue"
+
+  const showMore = ref(false)     // 給想了解更多的你
+  const showHelp = ref(false)     // 給需要幫助的你
 </script>
 <style module>
   .p {
@@ -456,7 +460,7 @@
     color: inherit;
     display: flex;
     align-items: center;
-    opacity: 0;
+    opacity: 1;
     z-index: 2;
   }
   .courseGuide {
@@ -643,6 +647,14 @@
     box-sizing: border-box;
     max-width: 100%;
     font-size: var(--font-size-16);
+    overflow: hidden;
+  }
+  /* collapse/expand animation for first panel */
+  .component[data-open="true"] .keyboardArrowDownParent {
+    animation: panelFadeIn 300ms ease forwards;
+  }
+  .component[data-open="false"] .keyboardArrowDownParent {
+    animation: panelFadeOut 300ms ease forwards;
   }
   .externalResources {
     display: flex;
@@ -762,6 +774,23 @@
     justify-content: flex-start;
     padding: var(--padding-14) 0px 109px;
     box-sizing: border-box;
+    overflow: hidden;
+  }
+  /* collapse/expand animation for help panel */
+  .component1[data-open="true"] .group {
+    animation: panelFadeIn 300ms ease forwards;
+  }
+  .component1[data-open="false"] .group {
+    animation: panelFadeOut 300ms ease forwards;
+  }
+
+  @keyframes panelFadeIn {
+    0% { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes panelFadeOut {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-8px); }
   }
   .emergencyAccess {
     height: 676px;
@@ -941,6 +970,51 @@
 
     .frameParent {
       gap: 35px;
+    }
+  }
+  @media screen and (max-width: 401px) {
+    /* Stack the two sections vertically */
+    .externalResourcesParent {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .externalResources,
+    .emergencyAccess {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .guidanceRow {
+      width: 100%;
+      height: 24px;
+    }
+
+    /* Center the title block in the middle of the screen */
+    .accompanyQuoteParent {
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .h2 {
+      text-align: center;
+    }
+
+    /* Prevent overlaps: ensure wrapper grows and internal blocks aren't absolute-stacked */
+    .gWrapper {
+      height: auto;
+    }
+
+    .g {
+      padding-top: var(--padding-20);
+      padding-bottom: var(--padding-20);
+    }
+
+    .frameParent {
+      gap: var(--gap-20);
     }
   }
 </style>

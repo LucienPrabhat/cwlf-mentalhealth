@@ -8,11 +8,13 @@
       loading="lazy"
       alt=""
       src="/frame-211.svg"
+      @click="emit('toggle')"
     />
   </div>
 </template>
 <script setup>
   import { computed } from "vue"
+  const emit = defineEmits(["toggle"])
 
   const props = defineProps({
     prop: { type: String },

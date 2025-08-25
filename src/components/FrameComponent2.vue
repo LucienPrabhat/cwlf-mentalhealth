@@ -778,5 +778,45 @@
       padding-right: var(--padding-20);
       box-sizing: border-box;
     }
+
+    /* Prevent overlaps with next sections on small screens */
+    .fWrapper {
+      height: auto;
+    }
+
+    .f {
+      width: 100%;
+    }
+
+    .back {
+      margin-left: 0;
+      padding-left: var(--padding-20);
+      padding-right: var(--padding-20);
+      max-width: 100%;
+    }
+
+    .frameParent {
+      height: auto;
+    }
+
+    .backgroundBlueParent,
+    .blockContainerParent,
+    .pageElement,
+    .imageBackGroud {
+      position: static;
+      height: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      top: auto;
+    }
+
+    .blockContainerParent,
+    .pageElement {
+      width: 100%;
+      padding-left: var(--padding-20);
+      padding-right: var(--padding-20);
+      box-sizing: border-box;
+    }
   }
 </style>

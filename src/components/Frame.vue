@@ -134,6 +134,10 @@
   }
 
   @media screen and (max-width: 401px) {
+    .frame {
+      width: 100%;
+    }
+
     .h2 {
       font-size: var(--font-size-19);
       line-height: 31px;
