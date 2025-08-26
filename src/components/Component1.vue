@@ -1,24 +1,26 @@
 <template>
   <div :class="$style.component" :data-property1="property1">
-    <div :class="$style.wrapper">
-      <p>
-        我以為只要我夠痛，就會被看見。<br>
-        只是媽媽也太痛了，痛到顧不了我
-      </p>
-      <p>
-        我有在努力好好生活，真的有。<br>
-        只是有時候，晚上還是會想：<br>
-        「我是不是又快要掉回去那個深淵？」
-      </p>
-      <p>
-        恐懼像影子一樣跟著我
-      </p>
-      <p>
-        它不僅出現在夜晚，<br>
-        也逐漸侵蝕了白天<br>
-        不論在家裡還是學校<br>
-        對我而言都是沒有盡頭的永夜。
-      </p>
+    <div :class="$style.wrapper" ref="wrap" @mouseenter="pause" @mouseleave="resume">
+      <div :class="$style.scrollInner" ref="inner">
+        <p>
+          我以為只要我夠痛，就會被看見。<br />
+          只是媽媽也太痛了，痛到顧不了我
+        </p>
+        <p>
+          我有在努力好好生活，真的有。<br />
+          只是有時候，晚上還是會想：<br />
+          「我是不是又快要掉回去那個深淵？」
+        </p>
+        <p>
+          恐懼像影子一樣跟著我
+        </p>
+        <p>
+          它不僅出現在夜晚，<br />
+          也逐漸侵蝕了白天<br />
+          不論在家裡還是學校<br />
+          對我而言都是沒有盡頭的永夜。
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -27,17 +29,74 @@ defineProps({
   property1: { type: Number, default: "Frame 8" },
 })
 </script>
+<script>
+export default {
+  mounted() {
+    this.startAutoScroll()
+  },
+  beforeUnmount() {
+    this.stopAutoScroll()
+  },
+  data() {
+    return {
+      timer: null,
+      index: 0,
+      paused: false,
+    }
+  },
+  methods: {
+    startAutoScroll() {
+      // measure first p height and scroll by that amount every interval
+      this.$nextTick(() => {
+        const inner = this.$refs.inner
+        const wrap = this.$refs.wrap
+        if (!inner || !wrap) return
+        const ps = inner.querySelectorAll('p')
+        if (!ps.length) return
+        // make container height equal to first p's height so only first is visible
+        const h = ps[0].getBoundingClientRect().height
+        wrap.style.overflow = 'hidden'
+        this.timer = setInterval(() => {
+          if (this.paused) return
+          this.index = (this.index + 1) % ps.length
+          inner.style.transition = 'transform 600ms ease'
+          inner.style.transform = `translateY(-${this.index * h}px)`
+        }, 2500)
+      })
+    },
+    stopAutoScroll() {
+      if (this.timer) {
+        clearInterval(this.timer)
+        this.timer = null
+      }
+    },
+    pause() {
+      this.paused = true
+    },
+    resume() {
+      this.paused = false
+    },
+  },
+}
+</script>
 <style module>
 /* paragraph tags use default styles; trivial .p* rules removed */
 
 .wrapper {
   width: 100%;
+  height: 250px;
+  display: block;
+  /* single clipped viewport for scrolling */
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.scrollInner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  z-index: 0;
+  transition: transform 600ms ease;
+  /* transform: translateY(200px); */
 }
 
 /* removed trivial p2,p3,p4 rules */
@@ -58,13 +117,14 @@ defineProps({
 }
 
 p {
-  margin: 55px 20px;
-  padding: 0;
+  margin: 0;
+  padding: 20px 20px;
+  /* predictable height */
   text-align: center;
   font-size: var(--font-size-20);
   color: var(--color-white);
   font-family: var(--font-gensenrounded2-tw);
   line-height: 190%;
-  letter-spacing: 4%;
+  letter-spacing: 0.04em;
 }
 </style>

@@ -122,6 +122,41 @@ import Component1 from "./Component1.vue"
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  /* dark overlay and lightning effect handled by pseudo-elements */
+}
+
+.rectangleParent::before {
+  /* semi-transparent black mask over the whole block */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.rectangleParent::after {
+  /* animated lightning streak */
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: -50%;
+  width: 140%;
+  height: 200%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: rotate(25deg) translateX(-100%);
+  opacity: 0;
+  z-index: 4;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: lightning 6s linear infinite;
+}
+
+/* ensure content sits above the dark mask */
+.rectangleParent>* {
+  position: relative;
+  z-index: 3;
 }
 
 .icon1 {
