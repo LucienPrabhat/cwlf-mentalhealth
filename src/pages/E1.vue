@@ -1,9 +1,9 @@
 <template>
   <div :class="$style.e">
-    <img :class="$style.eChild" loading="lazy" alt="" src="/frame-27@3x.png" />
-    <img :class="$style.icon" loading="lazy" alt="" src="/frame-27@3x.png" />
-    <img :class="$style.graphicIcon" alt="" src="/frame-27@3x.png" />
-    <img :class="$style.icon1" loading="lazy" alt="" src="/frame-27@3x.png" />
+    <img :class="$style.eChild" loading="lazy" alt="" src="/bo/btm.png" />
+    <img :class="$style.icon" loading="lazy" alt="" src="/bo/rain.png" />
+    <img :class="$style.graphicIcon" alt="" src="/bo/top.png" />
+    <img :class="$style.icon1" loading="lazy" alt="" src="/bo/tree.png" />
     <main :class="$style.container">
       <section :class="$style.segment">
         <div :class="$style.holder">
@@ -16,7 +16,7 @@
                 </span>
               </h1>
             </div>
-            <img :class="$style.icon2" alt="" src="/frame-27@3x.png" />
+            <img :class="$style.icon2" alt="" src="/bo/po.png" />
           </section>
           <div :class="$style.collection">
             <div :class="$style.elements" />
@@ -125,18 +125,18 @@
               :class="$style.s11157513Icon"
               loading="lazy"
               alt=""
-              src="/frame-27@3x.png"
+              src="/bo/01.png"
             />
             <img
               :class="$style.s11157508Icon"
               loading="lazy"
               alt=""
-              src="/frame-27@3x.png"
+              src="/bo/02.png"
             />
             <img
               :class="$style.s11157513Icon"
               alt=""
-              src="/frame-27@3x.png"
+              src="/bo/03.png"
             />
           </div>
           <button :class="$style.wrapper" @click="goBack">
@@ -149,7 +149,7 @@
         </div>
       </section>
       <div :class="$style.parent">
-        <img :class="$style.icon4" alt="" src="/1@2x.png" />
+        <!-- <img :class="$style.icon4" alt="" src="/frame-27@3x.png" /> -->
         <h3 :class="$style.h3">
           <p :class="$style.p">立即</p>
           <p :class="$style.p">行動</p>
@@ -388,7 +388,6 @@ function goBack() {
   }
   .segment {
     align-self: stretch;
-    height: 2424px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -414,25 +413,26 @@ function goBack() {
     letter-spacing: 0.09em;
     line-height: 104.39%;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 600;
     font-family: inherit;
     z-index: 1;
+    font-size: 28px;
   }
   .parent {
-    width: 292px;
+    width: 132px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 45px 85px 182px 135px;
+    padding: 35px;
     box-sizing: border-box;
-    background-image: url("/public/1@2x.png");
-    background-size: cover;
+    background-image: url("/frame-27@3x.png");
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     z-index: 2;
-    margin-top: -2109px;
     position: relative;
+    margin-top: 400px;
   }
   .container {
     position: absolute;
@@ -441,8 +441,8 @@ function goBack() {
     width: 1056px;
     height: 2424px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: flex-start;
     max-width: 100%;
     text-align: center;
@@ -460,75 +460,6 @@ function goBack() {
     letter-spacing: normal;
   }
 
-  @media screen and (max-width: 1125px) {
-    .portion {
-      min-width: 100%;
-    }
-
-    .series {
-      margin: 0 auto;
-      grid-template-columns: repeat(2, minmax(161px, 280px));
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .h1 {
-      font-size: var(--font-size-24);
-      line-height: 34px;
-    }
-
-    .div {
-      font-size: var(--font-size-16);
-      line-height: 29px;
-    }
-
-    .s11157513Icon {
-      width: 100%;
-    }
-
-    .s11157508Icon {
-      width: 100%;
-    }
-
-    .series {
-      grid-template-columns: minmax(161px, 1fr);
-    }
-
-    .div1 {
-      font-size: var(--font-size-19);
-      line-height: 32px;
-    }
-
-    .h3 {
-      font-size: var(--font-size-22);
-      line-height: 23px;
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .h1 {
-      font-size: var(--font-size-32);
-      line-height: 45px;
-    }
-
-    .portion {
-      flex: 1;
-    }
-
-    .icon2 {
-      flex: 1;
-    }
-
-    .area {
-      height: auto;
-      flex-wrap: wrap;
-    }
-
-    .series {
-      flex-wrap: wrap;
-    }
-
-    .div1 {
-      font-size: var(--font-size-26);
-      line-height: 43px;
-    }
+  @media screen and (max-width: 401px) {
   }
 </style>

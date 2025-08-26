@@ -380,7 +380,7 @@ function goBack() {
     justify-content: flex-start;
     padding: 45px 85px 182px 135px;
     box-sizing: border-box;
-    background-image: url("/public/1@2x.png");
+    background-image: url("/frame-27@3x.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
