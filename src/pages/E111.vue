@@ -14,13 +14,7 @@
               <div :class="$style.xuanNarrative">
                 <div :class="$style.div">
                   <p :class="$style.p"><strong>{{ activeCardL.title }}</strong></p>
-                  <p
-                    v-for="(line, idx) in activeCardL.contentLines"
-                    :key="idx"
-                    :class="$style.p"
-                  >
-                    {{ line }}
-                  </p>
+                  <p :class="$style.p">{{ activeCardL.content }}</p>
                 </div>
               </div>
               <div :class="$style.segmentContainer" @click="onClickButton">
@@ -61,13 +55,7 @@
               <div :class="$style.xuanNarrative">
                 <div :class="$style.div">
                   <p :class="$style.p"><strong>{{ activeCard.title }}</strong></p>
-                  <p
-                    v-for="(line, idx) in activeCard.contentLines"
-                    :key="idx"
-                    :class="$style.p"
-                  >
-                    {{ line }}
-                  </p>
+                  <p :class="$style.p">{{ activeCard.content }}</p>
                 </div>
               </div>
               <div :class="$style.segmentContainer" @click="onClickButton">
@@ -108,13 +96,7 @@
               <div :class="$style.xuanNarrative">
                 <div :class="$style.div">
                   <p :class="$style.p"><strong>{{ activeCardR.title }}</strong></p>
-                  <p
-                    v-for="(line, idx) in activeCardR.contentLines"
-                    :key="idx"
-                    :class="$style.p"
-                  >
-                    {{ line }}
-                  </p>
+                  <p :class="$style.p">{{ activeCardR.content }}</p>
                 </div>
               </div>
               <div :class="$style.segmentContainer" @click="onClickButton">
@@ -148,12 +130,7 @@ const cards = [
   {
     image: "03@2x.png",
     title: "媽媽生病又入獄 我的世界崩潰了",
-    contentLines: [
-      "瘦瘦小小的阿馨，本該是準備升學考試、",
-      "和同學談天說地的年紀，卻要獨自面對媽媽",
-      "入獄、學業中斷的殘酷現實。",
-      "媽媽入獄的那一刻，她的世界瞬間崩塌了⋯⋯",
-    ],
+    content: "瘦瘦小小的阿馨，本該是準備升學考試、和同學談天說地的年紀，卻要獨自面對媽媽入獄、學業中斷的殘酷現實。媽媽入獄的那一刻，她的世界瞬間崩塌了⋯⋯",
     btnText: "阿馨後來呢？",
     routeName: "E2",
     key: "card-e2",
@@ -161,12 +138,7 @@ const cards = [
   {
     image: "04@2x.png",
     title: "從垃圾堆裡撿回自己的小雨",
-    contentLines: [
-      "國中就拒學的小雨，畢業後開始繭居在家。",
-      "因為情緒失控自傷被強制送醫，小雨曾住進",
-      "康復之家。回家後，因房間過於髒亂，",
-      "只能鋪地墊睡在走廊⋯⋯",
-    ],
+    content: "國中就拒學的小雨，畢業後開始繭居在家。因為情緒失控自傷被強制送醫，小雨曾住進康復之家。回家後，因房間過於髒亂，只能鋪地墊睡在走廊⋯⋯",
     btnText: "小雨後來呢？",
     routeName: "E3",
     key: "card-e3",
@@ -174,12 +146,7 @@ const cards = [
   {
     image: "frame-149@2x.png",
     title: "「反正每個人最後都會離開我...」把心關上的小言",
-    contentLines: [
-      "國中遭同學霸凌、被逼迫分手後，崩潰的小言開始",
-      "自傷、拒學。高二時，連最親近的朋友都選擇離開",
-      "後，小言再度陷入憂鬱與焦慮，從此推開所有人。",
-      "直到那天，她第一次在社工面前落淚⋯⋯",
-    ],
+    content: "國中遭同學霸凌、被逼迫分手後，崩潰的小言開始自傷、拒學。高二時，連最親近的朋友都選擇離開後，小言再度陷入憂鬱與焦慮，從此推開所有人。直到那天，她第一次在社工面前落淚⋯⋯",
     btnText: "小言後來呢？",
     routeName: "E4",
     key: "card-e4",
@@ -187,11 +154,7 @@ const cards = [
   {
     image: "frame-170@2x.png",
     title: "從陽台邊緣走回了人生的小波",
-    contentLines: [
-      "國中時的小波品學兼優、開朗活潑，",
-      "誰能想到，這個曾經是班上開心果的",
-      "女孩，有一天會想結束自己的生命⋯⋯",
-    ],
+    content: "國中時的小波品學兼優、開朗活潑，誰能想到，這個曾經是班上開心果的女孩，有一天會想結束自己的生命⋯⋯",
     btnText: "小波後來呢",
     routeName: "E1",
     key: "card-e1",
