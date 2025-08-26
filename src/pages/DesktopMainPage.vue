@@ -1,5 +1,11 @@
 <template>
   <div :class="$style.desktopMainPage">
+    <div :class="$style.titleFrame">
+      <picture>
+        <source srcset="/titleFrame/title-frame-m.png" media="(max-width: 600px)">
+        <img src="/titleFrame/title-frame.jpg" alt="Title Frame">
+      </picture>
+    </div>
     <section :class="$style.a">
       <div :class="$style.aChild" />
       <div :class="$style.frameParent">
@@ -33,6 +39,16 @@ import FrameComponent2 from "../components/FrameComponent2.vue"
 import FrameComponent111 from "../components/FrameComponent3.vue"
 </script>
 <style module>
+.titleFrame {
+  width: 100%;
+}
+
+.titleFrame img {
+  width: 101%;
+  height: auto;
+  display: block;
+}
+
 .aChild {
   align-self: stretch;
   width: 1440px;

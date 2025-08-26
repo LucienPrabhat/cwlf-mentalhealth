@@ -122,7 +122,11 @@ export default {
 /* removed trivial p2,p3,p4 rules */
 
 .component {
-  width: 100%;
+  min-width: 350px;
+  width: clamp(350px, 30vw, 512px);
+  aspect-ratio: 350 / 512;
+  /* width / height -> keeps proportional height */
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
