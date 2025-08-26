@@ -121,7 +121,7 @@ import Component1 from "./Component1.vue"
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   overflow: hidden;
   /* dark overlay and lightning effect handled by pseudo-elements */
 }

@@ -84,11 +84,31 @@ export default {
 
 .wrapper {
   width: 100%;
-  height: 250px;
   display: block;
   /* single clipped viewport for scrolling */
   box-sizing: border-box;
   z-index: 0;
+  position: relative;
+  /* for overlay mask */
+  overflow: hidden;
+
+  -webkit-mask-image: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      /* 上方透明，內容隱藏 */
+      rgba(255, 255, 255, 1) 12%,
+      rgba(255, 255, 255, 1) 38%,
+      /* 中間不透明，內容顯示 */
+      rgba(255, 255, 255, 0) 62%,
+      rgba(255, 255, 255, 0) 88%,
+      /* 下方透明，內容隱藏 */
+      rgba(255, 255, 255, 0) 100%);
+  mask-image: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 12%,
+      rgba(255, 255, 255, 1) 38%,
+      rgba(255, 255, 255, 0) 62%,
+      rgba(255, 255, 255, 0) 88%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 .scrollInner {
