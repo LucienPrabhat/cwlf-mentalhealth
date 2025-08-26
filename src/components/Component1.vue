@@ -2,19 +2,19 @@
   <div :class="$style.component" :data-property1="property1">
     <div :class="$style.wrapper" ref="wrap" @mouseenter="pause" @mouseleave="resume">
       <div :class="$style.scrollInner" ref="inner">
-        <p>
+        <p :class="$style.p">
           我以為只要我夠痛，就會被看見。<br />
           只是媽媽也太痛了，痛到顧不了我
         </p>
-        <p>
+        <p :class="$style.p">
           我有在努力好好生活，真的有。<br />
           只是有時候，晚上還是會想：<br />
           「我是不是又快要掉回去那個深淵？」
         </p>
-        <p>
+        <p :class="$style.p">
           恐懼像影子一樣跟著我
         </p>
-        <p>
+        <p :class="$style.p">
           它不僅出現在夜晚，<br />
           也逐漸侵蝕了白天<br />
           不論在家裡還是學校<br />
@@ -136,7 +136,7 @@ export default {
   font-family: var(--font-gensenrounded2-tw);
 }
 
-p {
+.p {
   margin: 0;
   padding: 20px 20px;
   /* predictable height */
