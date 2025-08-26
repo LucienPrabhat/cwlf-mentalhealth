@@ -114,10 +114,6 @@ import Component1 from "./Component1.vue"
   /* ensure it won't shrink below this height */
   position: relative;
   z-index: 1;
-  text-align: center;
-  font-size: var(--font-size-20);
-  color: var(--color-white);
-  font-family: var(--font-gensenrounded2-tw);
   flex: 2;
   box-shadow: 0px 1px 4.3px 21px rgba(148, 207, 255, 0.25);
   border-radius: 34px;

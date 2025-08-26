@@ -2,19 +2,21 @@
   <div :class="$style.component" :data-property1="property1">
     <div :class="$style.wrapper">
       <p>
-        我以為只要我夠痛，就會被看見。</br>
+        我以為只要我夠痛，就會被看見。<br>
         只是媽媽也太痛了，痛到顧不了我
       </p>
       <p>
-        我有在努力好好生活，真的有。</br>
-        只是有時候，晚上還是會想：</br>
+        我有在努力好好生活，真的有。<br>
+        只是有時候，晚上還是會想：<br>
         「我是不是又快要掉回去那個深淵？」
       </p>
       <p>
-        恐懼像影子一樣跟著我</br>
-        它不僅出現在夜晚，</br>
-        也逐漸侵蝕了白天</br>
-        不論在家裡還是學校</br>
+        恐懼像影子一樣跟著我
+      </p>
+      <p>
+        它不僅出現在夜晚，<br>
+        也逐漸侵蝕了白天<br>
+        不論在家裡還是學校<br>
         對我而言都是沒有盡頭的永夜。
       </p>
     </div>
@@ -56,7 +58,13 @@ defineProps({
 }
 
 p {
-  margin: 20px;
+  margin: 55px 20px;
   padding: 0;
+  text-align: center;
+  font-size: var(--font-size-20);
+  color: var(--color-white);
+  font-family: var(--font-gensenrounded2-tw);
+  line-height: 190%;
+  letter-spacing: 4%;
 }
 </style>
