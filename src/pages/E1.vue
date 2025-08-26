@@ -146,6 +146,9 @@
 
   <div :class="$style.responsiveImg">
     <img src="/storyMobile/story_m_po.png"></img>
+    <div :class="$style.mobileReturn">
+      <img src="/storyMobile/return.png" @click="goBack"></img>
+    </div>
   </div>
 </template>
 <script setup>
@@ -489,6 +492,21 @@ function goBack() {
   width: 101%;
   height: auto;
   display: block;
+}
+
+.mobileReturn {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 125px;
+}
+
+.mobileReturn img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: absolute;
+  bottom: 80px;
 }
 
 @media (max-width: 600px) {
