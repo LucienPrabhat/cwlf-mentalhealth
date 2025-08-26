@@ -40,11 +40,42 @@
                       <h2 :class="$style.h21">單次捐款</h2>
                     </div>
                   </div>
-                  <OfferParameters
-                    prop="回饋品｜年刊、鬧卡"
-                    dataInfo="/frame-110.svg"
-                  />
-                  <div :class="$style.offerParameters">
+                  <!-- 1000元單次捐款卡片 -->
+                  <div 
+                    :class="[$style.offerParameters, $style.clickableCard]"
+                    @click="handleDonation(1000, 'A')"
+                  >
+                    <div :class="$style.frameGroup">
+                      <div :class="$style.parent">
+                        <div :class="$style.div">
+                          <span :class="$style.txt">
+                            <p :class="$style.p">資助孩子一次心理諮商</p>
+                            <p :class="$style.p">費</p>
+                          </span>
+                        </div>
+                        <div :class="$style.div1">
+                          <span :class="$style.txt1">
+                            <span>1000元</span>
+                            <span :class="$style.span"></span>
+                          </span>
+                        </div>
+                        <div :class="$style.plainMe">
+                          回饋品｜年刊、鬧卡
+                        </div>
+                      </div>
+                      <img
+                        :class="$style.frameInner"
+                        loading="lazy"
+                        alt=""
+                        src="/frame-110.svg"
+                      />
+                    </div>
+                  </div>
+                  <!-- 3000元單次捐款卡片 -->
+                  <div 
+                    :class="[$style.offerParameters, $style.clickableCard]"
+                    @click="handleDonation(3000, 'A')"
+                  >
                     <div :class="$style.frameGroup">
                       <div :class="$style.parent">
                         <div :class="$style.div">
@@ -86,7 +117,11 @@
                       />
                     </div>
                   </div>
-                  <div :class="$style.childParameter">
+                  <!-- 600元定期捐款卡片 -->
+                  <div 
+                    :class="[$style.childParameter, $style.clickableCard]"
+                    @click="handleDonation(600, 'B')"
+                  >
                     <div :class="$style.offerFeatures">
                       <div :class="$style.counselorProvision">
                         <div :class="$style.div2">
@@ -106,16 +141,33 @@
                       />
                     </div>
                   </div>
-                  <OfferParameters
-                    offerParametersPadding="unset"
-                    supportiveJustifyContent="center"
-                    consultingSpecificationHeight="133px"
-                    prop="回饋品｜年刊、療癒香氛蠟燭"
-                    dataInfo="/frame-114.svg"
-                    dataInfoIconWidth="76px"
-                  />
+                  <!-- 1500元定期捐款卡片 -->
+                  <div 
+                    :class="[$style.childParameter, $style.clickableCard]"
+                    @click="handleDonation(1500, 'B')"
+                  >
+                    <div :class="$style.offerFeatures">
+                      <div :class="$style.counselorProvision">
+                        <div :class="$style.div2">
+                          <span>
+                            <span>1500元</span>
+                            <span :class="$style.span"></span>
+                          </span>
+                        </div>
+                        <h3 :class="$style.h3">支持兒少心理健康與陪伴服務</h3>
+                        <div :class="$style.div3">回饋品｜年刊、療癒香氛蠟燭</div>
+                      </div>
+                      <img
+                        :class="$style.frameInner"
+                        loading="lazy"
+                        alt=""
+                        src="/frame-114.svg"
+                      />
+                    </div>
+                  </div>
                 </section>
               </div>
+              <!-- 自由捐款卡片 -->
               <section :class="$style.blockRowWrapper">
                 <div :class="$style.blockRow">
                   <div :class="$style.internalOfferWrapper">
@@ -128,8 +180,30 @@
                         />
                       </div>
                       <div :class="$style.paymentDonation">
-                        <div :class="$style.div4">自由捐款____元</div>
+                        <div :class="$style.div4">
+                          <span>自由捐款</span>
+                          <input
+                            v-model="customAmount"
+                            :class="$style.customAmountInput"
+                            type="number"
+                            placeholder="請輸入金額"
+                            :min="100"
+                            @keyup.enter="handleCustomDonation"
+                            @input="errorMessage = ''"
+                          />
+                          <span>元</span>
+                        </div>
                         <div :class="$style.div3">回饋品｜年刊</div>
+                        <div v-if="errorMessage" :class="$style.errorMessage">
+                          {{ errorMessage }}
+                        </div>
+                        <button 
+                          :class="$style.donateButton"
+                          @click="handleCustomDonation"
+                          :disabled="!isValidCustomAmount || isLoading"
+                        >
+                          {{ isLoading ? '處理中...' : '立即捐款' }}
+                        </button>
                       </div>
                       <img
                         :class="$style.frameInner"
@@ -233,8 +307,81 @@
   </main>
 </template>
 <script setup>
+  import { ref, computed } from 'vue'
   import OfferParameters from "./OfferParameters.vue"
   import E111 from "../pages/E111.vue"
+  import { submitDonation, validateDonationAmount } from '../services/donationService'
+  import { ERROR_MESSAGES, SUCCESS_MESSAGES } from '../config/api.js'
+
+  // 響應式數據
+  const customAmount = ref('')
+  const isLoading = ref(false)
+
+  // 計算屬性
+  const isValidCustomAmount = computed(() => {
+    if (!customAmount.value) return false
+    const validation = validateDonationAmount(customAmount.value)
+    return validation.valid
+  })
+
+  // 錯誤訊息
+  const errorMessage = ref('')
+
+  // 處理固定金額捐款
+  const handleDonation = async (amount, kind) => {
+    if (isLoading.value) return
+    
+    try {
+      isLoading.value = true
+      errorMessage.value = ''
+      console.log(`開始處理${amount}元, donate_kind = ${kind}`)
+      
+      const result = await submitDonation({
+        donate_amount: amount,
+        donate_kind: kind
+      })
+      
+      console.log('捐款成功:', result)
+      // 這裡可以添加成功提示或跳轉到支付頁面
+      alert(SUCCESS_MESSAGES.DONATION_SUCCESS(amount))
+      
+    } catch (error) {
+      console.error('捐款失敗:', error)
+      errorMessage.value = ERROR_MESSAGES.UNKNOWN_ERROR
+      alert(ERROR_MESSAGES.UNKNOWN_ERROR)
+    } finally {
+      isLoading.value = false
+    }
+  }
+
+  // 處理自定義金額捐款
+  const handleCustomDonation = async () => {
+    if (!isValidCustomAmount.value || isLoading.value) return
+    
+    try {
+      isLoading.value = true
+      errorMessage.value = ''
+      const amount = parseInt(customAmount.value)
+      console.log(`開始處理自定義金額${amount}元捐款`)
+      
+      const result = await submitDonation({
+        donate_amount: 0, // 自由捐款使用custom_amount
+        donate_kind: "A", // 自由捐款預設為單次
+        custom_amount: amount
+      })
+      
+      console.log('自由捐款成功:', result)
+      alert(SUCCESS_MESSAGES.CUSTOM_DONATION_SUCCESS(amount))
+      customAmount.value = '' // 清空輸入框
+      
+    } catch (error) {
+      console.error('自由捐款失敗:', error)
+      errorMessage.value = ERROR_MESSAGES.UNKNOWN_ERROR
+      alert(ERROR_MESSAGES.UNKNOWN_ERROR)
+    } finally {
+      isLoading.value = false
+    }
+  }
 </script>
 <style module>
   .frameChild {
@@ -989,9 +1136,104 @@
     font-family: var(--font-gensenrounded2-tw);
   }
 
+  /* 新增樣式 */
+  .clickableCard {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .clickableCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .clickableCard:active {
+    transform: translateY(0);
+  }
+
+  .customAmountInput {
+    width: 120px;
+    padding: 8px 12px;
+    margin: 0 8px;
+    border: 2px solid var(--color-cadetblue-100);
+    border-radius: 8px;
+    font-size: var(--font-size-20);
+    text-align: center;
+    background-color: var(--color-white);
+    color: var(--color-cadetblue-300);
+    font-family: var(--font-gensenrounded2-tw);
+  }
+
+  .customAmountInput:focus {
+    outline: none;
+    border-color: var(--color-cadetblue-200);
+    box-shadow: 0 0 0 2px rgba(95, 158, 160, 0.2);
+  }
+
+  .customAmountInput::placeholder {
+    color: var(--color-cadetblue-100);
+  }
+
+  .donateButton {
+    margin-top: 12px;
+    padding: 10px 20px;
+    background-color: var(--color-cadetblue-200);
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    font-size: var(--font-size-16);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-gensenrounded2-tw);
+  }
+
+  .donateButton:hover:not(:disabled) {
+    background-color: var(--color-cadetblue-300);
+    transform: translateY(-1px);
+  }
+
+  .donateButton:disabled {
+    background-color: var(--color-cadetblue-100);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .donateButton:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  .errorMessage {
+    color: #e74c3c;
+    font-size: var(--font-size-14);
+    margin-top: 8px;
+    text-align: center;
+    font-family: var(--font-gensenrounded2-tw);
+  }
+
+  /* 響應式設計 */
+  @media screen and (max-width: 768px) {
+    .customAmountInput {
+      width: 100px;
+      font-size: var(--font-size-16);
+    }
+    
+    .donateButton {
+      padding: 8px 16px;
+      font-size: var(--font-size-14);
+    }
+  }
+
   @media screen and (max-width: 401px) {
-    .casesNavigateWrapper {
-      width: 401px
+    .customAmountInput {
+      width: 80px;
+      font-size: var(--font-size-14);
+      margin: 0 4px;
+    }
+    
+    .donateButton {
+      padding: 6px 12px;
+      font-size: var(--font-size-12);
     }
   }
 </style>
