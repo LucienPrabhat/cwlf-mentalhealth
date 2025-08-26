@@ -4,12 +4,7 @@
       <div :class="$style.frame2">
         <transition :name="transitionName" mode="out-in">
           <div :key="activeCardLKey" :class="$style.narrative">
-            <img
-              :class="$style.eventIcon"
-              loading="lazy"
-              alt=""
-              :src="`/${activeCardL.image}`"
-            />
+            <img :class="$style.eventIcon" loading="lazy" alt="" :src="`/${activeCardL.image}`" />
             <div :class="$style.xiaoYanEvent">
               <div :class="$style.xuanNarrative">
                 <div :class="$style.div">
@@ -24,33 +19,17 @@
                 <div :class="$style.wrapper">
                   <div :class="$style.div1">{{ activeCardL.btnText }}</div>
                 </div>
-                <img
-                  :class="$style.xuanEventEnd"
-                  loading="lazy"
-                  alt=""
-                  src="/frame-157.svg"
-                />
+                <img :class="$style.xuanEventEnd" loading="lazy" alt="" src="/frame-157.svg" />
               </div>
             </div>
           </div>
         </transition>
       </div>
-      <img
-        :class="$style.yanPanelIcon"
-        loading="lazy"
-        alt=""
-        src="/icon_to_left.png"
-        @click="goPrev"
-      />
+      <img :class="$style.yanPanelIcon" loading="lazy" alt="" src="/icon_to_left.png" @click="goPrev" />
       <div :class="$style.frame2">
         <transition :name="transitionName" mode="out-in">
           <div :key="activeCardKey" :class="$style.narrative">
-            <img
-              :class="$style.eventIcon"
-              loading="lazy"
-              alt=""
-              :src="`/${activeCard.image}`"
-            />
+            <img :class="$style.eventIcon" loading="lazy" alt="" :src="`/${activeCard.image}`" />
             <div :class="$style.xiaoYanEvent">
               <div :class="$style.xuanNarrative">
                 <div :class="$style.div">
@@ -65,33 +44,17 @@
                 <div :class="$style.wrapper">
                   <div :class="$style.div1">{{ activeCard.btnText }}</div>
                 </div>
-                <img
-                  :class="$style.xuanEventEnd"
-                  loading="lazy"
-                  alt=""
-                  src="/frame-157.svg"
-                />
+                <img :class="$style.xuanEventEnd" loading="lazy" alt="" src="/frame-157.svg" />
               </div>
             </div>
           </div>
         </transition>
       </div>
-      <img
-        :class="$style.yanPanelIcon"
-        loading="lazy"
-        alt=""
-        src="/icon_to_right.png"
-        @click="goNext"
-      />
+      <img :class="$style.yanPanelIcon" loading="lazy" alt="" src="/icon_to_right.png" @click="goNext" />
       <div :class="$style.frame2">
         <transition :name="transitionName" mode="out-in">
           <div :key="activeCardRKey" :class="$style.narrative">
-            <img
-              :class="$style.eventIcon"
-              loading="lazy"
-              alt=""
-              :src="`/${activeCardR.image}`"
-            />
+            <img :class="$style.eventIcon" loading="lazy" alt="" :src="`/${activeCardR.image}`" />
             <div :class="$style.xiaoYanEvent">
               <div :class="$style.xuanNarrative">
                 <div :class="$style.div">
@@ -106,12 +69,7 @@
                 <div :class="$style.wrapper">
                   <div :class="$style.div1">{{ activeCardR.btnText }}</div>
                 </div>
-                <img
-                  :class="$style.xuanEventEnd"
-                  loading="lazy"
-                  alt=""
-                  src="/frame-157.svg"
-                />
+                <img :class="$style.xuanEventEnd" loading="lazy" alt="" src="/frame-157.svg" />
               </div>
             </div>
           </div>
@@ -194,663 +152,712 @@ function onClickButton() {
 }
 </script>
 <style module>
-  .xuanButtonData {
-    align-self: stretch;
-    height: 341px;
-    position: relative;
-    border-radius: 52px;
-    background-color: var(--color-white);
+.xuanButtonData {
+  align-self: stretch;
+  height: 341px;
+  position: relative;
+  border-radius: 52px;
+  background-color: var(--color-white);
+}
+
+.xuanStage {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-10);
+  z-index: 0;
+}
+
+.xuanEventIcon {
+  width: 316px;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.p {
+  margin: 0;
+}
+
+.div {
+  position: relative;
+  letter-spacing: 0.04em;
+  line-height: 190%;
+  text-transform: uppercase;
+}
+
+.xuanNarrative {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-10);
+}
+
+.xuanButtonDetails {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  /* background comes from container to ensure full pill color */
+  align-self: stretch;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 31.5px;
+}
+
+.xuanButtonArea {
+  width: 100%;
+  margin: 0 !important;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  z-index: 0;
+}
+
+.div1 {
+  position: relative;
+  letter-spacing: 0.09em;
+  line-height: 157.24%;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.xuanEventEnd {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.xuanPanel {
+  width: 393px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-20) 0px;
+  box-sizing: border-box;
+  gap: var(--gap-4);
+  max-width: 100%;
+}
+
+.xuanInfo {
+  margin: 0 !important;
+  position: absolute;
+  top: 12px;
+  left: 31px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: var(--gap-20);
+  max-width: 100%;
+  z-index: 1;
+}
+
+.frame {
+  width: 785px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  gap: var(--gap-10);
+  max-width: 100%;
+}
+
+.yanPanelIcon {
+  width: 55px;
+  max-height: 100%;
+}
+
+.frameChild {
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0px;
+  left: 0px;
+  border-radius: 52px;
+  background-color: var(--color-white);
+  height: 100%;
+  z-index: 0;
+}
+
+.eventIcon {
+  width: 274px;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.xiaoYanEvent {
+  width: 357px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-4);
+  max-width: 100%;
+}
+
+.narrative {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 13px;
+  max-width: 100%;
+  z-index: 1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 52px;
+  background-color: var(--color-white);
+}
+
+.frame2 {
+  height: 341px;
+  width: 765px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 23px 33px;
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-10);
+  max-width: 100%;
+}
+
+.segmentIcon {
+  width: 307px;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-10) 9px;
+}
+
+.segmentContainer {
+  width: 182px;
+  height: 43px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  color: var(--color-white);
+  border-radius: 31.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  background-color: var(--color-cadetblue-200);
+}
+
+.frameParent {
+  width: 411px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-20) 0px;
+  box-sizing: border-box;
+  gap: var(--gap-11);
+  max-width: 100%;
+}
+
+.segmentParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3px;
+  max-width: 100%;
+}
+
+.yanPanel {
+  height: 341px;
+  width: 765px;
+  border-radius: 52px;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 17px var(--padding-14);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.story {
+  margin-top: -10px;
+  margin-left: -10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-11);
+  flex-shrink: 0;
+  max-width: 101%;
+  text-align: left;
+  font-size: var(--font-size-18);
+  color: var(--color-black);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+.e1 {
+  width: 100%;
+  height: 341px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+@media screen and (max-width: 2225px) {
+  .story {
+    flex-wrap: wrap;
   }
-  .xuanStage {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: var(--padding-10);
-    z-index: 0;
+
+  .e1 {
+    height: auto;
   }
-  .xuanEventIcon {
-    width: 316px;
-    max-height: 100%;
-    object-fit: cover;
+}
+
+@media screen and (max-width: 2225px) {
+  .story {
+    flex-wrap: wrap;
   }
-  .p {
-    margin: 0;
+
+  .e1 {
+    height: auto;
   }
-  .div {
-    position: relative;
-    letter-spacing: 0.04em;
-    line-height: 190%;
-    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1625px) {
+  .story {
+    flex-wrap: wrap;
   }
-  .xuanNarrative {
-    align-self: stretch;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: var(--padding-10);
+
+  .e1 {
+    height: auto;
   }
-  .xuanButtonDetails {
-    cursor: pointer;
-    border: none;
-    padding: 0;
-    background-color: transparent; /* background comes from container to ensure full pill color */
-    align-self: stretch;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    border-radius: 31.5px;
+}
+
+@media screen and (max-width: 1625px) {
+  .story {
+    flex-wrap: wrap;
   }
-  .xuanButtonArea {
-    width: 100%;
-    margin: 0 !important;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 0;
-    box-sizing: border-box;
-    height: 100%;
-    z-index: 0;
+
+  .e1 {
+    height: auto;
   }
-  .div1 {
-    position: relative;
-    letter-spacing: 0.09em;
-    line-height: 157.24%;
-    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1410px) {
+  .story {
+    flex-wrap: wrap;
   }
-  .wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    z-index: 1;
+
+  .e1 {
+    height: auto;
   }
-  .xuanEventEnd {
-    width: 22px;
-    height: 22px;
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
+}
+
+@media screen and (max-width: 1410px) {
+  .story {
+    flex-wrap: wrap;
   }
+
+  .e1 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1325px) {
   .xuanPanel {
-    width: 393px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: var(--padding-20) 0px;
-    box-sizing: border-box;
-    gap: var(--gap-4);
-    max-width: 100%;
+    min-width: 100%;
   }
+
+  .xiaoYanEvent {
+    min-width: 100%;
+  }
+
+  .story {
+    flex-wrap: wrap;
+  }
+
+  .e1 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .xuanEventIcon {
+    flex: 1;
+  }
+
+  .xuanPanel {
+    flex: 1;
+  }
+
   .xuanInfo {
-    margin: 0 !important;
-    position: absolute;
-    top: 12px;
-    left: 31px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    row-gap: var(--gap-20);
-    max-width: 100%;
-    z-index: 1;
+    flex-wrap: wrap;
   }
-  .frame {
-    width: 785px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
-    gap: var(--gap-10);
-    max-width: 100%;
-  }
-  .yanPanelIcon {
-    width: 55px;
-    max-height: 100%;
-  }
-  .frameChild {
-    width: 100%;
-    position: absolute;
-    margin: 0 !important;
-    top: 0px;
-    left: 0px;
-    border-radius: 52px;
-    background-color: var(--color-white);
-    height: 100%;
-    z-index: 0;
-  }
+
   .eventIcon {
-    width: 294px;
-    max-height: 100%;
-    object-fit: cover;
+    flex: 1;
   }
+
   .xiaoYanEvent {
-    width: 357px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--gap-4);
-    max-width: 100%;
+    flex: 1;
   }
+
   .narrative {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 13px;
-    max-width: 100%;
-    z-index: 1;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 52px;
-    background-color: var(--color-white);
+    flex-wrap: wrap;
   }
+
   .frame2 {
-    height: 341px;
-    width: 765px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 23px 33px;
-    box-sizing: border-box;
-    position: relative;
-    gap: var(--gap-10);
-    max-width: 100%;
+    height: auto;
   }
+
   .segmentIcon {
-    width: 307px;
-    max-height: 100%;
-    object-fit: cover;
+    flex: 1;
   }
-  .container {
-    align-self: stretch;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: var(--padding-10) 9px;
-  }
-  .segmentContainer {
-    width: 182px;
-    height: 43px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
-    color: var(--color-white);
-    border-radius: 31.5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    background-color: var(--color-cadetblue-200);
-  }
+
   .frameParent {
-    width: 411px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: var(--padding-20) 0px;
-    box-sizing: border-box;
-    gap: var(--gap-11);
-    max-width: 100%;
+    flex: 1;
+    min-width: 100%;
   }
+
   .segmentParent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 3px;
-    max-width: 100%;
+    flex-wrap: wrap;
   }
+
   .yanPanel {
-    height: 341px;
-    width: 765px;
-    border-radius: 52px;
-    background-color: var(--color-white);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 17px var(--padding-14);
-    box-sizing: border-box;
-    max-width: 100%;
+    height: auto;
   }
+
   .story {
-    margin-top: -10px;
-    margin-left: -10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--gap-11);
-    flex-shrink: 0;
-    max-width: 101%;
-    text-align: left;
-    font-size: var(--font-size-18);
-    color: var(--color-black);
-    font-family: var(--font-gensenrounded2-tw);
+    flex-wrap: wrap;
   }
+
   .e1 {
-    width: 100%;
-    height: 341px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    line-height: normal;
-    letter-spacing: normal;
+    height: auto;
   }
+}
 
-  @media screen and (max-width: 2225px) {
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 2225px) {
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1625px) {
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1625px) {
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1410px) {
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1410px) {
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1325px) {
-    .xuanPanel {
-      min-width: 100%;
-    }
-
-    .xiaoYanEvent {
-      min-width: 100%;
-    }
-
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1150px) {
-    .xuanEventIcon {
-      flex: 1;
-    }
-
-    .xuanPanel {
-      flex: 1;
-    }
-
-    .xuanInfo {
-      flex-wrap: wrap;
-    }
-
-    .eventIcon {
-      flex: 1;
-    }
-
-    .xiaoYanEvent {
-      flex: 1;
-    }
-
-    .narrative {
-      flex-wrap: wrap;
-    }
-
-    .frame2 {
-      height: auto;
-    }
-
-    .segmentIcon {
-      flex: 1;
-    }
-
-    .frameParent {
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .segmentParent {
-      flex-wrap: wrap;
-    }
-
-    .yanPanel {
-      height: auto;
-    }
-
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1050px) {
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1050px) {
-    .xuanEventIcon {
-      flex: 1;
-    }
-
-    .xuanPanel {
-      flex: 1;
-    }
-
-    .xuanInfo {
-      flex-wrap: wrap;
-    }
-
-    .eventIcon {
-      flex: 1;
-    }
-
-    .xiaoYanEvent {
-      flex: 1;
-    }
-
-    .narrative {
-      flex-wrap: wrap;
-    }
-
-    .frame2 {
-      height: auto;
-    }
-
-    .segmentIcon {
-      flex: 1;
-    }
-
-    .frameParent {
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .segmentParent {
-      flex-wrap: wrap;
-    }
-
-    .yanPanel {
-      height: auto;
-    }
-
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 1050px) {
-    .xuanEventIcon {
-      flex: 1;
-    }
-
-    .xuanPanel {
-      flex: 1;
-    }
-
-    .xuanInfo {
-      flex-wrap: wrap;
-    }
-
-    .eventIcon {
-      flex: 1;
-    }
-
-    .xiaoYanEvent {
-      flex: 1;
-    }
-
-    .narrative {
-      flex-wrap: wrap;
-    }
-
-    .frame2 {
-      height: auto;
-    }
-
-    .segmentIcon {
-      flex: 1;
-    }
-
-    .frameParent {
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .segmentParent {
-      flex-wrap: wrap;
-    }
-
-    .yanPanel {
-      height: auto;
-    }
-
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 825px) {
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 825px) {
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .xuanEventIcon {
-      flex: 1;
-    }
-
-    .xuanPanel {
-      flex: 1;
-    }
-
-    .xuanInfo {
-      flex-wrap: wrap;
-    }
-
-    .eventIcon {
-      flex: 1;
-    }
-
-    .xiaoYanEvent {
-      flex: 1;
-    }
-
-    .narrative {
-      flex-wrap: wrap;
-    }
-
-    .frame2 {
-      height: auto;
-    }
-
-    .segmentIcon {
-      flex: 1;
-    }
-
-    .frameParent {
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .segmentParent {
-      flex-wrap: wrap;
-    }
-
-    .yanPanel {
-      height: auto;
-    }
-
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 750px) {
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .xuanPanel {
-      min-width: 100%;
-    }
-
-    .xiaoYanEvent {
-      min-width: 100%;
-    }
-
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
-  }
-  /* --- Force single-row carousel-style layout (no wrapping), center the row --- */
+@media screen and (max-width: 1050px) {
   .story {
-    flex-wrap: nowrap;
-    justify-content: center;
-    overflow: visible;
+    flex-wrap: wrap;
   }
-  .xuanPanel,
+
+  .e1 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .xuanEventIcon {
+    flex: 1;
+  }
+
+  .xuanPanel {
+    flex: 1;
+  }
+
+  .xuanInfo {
+    flex-wrap: wrap;
+  }
+
+  .eventIcon {
+    flex: 1;
+  }
+
   .xiaoYanEvent {
-    min-width: auto !important;
+    flex: 1;
   }
-  @media screen and (max-width: 450px) {
-    .xuanPanel {
-      min-width: 100%;
-    }
 
-    .xiaoYanEvent {
-      min-width: 100%;
-    }
-
-    .story {
-      flex-wrap: wrap;
-    }
-
-    .e1 {
-      height: auto;
-    }
+  .narrative {
+    flex-wrap: wrap;
   }
-  /* Center the story section inside the root container */
-  .e1 {
-    justify-content: center;
+
+  .frame2 {
+    height: auto;
   }
-  /* Cancel left offset so the section can be truly centered */
+
+  .segmentIcon {
+    flex: 1;
+  }
+
+  .frameParent {
+    flex: 1;
+    min-width: 100%;
+  }
+
+  .segmentParent {
+    flex-wrap: wrap;
+  }
+
+  .yanPanel {
+    height: auto;
+  }
+
   .story {
-    margin-left: 0 !important;
-  }
-  /* slide transitions */
-  :global(.slide-left-enter-active),
-  :global(.slide-left-leave-active),
-  :global(.slide-right-enter-active),
-  :global(.slide-right-leave-active) {
-    transition: transform 300ms ease, opacity 300ms ease;
+    flex-wrap: wrap;
   }
 
-  :global(.slide-left-enter-from),
-  :global(.slide-right-leave-to) {
-    transform: translateX(30px);
-    opacity: 0;
+  .e1 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .xuanEventIcon {
+    flex: 1;
   }
 
-  :global(.slide-left-leave-to),
-  :global(.slide-right-enter-from) {
-    transform: translateX(-30px);
-    opacity: 0;
+  .xuanPanel {
+    flex: 1;
   }
+
+  .xuanInfo {
+    flex-wrap: wrap;
+  }
+
+  .eventIcon {
+    flex: 1;
+  }
+
+  .xiaoYanEvent {
+    flex: 1;
+  }
+
+  .narrative {
+    flex-wrap: wrap;
+  }
+
+  .frame2 {
+    height: auto;
+  }
+
+  .segmentIcon {
+    flex: 1;
+  }
+
+  .frameParent {
+    flex: 1;
+    min-width: 100%;
+  }
+
+  .segmentParent {
+    flex-wrap: wrap;
+  }
+
+  .yanPanel {
+    height: auto;
+  }
+
+  .story {
+    flex-wrap: wrap;
+  }
+
+  .e1 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .story {
+    flex-wrap: wrap;
+  }
+
+  .e1 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .story {
+    flex-wrap: wrap;
+  }
+
+  .e1 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .xuanEventIcon {
+    flex: 1;
+  }
+
+  .xuanPanel {
+    flex: 1;
+  }
+
+  .xuanInfo {
+    flex-wrap: wrap;
+  }
+
+  .eventIcon {
+    flex: 1;
+  }
+
+  .xiaoYanEvent {
+    flex: 1;
+  }
+
+  .narrative {
+    flex-wrap: wrap;
+  }
+
+  .frame2 {
+    height: auto;
+  }
+
+  .segmentIcon {
+    flex: 1;
+  }
+
+  .frameParent {
+    flex: 1;
+    min-width: 100%;
+  }
+
+  .segmentParent {
+    flex-wrap: wrap;
+  }
+
+  .yanPanel {
+    height: auto;
+  }
+
+  .story {
+    flex-wrap: wrap;
+  }
+
+  .e1 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .story {
+    flex-wrap: wrap;
+  }
+
+  .e1 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .xuanPanel {
+    min-width: 100%;
+  }
+
+  .xiaoYanEvent {
+    min-width: 100%;
+  }
+
+  .story {
+    flex-wrap: wrap;
+  }
+
+  .e1 {
+    height: auto;
+  }
+}
+
+/* --- Force single-row carousel-style layout (no wrapping), center the row --- */
+.story {
+  flex-wrap: nowrap;
+  justify-content: center;
+  overflow: visible;
+}
+
+.xuanPanel,
+.xiaoYanEvent {
+  min-width: auto !important;
+}
+
+@media screen and (max-width: 450px) {
+  .xuanPanel {
+    min-width: 100%;
+  }
+
+  .xiaoYanEvent {
+    min-width: 100%;
+  }
+
+  .story {
+    flex-wrap: wrap;
+  }
+
+  .e1 {
+    height: auto;
+  }
+}
+
+/* Center the story section inside the root container */
+.e1 {
+  justify-content: center;
+}
+
+/* Cancel left offset so the section can be truly centered */
+.story {
+  margin-left: 0 !important;
+}
+
+/* slide transitions */
+:global(.slide-left-enter-active),
+:global(.slide-left-leave-active),
+:global(.slide-right-enter-active),
+:global(.slide-right-leave-active) {
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+:global(.slide-left-enter-from),
+:global(.slide-right-leave-to) {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+:global(.slide-left-leave-to),
+:global(.slide-right-enter-from) {
+  transform: translateX(-30px);
+  opacity: 0;
+}
 </style>

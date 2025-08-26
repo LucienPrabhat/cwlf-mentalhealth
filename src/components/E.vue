@@ -161,8 +161,7 @@
                   <div :class="$style.productDesign">
                     <h3 :class="$style.h31">服務年刊</h3>
                     <div :class="$style.div6">
-                      <p :class="$style.p">每年一次的服務成果分享，</p>
-                      <p :class="$style.p">看見陪伴與成長。</p>
+                      <p :class="$style.p">每年一次的服務成果分享，看見陪伴與成長。</p>
                     </div>
                   </div>
                 </section>
@@ -171,11 +170,7 @@
                   <div :class="$style.group">
                     <h3 :class="$style.h31">鬧卡</h3>
                     <div :class="$style.div6">
-                      <p :class="$style.p">兒福聯盟以情緒教育為核心設計，</p>
-                      <p :class="$style.p">
-                        透過插畫與情境文字，引導覺察感受、
-                      </p>
-                      <p :class="$style.p">調節情緒，穩定自己，也理解他人！</p>
+                      <p :class="$style.p">兒福聯盟以情緒教育為核心設計，透過插畫與情境文字，引導覺察感受、調節情緒，穩定自己，也理解他人！</p>
                     </div>
                   </div>
                 </section>
@@ -185,12 +180,7 @@
                     <h3 :class="$style.h31">療癒香氛蠟燭</h3>
                     <div :class="$style.div6">
                       <p :class="$style.p">
-                        兒盟秉持先照顧好自己，才有能量照顧好
-                      </p>
-                      <p :class="$style.p">
-                        他人的理念，邀請您用氣味療癒紓壓，
-                      </p>
-                      <p :class="$style.p">擁抱自己的內心感受。</p>
+                        兒盟秉持先照顧好自己，才有能量照顧好他人的理念，邀請您用氣味療癒紓壓，擁抱自己的內心感受。</p>
                     </div>
                   </div>
                 </section>
@@ -199,10 +189,7 @@
                   <div :class="$style.plainMeParent">
                     <h3 :class="$style.plainMe1">兒福聯盟 × plain-me水桶包</h3>
                     <div :class="$style.div6">
-                      <p :class="$style.p">
-                        心情不好的時候就背起包包出門走走吧，
-                      </p>
-                      <p :class="$style.p">一切都會慢慢好起來的。</p>
+                      <p :class="$style.p">心情不好的時候就背起包包出門走走吧，一切都會慢慢好起來的。</p>
                     </div>
                   </div>
                 </section>

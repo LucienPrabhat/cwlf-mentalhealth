@@ -11,21 +11,13 @@
             <section :class="$style.supportDetails">
               <div :class="$style.frameParent">
                 <div :class="$style.container">
-                  <img
-                    :class="$style.icon"
-                    loading="lazy"
-                    alt=""
-                    src="/--0001--2@2x.png"
-                  />
+                  <img :class="$style.icon" loading="lazy" alt="" src="/--0001--2@2x.png" />
                 </div>
                 <div :class="$style.frameDiv">
                   <h2 :class="$style.h2">單次捐款</h2>
                 </div>
               </div>
-              <FrameComponent
-                prop="回饋品｜年刊、鬧卡"
-                frame110="/frame-157.svg"
-              />
+              <FrameComponent prop="回饋品｜年刊、鬧卡" frame110="/frame-157.svg" />
               <div :class="$style.supportDetailsInner">
                 <div :class="$style.frameGroup">
                   <div :class="$style.parent">
@@ -45,12 +37,7 @@
                       回饋品｜年刊、plain-me水桶包
                     </div>
                   </div>
-                  <img
-                    :class="$style.frameItem"
-                    loading="lazy"
-                    alt=""
-                    src="/frame-157.svg"
-                  />
+                  <img :class="$style.frameItem" loading="lazy" alt="" src="/frame-157.svg" />
                 </div>
               </div>
             </section>
@@ -60,12 +47,7 @@
                   <h2 :class="$style.h2">定期捐款</h2>
                 </div>
                 <div :class="$style.mergedImageTwo">
-                  <img
-                    :class="$style.icon1"
-                    loading="lazy"
-                    alt=""
-                    src="/--0001--2@2x.png"
-                  />
+                  <img :class="$style.icon1" loading="lazy" alt="" src="/--0001--2@2x.png" />
                 </div>
               </div>
               <div :class="$style.annualSupportInner">
@@ -80,22 +62,11 @@
                     <h3 :class="$style.h3">支持兒少心理健康與陪伴服務</h3>
                     <div :class="$style.div3">回饋品｜年刊、鬧卡</div>
                   </div>
-                  <img
-                    :class="$style.frameItem"
-                    loading="lazy"
-                    alt=""
-                    src="/frame-157.svg"
-                  />
+                  <img :class="$style.frameItem" loading="lazy" alt="" src="/frame-157.svg" />
                 </div>
               </div>
-              <FrameComponent
-                frameDivPadding="unset"
-                frameDivJustifyContent="center"
-                frameDivHeight="133px"
-                prop="回饋品｜年刊、療癒香氛蠟燭"
-                frame110="/frame-157.svg"
-                frameIconWidth="76px"
-              />
+              <FrameComponent frameDivPadding="unset" frameDivJustifyContent="center" frameDivHeight="133px"
+                prop="回饋品｜年刊、療癒香氛蠟燭" frame110="/frame-157.svg" frameIconWidth="76px" />
             </section>
           </div>
           <section :class="$style.frameSection">
@@ -103,23 +74,13 @@
               <div :class="$style.frameWrapper1">
                 <div :class="$style.frameParent2">
                   <div :class="$style.wrapper2">
-                    <img
-                      :class="$style.icon2"
-                      loading="lazy"
-                      alt=""
-                      src="/--0002--2@2x.png"
-                    />
+                    <img :class="$style.icon2" loading="lazy" alt="" src="/--0002--2@2x.png" />
                   </div>
                   <div :class="$style.donationOption">
                     <div :class="$style.div4">自由捐款____元</div>
                     <div :class="$style.div3">回饋品｜年刊</div>
                   </div>
-                  <img
-                    :class="$style.frameItem"
-                    loading="lazy"
-                    alt=""
-                    src="/frame-157.svg"
-                  />
+                  <img :class="$style.frameItem" loading="lazy" alt="" src="/frame-157.svg" />
                 </div>
               </div>
             </div>
@@ -131,59 +92,34 @@
           <h2 :class="$style.h22">回饋品介紹</h2>
           <div :class="$style.rewardDescriptions">
             <section :class="$style.parent2">
-              <img
-                :class="$style.icon3"
-                loading="lazy"
-                alt=""
-                src="/-1@2x.png"
-              />
+              <img :class="$style.icon3" loading="lazy" alt="" src="/-1@2x.png" />
               <div :class="$style.imageContainerTwo">
                 <h3 :class="$style.h31">服務年刊</h3>
                 <div :class="$style.div6">
-                  <p :class="$style.p">每年一次的服務成果分享，</p>
-                  <p :class="$style.p">看見陪伴與成長。</p>
+                  <p :class="$style.p">每年一次的服務成果分享，看見陪伴與成長。</p>
                 </div>
               </div>
             </section>
             <section :class="$style.dscf5791Parent">
-              <img
-                :class="$style.dscf5791Icon"
-                loading="lazy"
-                alt=""
-                src="/dscf5791@2x.png"
-              />
+              <img :class="$style.dscf5791Icon" loading="lazy" alt="" src="/dscf5791@2x.png" />
               <div :class="$style.parent3">
                 <h3 :class="$style.h31">鬧卡</h3>
                 <div :class="$style.div6">
-                  <p :class="$style.p">兒福聯盟以情緒教育為核心設計，</p>
-                  <p :class="$style.p">透過插畫與情境文字，引導覺察感受、</p>
-                  <p :class="$style.p">調節情緒，穩定自己，也理解他人！</p>
+                  <p :class="$style.p">兒福聯盟以情緒教育為核心設計，>透過插畫與情境文字，引導覺察感受、調節情緒，穩定自己，也理解他人！</p>
                 </div>
               </div>
             </section>
             <section :class="$style.parent4">
-              <img
-                :class="$style.dscf5791Icon"
-                loading="lazy"
-                alt=""
-                src="/-1@2x.png"
-              />
+              <img :class="$style.dscf5791Icon" loading="lazy" alt="" src="/-1@2x.png" />
               <div :class="$style.parent5">
                 <h3 :class="$style.h31">療癒香氛蠟燭</h3>
                 <div :class="$style.div6">
-                  <p :class="$style.p">兒盟秉持先照顧好自己，才有能量照顧好</p>
-                  <p :class="$style.p">他人的理念，邀請您用氣味療癒紓壓，</p>
-                  <p :class="$style.p">擁抱自己的內心感受。</p>
+                  <p :class="$style.p">兒盟秉持先照顧好自己，才有能量照顧好他人的理念，邀請您用氣味療癒紓壓，擁抱自己的內心感受。</p>
                 </div>
               </div>
             </section>
             <section :class="$style.all2Parent">
-              <img
-                :class="$style.dscf5791Icon"
-                loading="lazy"
-                alt=""
-                src="/all-2@2x.png"
-              />
+              <img :class="$style.dscf5791Icon" loading="lazy" alt="" src="/all-2@2x.png" />
               <div :class="$style.plainMeParent">
                 <h3 :class="$style.plainMe1">兒福聯盟 × plain-me水桶包</h3>
                 <div :class="$style.div6">
@@ -199,652 +135,712 @@
   </section>
 </template>
 <script setup lang="ts">
-  import FrameComponent from "./FrameComponent.vue"
+import FrameComponent from "./FrameComponent.vue"
 </script>
 <style module>
-  .frameChild {
-    height: 1224px;
-    width: 1124px;
-    position: relative;
-    border-radius: 38px;
-    display: none;
-    z-index: 0;
-  }
-  .h1 {
-    margin: 0;
-    position: relative;
-    font-size: inherit;
-    letter-spacing: 0.09em;
-    line-height: 157.24%;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-family: inherit;
-  }
-  .wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 67px 444px;
-  }
-  .icon {
-    width: 132px;
-    position: relative;
-    max-height: 100%;
-    object-fit: cover;
-  }
-  .container {
-    width: 152px;
-    margin: 0 !important;
-    position: absolute;
-    top: -9.9px;
-    left: 11px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: var(--padding-10);
-    box-sizing: border-box;
-    z-index: 0;
-  }
-  .h2 {
-    margin: 0;
-    position: relative;
-    font-size: inherit;
-    letter-spacing: 0.09em;
-    line-height: 157.24%;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-family: inherit;
-  }
-  .frameDiv {
-    width: 157px;
-    margin: 0 !important;
-    position: absolute;
-    top: 222.1px;
-    left: 3px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: var(--padding-10) var(--padding-8);
-    box-sizing: border-box;
-    z-index: 1;
-  }
-  .frameParent {
-    width: 153px;
-    height: 335px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: var(--padding-10);
-    box-sizing: border-box;
-    position: relative;
-    gap: var(--gap-10);
-    text-align: center;
-    font-size: var(--font-size-32);
-    color: var(--color-cadetblue-200);
-  }
-  .p {
-    margin: 0;
-  }
-  .txt {
-    line-break: anywhere;
-    width: 100%;
-  }
-  .div {
-    height: 86.7px;
-    width: 342px;
-    position: absolute;
-    margin: 0 !important;
-    top: 24.4px;
-    left: calc(50% - 135px);
-    letter-spacing: 0.04em;
-    line-height: 114%;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    z-index: 0;
-  }
-  .span {
-    font-size: var(--font-size-20);
-    white-space: pre-wrap;
-  }
-  .txt1 {
-    width: 100%;
-  }
-  .div1 {
-    height: 51px;
-    width: 342px;
-    position: absolute;
-    margin: 0 !important;
-    top: 1px;
-    left: calc(50% - 135px);
-    letter-spacing: 0.04em;
-    line-height: 157.24%;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-    font-size: var(--font-size-24);
-  }
-  .plainMe {
-    width: 265px;
-    position: relative;
-    font-size: var(--font-size-16);
-    letter-spacing: 0.04em;
-    line-height: 157.24%;
-    text-transform: lowercase;
-    color: var(--color-cadetblue-200);
-    display: flex;
-    align-items: center;
-    z-index: 2;
-  }
-  .parent {
-    height: 133px;
-    width: 270px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 87.7px 0px 0px;
-    box-sizing: border-box;
-    position: relative;
-  }
-  .frameItem {
-    width: 96px;
-    max-height: 100%;
-  }
-  .frameGroup {
-    width: 372px;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .supportDetailsInner {
-    align-self: stretch;
-    height: 157px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: var(--br-18);
-    background-color: var(--color-gray);
-    border: 1px solid var(--color-cadetblue-100);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--padding-26) var(--padding-22);
-  }
-  .supportDetails {
-    width: 418px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 23px;
-    text-align: left;
-    font-size: var(--font-size-20);
-    color: var(--color-cadetblue-300);
-    font-family: var(--font-gensenrounded2-tw);
-  }
-  .wrapper1 {
-    margin: 0 !important;
-    position: absolute;
-    top: 267px;
-    left: calc(50% - 78.5px);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: var(--padding-10) var(--padding-8);
-    z-index: 0;
-  }
-  .icon1 {
-    width: 193px;
-    position: relative;
-    max-height: 100%;
-    object-fit: cover;
-  }
-  .mergedImageTwo {
-    width: 213px;
-    margin: 0 !important;
-    position: absolute;
-    top: -10px;
-    left: calc(50% - 106.5px);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: var(--padding-10);
-    box-sizing: border-box;
-    z-index: 1;
-  }
-  .frameContainer {
-    width: 233px;
-    height: 335px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: var(--padding-10);
-    box-sizing: border-box;
-    position: relative;
-    gap: var(--gap-10);
-  }
-  .div2 {
-    align-self: stretch;
-    position: relative;
-    letter-spacing: 0.04em;
-    line-height: 157.24%;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-  }
-  .h3 {
-    margin: 0;
-    align-self: stretch;
-    height: 31.6px;
-    position: relative;
-    font-size: var(--font-size-20);
-    letter-spacing: 0.04em;
-    line-height: 157.24%;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-family: inherit;
-    display: flex;
-    align-items: center;
-  }
-  .div3 {
-    align-self: stretch;
-    position: relative;
-    font-size: var(--font-size-16);
-    letter-spacing: 0.04em;
-    line-height: 157.24%;
-    text-transform: uppercase;
-    color: var(--color-cadetblue-200);
-    display: flex;
-    align-items: center;
-  }
-  .group {
-    height: 133px;
-    width: 270px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  .frameParent1 {
-    width: 372px;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .annualSupportInner {
-    align-self: stretch;
-    height: 157px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: var(--br-18);
-    background-color: var(--color-gray);
-    border: 1px solid var(--color-cadetblue-100);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    font-size: var(--font-size-24);
-    color: var(--color-cadetblue-300);
-  }
-  .annualSupport {
-    width: 429px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 23px;
-    text-align: center;
-    font-size: var(--font-size-32);
-    color: var(--color-cadetblue-200);
-    font-family: var(--font-gensenrounded2-tw);
-  }
-  .supportDetailsParent {
-    width: 911px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0px;
-  }
-  .icon2 {
-    width: 67px;
-    position: relative;
-    max-height: 100%;
-    object-fit: cover;
-  }
-  .wrapper2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: var(--padding-10);
-  }
-  .div4 {
-    align-self: stretch;
-    position: relative;
-    letter-spacing: 0.04em;
-    line-height: 157.24%;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-  }
-  .donationOption {
-    width: 228px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
+.frameChild {
+  height: 1224px;
+  width: 1124px;
+  position: relative;
+  border-radius: 38px;
+  display: none;
+  z-index: 0;
+}
+
+.h1 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.09em;
+  line-height: 157.24%;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 67px 444px;
+}
+
+.icon {
+  width: 132px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: 152px;
+  margin: 0 !important;
+  position: absolute;
+  top: -9.9px;
+  left: 11px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-10);
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.h2 {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.09em;
+  line-height: 157.24%;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.frameDiv {
+  width: 157px;
+  margin: 0 !important;
+  position: absolute;
+  top: 222.1px;
+  left: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-10) var(--padding-8);
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.frameParent {
+  width: 153px;
+  height: 335px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-10);
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-10);
+  text-align: center;
+  font-size: var(--font-size-32);
+  color: var(--color-cadetblue-200);
+}
+
+.p {
+  margin: 0;
+}
+
+.txt {
+  line-break: anywhere;
+  width: 100%;
+}
+
+.div {
+  height: 86.7px;
+  width: 342px;
+  position: absolute;
+  margin: 0 !important;
+  top: 24.4px;
+  left: calc(50% - 135px);
+  letter-spacing: 0.04em;
+  line-height: 114%;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+}
+
+.span {
+  font-size: var(--font-size-20);
+  white-space: pre-wrap;
+}
+
+.txt1 {
+  width: 100%;
+}
+
+.div1 {
+  height: 51px;
+  width: 342px;
+  position: absolute;
+  margin: 0 !important;
+  top: 1px;
+  left: calc(50% - 135px);
+  letter-spacing: 0.04em;
+  line-height: 157.24%;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  font-size: var(--font-size-24);
+}
+
+.plainMe {
+  width: 265px;
+  position: relative;
+  font-size: var(--font-size-16);
+  letter-spacing: 0.04em;
+  line-height: 157.24%;
+  text-transform: lowercase;
+  color: var(--color-cadetblue-200);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.parent {
+  height: 133px;
+  width: 270px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 87.7px 0px 0px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.frameItem {
+  width: 96px;
+  max-height: 100%;
+}
+
+.frameGroup {
+  width: 372px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.supportDetailsInner {
+  align-self: stretch;
+  height: 157px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-18);
+  background-color: var(--color-gray);
+  border: 1px solid var(--color-cadetblue-100);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-26) var(--padding-22);
+}
+
+.supportDetails {
+  width: 418px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 23px;
+  text-align: left;
+  font-size: var(--font-size-20);
+  color: var(--color-cadetblue-300);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+.wrapper1 {
+  margin: 0 !important;
+  position: absolute;
+  top: 267px;
+  left: calc(50% - 78.5px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-10) var(--padding-8);
+  z-index: 0;
+}
+
+.icon1 {
+  width: 193px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.mergedImageTwo {
+  width: 213px;
+  margin: 0 !important;
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 106.5px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-10);
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.frameContainer {
+  width: 233px;
+  height: 335px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-10);
+  box-sizing: border-box;
+  position: relative;
+  gap: var(--gap-10);
+}
+
+.div2 {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0.04em;
+  line-height: 157.24%;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.h3 {
+  margin: 0;
+  align-self: stretch;
+  height: 31.6px;
+  position: relative;
+  font-size: var(--font-size-20);
+  letter-spacing: 0.04em;
+  line-height: 157.24%;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.div3 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-16);
+  letter-spacing: 0.04em;
+  line-height: 157.24%;
+  text-transform: uppercase;
+  color: var(--color-cadetblue-200);
+  display: flex;
+  align-items: center;
+}
+
+.group {
+  height: 133px;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.frameParent1 {
+  width: 372px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.annualSupportInner {
+  align-self: stretch;
+  height: 157px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-18);
+  background-color: var(--color-gray);
+  border: 1px solid var(--color-cadetblue-100);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  font-size: var(--font-size-24);
+  color: var(--color-cadetblue-300);
+}
+
+.annualSupport {
+  width: 429px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 23px;
+  text-align: center;
+  font-size: var(--font-size-32);
+  color: var(--color-cadetblue-200);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+.supportDetailsParent {
+  width: 911px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+}
+
+.icon2 {
+  width: 67px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.wrapper2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-10);
+}
+
+.div4 {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: 0.04em;
+  line-height: 157.24%;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.donationOption {
+  width: 228px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.frameParent2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-12);
+}
+
+.frameWrapper1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.frameWrapper {
+  align-self: stretch;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 69.5px;
+  background-color: var(--color-gray);
+  border: 1px solid var(--color-cadetblue-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.frameSection {
+  width: 535px;
+  height: 338px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-60) 0px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-24);
+  color: var(--color-cadetblue-300);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+.frame {
+  width: 1124px;
+  margin: 0 !important;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.vectorParent {
+  align-self: stretch;
+  border-radius: 38px;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  gap: var(--gap-10);
+}
+
+.h22 {
+  margin: 0;
+  align-self: stretch;
+  height: 224px;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.09em;
+  line-height: 157.24%;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon3 {
+  width: 269px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.h31 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.div6 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-20);
+  letter-spacing: 0.04em;
+  line-height: 190%;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.imageContainerTwo {
+  width: 249px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-20) 0px;
+  box-sizing: border-box;
+  gap: var(--gap-20);
+}
+
+.parent2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 62px;
+  text-align: left;
+  font-size: var(--font-size-24);
+  color: var(--color-dimgray);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+.dscf5791Icon {
+  width: 269px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.parent3 {
+  width: 353px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-19);
+  max-width: 100%;
+}
+
+.dscf5791Parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 62px;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-24);
+  color: var(--color-dimgray);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+.parent5 {
+  width: 374px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-19);
+  max-width: 100%;
+}
+
+.parent4 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-24);
+  color: var(--color-dimgray);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+.plainMe1 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.plainMeParent {
+  width: 374px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-20) 0px;
+  box-sizing: border-box;
+  gap: var(--gap-20);
+  max-width: 100%;
+}
+
+.all2Parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-24);
+  color: var(--color-dimgray);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+.rewardDescriptions {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 41px;
+  max-width: 100%;
+}
+
+.parent1 {
+  width: 705px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+
+.monthlyLevelInner {
+  align-self: stretch;
+  height: 1326px;
+  background-color: var(--color-whitesmoke);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-28) 203px;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-top: -40px;
+  position: relative;
+  color: var(--color-dimgray);
+}
+
+.monthlyLevel {
+  width: 1124px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+
+.monthlyDonation {
+  width: 1412px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0px var(--padding-20);
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--font-size-36);
+  color: var(--color-cadetblue-200);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+@media screen and (max-width: 401px) {
   .frameParent2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--gap-12);
+    flex-wrap: wrap;
   }
-  .frameWrapper1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .frameWrapper {
-    align-self: stretch;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 69.5px;
-    background-color: var(--color-gray);
-    border: 1px solid var(--color-cadetblue-100);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+
   .frameSection {
-    width: 535px;
-    height: 338px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: var(--padding-60) 0px;
-    box-sizing: border-box;
-    text-align: left;
-    font-size: var(--font-size-24);
-    color: var(--color-cadetblue-300);
-    font-family: var(--font-gensenrounded2-tw);
+    height: auto;
   }
-  .frame {
-    width: 1124px;
-    margin: 0 !important;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-  }
-  .vectorParent {
-    align-self: stretch;
-    border-radius: 38px;
-    background-color: var(--color-white);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-    gap: var(--gap-10);
-  }
-  .h22 {
-    margin: 0;
-    align-self: stretch;
-    height: 224px;
-    position: relative;
-    font-size: inherit;
-    letter-spacing: 0.09em;
-    line-height: 157.24%;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-family: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+
   .icon3 {
-    width: 269px;
-    position: relative;
-    max-height: 100%;
-    object-fit: cover;
-  }
-  .h31 {
-    margin: 0;
-    align-self: stretch;
-    position: relative;
-    font-size: inherit;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-family: inherit;
-  }
-  .div6 {
-    align-self: stretch;
-    position: relative;
-    font-size: var(--font-size-20);
-    letter-spacing: 0.04em;
-    line-height: 190%;
-    text-transform: uppercase;
-    color: var(--color-black);
-  }
-  .imageContainerTwo {
-    width: 249px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: var(--padding-20) 0px;
-    box-sizing: border-box;
-    gap: var(--gap-20);
-  }
-  .parent2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 62px;
-    text-align: left;
-    font-size: var(--font-size-24);
-    color: var(--color-dimgray);
-    font-family: var(--font-gensenrounded2-tw);
-  }
-  .dscf5791Icon {
-    width: 269px;
-    position: relative;
-    max-height: 100%;
-    object-fit: cover;
-  }
-  .parent3 {
-    width: 353px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: var(--gap-19);
-    max-width: 100%;
-  }
-  .dscf5791Parent {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 62px;
-    max-width: 100%;
-    text-align: left;
-    font-size: var(--font-size-24);
-    color: var(--color-dimgray);
-    font-family: var(--font-gensenrounded2-tw);
-  }
-  .parent5 {
-    width: 374px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: var(--gap-19);
-    max-width: 100%;
-  }
-  .parent4 {
-    align-self: stretch;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0px;
-    max-width: 100%;
-    text-align: left;
-    font-size: var(--font-size-24);
-    color: var(--color-dimgray);
-    font-family: var(--font-gensenrounded2-tw);
-  }
-  .plainMe1 {
-    margin: 0;
-    align-self: stretch;
-    position: relative;
-    font-size: inherit;
-    letter-spacing: 0.04em;
-    text-transform: lowercase;
-    font-weight: 400;
-    font-family: inherit;
-  }
-  .plainMeParent {
-    width: 374px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: var(--padding-20) 0px;
-    box-sizing: border-box;
-    gap: var(--gap-20);
-    max-width: 100%;
-  }
-  .all2Parent {
-    align-self: stretch;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0px;
-    max-width: 100%;
-    text-align: left;
-    font-size: var(--font-size-24);
-    color: var(--color-dimgray);
-    font-family: var(--font-gensenrounded2-tw);
-  }
-  .rewardDescriptions {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 41px;
-    max-width: 100%;
-  }
-  .parent1 {
-    width: 705px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    max-width: 100%;
-  }
-  .monthlyLevelInner {
-    align-self: stretch;
-    height: 1326px;
-    background-color: var(--color-whitesmoke);
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding: var(--padding-28) 203px;
-    box-sizing: border-box;
-    max-width: 100%;
-    margin-top: -40px;
-    position: relative;
-    color: var(--color-dimgray);
-  }
-  .monthlyLevel {
-    width: 1124px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    max-width: 100%;
-  }
-  .monthlyDonation {
-    width: 1412px;
     flex: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0px var(--padding-20);
+  }
+
+  .imageContainerTwo {
+    flex: 1;
+  }
+
+  .parent2 {
+    gap: 31px;
+    flex-wrap: wrap;
+  }
+
+  .dscf5791Parent {
+    gap: 31px;
+  }
+
+  .rewardDescriptions {
+    gap: var(--gap-20);
+  }
+
+  .monthlyLevelInner {
+    height: auto;
+    padding-left: 50px;
+    padding-right: 50px;
     box-sizing: border-box;
-    max-width: 100%;
-    text-align: center;
-    font-size: var(--font-size-36);
-    color: var(--color-cadetblue-200);
-    font-family: var(--font-gensenrounded2-tw);
   }
-
-  @media screen and (max-width: 401px) {
-    .frameParent2 {
-      flex-wrap: wrap;
-    }
-
-    .frameSection {
-      height: auto;
-    }
-
-    .icon3 {
-      flex: 1;
-    }
-
-    .imageContainerTwo {
-      flex: 1;
-    }
-
-    .parent2 {
-      gap: 31px;
-      flex-wrap: wrap;
-    }
-
-    .dscf5791Parent {
-      gap: 31px;
-    }
-
-    .rewardDescriptions {
-      gap: var(--gap-20);
-    }
-
-    .monthlyLevelInner {
-      height: auto;
-      padding-left: 50px;
-      padding-right: 50px;
-      box-sizing: border-box;
-    }
-  }
+}
 </style>
