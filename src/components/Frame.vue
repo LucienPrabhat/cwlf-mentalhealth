@@ -122,6 +122,10 @@ import Component1 from "./Component1.vue"
   box-shadow: 0px 1px 4.3px 21px rgba(148, 207, 255, 0.25);
   border-radius: 34px;
   background: linear-gradient(180deg, #a8f4ff, rgba(153, 151, 111, 0));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon1 {
