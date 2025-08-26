@@ -2,8 +2,8 @@
   <div :class="$style.e">
     <main :class="$style.page">
       <section :class="$style.back">
-        <img :class="$style.backChild" alt="" src="/frame-27@3x.png" />
-        <img :class="$style.backItem" alt="" src="/frame-27@3x.png" />
+        <img :class="$style.backChild" alt="" src="/yan/right.png" />
+        <img :class="$style.backItem" alt="" src="/yan/btm.png" />
       </section>
       <main :class="$style.main">
         <div :class="$style.mainInner">
@@ -12,7 +12,7 @@
               :class="$style.icon"
               loading="lazy"
               alt=""
-              src="/frame-27@3x.png"
+              src="/yan/grass.png"
             />
           </div>
         </div>
@@ -29,14 +29,12 @@
                   </p>
                 </div>
               </div>
-              <!--
               <img
                 :class="$style.frameChild"
                 loading="lazy"
                 alt=""
-                src="/frame-245@2x.png"
+                src="/yan/yan.png"
               />
-              -->
             </div>
           </section>
           <div :class="$style.txtParent">
@@ -229,7 +227,7 @@
                   :class="$style.icon1"
                   loading="lazy"
                   alt=""
-                  src="/frame-27@3x.png"
+                  src="/yan/bird.png"
                 />
               </div>
             </div>
@@ -240,7 +238,7 @@
                 :class="$style.d0067Icon"
                 loading="lazy"
                 alt=""
-                src="/frame-27@3x.png"
+                src="/yan/01.png"
               />
             </div>
           </section>
@@ -267,7 +265,7 @@
         </div>
       </main>
       <div :class="$style.wrapper4">
-        <!-- <img :class="$style.icon1" loading="lazy" alt="" src="/-1@2x.png" /> -->
+        <img :class="$style.icon1" loading="lazy" alt="" src="/frame-27@3x.png" />
       </div>
       <div :class="$style.actionArea">
         <h3 :class="$style.h3">

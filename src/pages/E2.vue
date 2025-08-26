@@ -17,16 +17,16 @@
           </div>
         </div>
         <div :class="$style.container">
-          <img :class="$style.icon" loading="lazy" alt="" src="/frame-27@3x.png" />
+          <img :class="$style.icon" loading="lazy" alt="" src="/xin/xin.png" />
         </div>
       </section>
       <header :class="$style.vectorParent">
-        <img :class="$style.frameChild" alt="" src="/frame-27@3x.png" />
+        <img :class="$style.frameChild" alt="" src="/xin/top.png" />
         <img
           :class="$style.layer241Icon"
           loading="lazy"
           alt=""
-          src="/frame-27@3x.png"
+          src="/xin/flower.png"
         />
       </header>
       <div :class="$style.parent">
@@ -38,12 +38,12 @@
       </div>
     </div>
     <div :class="$style.vectorGroup">
-      <img :class="$style.frameItem" alt="" src="/frame-27@3x.png" />
+      <img :class="$style.frameItem" alt="" src="/xin/btm.png" />
       <img
         :class="$style.maskGroupIcon"
         loading="lazy"
         alt=""
-        src="/frame-27@3x.png"
+        src="/xin/gr.png"
       />
     </div>
     <main :class="$style.eInner">
@@ -173,9 +173,9 @@
             :class="$style.frameInner"
             loading="lazy"
             alt=""
-            src="/rectangle-45@2x.png"
+            src="/xin/01.png"
           />
-          <img :class="$style.icon2" loading="lazy" alt="" src="/-3-1@2x.png" />
+          <img :class="$style.icon2" loading="lazy" alt="" src="/xin/02.png" />
         </div>
         <div :class="$style.frameWrapper">
           <div :class="$style.rectangleGroup" @click="goBack">
@@ -373,18 +373,19 @@ function goBack() {
     position: absolute;
     right: 72px;
     bottom: -282px;
-    width: 292px;
+    width: 132px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 45px 85px 182px 135px;
+    padding: 35px;
     box-sizing: border-box;
     background-image: url("/frame-27@3x.png");
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     z-index: 2;
+    margin-top: 400px;
   }
   .frameParent {
     align-self: stretch;

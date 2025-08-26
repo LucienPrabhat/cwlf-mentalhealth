@@ -1,23 +1,23 @@
 <template>
   <div :class="$style.e">
-    <img :class="$style.eChild" loading="lazy" alt="" src="/frame-27@3x.png" />
-    <img :class="$style.eItem" alt="" src="/frame-27@3x.png" />
-    <img :class="$style.icon" loading="lazy" alt="" src="/frame-27@3x.png" />
+    <img :class="$style.eChild" loading="lazy" alt="" src="/yu/right.png" />
+    <img :class="$style.eItem" alt="" src="/yu/btm.png" />
+    <img :class="$style.icon" loading="lazy" alt="" src="/yu/tree.png" />
     <div :class="$style.vectorParent">
-      <img :class="$style.frameChild" alt="" src="/frame-27@3x.png" />
+      <img :class="$style.frameChild" alt="" src="/yu/top.png" />
       
       <img
         :class="$style.icon1"
         loading="lazy"
         alt=""
-        src="/frame-27@3x.png"
+        src="/yu/treeL.png"
       />
     </div>
     <img
       :class="$style.layer252Icon"
       loading="lazy"
       alt=""
-      src="/frame-27@3x.png"
+      src="/yu/fl.png"
     />
     <main :class="$style.frameParent">
       <section :class="$style.frameGroup">
@@ -27,7 +27,7 @@
             <p :class="$style.p">住在走廊的那個女孩 </p>
           </h1>
         </div>
-        <!-- <img :class="$style.icon2" alt="" src="/04@2x.png" /> -->
+        <img :class="$style.icon2" alt="" src="/yu/yu.png" />
       </section>
       <section :class="$style.rectangleParent">
         <div :class="$style.frameItem" />
@@ -126,20 +126,24 @@
           :class="$style.img5144Icon"
           loading="lazy"
           alt=""
-          src="/frame-27@3x.png"
+          src="/yu/01.png"
         />
-        <img :class="$style.img5144Icon" loading="lazy" alt="" src="/@2x.png" />
+        <img
+          :class="$style.img5144Icon" 
+          loading="lazy" 
+          alt="" 
+          src="/yu/02.png" />
         <img
           :class="$style.img5144Icon"
           loading="lazy"
           alt=""
-          src="/frame-27@3x.png"
+          src="/yu/03.png"
         />
         <img
           :class="$style.img5144Icon"
           loading="lazy"
           alt=""
-          src="/frame-27@3x.png"
+          src="/yu/04.png"
         />
        
       </section>
@@ -465,20 +469,21 @@ function goBack() {
   }
   .parent {
     position: absolute;
-    top: 579px;
-    left: 1076px;
-    width: 292px;
+    top: 0;
+    right: 0;
+    width: 132px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 45px 85px 182px 135px;
+    padding: 35px;
     box-sizing: border-box;
     background-image: url("/frame-27@3x.png");
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-position: top;
-    z-index: 3;
+    background-position: center;
+    z-index: 2;
+    margin-top: 400px;
   }
   .e {
     width: 100%;
