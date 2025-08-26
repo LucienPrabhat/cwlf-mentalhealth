@@ -198,11 +198,13 @@ const cards = [
   },
 ];
 
-const activeIndex = ref(2); // default to 小言卡片 (與目前畫面相符)
+const activeIndexL = ref(0);
+const activeIndexR = ref(2);
+const activeIndex = ref(1);
 const isForward = ref(true);
 
-const activeCardL = computed(() => cards[activeIndex.value - 1]);
-const activeCardR = computed(() => cards[activeIndex.value + 1]);
+const activeCardL = computed(() => cards[activeIndexL.value]);
+const activeCardR = computed(() => cards[activeIndexR.value]);
 const activeCard = computed(() => cards[activeIndex.value]);
 const activeCardLKey = computed(() => activeCardL.value.key);
 const activeCardRKey = computed(() => activeCardR.value.key);
@@ -211,11 +213,15 @@ const transitionName = computed(() => (isForward.value ? "slide-left" : "slide-r
 
 function goPrev() {
   isForward.value = false;
+  activeIndexL.value = (activeIndexL.value - 1 + cards.length) % cards.length;
+  activeIndexR.value = (activeIndexR.value - 1 + cards.length) % cards.length;
   activeIndex.value = (activeIndex.value - 1 + cards.length) % cards.length;
 }
 
 function goNext() {
   isForward.value = true;
+  activeIndexL.value = (activeIndexL.value + 1) % cards.length;
+  activeIndexR.value = (activeIndexR.value + 1) % cards.length;
   activeIndex.value = (activeIndex.value + 1) % cards.length;
 }
 
