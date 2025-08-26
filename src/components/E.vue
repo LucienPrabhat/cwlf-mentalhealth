@@ -499,7 +499,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 67px 446px 67px 444px;
+    padding: 67px 0 67px 0;
   }
   .icon {
     width: 132px;
@@ -878,7 +878,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     position: relative;
     gap: var(--gap-10);
   }

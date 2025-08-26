@@ -99,14 +99,18 @@
     max-width: 100%;
   }
   .desktopMainPage {
-    width: 1440PX;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
-    line-height: normal;
-    letter-spacing: normal;
+  /* cap layout at 1440px and center on larger screens; be fluid under 1440px */
+  max-width: 1440px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  line-height: normal;
+  letter-spacing: normal;
   }
 
   @media screen and (max-width: 401px) {

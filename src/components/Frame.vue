@@ -78,7 +78,7 @@
     box-shadow: 0px 1px 4.3px 21px rgba(148, 207, 255, 0.25);
     border-radius: 34px;
     background: linear-gradient(180deg, #a8f4ff, rgba(153, 151, 111, 0));
-    width: 100%;
+    width: 400px;
     height: 100%;
   }
   .rectangleParent {

@@ -79,7 +79,7 @@
                 <p :class="$style.p">
                   <span :class="$style.span">兒福聯盟透過</span>
                   <span :class="$style.span">「青少年心理健康服務」</span>
-                  <span>， 針對情緒困擾青少年及其家庭提供服務，由專業</span>
+                  <span>，針對情緒困擾青少年及其家庭提供服務，由專業</span>
                 </p>
                 <p :class="$style.p">
                   社工進行定期的訪視與陪伴，協助家庭修復親子
