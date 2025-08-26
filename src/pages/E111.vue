@@ -1,46 +1,46 @@
 <template>
   <div :class="$style.e1">
     <section :class="$style.story">
-      <!-- <div :class="$style.frame">
-        <div :class="$style.xuanStage">
-          <div :class="$style.xuanButtonData" />
-        </div>
-        <div :class="$style.xuanInfo">
-          <img
-            :class="$style.xuanEventIcon"
-            loading="lazy"
-            alt=""
-            src="/frame-162@2x.png"
-          />
-          <div :class="$style.xuanPanel">
-            <div :class="$style.xuanNarrative">
-              <div :class="$style.div">
-                <p :class="$style.p">國中就拒學的小萱，畢業後開始繭居在家。</p>
-                <p :class="$style.p">因為情緒失控自傷被強制送醫，小萱曾住進</p>
-                <p :class="$style.p">康復之家一年。回家後，因房間過於髒亂，</p>
-                <p :class="$style.p">只能鋪地墊睡在走廊。</p>
-                <p :class="$style.p">
-                  現在的她，正努力從混亂中找回生活掌控感...
-                </p>
+      <div :class="$style.frame2">
+        <transition :name="transitionName" mode="out-in">
+          <div :key="activeCardLKey" :class="$style.narrative">
+            <img
+              :class="$style.eventIcon"
+              loading="lazy"
+              alt=""
+              :src="`/${activeCardL.image}`"
+            />
+            <div :class="$style.xiaoYanEvent">
+              <div :class="$style.xuanNarrative">
+                <div :class="$style.div">
+                  <p :class="$style.p"><strong>{{ activeCardL.title }}</strong></p>
+                  <p
+                    v-for="(line, idx) in activeCardL.contentLines"
+                    :key="idx"
+                    :class="$style.p"
+                  >
+                    {{ line }}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div :class="$style.segmentContainer">
-              <div :class="$style.xuanButtonArea">
-                <button :class="$style.xuanButtonDetails" />
+              <div :class="$style.segmentContainer" @click="onClickButton">
+                <div :class="$style.xuanButtonArea">
+                  <button :class="$style.xuanButtonDetails" />
+                </div>
+                <div :class="$style.wrapper">
+                  <div :class="$style.div1">{{ activeCardL.btnText }}</div>
+                </div>
+                <img
+                  :class="$style.xuanEventEnd"
+                  loading="lazy"
+                  alt=""
+                  src="/frame-157.svg"
+                />
               </div>
-              <div :class="$style.wrapper">
-                <div :class="$style.div1">小萱後來呢？</div>
-              </div>
-              <img
-                :class="$style.xuanEventEnd"
-                loading="lazy"
-                alt=""
-                src="/frame-157.svg"
-              />
             </div>
           </div>
-        </div>
-      </div> -->
+        </transition>
+      </div>
       <img
         :class="$style.yanPanelIcon"
         loading="lazy"
@@ -95,42 +95,46 @@
         src="/icon_to_right.png"
         @click="goNext"
       />
-      <!-- <div :class="$style.yanPanel">
-        <div :class="$style.segmentParent">
-          <img
-            :class="$style.segmentIcon"
-            loading="lazy"
-            alt=""
-            src="/frame-170@2x.png"
-          />
-          <div :class="$style.frameParent">
-            <div :class="$style.container">
-              <div :class="$style.div">
-                <p :class="$style.p">小波因在國中遭排擠，升高中後又無法融入</p>
-                <p :class="$style.p">而情緒失調，確診重度憂鬱。即使家庭經濟</p>
-                <p :class="$style.p">無虞，她仍難以承受來自身旁親友與自己的</p>
-                <p :class="$style.p">
-                  高期待，壓力窒息的讓她一度想離開這個世界...
-                </p>
+      <div :class="$style.frame2">
+        <transition :name="transitionName" mode="out-in">
+          <div :key="activeCardRKey" :class="$style.narrative">
+            <img
+              :class="$style.eventIcon"
+              loading="lazy"
+              alt=""
+              :src="`/${activeCardR.image}`"
+            />
+            <div :class="$style.xiaoYanEvent">
+              <div :class="$style.xuanNarrative">
+                <div :class="$style.div">
+                  <p :class="$style.p"><strong>{{ activeCardR.title }}</strong></p>
+                  <p
+                    v-for="(line, idx) in activeCardR.contentLines"
+                    :key="idx"
+                    :class="$style.p"
+                  >
+                    {{ line }}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div :class="$style.segmentContainer">
-              <div :class="$style.xuanButtonArea">
-                <button :class="$style.xuanButtonDetails" />
+              <div :class="$style.segmentContainer" @click="onClickButton">
+                <div :class="$style.xuanButtonArea">
+                  <button :class="$style.xuanButtonDetails" />
+                </div>
+                <div :class="$style.wrapper">
+                  <div :class="$style.div1">{{ activeCardR.btnText }}</div>
+                </div>
+                <img
+                  :class="$style.xuanEventEnd"
+                  loading="lazy"
+                  alt=""
+                  src="/frame-157.svg"
+                />
               </div>
-              <div :class="$style.wrapper">
-                <div :class="$style.div1">小波後來呢？</div>
-              </div>
-              <img
-                :class="$style.xuanEventEnd"
-                loading="lazy"
-                alt=""
-                src="/frame-157.svg"
-              />
             </div>
           </div>
-        </div>
-      </div> -->
+        </transition>
+      </div>
     </section>
   </div>
 </template>
@@ -197,7 +201,11 @@ const cards = [
 const activeIndex = ref(2); // default to 小言卡片 (與目前畫面相符)
 const isForward = ref(true);
 
+const activeCardL = computed(() => cards[activeIndex.value - 1]);
+const activeCardR = computed(() => cards[activeIndex.value + 1]);
 const activeCard = computed(() => cards[activeIndex.value]);
+const activeCardLKey = computed(() => activeCardL.value.key);
+const activeCardRKey = computed(() => activeCardR.value.key);
 const activeCardKey = computed(() => activeCard.value.key);
 const transitionName = computed(() => (isForward.value ? "slide-left" : "slide-right"));
 
