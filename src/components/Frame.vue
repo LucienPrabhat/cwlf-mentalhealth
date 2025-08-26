@@ -2,7 +2,9 @@
   <div :class="$style.frame">
     <div :class="$style.parent">
       <h2 :class="$style.h2">我只是想被看見、被聽見。</h2>
-      <h2 :class="$style.h21">每次感到快無法呼吸時，我都不知道該怎麼辦...</h2>
+      <h2 :class="$style.h21">每次感到快無法呼吸時，我都
+        <span :class="$style.blurWrap" data-text="不知道該怎麼辦...">不知道該怎麼辦...</span>
+      </h2>
     </div>
     <div :class="$style.group">
       <img :class="$style.icon" loading="lazy" alt="" src="/--0001--2@2x.png" />
@@ -52,7 +54,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: blur(5.4px);
+    /* remove global blur: we use a controlled blurred overlay for the substring */
+  }
+
+  /* The inline wrapper for the substring that will receive a gradient blurred overlay */
+  .blurWrap {
+    position: relative;
+    display: inline-block;
+    line-height: inherit;
+    font: inherit;
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-left: 6px;
+  }
+
+  /* Duplicate the text in a pseudo-element, blur it and apply a mask gradient so the blur fades */
+  .blurWrap::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    filter: blur(6px);
+    opacity: 0.95;
+    pointer-events: none;
+    z-index: 2;
+    /* Mask the blurred layer with a left-to-right gradient so blur is gradual */
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 20%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 20%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%);
   }
   .parent {
     display: flex;
