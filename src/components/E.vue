@@ -838,7 +838,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 0px;
+    gap: 62px;
     max-width: 100%;
     text-align: left;
     font-size: var(--font-size-24);
@@ -872,7 +872,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 0px;
+    gap: 62px;
     max-width: 100%;
     text-align: left;
     font-size: var(--font-size-24);
@@ -962,7 +962,7 @@
   .offersParent {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     padding: 200px;
     box-sizing: border-box;
@@ -989,207 +989,9 @@
     font-family: var(--font-gensenrounded2-tw);
   }
 
-  @media screen and (max-width: 1411px) {
-    .offersParent {
-      padding-bottom: 86px;
-      box-sizing: border-box;
-    }
-
-    .e {
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 1200px) {
-    .dscf5791Icon {
-      flex: 1;
-    }
-
-    .group {
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .releaseData1 {
-      flex-wrap: wrap;
-    }
-
-    .container {
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .releaseData2 {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .plainMeParent {
-      flex: 1;
-      min-width: 100%;
-    }
-
-    .releaseData3 {
-      flex-wrap: wrap;
-    }
-
-    .detailsOuter {
-      padding: 542px 101px var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .offersParent {
-      padding-bottom: 56px;
-      box-sizing: border-box;
-    }
-
-    .e {
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 825px) {
-    .frameParent {
-      padding-left: 90px;
-      padding-right: 90px;
-      box-sizing: border-box;
-    }
-
-    .h2 {
-      font-size: 29px;
-      line-height: 45px;
-    }
-
-    .h21 {
-      font-size: var(--font-size-26);
-      line-height: 40px;
-    }
-
-    .internalOffer {
-      flex-wrap: wrap;
-    }
-
-    .blockRowWrapper {
-      height: auto;
-    }
-
-    .h23 {
-      font-size: 29px;
-      line-height: 45px;
-    }
-
-    .icon3 {
-      flex: 1;
-    }
-
-    .productDesign {
-      flex: 1;
-    }
-
-    .releaseData {
-      gap: 31px;
-      flex-wrap: wrap;
-    }
-
-    .releaseData1 {
-      gap: 31px;
-    }
-
-    .projectPublications {
-      gap: var(--gap-20);
-    }
-
-    .detailsOuter {
-      height: auto;
-      padding-left: 50px;
-      padding-right: 50px;
-      box-sizing: border-box;
-    }
-
-    .offersParent {
-      gap: 50px;
-      padding-bottom: var(--padding-36);
-      box-sizing: border-box;
-    }
-
-    .e {
-      box-sizing: border-box;
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .frameParent {
-      padding-left: var(--padding-20);
-      padding-right: var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .h2 {
-      font-size: var(--font-size-22);
-      line-height: 34px;
-    }
-
-    .h21 {
-      font-size: var(--font-size-19);
-      line-height: 30px;
-    }
-
-    .div {
-      font-size: var(--font-size-16);
-      line-height: 18px;
-    }
-
-    .div1 {
-      font-size: var(--font-size-16);
-      line-height: 30px;
-    }
-
-    .div2 {
-      font-size: var(--font-size-16);
-      line-height: 30px;
-    }
-
-    .h3 {
-      font-size: var(--font-size-16);
-      line-height: 25px;
-    }
-
-    .div4 {
-      font-size: var(--font-size-19);
-      line-height: 30px;
-    }
-
-    .h23 {
-      font-size: var(--font-size-22);
-      line-height: 34px;
-    }
-
-    .h31 {
-      font-size: var(--font-size-19);
-    }
-
-    .div6 {
-      font-size: var(--font-size-16);
-      line-height: 30px;
-    }
-
-    .releaseData {
-      gap: var(--gap-15);
-    }
-
-    .releaseData1 {
-      gap: var(--gap-15);
-    }
-
-    .plainMe1 {
-      font-size: var(--font-size-19);
-    }
-
-    .detailsOuter {
-      padding-left: var(--padding-20);
-      padding-right: var(--padding-20);
-      box-sizing: border-box;
-    }
-
-    .offersParent {
-      gap: 25px;
+  @media screen and (max-width: 401px) {
+    .casesNavigateWrapper {
+      width: 401px
     }
   }
 </style>
