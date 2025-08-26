@@ -5,8 +5,7 @@ import MD5 from 'crypto-js/md5.js'
 // 生成donate_check參數（根據API文檔說明）
 const generateDonateCheck = (params) => {
   // 根據API文檔：md5(strtolower($HashKey1 . $donate_option . $donate_amount . $donate_type. $HashKey2))
-  // 注意：這裡的donate_option應該是donate_kind，根據文檔說明
-  const checkString = `${API_CONFIG.HASHKEY1}${params.donate_kind}${params.donate_amount}${params.donate_type}${API_CONFIG.HASHKEY2}`
+  const checkString = `${API_CONFIG.HASHKEY1}${params.donate_option}${params.donate_amount}${params.donate_type}${API_CONFIG.HASHKEY2}`
   const lowerCaseString = checkString.toLowerCase()
   return MD5(lowerCaseString).toString()
 }
@@ -35,8 +34,7 @@ export const submitDonation = async (donationData) => {
       donate_check: generateDonateCheck({
         donate_amount: finalAmount,
         donate_type: API_CONFIG.FIXED_PARAMS.DONATE_TYPE,
-        donate_kind: donate_kind,
-        donate_project_code: API_CONFIG.FIXED_PARAMS.DONATE_PROJECT_CODE
+        donate_option: API_CONFIG.FIXED_PARAMS.DONATE_OPTION,
       })
     }
 
