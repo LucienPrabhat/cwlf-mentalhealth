@@ -127,6 +127,7 @@ const handleClickShaonianjia = () => {
 
 .p {
   margin: 0;
+  color: black;
 }
 
 .div {

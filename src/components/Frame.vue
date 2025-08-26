@@ -33,6 +33,7 @@ import Component1 from "./Component1.vue"
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 36px;
 }
 
 .h21 {
@@ -49,6 +50,7 @@ import Component1 from "./Component1.vue"
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 36px;
   /* remove global blur: we use a controlled blurred overlay for the substring */
 }
 
@@ -61,14 +63,14 @@ import Component1 from "./Component1.vue"
   color: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-left: 6px;
+  filter: blur(2px);
 }
 
 /* Duplicate the text in a pseudo-element, blur it and apply a mask gradient so the blur fades */
-.blurWrap::after {
+.blurWrap::before {
   content: attr(data-text);
   position: absolute;
-  left: 0;
+  left: -9px;
   top: 0;
   width: 100%;
   height: 100%;
@@ -76,7 +78,27 @@ import Component1 from "./Component1.vue"
   color: inherit;
   font: inherit;
   line-height: inherit;
-  filter: blur(6px);
+  filter: blur(3px);
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 2;
+  /* Mask the blurred layer with a left-to-right gradient so blur is gradual */
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 20%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.25) 20%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+.blurWrap::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 9px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  filter: blur(3px);
   opacity: 0.95;
   pointer-events: none;
   z-index: 2;
@@ -91,6 +113,7 @@ import Component1 from "./Component1.vue"
   align-items: center;
   justify-content: flex-start;
   z-index: 0;
+  margin: 120px;
 }
 
 .icon {
@@ -134,23 +157,66 @@ import Component1 from "./Component1.vue"
   background: rgba(0, 0, 0, 0.6);
   z-index: 2;
   pointer-events: none;
+  animation: lightning 6s linear infinite;
 }
 
-.rectangleParent::after {
-  /* animated lightning streak */
-  content: "";
-  position: absolute;
-  left: -20%;
-  top: -50%;
-  width: 140%;
-  height: 200%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
-  transform: rotate(25deg) translateX(-100%);
-  opacity: 0;
-  z-index: 4;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  animation: lightning 6s linear infinite;
+/* lightning animation: sweep across and perform two quick bright pulses */
+@keyframes lightning {
+  0% {
+    opacity: 0;
+  }
+
+  6% {
+    opacity: 0.95;
+  }
+
+  7% {
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  9% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.95;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  51% {
+    opacity: 0.95;
+  }
+
+  52% {
+    opacity: 0;
+  }
+
+  53% {
+    opacity: 0.95;
+  }
+
+  54% {
+    opacity: 0;
+  }
+
+  55% {
+    opacity: 0.95;
+  }
+
+  56% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.95;
+  }
 }
 
 /* ensure content sits above the dark mask */
