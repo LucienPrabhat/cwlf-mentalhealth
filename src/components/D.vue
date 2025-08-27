@@ -93,6 +93,13 @@
       </div>
     </div>
   </section>
+
+  <div :class="$style.chartFrame">
+    <picture>
+      <source srcset="/tmpFrameImgs/chart-frame-m.png" media="(max-width: 600px)">
+      <img src="/tmpFrameImgs/chart-frame.png" alt="Chart Frame">
+    </picture>
+  </div>
 </template>
 <style module>
 .filler {
@@ -475,6 +482,18 @@
   font-size: var(--font-size-40);
   color: var(--color-teal-200);
   font-family: var(--font-gensenrounded2-tw);
+  display: none;
+}
+
+.chartFrame {
+  width: 100%;
+  margin-top: 120px;
+}
+
+.chartFrame img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media screen and (max-width: 401px) {
