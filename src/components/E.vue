@@ -1,10 +1,16 @@
 <template>
   <main :class="$style.e">
-    <div :class="$style.frameParent">
+    <!-- <div :class="$style.frameParent">
       <img :class="$style.frameChild" alt="" src="/white_wave.png" />
       <div :class="$style.layer252Wrapper">
         <img :class="$style.layer252Icon" loading="lazy" alt="" src="/--0002-layer25-2@2x.png" />
       </div>
+    </div> -->
+    <div :class="$style.waveFrame">
+      <picture>
+        <source srcset="/wave-frame-m.png" media="(max-width: 600px)">
+        <img src="/wave-frame.png" alt="Wave Frame">
+      </picture>
     </div>
     <div :class="$style.offersParent">
       <div :class="$style.offers1">
@@ -1198,6 +1204,17 @@ const handleCustomDonation = async () => {
   margin-top: 8px;
   text-align: center;
   font-family: var(--font-gensenrounded2-tw);
+}
+
+.waveFrame {
+  width: 100%;
+  background: linear-gradient(180deg, #00000000 49%, #C0EB77 50%, #C0EB77 100%);
+}
+
+.waveFrame img {
+  width: 101%;
+  height: auto;
+  display: block;
 }
 
 /* 響應式設計 */
