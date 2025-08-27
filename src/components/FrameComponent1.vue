@@ -199,6 +199,55 @@ const handleClickErtongchuangshang = () => {
   max-width: 100%;
 }
 
+/* Responsive: stack .frameGroup and .frameContainer on smaller screens */
+@media screen and (max-width: 1024px) {
+  .frameParent {
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+    padding: 0 16px;
+  }
+
+  .frameGroup {
+    width: 100%;
+    max-width: 720px;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  .frameContainer {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    position: relative;
+    min-width: 0;
+    min-height: 320px;
+  }
+
+  .imageWrapper {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    padding: 12px;
+  }
+
+  .frame {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+  }
+
+  .frameChild {
+    width: 100%;
+    height: auto;
+  }
+}
+
 .frameWrapper {
   align-self: stretch;
   display: flex;

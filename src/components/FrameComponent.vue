@@ -280,6 +280,56 @@ const handleClickShaonianjia = () => {
   max-width: 100%;
 }
 
+/* Responsive: stack the text block and image block on smaller screens */
+@media screen and (max-width: 1024px) {
+  .frameParent {
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+    padding: 0 16px;
+  }
+
+  .frameGroup {
+    width: 100%;
+    max-width: 720px;
+    box-sizing: border-box;
+    padding: 0;
+    display: block;
+  }
+
+  .groupDiv {
+    width: 100%;
+    max-width: 920px;
+    height: auto;
+    position: relative;
+    min-height: 320px;
+  }
+
+  /* When stacked, allow the decorative image to flow instead of being absolutely positioned */
+  .imageWrapper {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    padding: 12px;
+  }
+
+  .frameChild {
+    width: 100%;
+    height: auto;
+  }
+
+  .wrapper2 {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+  }
+}
+
 .frameWrapper {
   align-self: stretch;
   display: flex;
@@ -289,7 +339,7 @@ const handleClickShaonianjia = () => {
   max-width: 100%;
 }
 
-@media screen and (max-width: 401px) {
+/* @media screen and (max-width: 401px) {
   .h2 {
     font-size: var(--font-size-19);
   }
@@ -303,5 +353,5 @@ const handleClickShaonianjia = () => {
     font-size: var(--font-size-22);
     line-height: 34px;
   }
-}
+} */
 </style>

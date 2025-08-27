@@ -96,7 +96,6 @@ import FrameComponent111 from "../components/FrameComponent3.vue"
 
 .c {
   align-self: stretch;
-  height: 2117px;
   background-color: var(--color-white);
   overflow: hidden;
   flex-shrink: 0;
