@@ -1001,8 +1001,8 @@ const handleCustomDonation = async () => {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 41px;
   max-width: 100%;
   color: black;
