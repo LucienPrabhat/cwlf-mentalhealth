@@ -2,8 +2,8 @@
   <div :class="$style.desktopMainPage">
     <div :class="$style.titleFrame">
       <picture>
-        <source srcset="/titleFrame/title-frame-m.png" media="(max-width: 600px)">
-        <img src="/titleFrame/title-frame.jpg" alt="Title Frame">
+        <source srcset="/tmpFrameImgs/title-frame-m.png" media="(max-width: 600px)">
+        <img src="/tmpFrameImgs/title-frame.jpg" alt="Title Frame">
       </picture>
     </div>
     <section :class="$style.a">

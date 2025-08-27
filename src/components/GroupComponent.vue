@@ -44,6 +44,13 @@
       </div>
     </section>
   </div>
+
+  <div :class="$style.tmpFrameWrapper">
+    <picture>
+      <source srcset="/tmpFrameImgs/suicide-frame-m.png" media="(max-width: 600px)">
+      <img src="/tmpFrameImgs/suicide-frame.png" alt="Title Frame">
+    </picture>
+  </div>
 </template>
 <style module>
 .frameChild {
@@ -167,42 +174,24 @@
   padding: 0px var(--padding-20);
   gap: 38.5px;
   width: 100%;
+  /* USING PICTURE TO REPLACE TEMPORARY */
+  display: none;
+}
+
+.tmpFrameWrapper {
+  width: 100%;
+  padding: 0 70px;
+}
+
+.tmpFrameWrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media screen and (max-width: 401px) {
-  .frameParent {
-    flex-direction: column;
-  }
-
-  .groupWrapper {
-    width: 100%;
-  }
-
-  .h2 {
-    font-size: var(--font-size-19);
-    line-height: 36px;
-  }
-
-  .div {
-    font-size: var(--font-size-18);
-    line-height: 35px;
-  }
-
-  .h21 {
-    font-size: 21px;
-  }
-
-  .groupWrapper {
-    padding-top: 52px;
-    box-sizing: border-box;
-  }
-
-  .group {
-    gap: var(--gap-16);
-  }
-
-  .frameParent {
-    gap: var(--gap-19);
+  .tmpFrameWrapper {
+    padding: 0 7.5px;
   }
 }
 </style>
