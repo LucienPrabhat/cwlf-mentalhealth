@@ -2,16 +2,15 @@
   <div :class="$style.frame">
     <div :class="$style.parent">
       <h2 :class="$style.h2">我只是想被看見、被聽見。</h2>
-      <h2 :class="$style.h21">每次感到快無法呼吸時，我都
-        <span :class="$style.blurWrap" data-text="不知道該怎麼辦...">不知道該怎麼辦...</span>
-      </h2>
+      <h2 :class="$style.h21">每次感到快無法呼吸時，我都</h2>
+      <h2 :class="[$style.blurWrap, $style.h21]" data-text="不知道該怎麼辦...">不知道該怎麼辦...</h2>
     </div>
     <div :class="$style.group">
-      <img :class="$style.icon" loading="lazy" alt="" src="/--0001--2@2x.png" />
+      <!-- <img :class="$style.icon" loading="lazy" alt="" src="/--0001--2@2x.png" /> -->
       <section :class="$style.rectangleParent">
         <Component1 property1="Frame 8" />
       </section>
-      <img :class="$style.icon1" loading="lazy" alt="" src="/--0001--2@2x.png" />
+      <!-- <img :class="$style.icon1" loading="lazy" alt="" src="/--0001--2@2x.png" /> -->
     </div>
   </div>
 </template>
@@ -247,6 +246,12 @@ import Component1 from "./Component1.vue"
   gap: 20px;
   box-sizing: border-box;
   z-index: 1;
+  padding: 10% 25%;
+  background-image: url('/double-leaves.png');
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: screen;
 }
 
 .frame {
@@ -332,12 +337,6 @@ import Component1 from "./Component1.vue"
     gap: 20px;
   }
 
-  .icon,
-  .icon1 {
-    width: 30%;
-    max-width: 200px;
-  }
-
   .rectangleParent {
     min-width: 280px;
     width: clamp(280px, 80vw, 400px);
@@ -374,12 +373,6 @@ import Component1 from "./Component1.vue"
     gap: 15px;
   }
 
-  .icon,
-  .icon1 {
-    width: 25%;
-    max-width: 150px;
-  }
-
   .rectangleParent {
     min-width: 250px;
     width: clamp(250px, 85vw, 350px);
@@ -414,12 +407,6 @@ import Component1 from "./Component1.vue"
 
   .group {
     gap: 10px;
-  }
-
-  .icon,
-  .icon1 {
-    width: 20%;
-    max-width: 120px;
   }
 
   .rectangleParent {
