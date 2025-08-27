@@ -38,27 +38,6 @@ export const submitDonation = async (donationData) => {
       })
     }
 
-    // 開發環境模擬API回應
-    if (import.meta.env.DEV) {
-      console.log('開發環境：模擬API調用')
-      console.log('API參數:', params)
-      
-      // 模擬API延遲
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      // 模擬成功回應
-      return {
-        success: true,
-        message: '捐款提交成功',
-        data: {
-          donate_amount: finalAmount,
-          donate_kind: donate_kind,
-          transaction_id: `TXN_${Date.now()}`,
-          redirect_url: `${API_CONFIG.BASE_URL}/payment/redirect`
-        }
-      }
-    }
-
     // 生產環境實際API調用
     const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.DONATE_VISA}`, {
       method: 'POST',
