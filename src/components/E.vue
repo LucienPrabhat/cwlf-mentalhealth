@@ -13,11 +13,6 @@
       </picture>
     </div>
     <div :class="$style.offersParent">
-      <div :class="$style.offers1">
-        <div>
-          <img :class="$style.offerItemIcon" alt="" src="/offer-item.svg" />
-        </div>
-      </div>
       <div :class="$style.insidePlanWrapper">
         <div :class="$style.insidePlan">
           <div :class="$style.vectorParent">
@@ -954,11 +949,10 @@ const handleCustomDonation = async () => {
 }
 
 .releaseData2 {
-  align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 62px;
   max-width: 100%;
   text-align: left;
@@ -991,11 +985,10 @@ const handleCustomDonation = async () => {
 }
 
 .releaseData3 {
-  align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 62px;
   max-width: 100%;
   text-align: left;
@@ -1034,7 +1027,6 @@ const handleCustomDonation = async () => {
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding: var(--padding-28) 203px;
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
@@ -1111,7 +1103,10 @@ const handleCustomDonation = async () => {
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  background: linear-gradient(180deg, #c0eb77, #f0ffc3 50%);
+  background-image: url('/gb-wave-background.png');
+  background-size: 101% calc(100% + 50px);
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .e {
@@ -1461,6 +1456,8 @@ const handleCustomDonation = async () => {
   .icon3,
   .dscf5791Icon {
     width: 150px;
+    border-radius: 66.5px;
+    overflow: hidden;
   }
 
   .productDesign,
@@ -1586,6 +1583,8 @@ const handleCustomDonation = async () => {
   .icon3,
   .dscf5791Icon {
     width: 120px;
+    border-radius: 66.5px;
+    overflow: hidden;
   }
 
   .productDesign,
@@ -1632,6 +1631,8 @@ const handleCustomDonation = async () => {
   .icon3,
   .dscf5791Icon {
     width: 100%;
+    border-radius: 66.5px;
+    overflow: hidden;
   }
 }
 
