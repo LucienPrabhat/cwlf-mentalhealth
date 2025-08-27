@@ -783,24 +783,6 @@ function onClickButton() {
   }
 }
 
-@media screen and (max-width: 450px) {
-  .xuanPanel {
-    min-width: 100%;
-  }
-
-  .xiaoYanEvent {
-    min-width: 100%;
-  }
-
-  .story {
-    flex-wrap: wrap;
-  }
-
-  .e1 {
-    height: auto;
-  }
-}
-
 /* --- Force single-row carousel-style layout (no wrapping), center the row --- */
 .story {
   flex-wrap: nowrap;
@@ -811,24 +793,6 @@ function onClickButton() {
 .xuanPanel,
 .xiaoYanEvent {
   min-width: auto !important;
-}
-
-@media screen and (max-width: 450px) {
-  .xuanPanel {
-    min-width: 100%;
-  }
-
-  .xiaoYanEvent {
-    min-width: 100%;
-  }
-
-  .story {
-    flex-wrap: wrap;
-  }
-
-  .e1 {
-    height: auto;
-  }
 }
 
 /* Center the story section inside the root container */

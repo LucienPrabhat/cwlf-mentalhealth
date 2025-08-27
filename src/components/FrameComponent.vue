@@ -277,6 +277,16 @@ const handleClickShaonianjia = () => {
   font-size: var(--font-size-36);
   color: var(--color-cadetblue-200);
   font-family: var(--font-gensenrounded2-tw);
+  max-width: 100%;
+}
+
+.frameWrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 401px) {
