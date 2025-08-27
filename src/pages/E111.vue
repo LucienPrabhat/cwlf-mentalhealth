@@ -4,24 +4,10 @@
       <div :class="$style.frame2">
         <transition :name="transitionName" mode="out-in">
           <div :key="activeCardLKey" :class="$style.narrative">
-            <img :class="$style.eventIcon" loading="lazy" alt="" :src="`/${activeCardL.image}`" />
-            <div :class="$style.xiaoYanEvent">
-              <div :class="$style.xuanNarrative">
-                <div :class="$style.div">
-                  <p :class="$style.p"><strong>{{ activeCardL.title }}</strong></p>
-                  <p :class="$style.p">{{ activeCardL.content }}</p>
-                </div>
-              </div>
-              <div :class="$style.segmentContainer" @click="onClickButton">
-                <div :class="$style.xuanButtonArea">
-                  <button :class="$style.xuanButtonDetails" />
-                </div>
-                <div :class="$style.wrapper">
-                  <div :class="$style.div1">{{ activeCardL.btnText }}</div>
-                </div>
-                <img :class="$style.xuanEventEnd" loading="lazy" alt="" src="/frame-157.svg" />
-              </div>
-            </div>
+            <picture @click="onClickButton">
+              <source :srcset="`${activeCardL.cardBorderMobile}`" media="(max-width: 1000px)" />
+              <img :class="$style.cardBorder" loading="lazy" alt="story card" :src="`${activeCardL.cardBorder}`" />
+            </picture>
           </div>
         </transition>
       </div>
@@ -29,24 +15,10 @@
       <div :class="$style.frame2">
         <transition :name="transitionName" mode="out-in">
           <div :key="activeCardKey" :class="$style.narrative">
-            <img :class="$style.eventIcon" loading="lazy" alt="" :src="`/${activeCard.image}`" />
-            <div :class="$style.xiaoYanEvent">
-              <div :class="$style.xuanNarrative">
-                <div :class="$style.div">
-                  <p :class="$style.p"><strong>{{ activeCard.title }}</strong></p>
-                  <p :class="$style.p">{{ activeCard.content }}</p>
-                </div>
-              </div>
-              <div :class="$style.segmentContainer" @click="onClickButton">
-                <div :class="$style.xuanButtonArea">
-                  <button :class="$style.xuanButtonDetails" />
-                </div>
-                <div :class="$style.wrapper">
-                  <div :class="$style.div1">{{ activeCard.btnText }}</div>
-                </div>
-                <img :class="$style.xuanEventEnd" loading="lazy" alt="" src="/frame-157.svg" />
-              </div>
-            </div>
+            <picture @click="onClickButton">
+              <source :srcset="`${activeCard.cardBorderMobile}`" media="(max-width: 1000px)" />
+              <img :class="$style.cardBorder" loading="lazy" alt="story card" :src="`${activeCard.cardBorder}`" />
+            </picture>
           </div>
         </transition>
       </div>
@@ -54,24 +26,10 @@
       <div :class="$style.frame2">
         <transition :name="transitionName" mode="out-in">
           <div :key="activeCardRKey" :class="$style.narrative">
-            <img :class="$style.eventIcon" loading="lazy" alt="" :src="`/${activeCardR.image}`" />
-            <div :class="$style.xiaoYanEvent">
-              <div :class="$style.xuanNarrative">
-                <div :class="$style.div">
-                  <p :class="$style.p"><strong>{{ activeCardR.title }}</strong></p>
-                  <p :class="$style.p">{{ activeCardR.content }}</p>
-                </div>
-              </div>
-              <div :class="$style.segmentContainer" @click="onClickButton">
-                <div :class="$style.xuanButtonArea">
-                  <button :class="$style.xuanButtonDetails" />
-                </div>
-                <div :class="$style.wrapper">
-                  <div :class="$style.div1">{{ activeCardR.btnText }}</div>
-                </div>
-                <img :class="$style.xuanEventEnd" loading="lazy" alt="" src="/frame-157.svg" />
-              </div>
-            </div>
+            <picture @click="onClickButton">
+              <source :srcset="`${activeCardR.cardBorderMobile}`" media="(max-width: 1000px)" />
+              <img :class="$style.cardBorder" loading="lazy" alt="story card" :src="`${activeCardR.cardBorder}`" />
+            </picture>
           </div>
         </transition>
       </div>
@@ -320,6 +278,12 @@ function onClickButton() {
   object-fit: cover;
 }
 
+.cardBorder {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .xiaoYanEvent {
   width: 357px;
   display: flex;
@@ -338,9 +302,6 @@ function onClickButton() {
   gap: 13px;
   max-width: 100%;
   z-index: 1;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 52px;
-  background-color: var(--color-white);
 }
 
 .frame2 {
