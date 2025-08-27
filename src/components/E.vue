@@ -505,7 +505,8 @@ const handleCustomDonation = async () => {
 }
 
 .planSpecification {
-  width: 418px;
+  width: 100%;
+  max-width: 418px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -616,6 +617,7 @@ const handleCustomDonation = async () => {
 
 .planLayout {
   width: 100%;
+  max-width: 418px;
   display: flex;
   flex-direction: column;
   align-items: center;
