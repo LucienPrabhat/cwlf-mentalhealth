@@ -200,7 +200,7 @@ const handleClickErtongchuangshang = () => {
 }
 
 /* Responsive: stack .frameGroup and .frameContainer on smaller screens */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 800px) {
   .frameParent {
     flex-direction: column;
     gap: 28px;

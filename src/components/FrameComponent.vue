@@ -281,7 +281,7 @@ const handleClickShaonianjia = () => {
 }
 
 /* Responsive: stack the text block and image block on smaller screens */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 800px) {
   .frameParent {
     flex-direction: column;
     gap: 28px;
