@@ -33,49 +33,17 @@
                   </div>
                   <!-- 1000元單次捐款卡片 -->
                   <div :class="[$style.offerParameters, $style.clickableCard]" @click="handleDonation(1000, 'A')">
-                    <div :class="$style.frameGroup">
-                      <div :class="$style.parent">
-                        <div :class="$style.div">
-                          <span :class="$style.txt">
-                            <p :class="$style.p">資助孩子一次心理諮商</p>
-                            <p :class="$style.p">費</p>
-                          </span>
-                        </div>
-                        <div :class="$style.div1">
-                          <span :class="$style.txt1">
-                            <span>1000元</span>
-                            <span :class="$style.span"></span>
-                          </span>
-                        </div>
-                        <div :class="$style.plainMe">
-                          回饋品｜年刊、鬧卡
-                        </div>
-                      </div>
-                      <img :class="$style.frameInner" loading="lazy" alt="" src="/frame-110.svg" />
-                    </div>
+                    <picture>
+                      <source srcset="/donateBtn/1000-m.png" media="(max-width: 1000px)" />
+                      <img alt="1000元捐款" src="/donateBtn/1000.png" style="width:100%;height:auto;display:block;" />
+                    </picture>
                   </div>
                   <!-- 3000元單次捐款卡片 -->
                   <div :class="[$style.offerParameters, $style.clickableCard]" @click="handleDonation(3000, 'A')">
-                    <div :class="$style.frameGroup">
-                      <div :class="$style.parent">
-                        <div :class="$style.div">
-                          <span :class="$style.txt">
-                            <p :class="$style.p">支持社工長期訪視陪伴，</p>
-                            <p :class="$style.p">多接住一位受創兒少</p>
-                          </span>
-                        </div>
-                        <div :class="$style.div1">
-                          <span :class="$style.txt1">
-                            <span>3000元</span>
-                            <span :class="$style.span"></span>
-                          </span>
-                        </div>
-                        <div :class="$style.plainMe">
-                          回饋品｜年刊、plain-me水桶包
-                        </div>
-                      </div>
-                      <img :class="$style.frameInner" loading="lazy" alt="" src="/frame-114.svg" />
-                    </div>
+                    <picture>
+                      <source srcset="/donateBtn/3000-m.png" media="(max-width: 1000px)" />
+                      <img alt="3000元捐款" src="/donateBtn/3000.png" style="width:100%;height:auto;display:block;" />
+                    </picture>
                   </div>
                 </section>
                 <section :class="$style.planLayout">
@@ -88,36 +56,18 @@
                     </div>
                   </div>
                   <!-- 600元定期捐款卡片 -->
-                  <div :class="[$style.childParameter, $style.clickableCard]" @click="handleDonation(600, 'B')">
-                    <div :class="$style.offerFeatures">
-                      <div :class="$style.counselorProvision">
-                        <div :class="$style.div2">
-                          <span>
-                            <span>600元</span>
-                            <span :class="$style.span"></span>
-                          </span>
-                        </div>
-                        <h3 :class="$style.h3">支持兒少心理健康與陪伴服務</h3>
-                        <div :class="$style.div3">回饋品｜年刊、鬧卡</div>
-                      </div>
-                      <img :class="$style.frameInner" loading="lazy" alt="" src="/frame-110.svg" />
-                    </div>
+                  <div :class="[$style.offerParameters, $style.clickableCard]" @click="handleDonation(600, 'B')">
+                    <picture>
+                      <source srcset="/donateBtn/600-m.png" media="(max-width: 1000px)" />
+                      <img alt="600元定期捐款" src="/donateBtn/600.png" style="width:100%;height:auto;display:block;" />
+                    </picture>
                   </div>
                   <!-- 1500元定期捐款卡片 -->
-                  <div :class="[$style.childParameter, $style.clickableCard]" @click="handleDonation(1500, 'B')">
-                    <div :class="$style.offerFeatures">
-                      <div :class="$style.counselorProvision">
-                        <div :class="$style.div2">
-                          <span>
-                            <span>1500元</span>
-                            <span :class="$style.span"></span>
-                          </span>
-                        </div>
-                        <h3 :class="$style.h3">支持兒少心理健康與陪伴服務</h3>
-                        <div :class="$style.div3">回饋品｜年刊、療癒香氛蠟燭</div>
-                      </div>
-                      <img :class="$style.frameInner" loading="lazy" alt="" src="/frame-114.svg" />
-                    </div>
+                  <div :class="[$style.offerParameters, $style.clickableCard]" @click="handleDonation(1500, 'B')">
+                    <picture>
+                      <source srcset="/donateBtn/1500-m.png" media="(max-width: 1000px)" />
+                      <img alt="1500元定期捐款" src="/donateBtn/1500.png" style="width:100%;height:auto;display:block;" />
+                    </picture>
                   </div>
                 </section>
               </div>
@@ -212,7 +162,6 @@
 </template>
 <script setup>
 import { ref, computed } from 'vue'
-import OfferParameters from "./OfferParameters.vue"
 import E111 from "../pages/E111.vue"
 import { submitDonation, validateDonationAmount } from '../services/donationService'
 import { API_CONFIG, ERROR_MESSAGES, SUCCESS_MESSAGES } from '../config/api.js'
@@ -568,17 +517,10 @@ const handleCustomDonation = async () => {
 
 .offerParameters {
   align-self: stretch;
-  height: 157px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: var(--br-18);
-  background-color: var(--color-gray);
-  border: 1px solid var(--color-cadetblue-100);
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-26) var(--padding-22);
 }
 
 .planSpecification {
@@ -695,23 +637,6 @@ const handleCustomDonation = async () => {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
-
-.childParameter {
-  align-self: stretch;
-  height: 157px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: var(--br-18);
-  background-color: var(--color-gray);
-  border: 1px solid var(--color-cadetblue-100);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-  font-size: var(--font-size-24);
-  color: var(--color-cadetblue-300);
 }
 
 .planLayout {
@@ -1361,8 +1286,7 @@ const handleCustomDonation = async () => {
     width: 80px;
   }
 
-  .offerParameters,
-  .childParameter {
+  .offerParameters {
     width: 100%;
     height: auto;
     padding: 20px;
@@ -1532,8 +1456,7 @@ const handleCustomDonation = async () => {
     width: 60px;
   }
 
-  .offerParameters,
-  .childParameter {
+  .offerParameters {
     padding: 15px;
   }
 
