@@ -7,7 +7,6 @@
       </picture>
     </div>
     <section :class="$style.a">
-      <div :class="$style.aChild" />
       <div :class="$style.frameParent">
         <Frame />
         <GroupComponent />
@@ -47,15 +46,6 @@ import FrameComponent111 from "../components/FrameComponent3.vue"
   width: 101%;
   height: auto;
   display: block;
-}
-
-.aChild {
-  align-self: stretch;
-  width: 1440px;
-  position: relative;
-  background: linear-gradient(180deg, var(--color-cadetblue-300), #5e6e7a);
-  display: none;
-  max-width: 100%;
 }
 
 .icon {
