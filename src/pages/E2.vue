@@ -166,7 +166,7 @@
           <div :class="$style.rectangleGroup" @click="goBack">
             <div :class="$style.rectangleDiv" />
             <div :class="$style.iconWrapper">
-              <img :class="$style.icon3" loading="lazy" alt="" src="/frame-27@3x.png" />
+              <img :class="$style.icon3" loading="lazy" alt="" src="/storyMobile/return.png" />
             </div>
             <h2 :class="$style.h2">回上頁</h2>
           </div>
@@ -392,10 +392,6 @@ function goBack() {
   justify-content: flex-start;
   padding: 35px;
   box-sizing: border-box;
-  background-image: url("/frame-27@3x.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
   z-index: 2;
   margin-top: 400px;
 }

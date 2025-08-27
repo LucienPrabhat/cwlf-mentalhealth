@@ -128,7 +128,7 @@
           <button :class="$style.wrapper" @click="goBack">
             <div :class="$style.wrapperChild" />
             <div :class="$style.navigation">
-              <img :class="$style.icon3" alt="" src="/frame-27@3x.png" />
+              <img :class="$style.icon3" alt="" src="/storyMobile/return.png" />
             </div>
             <div :class="$style.div1">回上頁</div>
           </button>
@@ -447,10 +447,6 @@ function goBack() {
   justify-content: flex-start;
   padding: 35px;
   box-sizing: border-box;
-  background-image: url("/frame-27@3x.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
   z-index: 2;
   position: relative;
   margin-top: 400px;

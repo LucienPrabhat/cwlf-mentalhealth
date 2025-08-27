@@ -240,7 +240,7 @@
         </div>
       </main>
       <div :class="$style.wrapper4">
-        <img :class="$style.icon1" loading="lazy" alt="" src="/frame-27@3x.png" />
+        <img :class="$style.icon1" loading="lazy" alt="" src="/storyMobile/return.png" />
       </div>
       <div :class="$style.actionArea">
         <h3 :class="$style.h3">

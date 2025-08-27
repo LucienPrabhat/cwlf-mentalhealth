@@ -92,6 +92,8 @@ const cards = [
     btnText: "阿馨後來呢？",
     routeName: "E2",
     key: "card-e2",
+    cardBorder: "/storyCard/xin.png",
+    cardBorderMobile: "/storyCard/xin-m.png",
   },
   {
     image: "04@2x.png",
@@ -100,6 +102,8 @@ const cards = [
     btnText: "小雨後來呢？",
     routeName: "E3",
     key: "card-e3",
+    cardBorder: "/storyCard/yu.png",
+    cardBorderMobile: "/storyCard/yu-m.png",
   },
   {
     image: "frame-149@2x.png",
@@ -108,6 +112,8 @@ const cards = [
     btnText: "小言後來呢？",
     routeName: "E4",
     key: "card-e4",
+    cardBorder: "/storyCard/yan.png",
+    cardBorderMobile: "/storyCard/yan-m.png",
   },
   {
     image: "frame-170@2x.png",
@@ -116,6 +122,8 @@ const cards = [
     btnText: "小波後來呢",
     routeName: "E1",
     key: "card-e1",
+    cardBorder: "/storyCard/po.png",
+    cardBorderMobile: "/storyCard/po-m.png",
   },
 ];
 

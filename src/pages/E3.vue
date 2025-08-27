@@ -127,7 +127,7 @@
       </button>
     </main>
     <div :class="$style.parent">
-      <img :class="$style.icon6" alt="" src="/frame-27@3x.png" />
+      <img :class="$style.icon6" alt="" src="/storyMobile/return.png" />
       <h3 :class="$style.h3">
         <p :class="$style.p">立即</p>
         <p :class="$style.p">行動</p>
@@ -488,10 +488,6 @@ function goBack() {
   justify-content: flex-start;
   padding: 35px;
   box-sizing: border-box;
-  background-image: url("/frame-27@3x.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
   z-index: 2;
   margin-top: 400px;
 }
