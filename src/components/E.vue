@@ -48,11 +48,11 @@
                 </section>
                 <section :class="$style.planLayout">
                   <div :class="$style.blockColumn">
-                    <div :class="$style.paymentProcess">
-                      <h2 :class="$style.h21">定期捐款</h2>
-                    </div>
                     <div :class="$style.planLayoutBlock">
                       <img :class="$style.icon1" loading="lazy" alt="" src="/--0000@2x.png" />
+                    </div>
+                    <div :class="$style.paymentProcess">
+                      <h2 :class="$style.h21">定期捐款</h2>
                     </div>
                   </div>
                   <!-- 600元定期捐款卡片 -->
@@ -75,28 +75,13 @@
               <section :class="$style.blockRowWrapper">
                 <div :class="$style.blockRow">
                   <div :class="$style.internalOfferWrapper">
-                    <div :class="$style.internalOffer">
-                      <div :class="$style.offeringsElement">
-                        <img :class="$style.icon2" alt="" src="/--0002@2x.png" />
-                      </div>
-                      <div :class="$style.paymentDonation">
-                        <div :class="$style.div4">
-                          <span>自由捐款</span>
-                          <input v-model="customAmount" :class="$style.customAmountInput" type="number"
-                            placeholder="請輸入金額" :min="100" @keyup.enter="handleCustomDonation"
-                            @input="errorMessage = ''" />
-                          <span>元</span>
-                        </div>
-                        <div :class="$style.div3">回饋品｜年刊</div>
-                        <div v-if="errorMessage" :class="$style.errorMessage">
-                          {{ errorMessage }}
-                        </div>
-                        <button :class="$style.donateButton" @click="handleCustomDonation"
-                          :disabled="!isValidCustomAmount || isLoading">
-                          {{ isLoading ? '處理中...' : '立即捐款' }}
-                        </button>
-                      </div>
-                      <img :class="$style.frameInner" alt="" src="/gift-promotion.svg" />
+                    <div :class="$style.freeDonateCard" @click="handleCustomDonation">
+                      <picture>
+                        <source srcset="/donateBtn/free-m.png" media="(max-width: 1000px)" />
+                        <img :class="$style.freeDonateImage" alt="自由捐款" src="/donateBtn/free.png" />
+                      </picture>
+                      <input v-model="customAmount" :class="$style.freeInput" type="number" placeholder="0" :min="100"
+                        @keyup.enter="handleCustomDonation" @click.stop @input="errorMessage = ''" />
                     </div>
                   </div>
                 </div>
@@ -379,7 +364,7 @@ const handleCustomDonation = async () => {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: var(--padding-10);
   box-sizing: border-box;
   z-index: 0;
@@ -397,11 +382,7 @@ const handleCustomDonation = async () => {
 }
 
 .paymentSign {
-  width: 157px;
   margin: 0 !important;
-  position: absolute;
-  top: 222.1px;
-  left: 3px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -538,9 +519,6 @@ const handleCustomDonation = async () => {
 
 .paymentProcess {
   margin: 0 !important;
-  position: absolute;
-  top: 267px;
-  left: calc(50% - 78.5px);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -557,11 +535,8 @@ const handleCustomDonation = async () => {
 }
 
 .planLayoutBlock {
-  width: 213px;
+  width: 100%;
   margin: 0 !important;
-  position: absolute;
-  top: -10px;
-  left: calc(50% - 106.5px);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -640,7 +615,7 @@ const handleCustomDonation = async () => {
 }
 
 .planLayout {
-  width: 429px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -711,12 +686,50 @@ const handleCustomDonation = async () => {
   justify-content: center;
 }
 
+/* Free donate image card with centered input overlay */
+.freeDonateCard {
+  position: relative;
+  width: 100%;
+  max-width: 535px;
+}
+
+.freeDonateImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.freeInput {
+  position: absolute;
+  top: 35%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: var(--font-size-24);
+  color: var(--color-cadetblue-300);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+@media screen and (max-width: 768px) {
+  .freeInput {
+    width: 70%;
+    font-size: var(--font-size-18);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .freeInput {
+    width: 75%;
+    font-size: var(--font-size-16);
+  }
+}
+
 .blockRow {
   align-self: stretch;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 69.5px;
-  background-color: var(--color-gray);
-  border: 1px solid var(--color-cadetblue-100);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1146,6 +1159,11 @@ const handleCustomDonation = async () => {
     padding: 0px 100px;
   }
 
+  .offersParent {
+    padding: 100px 20px;
+    gap: var(--gap-50);
+  }
+
   .insidePlanWrapper {
     width: 100%;
     padding: 0px 40px;
@@ -1219,6 +1237,12 @@ const handleCustomDonation = async () => {
     width: 100%;
     text-align: center;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .freeInput {
+    left: 51%;
   }
 }
 
