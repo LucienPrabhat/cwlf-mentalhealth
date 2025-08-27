@@ -6,6 +6,7 @@ export const API_CONFIG = {
   // 捐款相關API端點
   ENDPOINTS: {
     DONATE_VISA: '/donate/usevisa',
+    QUICK_DONATE: '/donate/quick_donate'
   },
   
   // 捐款類型

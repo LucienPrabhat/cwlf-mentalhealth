@@ -250,8 +250,7 @@ const handleDonation = async (amount, kind) => {
 
   } catch (error) {
     console.error('捐款失敗:', error)
-    errorMessage.value = ERROR_MESSAGES.UNKNOWN_ERROR
-    alert(ERROR_MESSAGES.UNKNOWN_ERROR)
+    window.location.href = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.QUICK_DONATE}`
   } finally {
     isLoading.value = false
   }
@@ -280,7 +279,7 @@ const handleCustomDonation = async () => {
   } catch (error) {
     console.error('自由捐款失敗:', error)
     errorMessage.value = ERROR_MESSAGES.UNKNOWN_ERROR
-    alert(ERROR_MESSAGES.UNKNOWN_ERROR)
+    window.location.href = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.QUICK_DONATE}`
   } finally {
     isLoading.value = false
   }
