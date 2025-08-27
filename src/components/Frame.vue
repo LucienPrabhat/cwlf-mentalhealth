@@ -267,40 +267,189 @@ import Component1 from "./Component1.vue"
   font-family: var(--font-gensenrounded2-tw);
 }
 
-@media screen and (max-width: 1283px) {
+/* 響應式設計 */
+@media screen and (max-width: 1200px) {
   .frame {
-    width: 100%;
-    box-sizing: border-box;
-    padding-left: var(--padding-20);
-    padding-right: var(--padding-20);
+    padding: 100px var(--padding-20);
   }
-}
 
-@media screen and (max-width: 401px) {
-  .frame {
-    width: 100%;
+  .parent {
+    margin: 80px;
   }
 
   .h2 {
-    font-size: var(--font-size-19);
-    line-height: 31px;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    font-size: var(--font-size-30);
   }
 
   .h21 {
-    font-size: var(--font-size-19);
-    line-height: 31px;
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    font-size: var(--font-size-30);
   }
 
   .group {
-    padding-left: var(--padding-20);
-    padding-right: var(--padding-20);
-    box-sizing: border-box;
+    gap: 15px;
   }
 
+  .rectangleParent {
+    min-width: 300px;
+    width: clamp(300px, 25vw, 450px);
+    min-height: 430px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .frame {
-    padding-top: 81px;
-    padding-bottom: 81px;
-    box-sizing: border-box;
+    padding: 80px var(--padding-20);
+  }
+
+  .parent {
+    margin: 60px 40px;
+  }
+
+  .h2 {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    font-size: var(--font-size-26);
+    line-height: 140%;
+  }
+
+  .h21 {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    font-size: var(--font-size-26);
+    line-height: 140%;
+  }
+
+  .group {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .icon,
+  .icon1 {
+    width: 30%;
+    max-width: 200px;
+  }
+
+  .rectangleParent {
+    min-width: 280px;
+    width: clamp(280px, 80vw, 400px);
+    min-height: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .frame {
+    padding: 60px var(--padding-20);
+  }
+
+  .parent {
+    margin: 40px 20px;
+  }
+
+  .h2 {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    font-size: var(--font-size-22);
+    line-height: 130%;
+  }
+
+  .h21 {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    font-size: var(--font-size-22);
+    line-height: 130%;
+  }
+
+  .group {
+    gap: 15px;
+  }
+
+  .icon,
+  .icon1 {
+    width: 25%;
+    max-width: 150px;
+  }
+
+  .rectangleParent {
+    min-width: 250px;
+    width: clamp(250px, 85vw, 350px);
+    min-height: 360px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .frame {
+    padding: 40px var(--padding-20);
+  }
+
+  .parent {
+    margin: 30px 15px;
+  }
+
+  .h2 {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    font-size: var(--font-size-19);
+    line-height: 125%;
+  }
+
+  .h21 {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    font-size: var(--font-size-19);
+    line-height: 125%;
+  }
+
+  .group {
+    gap: 10px;
+  }
+
+  .icon,
+  .icon1 {
+    width: 20%;
+    max-width: 120px;
+  }
+
+  .rectangleParent {
+    min-width: 220px;
+    width: clamp(220px, 90vw, 300px);
+    min-height: 320px;
+  }
+}
+
+/* 橫向螢幕適配 */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .frame {
+    padding: 60px var(--padding-20);
+  }
+
+  .parent {
+    margin: 40px;
+  }
+
+  .h2 {
+    font-size: var(--font-size-24);
+  }
+
+  .h21 {
+    font-size: var(--font-size-24);
+  }
+
+  .group {
+    flex-direction: row;
+    gap: 15px;
   }
 }
 </style>
