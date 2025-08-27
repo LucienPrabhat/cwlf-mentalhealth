@@ -861,6 +861,7 @@ const handleCustomDonation = async () => {
   position: relative;
   max-height: 100%;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .h31 {
@@ -913,6 +914,7 @@ const handleCustomDonation = async () => {
   position: relative;
   max-height: 100%;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .group {
@@ -1001,8 +1003,8 @@ const handleCustomDonation = async () => {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 41px;
   max-width: 100%;
   color: black;
@@ -1265,6 +1267,8 @@ const handleCustomDonation = async () => {
 
   .projectPublications {
     width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 
   .releaseData,
@@ -1278,7 +1282,9 @@ const handleCustomDonation = async () => {
 
   .icon3,
   .dscf5791Icon {
-    width: 200px;
+    width: 80%;
+    border-radius: 66.5px;
+    overflow: hidden;
   }
 
   .productDesign,
@@ -1444,6 +1450,8 @@ const handleCustomDonation = async () => {
 
   .projectPublications {
     gap: 30px;
+    align-items: center;
+    justify-content: center;
   }
 
   .releaseData,
@@ -1455,7 +1463,7 @@ const handleCustomDonation = async () => {
 
   .icon3,
   .dscf5791Icon {
-    width: 150px;
+    width: 80%;
     border-radius: 66.5px;
     overflow: hidden;
   }
@@ -1571,6 +1579,8 @@ const handleCustomDonation = async () => {
 
   .projectPublications {
     gap: 20px;
+    align-items: center;
+    justify-content: center;
   }
 
   .releaseData,
@@ -1582,7 +1592,7 @@ const handleCustomDonation = async () => {
 
   .icon3,
   .dscf5791Icon {
-    width: 120px;
+    width: 80%;
     border-radius: 66.5px;
     overflow: hidden;
   }
@@ -1630,7 +1640,7 @@ const handleCustomDonation = async () => {
 
   .icon3,
   .dscf5791Icon {
-    width: 100%;
+    width: 80%;
     border-radius: 66.5px;
     overflow: hidden;
   }
