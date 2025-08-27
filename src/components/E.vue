@@ -299,7 +299,8 @@ const handleCustomDonation = async () => {
 }
 
 .layer252Icon {
-  width: 434px;
+  width: 100%;
+  max-width: 434px;
   position: relative;
   max-height: 100%;
   object-fit: contain;
@@ -317,7 +318,8 @@ const handleCustomDonation = async () => {
 }
 
 .frameParent {
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -326,7 +328,7 @@ const handleCustomDonation = async () => {
   box-sizing: border-box;
   position: relative;
   flex-shrink: 0;
-  max-width: 100%;
+  margin: 0 auto;
   z-index: 2;
   background-color: #C0EB77;
 }
@@ -728,12 +730,14 @@ const handleCustomDonation = async () => {
 }
 
 .layoutBlock {
-  width: 911px;
+  width: 100%;
+  max-width: 911px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 0px;
+  margin: 0 auto;
 }
 
 .icon2 {
@@ -797,8 +801,10 @@ const handleCustomDonation = async () => {
 }
 
 .blockRowWrapper {
-  width: 535px;
-  height: 338px;
+  width: 100%;
+  max-width: 535px;
+  height: auto;
+  min-height: 338px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -809,10 +815,12 @@ const handleCustomDonation = async () => {
   font-size: var(--font-size-24);
   color: var(--color-cadetblue-300);
   font-family: var(--font-gensenrounded2-tw);
+  margin: 0 auto;
 }
 
 .frame {
-  width: 1124px;
+  width: 100%;
+  max-width: 1124px;
   margin: 0 !important;
   position: relative;
   display: flex;
@@ -895,6 +903,7 @@ const handleCustomDonation = async () => {
   align-items: center;
   justify-content: center;
   gap: 62px;
+  max-width: 100%;
   text-align: left;
   font-size: var(--font-size-24);
   color: var(--color-dimgray);
@@ -1004,17 +1013,19 @@ const handleCustomDonation = async () => {
 }
 
 .outerView {
-  width: 705px;
+  width: 100%;
+  max-width: 705px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  max-width: 100%;
+  margin: 0 auto;
 }
 
 .detailsOuter {
   align-self: stretch;
-  height: 1326px;
+  height: auto;
+  min-height: 1326px;
   background-color: var(--color-whitesmoke);
   display: flex;
   flex-direction: row;
@@ -1022,6 +1033,7 @@ const handleCustomDonation = async () => {
   justify-content: center;
   padding: var(--padding-28) 203px;
   box-sizing: border-box;
+  width: 100%;
   max-width: 100%;
   position: relative;
   color: var(--color-dimgray);
@@ -1037,7 +1049,8 @@ const handleCustomDonation = async () => {
 }
 
 .insidePlanWrapper {
-  width: 1412px;
+  width: 100%;
+  max-width: 1412px;
   flex: 1;
   display: flex;
   flex-direction: row;
@@ -1045,7 +1058,7 @@ const handleCustomDonation = async () => {
   justify-content: center;
   padding: 0px var(--padding-20);
   box-sizing: border-box;
-  max-width: 100%;
+  margin: 0 auto;
 }
 
 .externalBottom {
@@ -1093,7 +1106,8 @@ const handleCustomDonation = async () => {
   position: relative;
   gap: var(--gap-100);
   flex-shrink: 0;
-  max-width: 102%;
+  width: 100%;
+  max-width: 100%;
   background: linear-gradient(180deg, #c0eb77, #f0ffc3 50%);
 }
 
@@ -1190,28 +1204,484 @@ const handleCustomDonation = async () => {
 }
 
 /* 響應式設計 */
+@media screen and (max-width: 1200px) {
+  .frameParent {
+    width: 100%;
+    padding: 0px 100px;
+  }
+
+  .insidePlanWrapper {
+    width: 100%;
+    padding: 0px 40px;
+  }
+
+  .insidePlan {
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .frame {
+    width: 100%;
+  }
+
+  .vectorParent {
+    width: 100%;
+  }
+
+  .layoutBlock {
+    width: 100%;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .planSpecification,
+  .planLayout {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .blockRowWrapper {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .detailsOuter {
+    padding: var(--padding-28) 60px;
+  }
+
+  .outerView {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .projectPublications {
+    width: 100%;
+  }
+
+  .releaseData,
+  .releaseData1,
+  .releaseData2,
+  .releaseData3 {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .icon3,
+  .dscf5791Icon {
+    width: 200px;
+  }
+
+  .productDesign,
+  .group,
+  .container,
+  .plainMeParent {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .frameParent {
+    padding: 0px 20px;
+  }
+
+  .offersParent {
+    padding: 100px 20px;
+    gap: var(--gap-50);
+  }
+
+  .insidePlanWrapper {
+    padding: 0px 20px;
+  }
+
+  .h2,
+  .h21,
+  .h23 {
+    font-size: var(--font-size-28);
+  }
+
+  .h3,
+  .h31 {
+    font-size: var(--font-size-18);
+  }
+
+  .p {
+    font-size: var(--font-size-16);
+  }
+
+  .div6 {
+    font-size: var(--font-size-16);
+  }
+
+  .layoutBlock {
+    gap: 30px;
+  }
+
+  .planSpecification,
+  .planLayout {
+    gap: 20px;
+  }
+
+  .singlePledge,
+  .blockColumn {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .donateScheme,
+  .paymentSign,
+  .paymentProcess,
+  .planLayoutBlock {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .icon,
+  .icon1 {
+    width: 80px;
+  }
+
+  .offerParameters,
+  .childParameter {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .frameGroup,
+  .offerFeatures {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .parent,
+  .counselorProvision {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .div,
+  .div1,
+  .div2 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .frameInner {
+    width: 60px;
+  }
+
+  .blockRowWrapper {
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .internalOffer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .offeringsElement {
+    justify-content: center;
+  }
+
+  .icon2 {
+    width: 50px;
+  }
+
+  .paymentDonation {
+    width: 100%;
+    align-items: center;
+  }
+
+  .div4 {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
   .customAmountInput {
-    width: 100px;
+    width: 120px;
     font-size: var(--font-size-16);
   }
 
   .donateButton {
-    padding: 8px 16px;
-    font-size: var(--font-size-14);
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 20px;
+    font-size: var(--font-size-16);
+  }
+
+  .detailsOuter {
+    padding: var(--padding-28) 20px;
+    height: auto;
+  }
+
+  .h23 {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .projectPublications {
+    gap: 30px;
+  }
+
+  .releaseData,
+  .releaseData1,
+  .releaseData2,
+  .releaseData3 {
+    gap: 20px;
+  }
+
+  .icon3,
+  .dscf5791Icon {
+    width: 150px;
+  }
+
+  .productDesign,
+  .group,
+  .container,
+  .plainMeParent {
+    padding: 15px 0;
+    gap: var(--gap-15);
+  }
+
+  .div6 {
+    line-height: 160%;
   }
 }
 
-@media screen and (max-width: 401px) {
+@media screen and (max-width: 480px) {
+  .frameParent {
+    padding: 0px 10px;
+  }
+
+  .offersParent {
+    padding: 60px 10px;
+  }
+
+  .insidePlanWrapper {
+    padding: 0px 10px;
+  }
+
+  .h2,
+  .h21,
+  .h23 {
+    font-size: var(--font-size-24);
+  }
+
+  .h3,
+  .h31 {
+    font-size: var(--font-size-16);
+  }
+
+  .p {
+    font-size: var(--font-size-14);
+  }
+
+  .div6 {
+    font-size: var(--font-size-14);
+  }
+
+  .layoutBlock {
+    gap: 20px;
+  }
+
+  .planSpecification,
+  .planLayout {
+    gap: 15px;
+  }
+
+  .singlePledge,
+  .blockColumn {
+    padding: 15px;
+  }
+
+  .icon,
+  .icon1 {
+    width: 60px;
+  }
+
+  .offerParameters,
+  .childParameter {
+    padding: 15px;
+  }
+
+  .frameGroup,
+  .offerFeatures {
+    gap: 10px;
+  }
+
+  .frameInner {
+    width: 50px;
+  }
+
+  .blockRowWrapper {
+    padding: 20px 15px;
+  }
+
+  .internalOffer {
+    gap: 15px;
+  }
+
+  .icon2 {
+    width: 40px;
+  }
+
+  .div4 {
+    gap: 8px;
+  }
+
+  .customAmountInput {
+    width: 100px;
+    font-size: var(--font-size-14);
+    padding: 6px 8px;
+  }
+
+  .donateButton {
+    padding: 10px 16px;
+    font-size: var(--font-size-14);
+  }
+
+  .detailsOuter {
+    padding: var(--padding-28) 10px;
+  }
+
+  .projectPublications {
+    gap: 20px;
+  }
+
+  .releaseData,
+  .releaseData1,
+  .releaseData2,
+  .releaseData3 {
+    gap: 15px;
+  }
+
+  .icon3,
+  .dscf5791Icon {
+    width: 120px;
+  }
+
+  .productDesign,
+  .group,
+  .container,
+  .plainMeParent {
+    padding: 10px 0;
+    gap: var(--gap-10);
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  .h2,
+  .h21,
+  .h23 {
+    font-size: var(--font-size-20);
+  }
+
+  .h3,
+  .h31 {
+    font-size: var(--font-size-14);
+  }
+
+  .p {
+    font-size: var(--font-size-12);
+  }
+
+  .div6 {
+    font-size: var(--font-size-12);
+  }
+
   .customAmountInput {
     width: 80px;
-    font-size: var(--font-size-14);
+    font-size: var(--font-size-12);
     margin: 0 4px;
   }
 
   .donateButton {
-    padding: 6px 12px;
+    padding: 8px 12px;
     font-size: var(--font-size-12);
+  }
+
+  .icon3,
+  .dscf5791Icon {
+    width: 100%;
+  }
+}
+
+/* 橫向螢幕適配 */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .offersParent {
+    padding: 60px 20px;
+  }
+
+  .detailsOuter {
+    padding: var(--padding-20) 20px;
+  }
+
+  .projectPublications {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .releaseData,
+  .releaseData1,
+  .releaseData2,
+  .releaseData3 {
+    width: calc(50% - 10px);
+    min-width: 250px;
+  }
+}
+
+/* 高解析度螢幕適配 */
+@media screen and (min-width: 1920px) {
+  .frameParent {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .insidePlanWrapper {
+    width: 100%;
+    max-width: 1400px;
+  }
+
+  .insidePlan {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .h2,
+  .h21,
+  .h23 {
+    font-size: var(--font-size-42);
+  }
+
+  .h3,
+  .h31 {
+    font-size: var(--font-size-24);
+  }
+
+  .p {
+    font-size: var(--font-size-22);
+  }
+
+  .div6 {
+    font-size: var(--font-size-22);
   }
 }
 </style>
