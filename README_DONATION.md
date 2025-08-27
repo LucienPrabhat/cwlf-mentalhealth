@@ -75,7 +75,7 @@ export const API_CONFIG = {
 | donate_kind | A/B | 捐款類別 (A:單次/B:定期) |
 | dvr_msg_source_title | mentalhealth | 本次捐款訊息來源標題 |
 | fix_donate_type | 1 | 鎖定捐款用途和金額 |
-| donate_project_code | 18 | 捐款專案代碼 |
+| donate_project_code | 81 | 捐款專案代碼 |
 | enable_offline_payment | 0 | 單次付款可使用非即時付款方式 |
 | dvr_msg_source | 03 | 訊息來源代碼 |
 | donate_check | 動態 | 安全檢查碼 |

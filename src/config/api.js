@@ -1,7 +1,8 @@
 // API配置文件
 export const API_CONFIG = {
   // API基礎URL
-  BASE_URL: import.meta.env.DEV ? '/api' : 'https://www.children.org.tw',
+  // BASE_URL: import.meta.env.DEV ? '/api' : 'https://www.children.org.tw',
+  BASE_URL: 'https://www.children.org.tw',
   
   // 捐款相關API端點
   ENDPOINTS: {
@@ -18,7 +19,7 @@ export const API_CONFIG = {
   // 固定參數
   FIXED_PARAMS: {
     DONATE_TYPE: '18',
-    DONATE_PROJECT_CODE: '18',
+    DONATE_PROJECT_CODE: '81',
     DONATE_OPTION: '',
     FIX_DONATE_TYPE: 1,
     ENABLE_OFFLINE_PAYMENT: 0,
