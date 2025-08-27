@@ -214,7 +214,7 @@ import { ref, computed } from 'vue'
 import OfferParameters from "./OfferParameters.vue"
 import E111 from "../pages/E111.vue"
 import { submitDonation, validateDonationAmount } from '../services/donationService'
-import { ERROR_MESSAGES, SUCCESS_MESSAGES } from '../config/api.js'
+import { API_CONFIG, ERROR_MESSAGES, SUCCESS_MESSAGES } from '../config/api.js'
 
 // 響應式數據
 const customAmount = ref('')
