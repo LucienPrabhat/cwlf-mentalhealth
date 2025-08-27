@@ -10,6 +10,43 @@ const generateDonateCheck = (params) => {
   return MD5(lowerCaseString).toString()
 }
 
+// 創建並提交表單
+const submitForm = (params, targetUrl) => {
+  return new Promise((resolve, reject) => {
+    try {
+      // 創建表單元素
+      const form = document.createElement('form')
+      form.method = 'POST'
+      form.action = targetUrl
+      form.target = '_blank' // 在新視窗中打開
+      form.style.display = 'none'
+
+      // 添加所有參數到表單
+      Object.keys(params).forEach(key => {
+        const input = document.createElement('input')
+        input.type = 'hidden'
+        input.name = key
+        input.value = params[key]
+        form.appendChild(input)
+      })
+
+      // 將表單添加到頁面並提交
+      document.body.appendChild(form)
+      form.submit()
+
+      // 清理表單
+      setTimeout(() => {
+        document.body.removeChild(form)
+      }, 1000)
+
+      // 返回成功狀態
+      resolve({ success: true, message: '表單已提交到新視窗' })
+    } catch (error) {
+      reject(error)
+    }
+  })
+}
+
 // 捐款API調用
 export const submitDonation = async (donationData) => {
   try {
@@ -38,29 +75,14 @@ export const submitDonation = async (donationData) => {
       })
     }
 
-    // 生產環境實際API調用
-    const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.DONATE_VISA}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams(params).toString(),
-    })
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
-    }
-
-    const result = await response.json()
+    // 使用表單提交到目標URL
+    const targetUrl = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.DONATE_VISA}`
+    console.log('params', params)
+    const result = await submitForm(params, targetUrl)
+    
     return result
   } catch (error) {
     console.error('捐款提交失敗:', error)
-    
-    // 如果是CORS錯誤，提供更詳細的錯誤訊息
-    if (error.message.includes('CORS') || error.message.includes('Access-Control-Allow-Origin')) {
-      throw new Error('API伺服器CORS設定問題，請聯繫管理員或使用代理伺服器')
-    }
-    
     throw error
   }
 }

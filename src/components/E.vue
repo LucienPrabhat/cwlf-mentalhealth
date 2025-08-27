@@ -244,13 +244,11 @@ const handleDonation = async (amount, kind) => {
       donate_kind: kind
     })
 
-    console.log('捐款成功:', result)
-    // 這裡可以添加成功提示或跳轉到支付頁面
-    alert(SUCCESS_MESSAGES.DONATION_SUCCESS(amount))
+    console.log('捐款表單已提交:', result)
 
   } catch (error) {
     console.error('捐款失敗:', error)
-    // window.location.href = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.QUICK_DONATE}`
+    errorMessage.value = ERROR_MESSAGES.UNKNOWN_ERROR
   } finally {
     isLoading.value = false
   }
@@ -272,14 +270,13 @@ const handleCustomDonation = async () => {
       custom_amount: amount
     })
 
-    console.log('自由捐款成功:', result)
-    alert(SUCCESS_MESSAGES.CUSTOM_DONATION_SUCCESS(amount))
+    console.log('自由捐款表單已提交:', result)
+    // 表單已在新視窗中打開，顯示成功訊息
     customAmount.value = '' // 清空輸入框
 
   } catch (error) {
     console.error('自由捐款失敗:', error)
     errorMessage.value = ERROR_MESSAGES.UNKNOWN_ERROR
-    // window.location.href = `${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.QUICK_DONATE}`
   } finally {
     isLoading.value = false
   }
