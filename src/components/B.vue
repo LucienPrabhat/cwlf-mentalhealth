@@ -84,14 +84,9 @@
 
   <div :class="$style.tmpFrameWrapper">
     <picture>
-      <source srcset="/tmpFrameImgs/scar-frame-m.png" media="(max-width: 600px)">
-      <img src="/tmpFrameImgs/scar-frame.png">
+      <source srcset="/tmpFrameImgs/scar-frame-m-tmp.png" media="(max-width: 600px)">
+      <img src="/tmpFrameImgs/scar-frame-tmp.png">
     </picture>
-
-    <div :class="$style.tmpFrameWrapperElements">
-      <!-- <img src="/tmpFrameImgs/scar-frame-video.png">
-      <img src="/tmpFrameImgs/scar-frame-btn.png"> -->
-    </div>
   </div>
 </template>
 <style module>
@@ -531,21 +526,6 @@
 }
 
 .tmpFrameWrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.tmpFrameWrapperElements {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 0 70px;
-}
-
-.tmpFrameWrapperElements img {
   width: 100%;
   height: auto;
   display: block;
