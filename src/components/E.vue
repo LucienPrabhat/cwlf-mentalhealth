@@ -1646,32 +1646,6 @@ const handleCustomDonation = async () => {
   }
 }
 
-/* 橫向螢幕適配 */
-@media screen and (max-height: 600px) and (orientation: landscape) {
-  .offersParent {
-    padding: 60px 20px;
-  }
-
-  .detailsOuter {
-    padding: var(--padding-20) 20px;
-  }
-
-  .projectPublications {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .releaseData,
-  .releaseData1,
-  .releaseData2,
-  .releaseData3 {
-    width: calc(50% - 10px);
-    min-width: 250px;
-  }
-}
-
 /* 高解析度螢幕適配 */
 @media screen and (min-width: 1920px) {
   .frameParent {

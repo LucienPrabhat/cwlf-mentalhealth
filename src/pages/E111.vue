@@ -258,6 +258,7 @@ function onClickButton() {
 .yanPanelIcon {
   width: 55px;
   max-height: 100%;
+  cursor: pointer;
 }
 
 .frameChild {
@@ -316,6 +317,11 @@ function onClickButton() {
   position: relative;
   gap: var(--gap-10);
   max-width: 100%;
+  overflow: hidden;
+  /* avoid content flash during transition */
+  will-change: transform;
+  /* hint for smoother transition */
+  cursor: pointer;
 }
 
 .segmentIcon {
