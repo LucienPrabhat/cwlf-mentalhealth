@@ -271,7 +271,7 @@ const handleCustomDonation = async () => {
     })
 
     console.log('自由捐款表單已提交:', result)
-    // 表單已在新視窗中打開，顯示成功訊息
+    // 表單已提交，頁面將跳轉到捐款系統
     customAmount.value = '' // 清空輸入框
 
   } catch (error) {

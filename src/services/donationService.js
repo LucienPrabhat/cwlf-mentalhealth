@@ -18,7 +18,6 @@ const submitForm = (params, targetUrl) => {
       const form = document.createElement('form')
       form.method = 'POST'
       form.action = targetUrl
-      form.target = '_blank' // 在新視窗中打開
       form.style.display = 'none'
 
       // 添加所有參數到表單
@@ -40,7 +39,7 @@ const submitForm = (params, targetUrl) => {
       }, 1000)
 
       // 返回成功狀態
-      resolve({ success: true, message: '表單已提交到新視窗' })
+      resolve({ success: true, message: '表單已提交，正在跳轉到捐款頁面' })
     } catch (error) {
       reject(error)
     }
