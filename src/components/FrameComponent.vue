@@ -204,6 +204,7 @@ const handleClickShaonianjia = () => {
   align-items: center;
   justify-content: flex-end;
   padding: var(--padding-10);
+  margin: 35px 0;
 }
 
 .wrapper11 {
@@ -212,7 +213,6 @@ const handleClickShaonianjia = () => {
   align-items: flex-start;
   justify-content: center;
   padding: var(--padding-10);
-  width: 50%;
 }
 
 .imageWrapper {
@@ -305,6 +305,14 @@ const handleClickShaonianjia = () => {
     min-height: 320px;
   }
 
+  .wrapper1 {
+    justify-content: center;
+  }
+
+  .wrapper11 {
+    align-items: center;
+  }
+
   /* When stacked, allow the decorative image to flow instead of being absolutely positioned */
   .imageWrapper {
     position: relative;
@@ -339,7 +347,7 @@ const handleClickShaonianjia = () => {
   max-width: 100%;
 }
 
-/* @media screen and (max-width: 401px) {
+@media screen and (max-width: 450px) {
   .h2 {
     font-size: var(--font-size-19);
   }
@@ -353,5 +361,5 @@ const handleClickShaonianjia = () => {
     font-size: var(--font-size-22);
     line-height: 34px;
   }
-} */
+}
 </style>
