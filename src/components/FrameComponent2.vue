@@ -348,20 +348,19 @@ onBeforeUnmount(() => {
   pointer-events: none;
 }
 
-.pngIcon {
-  width: 881px;
+.pngIcon,
+.pngIcon1 {
+  /* prevent cover cropping: contain the image, keep aspect ratio, and allow responsive width */
+  width: 100%;
+  max-width: 881px;
+  height: auto;
   position: relative;
-  max-height: 100%;
-  object-fit: cover;
-  max-width: 100%;
+  object-fit: contain;
+  max-height: none;
+  display: block;
 }
 
 .pngIcon1 {
-  width: 881px;
-  position: relative;
-  max-height: 100%;
-  object-fit: cover;
-  max-width: 100%;
   margin-left: -60px;
 }
 
@@ -539,10 +538,14 @@ onBeforeUnmount(() => {
 }
 
 .icon {
+  /* image inside the left wrapper: avoid cropping by containing the image */
   width: 100%;
+  max-width: 100%;
+  height: auto;
   position: relative;
-  max-height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  display: block;
+  max-height: none;
 }
 
 .wrapper {
