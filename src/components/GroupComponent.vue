@@ -1,20 +1,10 @@
 <template>
   <div :class="$style.frameParent">
-    <img
-      :class="$style.frameChild"
-      loading="lazy"
-      alt=""
-      src="/frame-46@2x.png"
-    />
+    <img :class="$style.frameChild" loading="lazy" alt="" src="/frame-46@2x.png" />
     <section :class="$style.groupWrapper">
       <div :class="$style.group">
         <div :class="$style.vectorParent">
-          <img
-            :class="$style.frameItem"
-            loading="lazy"
-            alt=""
-            src="/vector-2.svg"
-          />
+          <img :class="$style.frameItem" loading="lazy" alt="" src="/vector-2.svg" />
           <h2 :class="$style.h2">
             <span :class="$style.txt">
               <p :class="$style.p">近年自殺已成</p>
@@ -56,150 +46,163 @@
   </div>
 </template>
 <style module>
-  .frameChild {
-    width: 503.1px;
-    max-height: 100%;
-    object-fit: cover;
-    z-index: 2;
+.frameChild {
+  width: 503.1px;
+  max-height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.frameItem {
+  height: 85.1px;
+  width: 84.6px;
+  position: absolute;
+  margin: 0 !important;
+  top: -29.3px;
+  left: 81.1px;
+}
+
+.p {
+  margin: 0;
+}
+
+.p1 {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.txt {
+  width: 100%;
+}
+
+.h2 {
+  margin: 0;
+  height: 95.8px;
+  width: 635.6px;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.04em;
+  line-height: 189.28%;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.vectorParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.div {
+  width: 658.4px;
+  height: 516.2px;
+  position: relative;
+  letter-spacing: 0.04em;
+  line-height: 190%;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0px 0px 10.8px rgba(0, 0, 0, 0.46));
+}
+
+.h21 {
+  margin: 0;
+  width: 567px;
+  height: 25.4px;
+  position: relative;
+  font-size: var(--font-size-26);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(3px 2px 4px rgba(0, 0, 0, 0.25));
+  z-index: 1;
+  margin-top: -375.4px;
+}
+
+.parent {
+  height: 516.2px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 23px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 29.3px 0px 0px;
+  gap: 31.3px;
+}
+
+.groupWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 123.4px 0px 0px;
+  text-align: left;
+  font-size: var(--font-size-32);
+  color: var(--color-white);
+  font-family: var(--font-gensenrounded2-tw);
+}
+
+.frameParent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0px var(--padding-20);
+  gap: 38.5px;
+  width: 100%;
+}
+
+@media screen and (max-width: 401px) {
+  .frameParent {
+    flex-direction: column;
   }
-  .frameItem {
-    height: 85.1px;
-    width: 84.6px;
-    position: absolute;
-    margin: 0 !important;
-    top: -29.3px;
-    left: 81.1px;
-  }
-  .p {
-    margin: 0;
-  }
-  .p1 {
-    margin: 0;
-    white-space: pre-wrap;
-  }
-  .txt {
+
+  .groupWrapper {
     width: 100%;
   }
+
   .h2 {
-    margin: 0;
-    height: 95.8px;
-    width: 635.6px;
-    position: relative;
-    font-size: inherit;
-    letter-spacing: 0.04em;
-    line-height: 189.28%;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-family: inherit;
-    display: flex;
-    align-items: center;
-    text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.25);
-    z-index: 1;
+    font-size: var(--font-size-19);
+    line-height: 36px;
   }
-  .vectorParent {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
-  }
+
   .div {
-    width: 658.4px;
-    height: 516.2px;
-    position: relative;
-    letter-spacing: 0.04em;
-    line-height: 190%;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    filter: drop-shadow(0px 0px 10.8px rgba(0, 0, 0, 0.46));
+    font-size: var(--font-size-18);
+    line-height: 35px;
   }
+
   .h21 {
-    margin: 0;
-    width: 567px;
-    height: 25.4px;
-    position: relative;
-    font-size: var(--font-size-26);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-family: inherit;
-    display: flex;
-    align-items: center;
-    filter: drop-shadow(3px 2px 4px rgba(0, 0, 0, 0.25));
-    z-index: 1;
-    margin-top: -375.4px;
+    font-size: 21px;
   }
-  .parent {
-    height: 516.2px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    font-size: 23px;
-  }
-  .group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 29.3px 0px 0px;
-    gap: 31.3px;
-  }
+
   .groupWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 123.4px 0px 0px;
-    text-align: left;
-    font-size: var(--font-size-32);
-    color: var(--color-white);
-    font-family: var(--font-gensenrounded2-tw);
+    padding-top: 52px;
+    box-sizing: border-box;
   }
+
+  .group {
+    gap: var(--gap-16);
+  }
+
   .frameParent {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 0px var(--padding-20);
-    gap: 38.5px;
+    gap: var(--gap-19);
   }
-
-  @media screen and (max-width: 401px) {
-    .frameParent {
-      flex-direction: column;
-    }
-
-    .groupWrapper {
-      width: 100%;
-    }
-
-    .h2 {
-      font-size: var(--font-size-19);
-      line-height: 36px;
-    }
-
-    .div {
-      font-size: var(--font-size-18);
-      line-height: 35px;
-    }
-
-    .h21 {
-      font-size: 21px;
-    }
-
-    .groupWrapper {
-      padding-top: 52px;
-      box-sizing: border-box;
-    }
-
-    .group {
-      gap: var(--gap-16);
-    }
-
-    .frameParent {
-      gap: var(--gap-19);
-    }
-  }
+}
 </style>
