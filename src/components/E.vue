@@ -93,25 +93,25 @@
               <h2 :class="$style.h23">回饋品介紹</h2>
               <div :class="$style.projectPublications">
                 <section :class="$style.releaseData">
-                  <img :class="$style.icon3" loading="lazy" alt="" src="/-1-1@2x.png" />
-                  <div :class="$style.productDesign">
+                  <img :class="$style.giftImg" loading="lazy" alt="" src="/-1-1@2x.png" />
+                  <div :class="$style.container">
                     <h3 :class="$style.h31">服務年刊</h3>
                     <div :class="$style.div6">
                       <p :class="$style.p">每年一次的服務成果分享，看見陪伴與成長。</p>
                     </div>
                   </div>
                 </section>
-                <section :class="$style.releaseData1">
-                  <img :class="$style.dscf5791Icon" loading="lazy" alt="" src="/dscf5791@2x.png" />
-                  <div :class="$style.group">
+                <section :class="$style.releaseData">
+                  <img :class="$style.giftImg" loading="lazy" alt="" src="/dscf5791@2x.png" />
+                  <div :class="$style.container">
                     <h3 :class="$style.h31">鬧卡</h3>
                     <div :class="$style.div6">
                       <p :class="$style.p">兒福聯盟以情緒教育為核心設計，透過插畫與情境文字，引導覺察感受、調節情緒，穩定自己，也理解他人！</p>
                     </div>
                   </div>
                 </section>
-                <section :class="$style.releaseData2">
-                  <img :class="$style.dscf5791Icon" loading="lazy" alt="" src="/-1-11@2x.png" />
+                <section :class="$style.releaseData">
+                  <img :class="$style.giftImg" loading="lazy" alt="" src="/-1-11@2x.png" />
                   <div :class="$style.container">
                     <h3 :class="$style.h31">療癒香氛蠟燭</h3>
                     <div :class="$style.div6">
@@ -120,10 +120,10 @@
                     </div>
                   </div>
                 </section>
-                <section :class="$style.releaseData3">
-                  <img :class="$style.dscf5791Icon" loading="lazy" alt="" src="/all-2@2x.png" />
-                  <div :class="$style.plainMeParent">
-                    <h3 :class="$style.plainMe1">兒福聯盟 × plain-me水桶包</h3>
+                <section :class="$style.releaseData">
+                  <img :class="$style.giftImg" loading="lazy" alt="" src="/all-2@2x.png" />
+                  <div :class="$style.container">
+                    <h3 :class="$style.h31">兒福聯盟 × plain-me水桶包</h3>
                     <div :class="$style.div6">
                       <p :class="$style.p">心情不好的時候就背起包包出門走走吧，一切都會慢慢好起來的。</p>
                     </div>
@@ -634,10 +634,11 @@ const handleCustomDonation = async () => {
   max-width: 911px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0px;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 40px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .icon2 {
@@ -796,7 +797,7 @@ const handleCustomDonation = async () => {
   justify-content: center;
 }
 
-.icon3 {
+.giftImg {
   width: 269px;
   position: relative;
   max-height: 100%;
@@ -836,20 +837,7 @@ const handleCustomDonation = async () => {
   gap: var(--gap-20);
 }
 
-.releaseData {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 62px;
-  max-width: 100%;
-  text-align: left;
-  font-size: var(--font-size-24);
-  color: var(--color-dimgray);
-  font-family: var(--font-gensenrounded2-tw);
-}
-
-.dscf5791Icon {
+.giftImg {
   width: 269px;
   position: relative;
   max-height: 100%;
@@ -867,7 +855,7 @@ const handleCustomDonation = async () => {
   max-width: 100%;
 }
 
-.releaseData1 {
+.releaseData {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -888,19 +876,6 @@ const handleCustomDonation = async () => {
   justify-content: flex-start;
   gap: var(--gap-19);
   max-width: 100%;
-}
-
-.releaseData2 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 62px;
-  max-width: 100%;
-  text-align: left;
-  font-size: var(--font-size-24);
-  color: var(--color-dimgray);
-  font-family: var(--font-gensenrounded2-tw);
 }
 
 .plainMe1 {
@@ -924,19 +899,6 @@ const handleCustomDonation = async () => {
   box-sizing: border-box;
   gap: var(--gap-20);
   max-width: 100%;
-}
-
-.releaseData3 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 62px;
-  max-width: 100%;
-  text-align: left;
-  font-size: var(--font-size-24);
-  color: var(--color-dimgray);
-  font-family: var(--font-gensenrounded2-tw);
 }
 
 .projectPublications {
@@ -1069,17 +1031,22 @@ const handleCustomDonation = async () => {
 }
 
 /* 新增樣式 */
-.clickableCard {
+.clickableCard img {
   cursor: pointer;
   transition: all 0.3s ease;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3); */
+  /* border: 1px solid #56A3B0; */
+  border-radius: 16px;
+  transform-origin: center center;
 }
 
-.clickableCard:hover {
+.clickableCard:hover img {
   transform: translateY(-2px);
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
 }
 
-.clickableCard:active {
+.clickableCard:active img {
   transform: translateY(0);
 }
 
@@ -1187,6 +1154,7 @@ const handleCustomDonation = async () => {
   .layoutBlock {
     width: 100%;
     flex-direction: column;
+    align-items: center;
     gap: 40px;
   }
 
@@ -1216,17 +1184,13 @@ const handleCustomDonation = async () => {
     justify-content: center;
   }
 
-  .releaseData,
-  .releaseData1,
-  .releaseData2,
-  .releaseData3 {
+  .releaseData {
     flex-direction: column;
     gap: 30px;
     text-align: center;
   }
 
-  .icon3,
-  .dscf5791Icon {
+  .giftImg {
     width: 80%;
     border-radius: 66.5px;
     overflow: hidden;
@@ -1245,6 +1209,16 @@ const handleCustomDonation = async () => {
 @media screen and (max-width: 1200px) {
   .freeInput {
     left: 51%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .clickableCard img {
+    border-radius: 45px;
+  }
+
+  .clickableCard:hover img {
+    border-radius: 45px;
   }
 }
 
@@ -1404,15 +1378,11 @@ const handleCustomDonation = async () => {
     justify-content: center;
   }
 
-  .releaseData,
-  .releaseData1,
-  .releaseData2,
-  .releaseData3 {
+  .releaseData {
     gap: 20px;
   }
 
-  .icon3,
-  .dscf5791Icon {
+  .giftImg {
     width: 80%;
     border-radius: 66.5px;
     overflow: hidden;
@@ -1532,15 +1502,11 @@ const handleCustomDonation = async () => {
     justify-content: center;
   }
 
-  .releaseData,
-  .releaseData1,
-  .releaseData2,
-  .releaseData3 {
+  .releaseData {
     gap: 15px;
   }
 
-  .icon3,
-  .dscf5791Icon {
+  .giftImg {
     width: 80%;
     border-radius: 66.5px;
     overflow: hidden;
@@ -1587,8 +1553,7 @@ const handleCustomDonation = async () => {
     font-size: var(--font-size-12);
   }
 
-  .icon3,
-  .dscf5791Icon {
+  .giftImg {
     width: 80%;
     border-radius: 66.5px;
     overflow: hidden;
