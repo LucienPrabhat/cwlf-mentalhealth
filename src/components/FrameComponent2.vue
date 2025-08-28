@@ -808,8 +808,8 @@ onBeforeUnmount(() => {
   height: 1483px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   padding: 0px var(--padding-1) 0px 0px;
   box-sizing: border-box;
   max-width: 100%;

@@ -11,7 +11,7 @@
           </div>
         </transition>
       </div>
-      <img :class="$style.yanPanelIcon" loading="lazy" alt="" src="/icon_to_left.png" @click="goPrev" />
+      <img :class="$style.arrowIcon" loading="lazy" alt="" src="/icon_to_left.png" @click="goPrev" />
       <div :class="$style.frame2">
         <transition :name="transitionName" mode="out-in">
           <div :key="activeCardKey" :class="$style.narrative">
@@ -22,7 +22,7 @@
           </div>
         </transition>
       </div>
-      <img :class="$style.yanPanelIcon" loading="lazy" alt="" src="/icon_to_right.png" @click="goNext" />
+      <img :class="$style.arrowIcon" loading="lazy" alt="" src="/icon_to_right.png" @click="goNext" />
       <div :class="$style.frame2">
         <transition :name="transitionName" mode="out-in">
           <div :key="activeCardRKey" :class="$style.narrative">
@@ -255,7 +255,7 @@ function onClickButton() {
   max-width: 100%;
 }
 
-.yanPanelIcon {
+.arrowIcon {
   width: 55px;
   max-height: 100%;
   cursor: pointer;
@@ -430,37 +430,7 @@ function onClickButton() {
   }
 }
 
-@media screen and (max-width: 2225px) {
-  .story {
-    flex-wrap: wrap;
-  }
-
-  .e1 {
-    height: auto;
-  }
-}
-
 @media screen and (max-width: 1625px) {
-  .story {
-    flex-wrap: wrap;
-  }
-
-  .e1 {
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 1625px) {
-  .story {
-    flex-wrap: wrap;
-  }
-
-  .e1 {
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 1410px) {
   .story {
     flex-wrap: wrap;
   }
@@ -554,16 +524,6 @@ function onClickButton() {
 }
 
 @media screen and (max-width: 1050px) {
-  .story {
-    flex-wrap: wrap;
-  }
-
-  .e1 {
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 1050px) {
   .xuanEventIcon {
     flex: 1;
   }
@@ -609,71 +569,6 @@ function onClickButton() {
     height: auto;
   }
 
-  .story {
-    flex-wrap: wrap;
-  }
-
-  .e1 {
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 1050px) {
-  .xuanEventIcon {
-    flex: 1;
-  }
-
-  .xuanPanel {
-    flex: 1;
-  }
-
-  .xuanInfo {
-    flex-wrap: wrap;
-  }
-
-  .eventIcon {
-    flex: 1;
-  }
-
-  .xiaoYanEvent {
-    flex: 1;
-  }
-
-  .narrative {
-    flex-wrap: wrap;
-  }
-
-  .frame2 {
-    height: auto;
-  }
-
-  .segmentIcon {
-    flex: 1;
-  }
-
-  .frameParent {
-    flex: 1;
-    min-width: 100%;
-  }
-
-  .segmentParent {
-    flex-wrap: wrap;
-  }
-
-  .yanPanel {
-    height: auto;
-  }
-
-  .story {
-    flex-wrap: wrap;
-  }
-
-  .e1 {
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 825px) {
   .story {
     flex-wrap: wrap;
   }
@@ -755,6 +650,28 @@ function onClickButton() {
 
   .e1 {
     height: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .arrowIcon {
+    width: 35px;
+  }
+
+  .frame2 {
+    width: 80vw;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .arrowIcon {
+    width: 26px;
+  }
+
+  .frame2 {
+    width: 80vw;
+    padding: 10px;
   }
 }
 
