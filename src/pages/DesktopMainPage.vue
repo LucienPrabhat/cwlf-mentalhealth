@@ -39,11 +39,14 @@ import FrameComponent111 from "../components/FrameComponent3.vue"
 </script>
 <style module>
 .titleFrame {
-  width: 100%;
+  /* full-bleed container */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .titleFrame img {
-  width: 101%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -58,7 +61,7 @@ import FrameComponent111 from "../components/FrameComponent3.vue"
 }
 
 .frameParent {
-  margin-left: -6px;
+  margin-left: 0;
   align-self: stretch;
   display: flex;
   flex-direction: column;
@@ -66,7 +69,7 @@ import FrameComponent111 from "../components/FrameComponent3.vue"
   justify-content: flex-start;
   gap: 47px;
   flex-shrink: 0;
-  max-width: 101%;
+  max-width: 100%;
 }
 
 .a {
@@ -110,7 +113,7 @@ import FrameComponent111 from "../components/FrameComponent3.vue"
 
 .desktopMainPage {
   /* cap layout at 1440px and center on larger screens; be fluid under 1440px */
-  max-width: 1440px;
+  /* max-width: 1440px; */
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -125,7 +128,7 @@ import FrameComponent111 from "../components/FrameComponent3.vue"
 
 @media screen and (max-width: 401px) {
   .desktopMainPage {
-    width: 401px;
+    width: 100%;
   }
 }
 </style>

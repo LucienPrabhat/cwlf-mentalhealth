@@ -489,7 +489,9 @@
 }
 
 .titleFrame {
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .titleFrame img {
