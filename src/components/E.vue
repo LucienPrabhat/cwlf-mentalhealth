@@ -22,12 +22,12 @@
                 <h2 :class="$style.h2">捐款方案介紹</h2>
               </div>
               <div :class="$style.layoutBlock">
-                <section :class="$style.planSpecification">
-                  <div :class="$style.singlePledge">
-                    <div :class="$style.donateScheme">
+                <section :class="$style.planLayout">
+                  <div :class="$style.blockColumn">
+                    <div :class="$style.planLayoutBlock">
                       <img :class="$style.icon" loading="lazy" alt="" src="/--0001@2x.png" />
                     </div>
-                    <div :class="$style.paymentSign">
+                    <div :class="$style.paymentProcess">
                       <h2 :class="$style.h21">單次捐款</h2>
                     </div>
                   </div>
@@ -393,8 +393,8 @@ const handleCustomDonation = async () => {
 }
 
 .singlePledge {
-  width: 153px;
-  height: 335px;
+  width: 100%;
+  max-width: 233px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -548,8 +548,8 @@ const handleCustomDonation = async () => {
 }
 
 .blockColumn {
-  width: 233px;
-  height: 335px;
+  width: 100%;
+  max-width: 233px;
   display: flex;
   flex-direction: column;
   align-items: center;
