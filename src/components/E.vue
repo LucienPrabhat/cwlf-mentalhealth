@@ -700,6 +700,20 @@ const handleCustomDonation = async () => {
   width: 100%;
   height: auto;
   display: block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 70px;
+  transform-origin: center center;
+}
+
+.freeDonateImage:hover img {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 70px;
+}
+
+.freeDonateImage:active img {
+  transform: translateY(0);
 }
 
 .freeInput {
@@ -1219,6 +1233,14 @@ const handleCustomDonation = async () => {
 
   .clickableCard:hover img {
     border-radius: 45px;
+  }
+
+  .freeDonateImage {
+    border-radius: 11px;
+  }
+
+  .freeDonateImage:hover img {
+    border-radius: 11px;
   }
 }
 
