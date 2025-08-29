@@ -34,7 +34,7 @@
 import { ref } from 'vue'
 
 const currentImage = ref('/Ellipse.png')
-const ertongchuangshangImages = ['/ertongchuangshang01.png', '/ertongchuangshang02.png', '/ertongchuangshang03.png']
+const ertongchuangshangImages = ['/ertongchuangshang01.png', '/ertongchuangshang03.png']
 let ertongchuangshangIndex = 0
 let ertongchuangshangInterval = null
 
