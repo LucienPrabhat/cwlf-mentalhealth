@@ -167,7 +167,7 @@
   justify-content: center;
   padding: var(--padding-32) 29px;
   box-sizing: border-box;
-  background-image: url("/public/frame-27@3x.png");
+  background-image: url("/public/icon-sun.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;

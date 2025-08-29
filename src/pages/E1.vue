@@ -135,7 +135,7 @@
         </div>
       </section>
       <div :class="$style.parent">
-        <!-- <img :class="$style.icon4" alt="" src="/frame-27@3x.png" /> -->
+        <!-- <img :class="$style.icon4" alt="" src="/icon-sun.png" /> -->
         <h3 :class="$style.h3">
           <p :class="$style.p">立即</p>
           <p :class="$style.p">行動</p>
