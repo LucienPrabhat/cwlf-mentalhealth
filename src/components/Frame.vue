@@ -342,6 +342,8 @@ import Component1 from "./Component1.vue"
     min-width: 280px;
     width: clamp(280px, 80vw, 400px);
     min-height: 400px;
+    /* softer outer + subtle inner shadow on small screens */
+    box-shadow: 0px 1px 4.3px 18px rgba(148, 207, 255, 0.25);
   }
 }
 
@@ -378,6 +380,8 @@ import Component1 from "./Component1.vue"
     min-width: 250px;
     width: clamp(250px, 85vw, 350px);
     min-height: 360px;
+    /* tighten shadows further for very small screens */
+    box-shadow: 0px 1px 4.3px 12px rgba(148, 207, 255, 0.25);
   }
 }
 
@@ -414,6 +418,8 @@ import Component1 from "./Component1.vue"
     min-width: 220px;
     width: clamp(220px, 90vw, 300px);
     min-height: 320px;
+    /* minimal but readable depth on ultra-small screens */
+    box-shadow: 0px 1px 4.3px 10px rgba(148, 207, 255, 0.25);
   }
 }
 
