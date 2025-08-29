@@ -96,7 +96,8 @@
 
       <div :class="[$style.iconWrapper, $style.videoWrapper]">
         <div :class="$style.videoContainer">
-          <iframe src="https://lihi.cc/T3zpx" title="YouTube video" frameborder="0"
+          <iframe src="https://www.youtube.com/embed/sPIzJfQSkMc?si=5tNI0XM4bv3xrCMx" title="青春不該 emo 一樣｜兒少療心計畫"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen loading="lazy"></iframe>
         </div>
@@ -559,7 +560,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 10vh 25vh 0 25vh;
+  padding: 10vh 22vw 0 22vw;
 }
 
 .videoWrapper {
