@@ -50,7 +50,7 @@ router.beforeEach((toRoute, _, next) => {
   const metaTitle = toRoute?.meta?.title;
   const metaDesc = toRoute?.meta?.description;
 
-  window.document.title = metaTitle || "Untitled";
+  window.document.title = metaTitle || "青春不該 emo 一樣｜兒少療心計畫";
   if (metaDesc) {
     addMetaTag(metaDesc);
   }
