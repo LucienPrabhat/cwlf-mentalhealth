@@ -92,7 +92,7 @@
           </div>
           <div :class="$style.detailsOuter">
             <div :class="$style.outerView">
-              <h2 :class="$style.h23">回饋品介紹</h2>
+              <h2 :class="$style.h23">回饋品介紹<small>回饋品贈完為止</small></h2>
               <div :class="$style.projectPublications">
                 <section :class="$style.releaseData">
                   <img :class="$style.giftImg" loading="lazy" alt="" src="/-1-1@2x.png" />
@@ -897,6 +897,14 @@ const handleCustomDonation = async () => {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.h23 small {
+  display: block;
+  font-size: 0.3em;
+  font-weight: normal;
+  color: #666;
+  margin-top: 0.25em;
 }
 
 .giftImg {
