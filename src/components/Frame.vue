@@ -3,7 +3,8 @@
     <div :class="$style.parent">
       <h2 :class="$style.h2">我只是想被看見、被聽見。</h2>
       <h2 :class="$style.h21">每次感到快無法呼吸時，我都</h2>
-      <h2 :class="[$style.blurWrap, $style.h21]" data-text="不知道該怎麼辦...">不知道該怎麼辦...</h2>
+      <h2 :class="$style.h21">不知道該怎麼辦...</h2>
+      <!-- <h2 :class="[$style.blurWrap, $style.h21]" data-text="不知道該怎麼辦...">不知道該怎麼辦...</h2> -->
     </div>
     <div :class="$style.group">
       <!-- <img :class="$style.icon" loading="lazy" alt="" src="/--0001--2@2x.png" /> -->
