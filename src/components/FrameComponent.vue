@@ -271,6 +271,7 @@ const handleClickShaonianjia = () => {
   flex: 1;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   text-align: right;
@@ -278,15 +279,15 @@ const handleClickShaonianjia = () => {
   color: var(--color-cadetblue-200);
   font-family: var(--font-gensenrounded2-tw);
   max-width: 100%;
+  width: 100%;
 }
 
 /* Responsive: stack the text block and image block on smaller screens */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1150px) {
   .frameParent {
     flex-direction: column;
     gap: 28px;
     align-items: center;
-    padding: 0 16px;
   }
 
   .frameGroup {
