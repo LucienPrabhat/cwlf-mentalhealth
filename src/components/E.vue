@@ -127,7 +127,7 @@
                   <div :class="$style.container">
                     <h3 :class="$style.h31">兒福聯盟 × plain-me水桶包</h3>
                     <div :class="$style.div6">
-                      <p :class="$style.p">心情不好的時候就背起包包出門走走吧，一切都會慢慢好起來的。</p>
+                      <p :class="$style.p">心情不好的時候就背起包包出門走走吧，一切都會慢慢好起來的。(顏色將隨機出貨)</p>
                     </div>
                   </div>
                 </section>
