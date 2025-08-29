@@ -84,9 +84,33 @@
 
   <div :class="$style.tmpFrameWrapper">
     <picture>
-      <source srcset="/tmpFrameImgs/scar-frame-m-tmp.png" media="(max-width: 600px)">
-      <img src="/tmpFrameImgs/scar-frame-tmp.png">
+      <source srcset="/tmpFrameImgs/scar-frame-m.png" media="(max-width: 600px)">
+      <img src="/tmpFrameImgs/scar-frame.png">
     </picture>
+
+    <div :class="$style.actionWrapper">
+      <picture>
+        <source srcset="/tmpFrameImgs/scar-frame-m-txt.png" media="(max-width: 600px)">
+        <img src="/tmpFrameImgs/scar-frame-txt.png">
+      </picture>
+
+      <div :class="[$style.iconWrapper, $style.videoWrapper]">
+        <div :class="$style.videoContainer">
+          <iframe src="https://lihi.cc/T3zpx" title="YouTube video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div :class="$style.frameParent3">
+        <a :class="$style.orangeButton" href="https://lihi.cc/wDAb7" target="_blank" rel="noopener">
+          <div :class="$style.buttonText">
+            <p :class="$style.blankLine">支持更多孩子</p>
+            <p :class="$style.blankLine">的復原之路</p>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 <style module>
@@ -279,15 +303,12 @@
 }
 
 .iconWrapper {
-  width: 779.4px;
-  height: 438.4px;
-  background-color: var(--color-white);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 131px 278px;
   box-sizing: border-box;
+  margin: 3vh 0;
 }
 
 .frameDiv {
@@ -306,7 +327,6 @@
 }
 
 .orangeButton {
-  width: 216px;
   background-color: #E87C4A;
   border-radius: 40px;
   display: flex;
@@ -315,6 +335,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: all 0.3s ease;
+  width: fit-content;
+  min-width: 195px;
+  min-height: 50px;
+  padding: 8px 16px;
 }
 
 .orangeButton:hover {
@@ -504,11 +528,7 @@
     line-height: 30px;
   }
 
-  .iconWrapper {
-    padding-left: var(--padding-20);
-    padding-right: var(--padding-20);
-    box-sizing: border-box;
-  }
+
 
   .div3 {
     font-size: var(--font-size-16);
@@ -523,6 +543,7 @@
 .tmpFrameWrapper {
   width: 100%;
   background: linear-gradient(180deg, #3B837D, #DFFAFF 100%);
+  position: relative;
 }
 
 .tmpFrameWrapper img {
@@ -531,5 +552,50 @@
   display: block;
 }
 
-@media screen and (max-width: 401px) {}
+.actionWrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10vh 25vh 0 25vh;
+}
+
+.videoWrapper {
+  width: 100%;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 */
+}
+
+.videoContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .actionWrapper {
+    padding: 0 5vh 0 5vh;
+  }
+
+  .orangeButton {
+    min-width: 195px;
+    min-height: 50px;
+  }
+
+  .buttonText {
+    display: flex;
+    font-size: 14px;
+    line-height: 1;
+  }
+}
 </style>
