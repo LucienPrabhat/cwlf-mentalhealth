@@ -890,11 +890,12 @@ const handleCustomDonation = async () => {
   position: relative;
   font-size: inherit;
   letter-spacing: 0.09em;
-  line-height: 157.24%;
+  line-height: 130%;
   text-transform: uppercase;
   font-weight: 400;
   font-family: inherit;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -904,7 +905,7 @@ const handleCustomDonation = async () => {
   font-size: 0.3em;
   font-weight: normal;
   color: #666;
-  margin-top: 0.25em;
+  margin-top: 0.1em;
 }
 
 .giftImg {
@@ -1500,7 +1501,7 @@ const handleCustomDonation = async () => {
 
   .h23 {
     height: auto;
-    padding: 20px 0;
+    padding: 20px 0 60px;
   }
 
   .projectPublications {
