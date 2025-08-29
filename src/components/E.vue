@@ -34,14 +34,14 @@
                   <!-- 1000元單次捐款卡片 -->
                   <div :class="[$style.offerParameters, $style.clickableCard]" @click="handleDonation(1000, 'A')">
                     <picture>
-                      <source srcset="/donateBtn/1000-m.png" media="(max-width: 1000px)" />
+                      <source srcset="/donateBtn/1000.png" media="(max-width: 1000px)" />
                       <img alt="1000元捐款" src="/donateBtn/1000.png" style="width:100%;height:auto;display:block;" />
                     </picture>
                   </div>
                   <!-- 3000元單次捐款卡片 -->
                   <div :class="[$style.offerParameters, $style.clickableCard]" @click="handleDonation(3000, 'A')">
                     <picture>
-                      <source srcset="/donateBtn/3000-m.png" media="(max-width: 1000px)" />
+                      <source srcset="/donateBtn/3000.png" media="(max-width: 1000px)" />
                       <img alt="3000元捐款" src="/donateBtn/3000.png" style="width:100%;height:auto;display:block;" />
                     </picture>
                   </div>
@@ -58,14 +58,14 @@
                   <!-- 600元定期捐款卡片 -->
                   <div :class="[$style.offerParameters, $style.clickableCard]" @click="handleDonation(600, 'B')">
                     <picture>
-                      <source srcset="/donateBtn/600-m.png" media="(max-width: 1000px)" />
+                      <source srcset="/donateBtn/600.png" media="(max-width: 1000px)" />
                       <img alt="600元定期捐款" src="/donateBtn/600.png" style="width:100%;height:auto;display:block;" />
                     </picture>
                   </div>
                   <!-- 1500元定期捐款卡片 -->
                   <div :class="[$style.offerParameters, $style.clickableCard]" @click="handleDonation(1500, 'B')">
                     <picture>
-                      <source srcset="/donateBtn/1500-m.png" media="(max-width: 1000px)" />
+                      <source srcset="/donateBtn/1500.png" media="(max-width: 1000px)" />
                       <img alt="1500元定期捐款" src="/donateBtn/1500.png" style="width:100%;height:auto;display:block;" />
                     </picture>
                   </div>
@@ -75,13 +75,15 @@
               <section :class="$style.blockRowWrapper">
                 <div :class="$style.blockRow">
                   <div :class="$style.internalOfferWrapper">
-                    <div :class="$style.freeDonateCard" @click="handleCustomDonation">
-                      <picture>
-                        <source srcset="/donateBtn/free-m.png" media="(max-width: 1000px)" />
-                        <img :class="$style.freeDonateImage" alt="自由捐款" src="/donateBtn/free.png" />
-                      </picture>
-                      <input v-model="customAmount" :class="$style.freeInput" type="number" placeholder="0" :min="100"
-                        @keyup.enter="handleCustomDonation" @click.stop @input="errorMessage = ''" />
+                    <div :class="$style.freeDonateCard">
+                      <a :class="$style.donateCta" href="https://lihi.cc/Iz8Pc" target="_blank"
+                        rel="noopener noreferrer">
+                        <span :class="$style.donateCtaText">立即捐款</span>
+                        <span :class="$style.donateCtaIconWrap">
+                          <img :class="$style.iconDefault" src="/donateBtn/btn-icon.png" alt="donate icon" />
+                          <img :class="$style.iconHover" src="/donateBtn/btn-icon-hover.png" alt="donate icon hover" />
+                        </span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -167,6 +169,9 @@ const errorMessage = ref('')
 
 // 處理固定金額捐款
 const handleDonation = async (amount, kind) => {
+  return;
+  // 先關閉捐款功能
+
   if (isLoading.value) return
 
   try {
@@ -696,6 +701,87 @@ const handleCustomDonation = async () => {
   max-width: 535px;
 }
 
+/* CTA button for free donate */
+.donateCta {
+  width: 389px;
+  height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: #E47F44;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 70px;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: var(--font-gensenrounded2-tw);
+  box-shadow: 0 8px 16px rgba(228, 127, 68, 0.35), 0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+  padding: 0 28px;
+}
+
+.donateCta:hover {
+  background-color: #ffffff;
+  color: #E47F44;
+  border-color: #E47F44;
+  box-shadow: 0 12px 22px rgba(228, 127, 68, 0.45), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.donateCta:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 8px rgba(228, 127, 68, 0.30), 0 2px 4px rgba(0, 0, 0, 0.06) inset;
+}
+
+.donateCtaText {
+  line-height: 1;
+}
+
+.donateCtaIconWrap {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+  transition: filter 0.2s ease;
+}
+
+.donateCta:hover .donateCtaIconWrap {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.28));
+}
+
+.donateCta:active .donateCtaIconWrap {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.22));
+}
+
+.donateCtaIconWrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.15s ease;
+}
+
+/* Default icon visible; swap on hover */
+.iconDefault {
+  opacity: 1;
+}
+
+.iconHover {
+  opacity: 0;
+}
+
+.donateCta:hover .iconDefault {
+  opacity: 0;
+}
+
+.donateCta:hover .iconHover {
+  opacity: 1;
+}
+
 .freeDonateImage {
   width: 100%;
   height: auto;
@@ -729,6 +815,8 @@ const handleCustomDonation = async () => {
   font-size: var(--font-size-24);
   color: var(--color-cadetblue-300);
   font-family: var(--font-gensenrounded2-tw);
+
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -1046,15 +1134,15 @@ const handleCustomDonation = async () => {
 
 /* 新增樣式 */
 .clickableCard img {
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: all 0.3s ease;
   /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3); */
   /* border: 1px solid #56A3B0; */
-  border-radius: 16px;
+  /* border-radius: 18px; */
   transform-origin: center center;
 }
 
-.clickableCard:hover img {
+/* .clickableCard:hover img {
   transform: translateY(-2px);
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
@@ -1062,7 +1150,7 @@ const handleCustomDonation = async () => {
 
 .clickableCard:active img {
   transform: translateY(0);
-}
+} */
 
 .customAmountInput {
   width: 120px;
@@ -1227,13 +1315,13 @@ const handleCustomDonation = async () => {
 }
 
 @media screen and (max-width: 1000px) {
-  .clickableCard img {
+  /* .clickableCard img {
     border-radius: 45px;
   }
 
   .clickableCard:hover img {
     border-radius: 45px;
-  }
+  } */
 
   .freeDonateImage {
     border-radius: 11px;
@@ -1245,6 +1333,19 @@ const handleCustomDonation = async () => {
 }
 
 @media screen and (max-width: 768px) {
+  .donateCta {
+    width: 193px;
+    height: 60px;
+    font-size: 20px;
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+  .donateCtaIconWrap {
+    width: 28px;
+    height: 28px;
+  }
+
   .frameParent {
     padding: 0px 20px;
   }
