@@ -2,7 +2,7 @@
   <div>
     <div :class="$style.wrapper1">
       <div :class="$style.wrapper11">
-        <h2 :class="$style.h22">兒盟用行動陪伴</h2>
+        <h2 :class="$style.h22">兒福聯盟用行動陪伴</h2>
         <h2 :class="$style.h22">困在花園的青少年</h2>
       </div>
     </div>
