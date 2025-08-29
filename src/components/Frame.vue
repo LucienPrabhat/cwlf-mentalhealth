@@ -129,11 +129,11 @@ import Component1 from "./Component1.vue"
 
 .rectangleParent {
   /* responsive box: between 350px and 512px wide, keeps aspect ratio */
-  min-width: 350px;
-  width: clamp(350px, 30vw, 512px);
-  aspect-ratio: 350 / 512;
+  min-width: 244px;
+  width: clamp(244px, 30vw, 472px);
+  aspect-ratio: 472 / 766;
   /* width / height -> keeps proportional height */
-  min-height: 500px;
+  min-height: 410px;
   /* ensure it won't shrink below this height */
   position: relative;
   z-index: 1;
