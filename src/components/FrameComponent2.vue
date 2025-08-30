@@ -21,13 +21,14 @@
             </div>
           </section>
           <div :class="$style.qiconAreaDiv">
-            <img :class="$style.qIcon" alt="" src="/q.svg" />
-            <img :class="$style.floatIcon" alt="" src="/questions.png" />
-            <img :class="$style.floatIcon2" alt="" src="/questions.png" />
+            <QuestionBubble :maxWidth="'520px'" :minWidth="'180px'">
+              <span :class="$style.commentDescriptionTxt">{{ 123123123 }}</span>
+            </QuestionBubble>
             <div v-for="(msg, idx) in messages" :key="msg.id" :class="$style.questionsBubble"
               :style="{ left: msg.left, bottom: msg.bottom, animationDuration: msg.duration + 's' }">
-              <img alt="" src="/questions.png" />
-              <div :class="$style.bubbleText">{{ msg.text }}</div>
+              <QuestionBubble :maxWidth="'520px'" :minWidth="'180px'">
+                <span :class="$style.commentDescriptionTxt">{{ msg.text }}</span>
+              </QuestionBubble>
             </div>
           </div>
         </div>
@@ -62,6 +63,7 @@
 </template>
 <script setup>
 import { ref, watch, onBeforeUnmount, nextTick } from 'vue'
+import QuestionBubble from './QuestionBubble.vue'
 
 const inputText = ref('')
 const overlayVisible = ref(false)
@@ -194,6 +196,8 @@ onBeforeUnmount(() => {
   position: relative;
   max-width: 100%;
   overflow: visible;
+  width: 100vw;
+  height: 50vh;
 }
 
 .floatIcon,
@@ -230,13 +234,6 @@ onBeforeUnmount(() => {
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
   pointer-events: none;
-}
-
-.questionsBubble>img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
 }
 
 .bubbleText {
