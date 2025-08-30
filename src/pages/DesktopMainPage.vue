@@ -23,7 +23,7 @@
     <D />
     <E />
     <FrameComponent2 />
-    <FrameComponent111 />
+    <FrameComponent3 />
   </div>
 </template>
 <script setup>
@@ -35,7 +35,7 @@ import FrameComponent1 from "../components/FrameComponent1.vue"
 import D from "../components/D.vue"
 import E from "../components/E.vue"
 import FrameComponent2 from "../components/FrameComponent2.vue"
-import FrameComponent111 from "../components/FrameComponent3.vue"
+import FrameComponent3 from "../components/FrameComponent3.vue"
 </script>
 <style module>
 .titleFrame {
