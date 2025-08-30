@@ -21,7 +21,9 @@
       </section>
       <div :class="$style.frameContainer">
         <div :class="$style.imageWrapper">
-          <img :class="$style.frameChild" alt="" :src="currentImage" />
+          <transition name="fade-slide" mode="out-in">
+            <img :class="$style.frameChild" alt="" :src="currentImage" :key="currentImage" />
+          </transition>
         </div>
         <div :class="$style.frame">
           <img :class="$style.icon" loading="lazy" alt="" src="/3-1@2x.png" />
@@ -31,14 +33,41 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const currentImage = ref('/Ellipse.png')
 const ertongchuangshangImages = ['/ertongchuangshang01.png', '/ertongchuangshang03.png']
 let ertongchuangshangIndex = 0
 let ertongchuangshangInterval = null
 
+// Default slideshow state
+const defaultImages = [
+  '/qingshaonianxinli.png',
+  '/ertongchuangshang01.png',
+  '/ertongchuangshang03.png',
+]
+let defaultIndex = 0
+let defaultInterval = null
+
+const stopDefaultSlideshow = () => {
+  if (defaultInterval) {
+    clearInterval(defaultInterval)
+    defaultInterval = null
+  }
+}
+
+const startDefaultSlideshow = () => {
+  if (defaultInterval) return
+  defaultIndex = 0
+  defaultInterval = setInterval(() => {
+    currentImage.value = defaultImages[defaultIndex]
+    defaultIndex = (defaultIndex + 1) % defaultImages.length
+  }, 3000)
+}
+
 const handleHover = (imagePath) => {
+  // Pause default slideshow while hovering specific items
+  stopDefaultSlideshow()
   currentImage.value = imagePath
 }
 
@@ -48,13 +77,23 @@ const handleLeave = () => {
     clearInterval(ertongchuangshangInterval)
     ertongchuangshangInterval = null
   }
+  // Resume default slideshow after leaving
+  startDefaultSlideshow()
 }
 
 const handleClick = (imagePath) => {
+  // Clicks take priority; stop any automated slideshows
+  stopDefaultSlideshow()
+  if (ertongchuangshangInterval) {
+    clearInterval(ertongchuangshangInterval)
+    ertongchuangshangInterval = null
+  }
   currentImage.value = imagePath
 }
 
 const handleHoverErtongchuangshang = () => {
+  // Pause default slideshow when hovering this carousel
+  stopDefaultSlideshow()
   ertongchuangshangIndex = 0
   currentImage.value = ertongchuangshangImages[ertongchuangshangIndex]
   ertongchuangshangInterval = setInterval(() => {
@@ -64,6 +103,8 @@ const handleHoverErtongchuangshang = () => {
 }
 
 const handleClickErtongchuangshang = () => {
+  // Clicks take priority; stop default slideshow
+  stopDefaultSlideshow()
   if (ertongchuangshangInterval) {
     clearInterval(ertongchuangshangInterval)
     ertongchuangshangInterval = null
@@ -71,6 +112,18 @@ const handleClickErtongchuangshang = () => {
   ertongchuangshangIndex = (ertongchuangshangIndex + 1) % ertongchuangshangImages.length
   currentImage.value = ertongchuangshangImages[ertongchuangshangIndex]
 }
+
+onMounted(() => {
+  startDefaultSlideshow()
+})
+
+onBeforeUnmount(() => {
+  stopDefaultSlideshow()
+  if (ertongchuangshangInterval) {
+    clearInterval(ertongchuangshangInterval)
+    ertongchuangshangInterval = null
+  }
+})
 </script>
 <style module>
 .h2 {
@@ -278,5 +331,21 @@ const handleClickErtongchuangshang = () => {
     font-size: var(--font-size-16);
     line-height: 30px;
   }
+}
+
+/* Fade + slide transition for slideshow */
+:global(.fade-slide-enter-active),
+:global(.fade-slide-leave-active) {
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+:global(.fade-slide-enter-from) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+:global(.fade-slide-leave-to) {
+  opacity: 0;
+  transform: translateX(-20px);
 }
 </style>

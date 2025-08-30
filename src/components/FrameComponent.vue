@@ -43,7 +43,9 @@
       </section>
       <div :class="$style.groupDiv">
         <div :class="$style.imageWrapper">
-          <img :class="$style.frameChild" alt="" :src="currentImage" />
+          <transition name="fade-slide" mode="out-in">
+            <img :class="$style.frameChild" alt="" :src="currentImage" :key="currentImage" />
+          </transition>
         </div>
         <div :class="$style.wrapper2">
           <img :class="$style.icon" loading="lazy" alt="" src="/1-1@2x.png" />
@@ -53,14 +55,45 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const currentImage = ref('/Ellipse.png')
 const shaonianjiaImages = ['/shaonianjia01.png', '/shaonianjia02.png', '/shaonianjia03.png']
 let shaonianjiaIndex = 0
 let shaonianjiaInterval = null
 
+// Default slideshow state
+const defaultImages = [
+  '/xiaoyuanxuandao.png',
+  '/xianshangkecheng.png',
+  '/shaonianzhuanxian.png',
+  '/shaonianjia01.png',
+  '/shaonianjia02.png',
+  '/shaonianjia03.png',
+]
+let defaultIndex = 0
+let defaultInterval = null
+
+const stopDefaultSlideshow = () => {
+  if (defaultInterval) {
+    clearInterval(defaultInterval)
+    defaultInterval = null
+  }
+}
+
+const startDefaultSlideshow = () => {
+  if (defaultInterval) return
+  // Keep initial Ellipse first; then cycle through provided images
+  defaultIndex = 0
+  defaultInterval = setInterval(() => {
+    currentImage.value = defaultImages[defaultIndex]
+    defaultIndex = (defaultIndex + 1) % defaultImages.length
+  }, 3000)
+}
+
 const handleHover = (imagePath) => {
+  // Pause default slideshow while hovering specific items
+  stopDefaultSlideshow()
   currentImage.value = imagePath
 }
 
@@ -70,13 +103,23 @@ const handleLeave = () => {
     clearInterval(shaonianjiaInterval)
     shaonianjiaInterval = null
   }
+  // Resume default slideshow after leaving
+  startDefaultSlideshow()
 }
 
 const handleClick = (imagePath) => {
+  // Clicks take priority; stop any automated slideshows
+  stopDefaultSlideshow()
+  if (shaonianjiaInterval) {
+    clearInterval(shaonianjiaInterval)
+    shaonianjiaInterval = null
+  }
   currentImage.value = imagePath
 }
 
 const handleHoverShaonianjia = () => {
+  // Pause default slideshow when hovering this carousel
+  stopDefaultSlideshow()
   shaonianjiaIndex = 0
   currentImage.value = shaonianjiaImages[shaonianjiaIndex]
   shaonianjiaInterval = setInterval(() => {
@@ -86,6 +129,8 @@ const handleHoverShaonianjia = () => {
 }
 
 const handleClickShaonianjia = () => {
+  // Clicks take priority; stop default slideshow
+  stopDefaultSlideshow()
   if (shaonianjiaInterval) {
     clearInterval(shaonianjiaInterval)
     shaonianjiaInterval = null
@@ -93,6 +138,18 @@ const handleClickShaonianjia = () => {
   shaonianjiaIndex = (shaonianjiaIndex + 1) % shaonianjiaImages.length
   currentImage.value = shaonianjiaImages[shaonianjiaIndex]
 }
+
+onMounted(() => {
+  startDefaultSlideshow()
+})
+
+onBeforeUnmount(() => {
+  stopDefaultSlideshow()
+  if (shaonianjiaInterval) {
+    clearInterval(shaonianjiaInterval)
+    shaonianjiaInterval = null
+  }
+})
 </script>
 <style module>
 .h2 {
@@ -365,5 +422,21 @@ const handleClickShaonianjia = () => {
     font-size: var(--font-size-22);
     line-height: 34px;
   }
+}
+
+/* Fade + slide transition for slideshow */
+:global(.fade-slide-enter-active),
+:global(.fade-slide-leave-active) {
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+:global(.fade-slide-enter-from) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+:global(.fade-slide-leave-to) {
+  opacity: 0;
+  transform: translateX(-20px);
 }
 </style>
