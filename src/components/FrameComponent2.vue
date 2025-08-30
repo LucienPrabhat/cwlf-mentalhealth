@@ -16,10 +16,8 @@
               <img :class="$style.icon" loading="lazy" alt="" src="/-1-2@2x.png" />
             </div>
             <div :class="$style.container">
-              <h2 :class="$style.h2">
-                <p :class="$style.p">每一個被訴說的傷口，</p>
-                <p :class="$style.p1">都是讓花開的養分</p>
-              </h2>
+              <h2 :class="$style.h2" :style="{ textAlign: 'left' }">每一個被訴說的傷口，</h2>
+              <h2 :class="$style.h2" :style="{ textAlign: 'right' }">都是讓花開的養分</h2>
             </div>
           </section>
           <div :class="$style.qiconAreaDiv">
@@ -525,32 +523,26 @@ onBeforeUnmount(() => {
 
 .h2 {
   margin: 0;
+  width: 100%;
   position: relative;
   font-size: inherit;
   letter-spacing: 0.04em;
   line-height: 193%;
   text-transform: uppercase;
+  font-size: clamp(14px, 4vw, 32px);
   font-weight: 400;
   font-family: inherit;
-}
-
-.p {
-  margin: 0;
-}
-
-.p1 {
-  margin: 0;
-  white-space: pre-wrap;
 }
 
 .container {
   width: 100%;
   min-width: 200px;
   max-width: 450px;
+  align-self: stretch;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 25px var(--padding-10);
   box-sizing: border-box;
 }
@@ -567,18 +559,7 @@ onBeforeUnmount(() => {
   font-size: var(--font-size-32);
   color: var(--color-cadetblue-200);
   font-family: var(--font-gensenrounded2-tw);
-}
-
-/* Responsive: when viewport is narrow, stack wrapper and container vertically */
-@media screen and (max-width: 768px) {
-  .titleContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3vh;
-    padding: 0 16px;
-  }
-
+  margin-bottom: 10%;
 }
 
 .qIcon {
@@ -726,5 +707,19 @@ onBeforeUnmount(() => {
 .f {
   width: 100%;
   background: linear-gradient(180deg, #B9F9FB, #f3ffd8);
+}
+
+@media screen and (max-width: 768px) {
+  .titleContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    padding: 0 16px;
+  }
+
+  .container {
+    align-self: center;
+  }
 }
 </style>
