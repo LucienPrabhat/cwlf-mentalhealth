@@ -119,11 +119,7 @@
 
       </section>
       <button :class="$style.rectangleGroup" @click="goBack">
-        <div :class="$style.frameChild6" />
-        <div :class="$style.iconWrapper">
-          <img :class="$style.icon5" alt="" src="/storyMobile/return.png" />
-        </div>
-        <div :class="$style.div">回上頁</div>
+        <img :class="$style.icon5" alt="" src="/storyMobile/return.png" />
       </button>
     </main>
   </div>
@@ -392,10 +388,7 @@ function goBack() {
 }
 
 .icon5 {
-  width: 28px;
-  height: 28px;
-  position: relative;
-  z-index: 1;
+  width: 100%;
 }
 
 .iconWrapper {
@@ -423,8 +416,6 @@ function goBack() {
 .rectangleGroup {
   cursor: pointer;
   border: none;
-  padding: var(--padding-6) 27px var(--padding-5) var(--padding-32);
-  background-color: var(--color-teal);
   width: 203px;
   height: 65px;
   border-radius: 38px;
