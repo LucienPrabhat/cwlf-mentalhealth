@@ -23,27 +23,10 @@
                       <img :class="$style.folderIcon" loading="lazy" alt="" />
                     </div>
                   </div>
-                  <div :class="$style.dropdownMenu">
-                    <img :class="$style.keyboardArrowDownIcon1" alt="" src="/keyboard-arrow-down@2x.png" />
-                    <img :class="$style.keyboardArrowDownIcon2" alt="" src="/keyboard-arrow-down@2x.png" />
-                    <a :class="$style.a"
-                      href="https://www.youtube.com/watch?v=IdzKajOLmpQ&list=PLK3rF9Qn9rzuBhr10LFOpkk98_46tfJfU"
-                      target="_blank">
-                      同學大小聲
-                    </a>
-                  </div>
                   <div :class="$style.dropDownOption">
                     <img :class="$style.keyboardArrowDownIcon3" alt="" src="/keyboard-arrow-down@2x.png" />
                     <a :class="$style.a1" href="https://lihi.cc/drKeO" target="_blank">
                       今晚來點樂社話
-                    </a>
-                  </div>
-                  <div :class="$style.dropDownOptionTwo">
-                    <img :class="$style.keyboardArrowDownIcon4" alt="" src="/keyboard-arrow-down@2x.png" />
-                    <a :class="$style.a2"
-                      href="https://www.youtube.com/watch?v=IdzKajOLmpQ&list=PLK3rF9Qn9rzuBhr10LFOpkk98_46tfJfU"
-                      target="_blank">
-                      同學大小聲
                     </a>
                   </div>
                   <div :class="$style.learningPane">
@@ -114,7 +97,6 @@
                 </div>
               </div>
             </section>
-            <div :class="$style.guidanceRow" />
             <section :class="$style.emergencyAccess">
               <ExplorePanel explorePanelWidth="unset" prop="給需要幫助的你" @toggle="showHelp = !showHelp" />
               <div :class="$style.component1" :data-open="showHelp">
@@ -590,15 +572,14 @@ const showHelp = ref(false)     // 給需要幫助的你
 }
 
 .component {
-  width: 502px;
-  height: 589px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: var(--padding-6) 0px 115px;
+  padding: 5% 0 15%;
   box-sizing: border-box;
-  max-width: 100%;
   font-size: var(--font-size-16);
   overflow: hidden;
 }
@@ -613,24 +594,17 @@ const showHelp = ref(false)     // 給需要幫助的你
 }
 
 .externalResources {
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-10);
-  max-width: 100%;
   text-align: left;
-  font-size: var(--font-size-32);
+  font-size: clamp(20px, 3vw, 32px);
   color: var(--color-white);
   font-family: var(--font-gensenrounded2-tw);
-}
-
-.guidanceRow {
-  height: 140px;
-  width: 100px;
-  position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
 }
 
 .div2 {
@@ -735,13 +709,13 @@ const showHelp = ref(false)     // 給需要幫助的你
 }
 
 .component1 {
-  width: 502px;
-  height: 532px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: var(--padding-14) 0px 109px;
+  padding: 5% 0 15%;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -780,16 +754,15 @@ const showHelp = ref(false)     // 給需要幫助的你
 }
 
 .emergencyAccess {
-  height: 676px;
-  width: 518px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-10);
-  max-width: 100%;
+  font-size: clamp(20px, 3vw, 32px);
   text-align: left;
-  font-size: var(--font-size-16);
   color: var(--color-white);
   font-family: var(--font-gensenrounded2-tw);
 }
@@ -797,7 +770,7 @@ const showHelp = ref(false)     // 給需要幫助的你
 .externalResourcesParent {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   row-gap: var(--gap-20);
   max-width: 100%;
@@ -985,17 +958,6 @@ const showHelp = ref(false)     // 給需要幫助的你
   .externalResourcesParent {
     flex-direction: column;
     align-items: center;
-  }
-
-  .externalResources,
-  .emergencyAccess {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .guidanceRow {
-    width: 100%;
-    height: 24px;
   }
 
   /* Center the title block in the middle of the screen */
