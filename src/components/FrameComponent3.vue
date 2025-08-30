@@ -131,7 +131,9 @@
           <p>衛部救字第1141360179號</p>
           <section :class="$style.partners">
             <div :class="$style.partnersInner">
-              <div :class="$style.partnerLabel">響應夥伴</div>
+              <div :class="$style.partnerLabel">
+                <p>響應夥伴</p>
+              </div>
               <div :class="$style.partnerStrip">
                 <img v-for="(file, idx) in partnerIconFiles" :key="file" :class="$style.partnerIcon"
                   :src="`/partnerIcon/${file}`" :alt="`partner-${idx + 1}`" />
@@ -874,13 +876,13 @@ const partnerIconFiles = [
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding: 16px 24px;
+  padding: 5vh 1vw;
   box-sizing: border-box;
 }
 
 .partnerLabel {
   white-space: nowrap;
+  font-size: clamp(16px, 3vw, 32px);
 }
 
 .partnerStrip {
@@ -889,7 +891,8 @@ const partnerIconFiles = [
   grid-template-columns: repeat(12, minmax(0, 1fr));
   align-items: center;
   justify-items: center;
-  gap: 16px;
+  gap: 5px;
+  padding: 3vh 1vw 5vh;
 }
 
 .partnerIcon {
