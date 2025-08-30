@@ -7,10 +7,10 @@ import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
 import DesktopMainPage from "./pages/DesktopMainPage.vue";
-import E1 from "./pages/E1.vue";
-import E2 from "./pages/E2.vue";
-import E3 from "./pages/E3.vue";
-import E4 from "./pages/E4.vue";
+import Po from "./pages/po.vue";
+import Xin from "./pages/xin.vue";
+import Yu from "./pages/yu.vue";
+import Yan from "./pages/yan.vue";
 import "./global.css";
 
 const routes = [
@@ -20,24 +20,24 @@ const routes = [
     component: DesktopMainPage,
   },
   {
-    path: "/E1",
-    name: "E1",
-    component: E1,
+    path: "/po",
+    name: "Po",
+    component: Po,
   },
   {
-    path: "/E2",
-    name: "E2",
-    component: E2,
+    path: "/xin",
+    name: "Xin",
+    component: Xin,
   },
   {
-    path: "/E3",
-    name: "E3",
-    component: E3,
+    path: "/yu",
+    name: "Yu",
+    component: Yu,
   },
   {
-    path: "/E4",
-    name: "E4",
-    component: E4,
+    path: "/yan",
+    name: "Yan",
+    component: Yan,
   },
 ];
 

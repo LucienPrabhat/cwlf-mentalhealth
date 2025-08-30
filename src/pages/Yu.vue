@@ -121,18 +121,11 @@
       <button :class="$style.rectangleGroup" @click="goBack">
         <div :class="$style.frameChild6" />
         <div :class="$style.iconWrapper">
-          <img :class="$style.icon5" alt="" src="/icon1.svg" />
+          <img :class="$style.icon5" alt="" src="/storyMobile/return.png" />
         </div>
         <div :class="$style.div">回上頁</div>
       </button>
     </main>
-    <div :class="$style.parent">
-      <img :class="$style.icon6" alt="" src="/storyMobile/return.png" />
-      <h3 :class="$style.h3">
-        <p :class="$style.p">立即</p>
-        <p :class="$style.p">行動</p>
-      </h3>
-    </div>
   </div>
 
   <div :class="$style.responsiveImg">
