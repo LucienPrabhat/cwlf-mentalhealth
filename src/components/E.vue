@@ -85,6 +85,8 @@
                         </span>
                       </a>
                     </div>
+                    <a :class="$style.qaLink" href="https://lihi.cc/MzRnf" target="_blank"
+                      rel="noopener noreferrer">捐款Ｑ＆Ａ</a>
                   </div>
                 </div>
               </section>
@@ -1727,6 +1729,25 @@ const handleCustomDonation = async () => {
 
   .div6 {
     font-size: var(--font-size-22);
+  }
+}
+
+.qaLink {
+  font-weight: 600;
+  font-size: 20px;
+  color: #838383;
+  text-decoration: underline;
+  margin: 30px 0;
+}
+
+.qaLink:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 450px) {
+  .qaLink {
+    font-size: 14px;
+    margin: 20px 0;
   }
 }
 </style>
