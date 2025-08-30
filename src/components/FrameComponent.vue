@@ -57,7 +57,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-const currentImage = ref('/Ellipse.png')
+const currentImage = ref('/shaonianjia01.png')
 const shaonianjiaImages = ['/shaonianjia01.png', '/shaonianjia02.png', '/shaonianjia03.png']
 let shaonianjiaIndex = 0
 let shaonianjiaInterval = null
@@ -83,7 +83,6 @@ const stopDefaultSlideshow = () => {
 
 const startDefaultSlideshow = () => {
   if (defaultInterval) return
-  // Keep initial Ellipse first; then cycle through provided images
   defaultIndex = 0
   defaultInterval = setInterval(() => {
     currentImage.value = defaultImages[defaultIndex]
@@ -98,7 +97,7 @@ const handleHover = (imagePath) => {
 }
 
 const handleLeave = () => {
-  currentImage.value = '/Ellipse.png'
+  currentImage.value = '/shaonianjia01.png'
   if (shaonianjiaInterval) {
     clearInterval(shaonianjiaInterval)
     shaonianjiaInterval = null

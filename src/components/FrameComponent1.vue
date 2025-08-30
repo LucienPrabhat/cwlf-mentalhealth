@@ -35,7 +35,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-const currentImage = ref('/Ellipse.png')
+const currentImage = ref('/ertongchuangshang01.png')
 const ertongchuangshangImages = ['/ertongchuangshang01.png', '/ertongchuangshang03.png']
 let ertongchuangshangIndex = 0
 let ertongchuangshangInterval = null
@@ -72,7 +72,7 @@ const handleHover = (imagePath) => {
 }
 
 const handleLeave = () => {
-  currentImage.value = '/Ellipse.png'
+  currentImage.value = '/ertongchuangshang01.png'
   if (ertongchuangshangInterval) {
     clearInterval(ertongchuangshangInterval)
     ertongchuangshangInterval = null
