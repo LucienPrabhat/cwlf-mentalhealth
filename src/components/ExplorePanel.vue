@@ -49,7 +49,7 @@ const explorePanelStyle = computed(() => ({
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--gap-24);
   text-align: left;
   font-size: var(--font-size-32);

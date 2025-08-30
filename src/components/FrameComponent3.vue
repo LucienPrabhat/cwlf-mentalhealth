@@ -14,22 +14,14 @@
               <ExplorePanel prop="給想了解更多的你" @toggle="showMore = !showMore" />
               <div :class="$style.component" :data-open="showMore">
                 <div :class="$style.keyboardArrowDownParent">
-                  <img :class="$style.keyboardArrowDownIcon" alt="" src="/keyboard-arrow-down@2x.png" />
-                  <div :class="$style.detailsArea">
-                    <Book :size="48" />
-                    <div :class="$style.iconRow">
-                      <Volume :size="48" />
-                      <PlayCircle :size="48" />
-                      <img :class="$style.folderIcon" loading="lazy" alt="" />
-                    </div>
-                  </div>
-                  <div :class="$style.dropDownOption">
-                    <img :class="$style.keyboardArrowDownIcon3" alt="" src="/keyboard-arrow-down@2x.png" />
-                    <a :class="$style.a1" href="https://lihi.cc/drKeO" target="_blank">
-                      今晚來點樂社話
-                    </a>
-                  </div>
+
                   <div :class="$style.learningPane">
+                    <div :class="$style.dropDownOption">
+                      <img :class="$style.keyboardArrowDownIcon3" alt="" src="/keyboard-arrow-down@2x.png" />
+                      <a :class="$style.a1" href="https://lihi.cc/drKeO" target="_blank">
+                        今晚來點樂社話
+                      </a>
+                    </div>
                     <div :class="$style.coursesBlock">
                       <div :class="$style.div">線上課程</div>
                       <div :class="$style.courseExpansion">
@@ -773,17 +765,17 @@ const showHelp = ref(false)     // 給需要幫助的你
   align-items: flex-start;
   justify-content: center;
   row-gap: var(--gap-20);
-  max-width: 100%;
+  width: 100%;
 }
 
 .accompanyQuoteParent {
+  width: 100%;
   align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 131px;
-  max-width: 100%;
+  gap: 5vh;
 }
 
 .icon {
@@ -811,13 +803,13 @@ const showHelp = ref(false)     // 給需要幫助的你
 }
 
 .frameParent {
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 140px;
-  max-width: 100%;
+  gap: 5vh;
   text-align: center;
   font-size: var(--font-size-32);
   color: var(--color-white);
@@ -835,29 +827,13 @@ const showHelp = ref(false)     // 給需要幫助的你
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: 56px 0px;
+  padding: 5vh 0;
   box-sizing: border-box;
-  max-width: 100%;
+  width: 100%;
 }
 
 .gWrapper {
-  align-self: stretch;
-  height: 1393px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0px var(--padding-1) 0px 0px;
-  box-sizing: border-box;
-  max-width: 100%;
-}
-
-@media screen and (max-width: 1411px) {
-  .g {
-    padding-top: var(--padding-36);
-    padding-bottom: var(--padding-36);
-    box-sizing: border-box;
-  }
+  width: 100%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -886,20 +862,6 @@ const showHelp = ref(false)     // 給需要幫助的你
   .component1 {
     padding-top: var(--padding-20);
     padding-bottom: 71px;
-    box-sizing: border-box;
-  }
-
-  .accompanyQuoteParent {
-    gap: 65px;
-  }
-
-  .frameParent {
-    gap: 70px;
-  }
-
-  .g {
-    padding-top: 23px;
-    padding-bottom: 23px;
     box-sizing: border-box;
   }
 }
@@ -942,14 +904,6 @@ const showHelp = ref(false)     // 給需要幫助的你
     font-size: var(--font-size-16);
     line-height: 32px;
   }
-
-  .accompanyQuoteParent {
-    gap: 33px;
-  }
-
-  .frameParent {
-    gap: 35px;
-  }
 }
 
 @media screen and (max-width: 401px) {
@@ -962,7 +916,6 @@ const showHelp = ref(false)     // 給需要幫助的你
 
   /* Center the title block in the middle of the screen */
   .accompanyQuoteParent {
-    min-height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -976,15 +929,6 @@ const showHelp = ref(false)     // 給需要幫助的你
   /* Prevent overlaps: ensure wrapper grows and internal blocks aren't absolute-stacked */
   .gWrapper {
     height: auto;
-  }
-
-  .g {
-    padding-top: var(--padding-20);
-    padding-bottom: var(--padding-20);
-  }
-
-  .frameParent {
-    gap: var(--gap-20);
   }
 }
 </style>
