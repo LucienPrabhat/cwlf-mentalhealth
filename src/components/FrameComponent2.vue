@@ -94,7 +94,7 @@ const randomBetween = (min, max) => Math.random() * (max - min) + min
 const spawnFloatBubble = (text, opts = {}) => {
   const id = Date.now() + Math.random()
   const leftPercent = randomBetween(-10, 100) // allow overflow to be clipped
-  const duration = opts.durationSec || Math.floor(randomBetween(6, 12))
+  const duration = opts.durationSec || Math.floor(randomBetween(10, 15))
   const opacity = typeof opts.opacity === 'number' ? opts.opacity : Number(randomBetween(0.2, 0.6).toFixed(2))
   const priority = !!opts.priority
   messages.value.push({ id, text, left: leftPercent + '%', duration, opacity, priority })
@@ -171,7 +171,7 @@ const onSend = async () => {
   const timestamp = formatNow()
   await playOverlay()
   // priority bubble: fully opaque, appears immediately
-  spawnFloatBubble(text, { priority: true, opacity: 1, durationSec: Math.floor(randomBetween(6, 10)) })
+  spawnFloatBubble(text, { priority: true, opacity: 1, durationSec: Math.floor(randomBetween(15, 20)) })
   inputText.value = ''
   overlayVisible.value = false
   isSending = false
@@ -251,7 +251,7 @@ onMounted(() => {
 
 .bubbleInstance {
   position: absolute;
-  bottom: -10%;
+  bottom: -5%;
   animation-name: riseFade;
   animation-timing-function: linear;
   animation-iteration-count: 1;
@@ -264,16 +264,16 @@ onMounted(() => {
     opacity: 0;
   }
 
-  10% {
-    opacity: 1;
+  15% {
+    opacity: 0.8;
   }
 
-  90% {
+  70% {
     opacity: 1;
   }
 
   100% {
-    transform: translateY(-70%);
+    transform: translateY(-48vh);
     opacity: 0;
   }
 }
