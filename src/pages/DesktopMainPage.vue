@@ -95,6 +95,7 @@ import FrameComponent111 from "../components/FrameComponent3.vue"
   padding: var(--padding-20);
   box-sizing: border-box;
   max-width: 100%;
+  gap: 5vh;
 }
 
 .c {
