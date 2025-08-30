@@ -523,7 +523,7 @@ function onClickButton() {
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1000px) {
   .xuanEventIcon {
     flex: 1;
   }
@@ -576,19 +576,14 @@ function onClickButton() {
   .e1 {
     height: auto;
   }
+
+  .frame2 {
+    width: 80vw;
+    padding: 10px;
+  }
 }
 
 @media screen and (max-width: 825px) {
-  .story {
-    flex-wrap: wrap;
-  }
-
-  .e1 {
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 800px) {
   .xuanEventIcon {
     flex: 1;
   }

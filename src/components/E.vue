@@ -1092,7 +1092,7 @@ const handleCustomDonation = async () => {
 }
 
 .casesNavigateWrapper {
-  width: 1440px;
+  width: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
