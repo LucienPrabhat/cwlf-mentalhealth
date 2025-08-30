@@ -4,7 +4,7 @@
       <div :class="$style.frame2">
         <transition :name="transitionName" mode="out-in">
           <div :key="activeCardLKey" :class="$style.narrative">
-            <picture @click="onClickButton">
+            <picture @click="">
               <source :srcset="`${activeCardL.cardBorderMobile}`" media="(max-width: 1000px)" />
               <img :class="$style.cardBorder" loading="lazy" alt="story card" :src="`${activeCardL.cardBorder}`" />
             </picture>
@@ -26,7 +26,7 @@
       <div :class="$style.frame2">
         <transition :name="transitionName" mode="out-in">
           <div :key="activeCardRKey" :class="$style.narrative">
-            <picture @click="onClickButton">
+            <picture @click="">
               <source :srcset="`${activeCardR.cardBorderMobile}`" media="(max-width: 1000px)" />
               <img :class="$style.cardBorder" loading="lazy" alt="story card" :src="`${activeCardR.cardBorder}`" />
             </picture>
