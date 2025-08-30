@@ -1,69 +1,65 @@
 <template>
-  <section :class="$style.fWrapper">
-    <div :class="$style.f">
-      <div :class="$style.back">
-        <div :class="$style.backgroundBlueParent">
-          <div :class="$style.imageBackGroud">
-            <picture>
-              <source srcset="/garden-plants-m.png" media="(max-width: 600px)">
-              <img src="/garden-plants.png" alt="Garden Plants">
-            </picture>
+  <section :class="$style.f">
+    <div :class="$style.back">
+      <div :class="$style.backgroundBlueParent">
+        <div :class="$style.imageBackGroud">
+          <picture>
+            <source srcset="/garden-plants-m.png" media="(max-width: 600px)">
+            <img src="/garden-plants.png" alt="Garden Plants">
+          </picture>
+        </div>
+      </div>
+      <div :class="$style.frameParent">
+        <div :class="$style.frameGroup">
+          <section :class="$style.titleContainer">
+            <div :class="$style.wrapper">
+              <img :class="$style.icon" loading="lazy" alt="" src="/-1-2@2x.png" />
+            </div>
+            <div :class="$style.container">
+              <h2 :class="$style.h2">
+                <p :class="$style.p">每一個被訴說的傷口，</p>
+                <p :class="$style.p1">都是讓花開的養分</p>
+              </h2>
+            </div>
+          </section>
+          <div :class="$style.qiconAreaDiv">
+            <img :class="$style.qIcon" alt="" src="/q.svg" />
+            <img :class="$style.floatIcon" alt="" src="/questions.png" />
+            <img :class="$style.floatIcon2" alt="" src="/questions.png" />
+            <div v-for="(msg, idx) in messages" :key="msg.id" :class="$style.questionsBubble"
+              :style="{ left: msg.left, bottom: msg.bottom, animationDuration: msg.duration + 's' }">
+              <img alt="" src="/questions.png" />
+              <div :class="$style.bubbleText">{{ msg.text }}</div>
+            </div>
           </div>
         </div>
-        <div :class="$style.backInner">
-          <div :class="$style.frameParent">
-            <div :class="$style.frameGroup">
-              <section :class="$style.frameContainer">
-                <div :class="$style.wrapper">
-                  <img :class="$style.icon" loading="lazy" alt="" src="/-1-2@2x.png" />
-                </div>
-                <div :class="$style.container">
-                  <h2 :class="$style.h2">
-                    <p :class="$style.p">每一個被訴說的傷口，</p>
-                    <p :class="$style.p1">都是讓花開的養分</p>
-                  </h2>
-                </div>
-              </section>
-              <div :class="$style.qiconAreaDiv">
-                <img :class="$style.qIcon" alt="" src="/q.svg" />
-                <img :class="$style.floatIcon" alt="" src="/questions.png" />
-                <img :class="$style.floatIcon2" alt="" src="/questions.png" />
-                <div v-for="(msg, idx) in messages" :key="msg.id" :class="$style.questionsBubble"
-                  :style="{ left: msg.left, bottom: msg.bottom, animationDuration: msg.duration + 's' }">
-                  <img alt="" src="/questions.png" />
-                  <div :class="$style.bubbleText">{{ msg.text }}</div>
-                </div>
+        <section :class="$style.type">
+          <div :class="$style.inputField">
+            <div :class="$style.inputContent">
+              <div :class="$style.inputFieldWrapper">
+                <div :class="$style.inputBox" />
+                <input :class="$style.textInput" v-model="inputText" type="text" :maxlength="30"
+                  placeholder="輸入最多30字..." />
+              </div>
+              <div :class="$style.inputIconArea" @click="onSend">
+                <img :class="$style.icon1" alt="" src="/icon-1.svg" />
               </div>
             </div>
-            <section :class="$style.type">
-              <div :class="$style.inputField">
-                <div :class="$style.inputContent">
-                  <div :class="$style.inputFieldWrapper">
-                    <div :class="$style.inputBox" />
-                    <input :class="$style.textInput" v-model="inputText" type="text" :maxlength="30"
-                      placeholder="輸入最多30字..." />
-                  </div>
-                  <div :class="$style.inputIconArea" @click="onSend">
-                    <img :class="$style.icon1" alt="" src="/icon-1.svg" />
-                  </div>
-                </div>
-              </div>
-              <div :class="$style.placeholder">
-                <div :class="$style.div">
-                  <p :class="$style.p">留下你曾經覺得過不去的低潮回憶</p>
-                  <p :class="$style.p">讓它在這裡成為生命的養分吧</p>
-                </div>
-              </div>
-            </section>
-            <transition name="overlay-fade">
-              <div v-if="overlayVisible" :class="$style.overlayMask">
-                <div :class="$style.overlayContent">
-                  <div ref="lottieContainer" :class="$style.lottieBox"></div>
-                </div>
-              </div>
-            </transition>
           </div>
-        </div>
+          <div :class="$style.placeholder">
+            <div :class="$style.div">
+              <p :class="$style.p">留下你曾經覺得過不去的低潮回憶</p>
+              <p :class="$style.p">讓它在這裡成為生命的養分吧</p>
+            </div>
+          </div>
+        </section>
+        <transition name="overlay-fade">
+          <div v-if="overlayVisible" :class="$style.overlayMask">
+            <div :class="$style.overlayContent">
+              <div ref="lottieContainer" :class="$style.lottieBox"></div>
+            </div>
+          </div>
+        </transition>
       </div>
     </div>
   </section>
@@ -192,9 +188,7 @@ onBeforeUnmount(() => {
 <style module>
 .backgroundBlue {
   align-self: stretch;
-  height: 1483px;
   position: relative;
-  background: linear-gradient(180deg, #baf9fb, #f3ffd8);
   display: none;
   z-index: 0;
 }
@@ -422,7 +416,6 @@ onBeforeUnmount(() => {
 }
 
 .layerNames {
-  height: 1269px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -455,7 +448,6 @@ onBeforeUnmount(() => {
 }
 
 .layerNames1 {
-  height: 1269px;
   width: 1093px;
   display: flex;
   flex-direction: column;
@@ -469,7 +461,6 @@ onBeforeUnmount(() => {
 
 .layerNamesParent {
   align-self: stretch;
-  height: 1269px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -497,13 +488,11 @@ onBeforeUnmount(() => {
 
 .backgroundBlueParent {
   width: 100%;
-  height: 1493px;
   margin: 0 !important;
   position: absolute;
   right: 0px;
   bottom: -11px;
   left: 0px;
-  background: linear-gradient(180deg, #B9F9FB, #f3ffd8);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -524,24 +513,14 @@ onBeforeUnmount(() => {
 }
 
 .wrapper {
-  height: 263px;
-  width: 503px;
+  width: 100%;
+  min-width: 200px;
+  max-width: 450px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  padding: 35px 0px;
   box-sizing: border-box;
-  max-width: 100%;
-}
-
-.p {
-  margin: 0;
-}
-
-.p1 {
-  margin: 0;
-  white-space: pre-wrap;
 }
 
 .h2 {
@@ -555,24 +534,35 @@ onBeforeUnmount(() => {
   font-family: inherit;
 }
 
-.container {
-  height: 264px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 25px var(--padding-10);
-  box-sizing: border-box;
-  max-width: 100%;
+.p {
+  margin: 0;
 }
 
-.frameContainer {
+.p1 {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.container {
+  width: 100%;
+  min-width: 200px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 25px var(--padding-10);
+  box-sizing: border-box;
+}
+
+.titleContainer {
+  max-width: 100%;
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
+  gap: 5vw;
   text-align: center;
   font-size: var(--font-size-32);
   color: var(--color-cadetblue-200);
@@ -581,29 +571,14 @@ onBeforeUnmount(() => {
 
 /* Responsive: when viewport is narrow, stack wrapper and container vertically */
 @media screen and (max-width: 768px) {
-  .frameContainer {
+  .titleContainer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 3vh;
     padding: 0 16px;
   }
 
-  .frameContainer .wrapper,
-  .frameContainer .container {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .frameContainer .wrapper {
-    justify-content: center;
-    padding: 20px 0;
-  }
-
-  .frameContainer .container {
-    padding: 12px 0 24px;
-  }
 }
 
 .qIcon {
@@ -616,7 +591,6 @@ onBeforeUnmount(() => {
 
 .frameGroup {
   align-self: stretch;
-  height: 745px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -726,35 +700,22 @@ onBeforeUnmount(() => {
 }
 
 .frameParent {
-  width: 1420px;
-  height: 1144px;
+  width: 100%;
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 0px;
-  max-width: 100%;
-}
-
-.backInner {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-60) 0px;
-  box-sizing: border-box;
-  flex-shrink: 0;
-  max-width: 100%;
-  z-index: 1;
+  gap: 3vh;
+  padding: 5% 2% 25%;
 }
 
 .back {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   padding: var(--padding-10);
   box-sizing: border-box;
   position: relative;
@@ -763,28 +724,7 @@ onBeforeUnmount(() => {
 }
 
 .f {
-  align-self: stretch;
-  width: 1440px;
-  background-color: var(--color-white);
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: 0px 0px var(--padding-11);
-  box-sizing: border-box;
-  max-width: 100%;
-}
-
-.fWrapper {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0px var(--padding-1) 0px 0px;
-  box-sizing: border-box;
-  max-width: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, #B9F9FB, #f3ffd8);
 }
 </style>
