@@ -19,13 +19,13 @@
           </div>
         </div>
       </section>
-      <div :class="$style.frameContainer">
+      <div :class="$style.groupDiv">
         <div :class="$style.imageWrapper">
           <transition name="fade-slide" mode="out-in">
             <img :class="$style.frameChild" alt="" :src="currentImage" :key="currentImage" />
           </transition>
         </div>
-        <div :class="$style.frame">
+        <div :class="$style.wrapper2">
           <img :class="$style.icon" loading="lazy" alt="" src="/3-1@2x.png" />
         </div>
       </div>
@@ -190,7 +190,6 @@ onBeforeUnmount(() => {
   padding: var(--padding-20) 0px;
   box-sizing: border-box;
   gap: var(--gap-14);
-  min-width: 350px;
   max-width: 100%;
   text-align: left;
   font-size: var(--font-size-32);
@@ -217,24 +216,25 @@ onBeforeUnmount(() => {
 }
 
 .icon {
-  width: 87px;
+  width: 10%;
   position: relative;
   max-height: 100%;
   object-fit: cover;
 }
 
-.frame {
+.wrapper2 {
   position: absolute;
   bottom: 0px;
-  left: 25%;
+  left: 20%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   padding: var(--padding-10);
+  width: 100%;
 }
 
-.frameContainer {
+.groupDiv {
   height: 650px;
   width: 650px;
   position: relative;
@@ -252,8 +252,8 @@ onBeforeUnmount(() => {
   max-width: 100%;
 }
 
-/* Responsive: stack .frameGroup and .frameContainer on smaller screens */
-@media screen and (max-width: 800px) {
+/* Responsive: stack .frameGroup and .groupDiv on smaller screens */
+@media screen and (max-width: 1150px) {
   .frameParent {
     flex-direction: column;
     gap: 28px;
@@ -268,7 +268,7 @@ onBeforeUnmount(() => {
     padding: 0;
   }
 
-  .frameContainer {
+  .groupDiv {
     width: 100%;
     max-width: 720px;
     height: auto;
@@ -286,15 +286,6 @@ onBeforeUnmount(() => {
     padding: 12px;
   }
 
-  .frame {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    display: flex;
-    justify-content: center;
-    padding: 8px 0;
-  }
-
   .frameChild {
     width: 100%;
     height: auto;
@@ -310,12 +301,12 @@ onBeforeUnmount(() => {
   max-width: 100%;
 }
 
-@media screen and (max-width: 401px) {
+@media screen and (max-width: 450px) {
   .frameGroup {
     min-width: 100%;
   }
 
-  .frameContainer {
+  .groupDiv {
     min-width: 100%;
   }
 

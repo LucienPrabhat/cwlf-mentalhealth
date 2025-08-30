@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="$style.frameGrandParent">
     <div :class="$style.wrapper1">
       <div :class="$style.wrapper11">
         <h2 :class="$style.h22">兒福聯盟用行動陪伴</h2>
@@ -152,6 +152,10 @@ onBeforeUnmount(() => {
 })
 </script>
 <style module>
+.frameGrandParent {
+  width: 100%;
+}
+
 .h2 {
   margin: 0;
   position: relative;
@@ -227,13 +231,11 @@ onBeforeUnmount(() => {
   padding: var(--padding-20) 0px;
   box-sizing: border-box;
   gap: var(--gap-14);
-  flex-shrink: 0;
+  max-width: 100%;
   text-align: left;
   font-size: var(--font-size-32);
   color: var(--color-black);
   font-family: var(--font-gensenrounded2-tw);
-  min-width: 350px;
-  max-width: 100%;
 }
 
 .txt {
@@ -294,7 +296,7 @@ onBeforeUnmount(() => {
 }
 
 .icon {
-  width: 97px;
+  width: 10%;
   position: relative;
   max-height: 100%;
   object-fit: cover;
@@ -303,12 +305,13 @@ onBeforeUnmount(() => {
 .wrapper2 {
   position: absolute;
   bottom: 0px;
-  right: 25%;
+  right: 20%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   padding: var(--padding-10);
+  width: 100%;
 }
 
 .groupDiv {
@@ -335,12 +338,19 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: center;
   text-align: right;
-  font-size: var(--font-size-36);
-  color: var(--color-cadetblue-200);
-  font-family: var(--font-gensenrounded2-tw);
   max-width: 100%;
   width: 100%;
 }
+
+/* .frameParent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  row-gap: var(--gap-20);
+  max-width: 100%;
+} */
 
 /* Responsive: stack the text block and image block on smaller screens */
 @media screen and (max-width: 1150px) {
@@ -387,15 +397,6 @@ onBeforeUnmount(() => {
   .frameChild {
     width: 100%;
     height: auto;
-  }
-
-  .wrapper2 {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    display: flex;
-    justify-content: center;
-    padding: 8px 0;
   }
 }
 
