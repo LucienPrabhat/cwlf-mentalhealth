@@ -3,32 +3,11 @@
     <div :class="$style.f">
       <div :class="$style.back">
         <div :class="$style.backgroundBlueParent">
-          <div :class="$style.backgroundBlue" />
           <div :class="$style.imageBackGroud">
-            <img :class="$style.pngIcon" alt="" src="/-2png@2x.png" />
-            <img :class="$style.pngIcon1" alt="" src="/-2png@2x.png" />
-          </div>
-          <div :class="$style.blockContainerParent">
-            <div :class="$style.blockContainer">
-              <img :class="$style.layer272Icon" loading="lazy" alt="" src="/--0003-layer27-2@2x.png" />
-            </div>
-            <div :class="$style.layer254Wrapper">
-              <img :class="$style.layer254Icon" alt="" src="/--0002-layer25-2@2x.png" />
-            </div>
-          </div>
-          <div :class="$style.pageElement">
-            <div :class="$style.layerNamesParent">
-              <div :class="$style.layerNames">
-                <div :class="$style.wrapper0002Layer2">
-                  <img :class="$style.layer251Icon" alt="" src="/--0002-layer25-1@2x.png" />
-                </div>
-              </div>
-              <div :class="$style.layerNames1">
-                <div :class="$style.wrapper0003Layer2">
-                  <img :class="$style.layer271Icon" alt="" src="/--0003-layer27-1-1@2x.png" />
-                </div>
-              </div>
-            </div>
+            <picture>
+              <source srcset="/garden-plants-m.png" media="(max-width: 600px)">
+              <img src="/garden-plants.png" alt="Garden Plants">
+            </picture>
           </div>
         </div>
         <div :class="$style.backInner">
@@ -365,16 +344,12 @@ onBeforeUnmount(() => {
 }
 
 .imageBackGroud {
-  margin: 0 !important;
   position: absolute;
-  bottom: 0px;
-  left: calc(50% - 851px);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  row-gap: var(--gap-20);
-  z-index: 1;
+  bottom: -1vh;
+}
+
+.imageBackGroud img {
+  width: 100%;
 }
 
 .layer272Icon {
@@ -528,7 +503,7 @@ onBeforeUnmount(() => {
   right: 0px;
   bottom: -11px;
   left: 0px;
-  background: linear-gradient(180deg, #baf9fb, #f3ffd8);
+  background: linear-gradient(180deg, #B9F9FB, #f3ffd8);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -775,13 +750,12 @@ onBeforeUnmount(() => {
 }
 
 .back {
-  margin-left: -10px;
   align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px var(--padding-10) 0px var(--padding-20);
+  padding: var(--padding-10);
   box-sizing: border-box;
   position: relative;
   flex-shrink: 0;
@@ -805,7 +779,6 @@ onBeforeUnmount(() => {
 
 .fWrapper {
   align-self: stretch;
-  height: 1483px;
   display: flex;
   flex-direction: row;
   align-items: center;
