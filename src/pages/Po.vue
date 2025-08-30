@@ -126,26 +126,18 @@
             <img :class="$style.s11157513Icon" alt="" src="/bo/03.png" />
           </div>
           <button :class="$style.wrapper" @click="goBack">
-            <div :class="$style.wrapperChild" />
-            <div :class="$style.navigation">
-              <img :class="$style.icon3" alt="" src="/storyMobile/return.png" />
-            </div>
-            <div :class="$style.div1">回上頁</div>
+            <img :class="$style.icon3" alt="" src="/storyMobile/return.png" />
           </button>
         </div>
       </section>
-      <div :class="$style.parent">
-        <!-- <img :class="$style.icon4" alt="" src="/icon-sun.png" /> -->
-        <h3 :class="$style.h3">
-          <p :class="$style.p">立即</p>
-          <p :class="$style.p">行動</p>
-        </h3>
-      </div>
     </main>
   </div>
 
   <div :class="$style.responsiveImg">
-    <img src="/storyMobile/story_m_po.png"></img>
+    <picture>
+      <source srcset="/storyMobile/story-m-po.png" media="(max-width: 600px)">
+      <img src="/storyMobile/story-po.png" alt="Title Frame">
+    </picture>
     <div :class="$style.mobileReturn">
       <img src="/storyMobile/return.png" @click="goBack"></img>
     </div>
@@ -348,10 +340,7 @@ function goBack() {
 }
 
 .icon3 {
-  width: 28px;
-  height: 28px;
-  position: relative;
-  z-index: 1;
+  width: 100%;
 }
 
 .navigation {
@@ -379,8 +368,6 @@ function goBack() {
 .wrapper {
   cursor: pointer;
   border: none;
-  padding: var(--padding-6) 27px var(--padding-5) var(--padding-32);
-  background-color: var(--color-teal);
   width: 203px;
   height: 65px;
   border-radius: 38px;
@@ -477,10 +464,10 @@ function goBack() {
   overflow: hidden;
   line-height: normal;
   letter-spacing: normal;
+  display: none;
 }
 
 .responsiveImg {
-  display: none;
   width: 100%;
 }
 
@@ -492,26 +479,18 @@ function goBack() {
 
 .mobileReturn {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 125px;
+  width: 100%;
 }
 
 .mobileReturn img {
   width: 100%;
+  min-width: 125px;
+  max-width: 18vw;
   height: auto;
   display: block;
   position: absolute;
   bottom: 80px;
-}
-
-@media (max-width: 600px) {
-  .e {
-    display: none;
-  }
-
-  .responsiveImg {
-    display: block;
-  }
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>

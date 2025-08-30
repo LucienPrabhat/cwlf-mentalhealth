@@ -24,13 +24,6 @@
         <img :class="$style.frameChild" alt="" src="/xin/top.png" />
         <img :class="$style.layer241Icon" loading="lazy" alt="" src="/xin/flower.png" />
       </header>
-      <div :class="$style.parent">
-        <img :class="$style.icon1" alt="" src="/1@2x.png" />
-        <h3 :class="$style.h3">
-          <p :class="$style.blankLine">立即</p>
-          <p :class="$style.blankLine">行動</p>
-        </h3>
-      </div>
     </div>
     <div :class="$style.vectorGroup">
       <img :class="$style.frameItem" alt="" src="/xin/btm.png" />
@@ -162,21 +155,18 @@
           <img :class="$style.frameInner" loading="lazy" alt="" src="/xin/01.png" />
           <img :class="$style.icon2" loading="lazy" alt="" src="/xin/02.png" />
         </div>
-        <div :class="$style.frameWrapper">
-          <div :class="$style.rectangleGroup" @click="goBack">
-            <div :class="$style.rectangleDiv" />
-            <div :class="$style.iconWrapper">
-              <img :class="$style.icon3" loading="lazy" alt="" src="/storyMobile/return.png" />
-            </div>
-            <h2 :class="$style.h2">回上頁</h2>
-          </div>
-        </div>
+        <button :class="$style.frameWrapper" @click="goBack">
+          <img :class="$style.icon3" alt="" src="/storyMobile/return.png" />
+        </button>
       </section>
     </main>
   </div>
 
   <div :class="$style.responsiveImg">
-    <img src="/storyMobile/story_m_xin.png"></img>
+    <picture>
+      <source srcset="/storyMobile/story-m-xin.png" media="(max-width: 600px)">
+      <img src="/storyMobile/story-xin.png" alt="Title Frame">
+    </picture>
     <div :class="$style.mobileReturn">
       <img src="/storyMobile/return.png" @click="goBack"></img>
     </div>
@@ -491,10 +481,7 @@ function goBack() {
 }
 
 .icon3 {
-  width: 28px;
-  height: 28px;
-  position: relative;
-  z-index: 1;
+  width: 100%;
 }
 
 .iconWrapper {
@@ -530,15 +517,17 @@ function goBack() {
 }
 
 .frameWrapper {
+  cursor: pointer;
+  border: none;
+  width: 203px;
+  height: 65px;
+  border-radius: 38px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px 284px;
   box-sizing: border-box;
-  max-width: 100%;
-  font-size: var(--font-size-32);
-  color: var(--color-white);
+  gap: var(--gap-11);
 }
 
 .frameContainer {
@@ -583,10 +572,10 @@ function goBack() {
   font-size: var(--font-size-28);
   color: var(--color-darkslategray);
   font-family: var(--font-gensenrounded2-tw);
+  display: none;
 }
 
 .responsiveImg {
-  display: none;
   width: 100%;
 }
 
@@ -598,26 +587,18 @@ function goBack() {
 
 .mobileReturn {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 125px;
+  width: 100%;
 }
 
 .mobileReturn img {
   width: 100%;
+  min-width: 125px;
+  max-width: 18vw;
   height: auto;
   display: block;
   position: absolute;
   bottom: 80px;
-}
-
-@media (max-width: 600px) {
-  .e {
-    display: none;
-  }
-
-  .responsiveImg {
-    display: block;
-  }
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>

@@ -254,7 +254,10 @@
   </div>
 
   <div :class="$style.responsiveImg">
-    <img src="/storyMobile/story_m_yan.png"></img>
+    <picture>
+      <source srcset="/storyMobile/story-m-yan.png" media="(max-width: 600px)">
+      <img src="/storyMobile/story-yan.png" alt="Title Frame">
+    </picture>
     <div :class="$style.mobileReturn">
       <img src="/storyMobile/return.png" @click="goBack"></img>
     </div>
@@ -1000,6 +1003,7 @@ function goBack() {
   justify-content: flex-start;
   line-height: normal;
   letter-spacing: normal;
+  display: none;
 }
 
 @media screen and (max-width: 1325px) {
@@ -1219,7 +1223,6 @@ function goBack() {
 }
 
 .responsiveImg {
-  display: none;
   width: 100%;
 }
 
@@ -1231,26 +1234,18 @@ function goBack() {
 
 .mobileReturn {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 125px;
+  width: 100%;
 }
 
 .mobileReturn img {
   width: 100%;
+  min-width: 125px;
+  max-width: 18vw;
   height: auto;
   display: block;
   position: absolute;
   bottom: 80px;
-}
-
-@media (max-width: 600px) {
-  .e {
-    display: none;
-  }
-
-  .responsiveImg {
-    display: block;
-  }
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>
