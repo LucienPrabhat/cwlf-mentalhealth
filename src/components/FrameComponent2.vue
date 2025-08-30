@@ -21,14 +21,12 @@
             </div>
           </section>
           <div :class="$style.qiconAreaDiv">
-            <QuestionBubble :maxWidth="'520px'" :minWidth="'180px'">
-              <span :class="$style.commentDescriptionTxt">{{ 123123123 }}</span>
-            </QuestionBubble>
-            <div v-for="(msg, idx) in messages" :key="msg.id" :class="$style.questionsBubble"
-              :style="{ left: msg.left, bottom: msg.bottom, animationDuration: msg.duration + 's' }">
-              <QuestionBubble :maxWidth="'520px'" :minWidth="'180px'">
-                <span :class="$style.commentDescriptionTxt">{{ msg.text }}</span>
-              </QuestionBubble>
+            <div v-for="bubble in messages" :key="bubble.id" :class="$style.bubbleInstance"
+              :style="{ left: bubble.left, animationDuration: bubble.duration + 's' }"
+              @animationend="removeBubble(bubble.id)">
+              <QuestionBubble :maxWidth="'520px'" :minWidth="'180px'"
+                :background="'rgba(255,255,255,' + (bubble.priority ? 1 : bubble.opacity) + ')'"><span
+                  :class="$style.commentDescriptionTxt">{{ bubble.text }}</span></QuestionBubble>
             </div>
           </div>
         </div>
@@ -62,7 +60,7 @@
   </section>
 </template>
 <script setup>
-import { ref, watch, onBeforeUnmount, nextTick } from 'vue'
+import { ref, watch, onBeforeUnmount, onMounted, nextTick } from 'vue'
 import QuestionBubble from './QuestionBubble.vue'
 
 const inputText = ref('')
@@ -71,6 +69,51 @@ const messages = ref([])
 const lottieContainer = ref(null)
 let lottieInstance = null
 let isSending = false
+
+// Predefined floating texts
+const PREDEFINED_TEXTS = [
+  '「手機打開又關上，不想看到那些關於我的謠言和嘲笑。」',
+  '「在鏡子前盯著自己看了很久，覺得哪裡都不對，像是生錯了樣子。」',
+  '「別急著走出來，先陪自己坐一會兒。」',
+  '「走在走廊，背後的竊笑像針一樣刺過來，我不敢回頭，也不敢多走一步。」',
+  '「大人都說只是為我好，但那些話像刀子一樣，割在我覺得已經夠醜的地方。」',
+  '「即使現在是陰天，也會有陽光等你。」',
+  '「假裝沒事，是我每天的日常作業...」',
+  '「明明人很多，但我覺得自己像透明的。」',
+  '「你不是因為脆弱才受傷，而是因為你一直很努力地承受。」',
+  '「那些嘲笑和惡意不能定義你，你的價值遠比他們看到的更多。」',
+  '「如果今天覺得累，就先好好喘口氣，你已經很勇敢走到這裡了。」',
+  '「手機訊息一閃，我卻沒有力氣回覆任何人。」',
+  '「試著對自己溫柔一點，你也需要被自己疼愛。」',
+  '「抱抱自己，告訴自己你很棒」',
+  '「好像不管我多努力，都沒有用...」',
+]
+
+const randomBetween = (min, max) => Math.random() * (max - min) + min
+
+const spawnFloatBubble = (text, opts = {}) => {
+  const id = Date.now() + Math.random()
+  const leftPercent = randomBetween(-10, 100) // allow overflow to be clipped
+  const duration = opts.durationSec || Math.floor(randomBetween(6, 12))
+  const opacity = typeof opts.opacity === 'number' ? opts.opacity : Number(randomBetween(0.2, 0.6).toFixed(2))
+  const priority = !!opts.priority
+  messages.value.push({ id, text, left: leftPercent + '%', duration, opacity, priority })
+}
+
+const removeBubble = (id) => {
+  const i = messages.value.findIndex(b => b.id === id)
+  if (i !== -1) messages.value.splice(i, 1)
+}
+
+let spawnTimer = null
+const scheduleSpawn = () => {
+  const delay = Math.floor(randomBetween(1200, 2600))
+  spawnTimer = setTimeout(() => {
+    const text = PREDEFINED_TEXTS[Math.floor(Math.random() * PREDEFINED_TEXTS.length)]
+    spawnFloatBubble(text)
+    scheduleSpawn()
+  }, delay)
+}
 
 const formatNow = () => {
   const d = new Date()
@@ -127,7 +170,8 @@ const onSend = async () => {
   overlayVisible.value = true
   const timestamp = formatNow()
   await playOverlay()
-  addBubble(text)
+  // priority bubble: fully opaque, appears immediately
+  spawnFloatBubble(text, { priority: true, opacity: 1, durationSec: Math.floor(randomBetween(6, 10)) })
   inputText.value = ''
   overlayVisible.value = false
   isSending = false
@@ -181,6 +225,11 @@ watch(overlayVisible, (visible) => {
 
 onBeforeUnmount(() => {
   destroyLottie()
+  if (spawnTimer) clearTimeout(spawnTimer)
+})
+
+onMounted(() => {
+  scheduleSpawn()
 })
 </script>
 <style module>
@@ -200,68 +249,32 @@ onBeforeUnmount(() => {
   height: 50vh;
 }
 
-.floatIcon,
-.floatIcon2 {
+.bubbleInstance {
   position: absolute;
-  width: 18%;
-  object-fit: contain;
-  opacity: 0.9;
-  animation-name: floatY;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
+  bottom: -10%;
+  animation-name: riseFade;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
   pointer-events: none;
 }
 
-.floatIcon {
-  left: 12%;
-  top: 50%;
-  animation-duration: 3s;
-}
-
-.floatIcon2 {
-  width: 22%;
-  right: 8%;
-  bottom: 18%;
-  animation-duration: 2s;
-}
-
-.questionsBubble {
-  position: absolute;
-  width: 25%;
-  animation-name: floatY;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
-  pointer-events: none;
-}
-
-.bubbleText {
-  position: absolute;
-  left: 15%;
-  right: 15%;
-  top: 30%;
-  color: var(--color-cadetblue-300);
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 1.2;
-  text-align: center;
-  word-break: break-word;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-@keyframes floatY {
-  from {
+@keyframes riseFade {
+  0% {
     transform: translateY(0);
+    opacity: 0;
+  }
+
+  10% {
     opacity: 1;
   }
 
-  to {
-    transform: translateY(-36px);
-    opacity: 0.5;
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-70%);
+    opacity: 0;
   }
 }
 
