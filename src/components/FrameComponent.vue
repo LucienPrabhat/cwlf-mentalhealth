@@ -24,6 +24,9 @@
             </p>
           </div>
         </div>
+        <div :class="$style.wrapper">
+          <h2 :class="$style.h2">二級輔導</h2>
+        </div>
         <div :class="$style.frameDiv">
           <div :class="$style.div">
             <p :class="$style.p">
