@@ -129,6 +129,15 @@
         <div :class="$style.donationFooter">
           <img :class="$style.icon" loading="lazy" alt="" src="/--0002@2x.png" />
           <p>衛部救字第1141360179號</p>
+          <section :class="$style.partners">
+            <div :class="$style.partnersInner">
+              <div :class="$style.partnerLabel">響應夥伴</div>
+              <div :class="$style.partnerStrip">
+                <img v-for="(file, idx) in partnerIconFiles" :key="file" :class="$style.partnerIcon"
+                  :src="`/partnerIcon/${file}`" :alt="`partner-${idx + 1}`" />
+              </div>
+            </div>
+          </section>
         </div>
       </footer>
     </div>
@@ -145,6 +154,20 @@ import Home from "./Home.vue"
 
 const showMore = ref(false)     // 給想了解更多的你
 const showHelp = ref(false)     // 給需要幫助的你
+const partnerIconFiles = [
+  '01.png',
+  '02.png',
+  '03.jpg',
+  '04.png',
+  '05.png',
+  '06.png',
+  '07.png',
+  '08.png',
+  '09.png',
+  '10.png',
+  '11.jpg',
+  '12.png',
+]
 </script>
 <style module>
 .p {
@@ -834,6 +857,47 @@ const showHelp = ref(false)     // 給需要幫助的你
 
 .gWrapper {
   width: 100%;
+}
+
+.partners {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.partnersInner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 24px;
+  box-sizing: border-box;
+}
+
+.partnerLabel {
+  white-space: nowrap;
+}
+
+.partnerStrip {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 16px;
+}
+
+.partnerIcon {
+  width: auto;
+  height: auto;
+  max-height: 56px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 1200px) {
