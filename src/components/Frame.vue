@@ -131,6 +131,7 @@ import Component1 from "./Component1.vue"
   /* responsive box: between 350px and 512px wide, keeps aspect ratio */
   min-width: 244px;
   width: clamp(244px, 30vw, 472px);
+  max-width: 472px;
   aspect-ratio: 472 / 766;
   /* width / height -> keeps proportional height */
   min-height: 410px;
@@ -304,6 +305,7 @@ import Component1 from "./Component1.vue"
   .rectangleParent {
     min-width: 300px;
     width: clamp(300px, 25vw, 450px);
+    max-width: 450px;
     min-height: 430px;
   }
 }
@@ -341,6 +343,7 @@ import Component1 from "./Component1.vue"
   .rectangleParent {
     min-width: 280px;
     width: clamp(280px, 80vw, 400px);
+    max-width: 400px;
     min-height: 400px;
     /* softer outer + subtle inner shadow on small screens */
     box-shadow: 0px 1px 4.3px 18px rgba(148, 207, 255, 0.25);
@@ -379,6 +382,7 @@ import Component1 from "./Component1.vue"
   .rectangleParent {
     min-width: 250px;
     width: clamp(250px, 85vw, 350px);
+    max-width: 350px;
     min-height: 360px;
     /* tighten shadows further for very small screens */
     box-shadow: 0px 1px 4.3px 12px rgba(148, 207, 255, 0.25);
@@ -417,6 +421,7 @@ import Component1 from "./Component1.vue"
   .rectangleParent {
     min-width: 220px;
     width: clamp(220px, 90vw, 300px);
+    max-width: 300px;
     min-height: 320px;
     /* minimal but readable depth on ultra-small screens */
     box-shadow: 0px 1px 4.3px 10px rgba(148, 207, 255, 0.25);
