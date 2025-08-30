@@ -44,11 +44,9 @@
               </div>
             </div>
           </div>
-          <div :class="$style.placeholder">
-            <div :class="$style.div">
-              <p :class="$style.p">留下你曾經覺得過不去的低潮回憶</p>
-              <p :class="$style.p">讓它在這裡成為生命的養分吧</p>
-            </div>
+          <div :class="$style.commentDescription">
+            <p :class="$style.commentDescriptionTxt">留下你曾經覺得過不去的低潮回憶</p>
+            <p :class="$style.commentDescriptionTxt">讓它在這裡成為生命的養分吧</p>
           </div>
         </section>
         <transition name="overlay-fade">
@@ -543,7 +541,7 @@ onBeforeUnmount(() => {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: 25px var(--padding-10);
+  padding: 25px 0;
   box-sizing: border-box;
 }
 
@@ -607,18 +605,16 @@ onBeforeUnmount(() => {
 }
 
 .icon1 {
-  width: 34px;
-  height: 28.7px;
-  position: relative;
+  width: clamp(20px, 5vw, 43px);
 }
 
 .inputIconArea {
-  height: 97px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  padding: 0px 25px;
+  padding: 0px 5%;
   box-sizing: border-box;
   position: relative;
   z-index: 4;
@@ -640,32 +636,29 @@ onBeforeUnmount(() => {
 
 .inputField {
   align-self: stretch;
-  height: 97px;
+  height: 100%;
+  min-height: 45px;
+  max-height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 25px 37px;
   box-sizing: border-box;
 }
 
-.div {
+.commentDescription {
+  box-sizing: border-box;
+  margin: 2vh 0 5vh;
+}
+
+.commentDescriptionTxt {
+  font-size: clamp(12px, 3vw, 24px);
+  font-weight: 100;
   position: relative;
   letter-spacing: 0.04em;
   line-height: 190%;
   text-transform: uppercase;
   text-shadow: 0px 0px 3px #fff;
-}
-
-.placeholder {
-  align-self: stretch;
-  height: 140px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0px var(--padding-64);
-  box-sizing: border-box;
 }
 
 .type {
@@ -720,6 +713,12 @@ onBeforeUnmount(() => {
 
   .container {
     align-self: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    padding: 25px 10vw;
   }
 }
 </style>
