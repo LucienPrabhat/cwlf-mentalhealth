@@ -85,6 +85,10 @@ body {
   --font-gensenrounded2-tw: GenSenRounded2 TW;
 
   /* FontSize */
+  --font-size-8: 8px;
+  --font-size-10: 10px;
+  --font-size-12: 12px;
+  --font-size-14: 14px;
   --font-size-16: 16px;
   --font-size-18: 18px;
   --font-size-19: 19px;
@@ -92,8 +96,12 @@ body {
   --font-size-22: 22px;
   --font-size-24: 24px;
   --font-size-26: 26px;
+  --font-size-28: 28px;
+  --font-size-30: 30px;
   --font-size-32: 32px;
+  --font-size-34: 34px;
   --font-size-36: 36px;
+  --font-size-38: 38px;
   --font-size-40: 40px;
 
   /* Figma Variables */

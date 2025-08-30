@@ -919,24 +919,26 @@ const handleCustomDonation = async () => {
 }
 
 .h31 {
-  margin: 0;
-  align-self: stretch;
   position: relative;
-  font-size: inherit;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-family: inherit;
-}
-
-.div6 {
   align-self: stretch;
-  position: relative;
   font-size: var(--font-size-20);
   letter-spacing: 0.04em;
   line-height: 190%;
+  font-weight: 400;
+  font-size: 24px;
   text-transform: uppercase;
   color: var(--color-black);
+}
+
+.div6 {
+  position: relative;
+  align-self: stretch;
+  font-size: inherit;
+  letter-spacing: 0.04em;
+  line-height: inherit;
+  font-weight: inherit;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 .productDesign {
@@ -1234,6 +1236,18 @@ const handleCustomDonation = async () => {
   display: block;
 }
 
+.qaLink {
+  font-weight: 600;
+  font-size: 20px;
+  color: #838383;
+  text-decoration: underline;
+  margin: 30px 0;
+}
+
+.qaLink:hover {
+  text-decoration: none;
+}
+
 /* 響應式設計 */
 @media screen and (max-width: 1200px) {
   .frameParent {
@@ -1317,9 +1331,7 @@ const handleCustomDonation = async () => {
     text-align: center;
     align-items: center;
   }
-}
 
-@media screen and (max-width: 1200px) {
   .freeInput {
     left: 51%;
   }
@@ -1382,11 +1394,11 @@ const handleCustomDonation = async () => {
   }
 
   .p {
-    font-size: var(--font-size-16);
+    font-size: var(--font-size-14);
   }
 
   .div6 {
-    font-size: var(--font-size-16);
+    font-size: var(--font-size-14);
   }
 
   .layoutBlock {
@@ -1529,13 +1541,9 @@ const handleCustomDonation = async () => {
     padding: 15px 0;
     gap: var(--gap-15);
   }
-
-  .div6 {
-    line-height: 160%;
-  }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 450px) {
   .frameParent {
     padding: 0px 10px;
   }
@@ -1560,11 +1568,11 @@ const handleCustomDonation = async () => {
   }
 
   .p {
-    font-size: var(--font-size-14);
+    font-size: var(--font-size-10);
   }
 
   .div6 {
-    font-size: var(--font-size-14);
+    font-size: var(--font-size-10);
   }
 
   .layoutBlock {
@@ -1653,6 +1661,11 @@ const handleCustomDonation = async () => {
     padding: 10px 0;
     gap: var(--gap-10);
   }
+
+  .qaLink {
+    font-size: 14px;
+    margin: 20px 0;
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -1669,11 +1682,11 @@ const handleCustomDonation = async () => {
   }
 
   .p {
-    font-size: var(--font-size-12);
+    font-size: var(--font-size-8);
   }
 
   .div6 {
-    font-size: var(--font-size-12);
+    font-size: var(--font-size-8);
   }
 
   .customAmountInput {
@@ -1724,30 +1737,11 @@ const handleCustomDonation = async () => {
   }
 
   .p {
-    font-size: var(--font-size-22);
+    font-size: var(--font-size-16);
   }
 
   .div6 {
-    font-size: var(--font-size-22);
-  }
-}
-
-.qaLink {
-  font-weight: 600;
-  font-size: 20px;
-  color: #838383;
-  text-decoration: underline;
-  margin: 30px 0;
-}
-
-.qaLink:hover {
-  text-decoration: none;
-}
-
-@media screen and (max-width: 450px) {
-  .qaLink {
-    font-size: 14px;
-    margin: 20px 0;
+    font-size: var(--font-size-16);
   }
 }
 </style>
