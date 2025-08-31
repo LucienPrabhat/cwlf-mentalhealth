@@ -15,20 +15,33 @@
               <div :class="$style.component" :data-open="showMore">
                 <div :class="$style.keyboardArrowDownParent">
                   <div :class="$style.learningPane">
-                    <div :class="$style.programColumn">
-                      <div :class="$style.icon">
-                        <img alt="" src="/icon-book.png" />
-                      </div>
-                      <div :class="$style.content">
-                        <div :class="$style.title">線上課程</div>
-                        <DetailsLink
-                          href="https://hahow.in/courses/6655a0be08aad049fe6d68fd?utm_source=share&utm_medium=link"
-                          text="兒福聯盟－給父母的青少年心理健康成長指南" />
-                        <DetailsLink
-                          href="https://hahow.in/courses/66726ce875e58cf0bb26d86f?utm_source=share&utm_medium=link"
-                          text="青春不該 EMO 一樣－青少年心理健康成長指南" />
-                      </div>
-                    </div>
+                    <ProgramColumn iconSrc="/icon-book.png" title="線上課程">
+                      <DetailsLink
+                        href="https://hahow.in/courses/6655a0be08aad049fe6d68fd?utm_source=share&utm_medium=link"
+                        text="兒福聯盟－給父母的青少年心理健康成長指南" />
+                      <DetailsLink
+                        href="https://hahow.in/courses/66726ce875e58cf0bb26d86f?utm_source=share&utm_medium=link"
+                        text="青春不該 EMO 一樣－青少年心理健康成長指南" />
+                    </ProgramColumn>
+
+                    <ProgramColumn iconSrc="/icon-volume.png" title="PODCAST">
+                      <DetailsLink href="https://lihi.cc/0OPPb" text="放學不回家" />
+                      <DetailsLink href="https://lihi.cc/drKeO" text="今晚來點樂社話" />
+                      <DetailsLink href="https://trauma-informedcare.children.org.tw/news/news_detail/ticpodcastlist"
+                        text="創傷知情照護" />
+                    </ProgramColumn>
+
+                    <ProgramColumn iconSrc="/icon-play.png" title="影音節目">
+                      <DetailsLink
+                        href="https://www.youtube.com/watch?v=IdzKajOLmpQ&list=PLK3rF9Qn9rzuBhr10LFOpkk98_46tfJfU"
+                        text="同學大小聲" />
+                      <DetailsLink
+                        href="https://www.youtube.com/watch?v=ujenK-pkDGI&list=PLK3rF9Qn9rzvwkJ8bsVyEvBNBglXalvO4"
+                        text="放學不回家" />
+                    </ProgramColumn>
+
+                    <ProgramColumn iconSrc="/icon-folder.png" title="公益報告書：伴成長之路</br>2025 兒福聯盟少年服務現場紀實">
+                    </ProgramColumn>
                   </div>
                 </div>
               </div>
@@ -98,6 +111,7 @@ import PlayCircle from "./PlayCircle.vue"
 import InnerElements from "./InnerElements.vue"
 import Home from "./Home.vue"
 import DetailsLink from "./DetailsLink.vue"
+import ProgramColumn from "./ProgramColumn.vue"
 
 const showMore = ref(false)     // 給想了解更多的你
 const showHelp = ref(false)     // 給需要幫助的你
