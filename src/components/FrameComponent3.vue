@@ -17,78 +17,16 @@
                   <div :class="$style.learningPane">
                     <div :class="$style.programColumn">
                       <div :class="$style.icon">
-                        <img alt="" src="/keyboard-arrow-down@2x.png" />
+                        <img alt="" src="/icon-book.png" />
                       </div>
                       <div :class="$style.content">
-                        <div :class="$style.title">今晚來點樂社話</div>
-                        <div :class="$style.details">
-                          <a :class="$style.a1" href="https://lihi.cc/drKeO" target="_blank">
-                            12334
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div :class="$style.programColumn">
-                      <div :class="$style.div">線上課程</div>
-                      <div :class="$style.courseExpansion">
-                        <div :class="$style.itemCard">
-                          <div :class="$style.courseGuide">
-                            <img :class="$style.keyboardArrowDownIcon5" alt="" src="/keyboard-arrow-down@2x.png" />
-                            <a :class="$style.a3"
-                              href="https://hahow.in/courses/6655a0be08aad049fe6d68fd?utm_source=share&utm_medium=link"
-                              target="_blank">
-                              兒福聯盟－給父母的青少年心理健康成長指南
-                            </a>
-                            <a :class="$style.emo"
-                              href="https://hahow.in/courses/66726ce875e58cf0bb26d86f?utm_source=share&utm_medium=link"
-                              target="_blank">
-                              青春不該 EMO 一樣－青少年心理健康成長指南
-                            </a>
-                          </div>
-                          <div :class="$style.podcast">Podcast</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div :class="$style.programColumn">
-                      <div :class="$style.showCase">
-                        <div :class="$style.playShow">
-                          <a :class="$style.a1" href="https://lihi.cc/0OPPb" target="_blank">
-                            放學不回家
-                          </a>
-                          <div :class="$style.courseGuide">
-                            <img :class="$style.keyboardArrowDownIcon6" alt="" src="/keyboard-arrow-down@2x.png" />
-                            <a :class="$style.a5"
-                              href="https://trauma-informedcare.children.org.tw/news/news_detail/ticpodcastlist"
-                              target="_blank">
-                              <span :class="$style.txt">
-                                <p :class="$style.p">&nbsp;</p>
-                                <p :class="$style.p">創傷知情照護</p>
-                              </span>
-                            </a>
-                          </div>
-                        </div>
-                        <div :class="$style.div1">影音節目</div>
-                      </div>
-                    </div>
-                    <div :class="$style.programColumn">
-                      <div :class="$style.courseGuide">
-                        <img :class="$style.keyboardArrowDownIcon7" alt="" src="/keyboard-arrow-down@2x.png" />
-                        <div :class="$style.resourceDivision">
-                          <a :class="$style.a6"
-                            href="https://www.youtube.com/watch?v=ujenK-pkDGI&list=PLK3rF9Qn9rzvwkJ8bsVyEvBNBglXalvO4"
-                            target="_blank">
-                            放學不回家
-                          </a>
-                          <div :class="$style.parent">
-                            <a :class="$style.a7"
-                              href="https://www.children.org.tw/publication_research/publication/2934" target="_blank">
-                              公益報告書
-                            </a>
-                            <div :class="$style.dropdownPanel">
-                              <img :class="$style.keyboardArrowDownIcon8" alt="" src="/keyboard-arrow-down-8@2x.png" />
-                            </div>
-                          </div>
-                        </div>
+                        <div :class="$style.title">線上課程</div>
+                        <DetailsLink
+                          href="https://hahow.in/courses/6655a0be08aad049fe6d68fd?utm_source=share&utm_medium=link"
+                          text="兒福聯盟－給父母的青少年心理健康成長指南" />
+                        <DetailsLink
+                          href="https://hahow.in/courses/66726ce875e58cf0bb26d86f?utm_source=share&utm_medium=link"
+                          text="青春不該 EMO 一樣－青少年心理健康成長指南" />
                       </div>
                     </div>
                   </div>
@@ -159,6 +97,7 @@ import Volume from "./Volume.vue"
 import PlayCircle from "./PlayCircle.vue"
 import InnerElements from "./InnerElements.vue"
 import Home from "./Home.vue"
+import DetailsLink from "./DetailsLink.vue"
 
 const showMore = ref(false)     // 給想了解更多的你
 const showHelp = ref(false)     // 給需要幫助的你
@@ -242,9 +181,7 @@ const partnerIconFiles = [
   object-fit: contain;
 }
 
-.a1 {
-  height: 28px;
-  width: 121px;
+.a {
   position: relative;
   text-decoration: underline;
   letter-spacing: 0.04em;
@@ -400,6 +337,7 @@ const partnerIconFiles = [
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0px var(--padding-4);
+  gap: 5%;
 }
 
 .programColumn .icon {
@@ -422,6 +360,11 @@ const partnerIconFiles = [
 
 .programColumn .content .details {
   font-size: clamp(12px, 3vw, 16px);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
 }
 
 .keyboardArrowDownIcon7 {
@@ -701,6 +644,7 @@ const partnerIconFiles = [
   justify-content: center;
   row-gap: var(--gap-20);
   width: 100%;
+  padding: 0 5%;
 }
 
 .accompanyQuoteParent {
