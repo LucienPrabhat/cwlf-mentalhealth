@@ -14,7 +14,6 @@
               <ExplorePanel prop="給想了解更多的你" @toggle="showMore = !showMore" />
               <div :class="$style.component" :data-open="showMore">
                 <div :class="$style.keyboardArrowDownParent">
-
                   <div :class="$style.learningPane">
                     <div :class="$style.dropDownOption">
                       <img :class="$style.keyboardArrowDownIcon3" alt="" src="/keyboard-arrow-down@2x.png" />
@@ -227,84 +226,6 @@ const partnerIconFiles = [
   padding: var(--padding-10) 9px;
 }
 
-.keyboardArrowDownIcon {
-  width: 27px;
-  position: absolute;
-  margin: 0 !important;
-  top: 87px;
-  right: 63px;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.folderIcon {
-  width: 48px;
-  height: 48px;
-  position: relative;
-}
-
-.iconRow {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 88px;
-}
-
-.detailsArea {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-100);
-}
-
-.keyboardArrowDownIcon1 {
-  width: 27px;
-  position: absolute;
-  margin: 0 !important;
-  right: -13px;
-  bottom: 20px;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.keyboardArrowDownIcon2 {
-  width: 27px;
-  position: absolute;
-  margin: 0 !important;
-  right: -13px;
-  bottom: -5px;
-  max-height: 100%;
-  object-fit: contain;
-  z-index: 1;
-}
-
-.a {
-  height: 68px;
-  width: 97px;
-  position: relative;
-  text-decoration: underline;
-  letter-spacing: 0.04em;
-  line-height: 157.24%;
-  text-transform: uppercase;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  z-index: 2;
-}
-
-.dropdownMenu {
-  margin: 0 !important;
-  position: absolute;
-  top: 187px;
-  left: 68px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
 .keyboardArrowDownIcon3 {
   width: 27px;
   position: absolute;
@@ -338,49 +259,6 @@ const partnerIconFiles = [
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-}
-
-.keyboardArrowDownIcon4 {
-  width: 27px;
-  position: absolute;
-  margin: 0 !important;
-  right: -13px;
-  bottom: -1px;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.a2 {
-  height: 30px;
-  width: 97px;
-  position: relative;
-  text-decoration: underline;
-  letter-spacing: 0.04em;
-  line-height: 190%;
-  text-transform: uppercase;
-  color: inherit;
-  display: inline-block;
-  z-index: 3;
-}
-
-.dropDownOptionTwo {
-  margin: 0 !important;
-  position: absolute;
-  top: 338px;
-  left: 68px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.div {
-  width: 84px;
-  position: relative;
-  letter-spacing: 0.04em;
-  line-height: 200%;
-  text-transform: uppercase;
-  display: inline-block;
 }
 
 .keyboardArrowDownIcon5 {
@@ -615,7 +493,8 @@ const partnerIconFiles = [
   position: relative;
   gap: var(--gap-16);
   opacity: 0;
-  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
 }
 
 .component {
@@ -749,8 +628,8 @@ const partnerIconFiles = [
 }
 
 .group {
-  height: 409px;
-  width: 502px;
+  width: 100%;
+  max-width: 500px;
   position: relative;
   opacity: 0;
 }
@@ -967,11 +846,6 @@ const partnerIconFiles = [
   .h2 {
     font-size: var(--font-size-19);
     line-height: 36px;
-  }
-
-  .div {
-    font-size: var(--font-size-16);
-    line-height: 32px;
   }
 
   .podcast {
