@@ -15,13 +15,20 @@
               <div :class="$style.component" :data-open="showMore">
                 <div :class="$style.keyboardArrowDownParent">
                   <div :class="$style.learningPane">
-                    <div :class="$style.dropDownOption">
-                      <img :class="$style.keyboardArrowDownIcon3" alt="" src="/keyboard-arrow-down@2x.png" />
-                      <a :class="$style.a1" href="https://lihi.cc/drKeO" target="_blank">
-                        今晚來點樂社話
-                      </a>
+                    <div :class="$style.programColumn">
+                      <div :class="$style.icon">
+                        <img alt="" src="/keyboard-arrow-down@2x.png" />
+                      </div>
+                      <div :class="$style.content">
+                        <div :class="$style.title">今晚來點樂社話</div>
+                        <div :class="$style.details">
+                          <a :class="$style.a1" href="https://lihi.cc/drKeO" target="_blank">
+                            12334
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                    <div :class="$style.coursesBlock">
+                    <div :class="$style.programColumn">
                       <div :class="$style.div">線上課程</div>
                       <div :class="$style.courseExpansion">
                         <div :class="$style.itemCard">
@@ -228,7 +235,6 @@ const partnerIconFiles = [
 
 .keyboardArrowDownIcon3 {
   width: 27px;
-  position: absolute;
   margin: 0 !important;
   right: -21px;
   bottom: 0px;
@@ -250,20 +256,8 @@ const partnerIconFiles = [
   z-index: 3;
 }
 
-.dropDownOption {
-  margin: 0 !important;
-  position: absolute;
-  top: 207px;
-  left: 224px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
 .keyboardArrowDownIcon5 {
   width: 27px;
-  position: absolute;
   margin: 0 !important;
   top: -13px;
   right: 63px;
@@ -274,7 +268,6 @@ const partnerIconFiles = [
 .a3 {
   height: 27px;
   width: 434px;
-  position: absolute;
   margin: 0 !important;
   top: -15px;
   left: 0px;
@@ -338,6 +331,7 @@ const partnerIconFiles = [
 }
 
 .coursesBlock {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -348,10 +342,7 @@ const partnerIconFiles = [
 
 .keyboardArrowDownIcon6 {
   width: 27px;
-  position: absolute;
   margin: 0 !important;
-  right: -21px;
-  bottom: 0px;
   max-height: 100%;
   object-fit: contain;
   z-index: 1;
@@ -403,6 +394,7 @@ const partnerIconFiles = [
 }
 
 .programColumn {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -410,13 +402,31 @@ const partnerIconFiles = [
   padding: 0px var(--padding-4);
 }
 
+.programColumn .icon {
+  width: 10%;
+}
+
+.programColumn .icon img {
+  width: 100%;
+}
+
+.programColumn .content {
+  width: 90%;
+  align-self: stretch;
+}
+
+.programColumn .content .title {
+  font-size: clamp(16px, 3vw, 20px);
+  margin: 3% 0;
+}
+
+.programColumn .content .details {
+  font-size: clamp(12px, 3vw, 16px);
+}
+
 .keyboardArrowDownIcon7 {
   width: 27px;
-  position: absolute;
   margin: 0 !important;
-  top: 2px;
-  right: 26px;
-  max-height: 100%;
   object-fit: contain;
   z-index: 1;
 }
@@ -534,9 +544,6 @@ const partnerIconFiles = [
 }
 
 .div2 {
-  position: absolute;
-  top: 190px;
-  left: calc(50% - 183px);
   letter-spacing: 0.04em;
   line-height: 157.24%;
   text-transform: uppercase;
@@ -582,9 +589,6 @@ const partnerIconFiles = [
 }
 
 .phoneAreaParent {
-  position: absolute;
-  top: 0px;
-  left: 68px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -617,9 +621,6 @@ const partnerIconFiles = [
 }
 
 .outreach {
-  position: absolute;
-  top: 0px;
-  left: 0px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
