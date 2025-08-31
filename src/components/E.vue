@@ -904,7 +904,7 @@ const handleCustomDonation = async () => {
 
 .h23 small {
   display: block;
-  font-size: 0.3em;
+  font-size: 0.5em;
   font-weight: normal;
   color: #666;
   margin-top: 0.1em;
@@ -925,7 +925,7 @@ const handleCustomDonation = async () => {
   letter-spacing: 0.04em;
   line-height: 190%;
   font-weight: 400;
-  font-size: 24px;
+  font-size: clamp(18px, 3vw, 28px);
   text-transform: uppercase;
   color: var(--color-black);
 }
@@ -934,10 +934,11 @@ const handleCustomDonation = async () => {
   position: relative;
   align-self: stretch;
   font-size: inherit;
+  font-weight: normal;
   letter-spacing: 0.04em;
   line-height: inherit;
   font-weight: inherit;
-  font-size: 16px;
+  font-size: clamp(12px, 3vw, 16px);
   text-transform: uppercase;
 }
 
@@ -1388,17 +1389,8 @@ const handleCustomDonation = async () => {
     font-size: var(--font-size-28);
   }
 
-  .h3,
-  .h31 {
+  .h3 {
     font-size: var(--font-size-18);
-  }
-
-  .p {
-    font-size: var(--font-size-14);
-  }
-
-  .div6 {
-    font-size: var(--font-size-14);
   }
 
   .layoutBlock {
@@ -1562,17 +1554,8 @@ const handleCustomDonation = async () => {
     font-size: var(--font-size-24);
   }
 
-  .h3,
-  .h31 {
+  .h3 {
     font-size: var(--font-size-16);
-  }
-
-  .p {
-    font-size: var(--font-size-10);
-  }
-
-  .div6 {
-    font-size: var(--font-size-10);
   }
 
   .layoutBlock {
@@ -1676,17 +1659,8 @@ const handleCustomDonation = async () => {
     font-size: var(--font-size-20);
   }
 
-  .h3,
-  .h31 {
+  .h3 {
     font-size: var(--font-size-14);
-  }
-
-  .p {
-    font-size: var(--font-size-8);
-  }
-
-  .div6 {
-    font-size: var(--font-size-8);
   }
 
   .customAmountInput {
@@ -1731,17 +1705,9 @@ const handleCustomDonation = async () => {
     font-size: var(--font-size-42);
   }
 
-  .h3,
-  .h31 {
+  .h3 {
     font-size: var(--font-size-24);
   }
 
-  .p {
-    font-size: var(--font-size-16);
-  }
-
-  .div6 {
-    font-size: var(--font-size-16);
-  }
 }
 </style>

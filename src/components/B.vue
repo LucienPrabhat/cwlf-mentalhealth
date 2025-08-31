@@ -340,6 +340,7 @@
   min-width: 195px;
   min-height: 50px;
   padding: 8px 16px;
+  text-decoration: none;
 }
 
 .orangeButton:hover {
