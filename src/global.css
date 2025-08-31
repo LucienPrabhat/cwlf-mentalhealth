@@ -82,7 +82,7 @@ body {
 
   /* Font */
   --font-noto-sans-tagalog: Noto Sans Tagalog;
-  --font-gensenrounded2-tw: GenSenRounded2 TW;
+  --font-gensenrounded2-tw: 'GenSenRounded2TW';
 
   /* FontSize */
   --font-size-8: 8px;
