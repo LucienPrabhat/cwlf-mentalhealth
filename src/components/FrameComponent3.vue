@@ -48,7 +48,7 @@
               </div>
             </section>
             <section :class="$style.emergencyAccess">
-              <ExplorePanel explorePanelWidth="unset" prop="給需要幫助的你" @toggle="showHelp = !showHelp" />
+              <ExplorePanel prop="給需要幫助的你" @toggle="showHelp = !showHelp" />
               <div :class="$style.component1" :data-open="showHelp">
                 <div :class="$style.group">
                   <div :class="$style.linksPane">
