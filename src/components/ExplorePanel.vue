@@ -52,7 +52,7 @@ const explorePanelStyle = computed(() => ({
   justify-content: flex-start;
   gap: var(--gap-24);
   text-align: left;
-  font-size: var(--font-size-32);
+  font-size: clamp(20px, 3vw, 32px);
   color: var(--color-white);
   font-family: var(--font-gensenrounded2-tw);
 }
