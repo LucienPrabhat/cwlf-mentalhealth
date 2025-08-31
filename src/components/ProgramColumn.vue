@@ -4,7 +4,7 @@
             <img :alt="iconAlt" :src="iconSrc" />
         </div>
         <div :class="$style.content">
-            <div :class="$style.title">{{ title }}</div>
+            <div :class="$style.title" v-html="title"></div>
             <slot />
         </div>
     </section>
@@ -44,6 +44,6 @@ const props = defineProps({
 
 .title {
     font-size: clamp(16px, 3vw, 20px);
-    margin: 3% 0;
+    line-height: 200%;
 }
 </style>
