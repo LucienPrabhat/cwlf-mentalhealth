@@ -14,7 +14,7 @@
               <ExplorePanel prop="給想了解更多的你" @toggle="showMore = !showMore" />
               <div :class="$style.component" :data-open="showMore">
                 <div :class="$style.keyboardArrowDownParent">
-                  <div :class="$style.learningPane">
+                  <div :class="$style.linksPane">
                     <ProgramColumn iconSrc="/icon-book.png" title="線上課程">
                       <DetailsLink
                         href="https://hahow.in/courses/6655a0be08aad049fe6d68fd?utm_source=share&utm_medium=link"
@@ -40,7 +40,8 @@
                         text="放學不回家" />
                     </ProgramColumn>
 
-                    <ProgramColumn iconSrc="/icon-folder.png" title="公益報告書：伴成長之路<br>2025 兒福聯盟少年服務現場紀實">
+                    <ProgramColumn iconSrc="/icon-folder.png" title="公益報告書：伴成長之路<br>2025 兒福聯盟少年服務現場紀實"
+                      titleHref="https://www.children.org.tw/publication_research/publication/2934">
                     </ProgramColumn>
                   </div>
                 </div>
@@ -50,33 +51,30 @@
               <ExplorePanel explorePanelWidth="unset" prop="給需要幫助的你" @toggle="showHelp = !showHelp" />
               <div :class="$style.component1" :data-open="showHelp">
                 <div :class="$style.group">
-                  <div :class="$style.div2">
-                    專線電話：0800-250585（愛我理我幫我）
-                  </div>
-                  <div :class="$style.phoneAreaParent">
-                    <div :class="$style.resourceDivision">
-                      <InnerElements prop="少年專線" href="https://www.children.org.tw/service/index/2313/2034" />
-                      <div :class="$style.group1">
-                        <a :class="$style.a8" href="https://www.children.org.tw/service/index/39/700" target="_blank">
-                          創傷專線
-                        </a>
-                        <div :class="$style.keyboardArrowDownWrapper">
-                          <img :class="$style.keyboardArrowDownIcon9" alt="" src="/keyboard-arrow-down-8@2x.png" />
-                        </div>
+                  <div :class="$style.linksPane">
+                    <ProgramColumn iconSrc="/icon-call.png" title="少年專線"
+                      titleHref="https://www.children.org.tw/service/index/2313/2034">
+                      <div :class="$style.details">
+                        專線電話： 0800-001769
                       </div>
-                    </div>
-                    <InnerElements groupWidth="unset" groupHeight="unset" groupAlignItems="flex-end" prop="少年＋據點"
-                      href="https://www.children.org.tw/service/index/3366/2493" aWidth="104px"
-                      expansionSignJustifyContent="flex-end" expansionSignPadding="0px 0px 3px" />
-                  </div>
-                  <div :class="$style.outreach">
-                    <div :class="$style.calendar">
-                      <img :class="$style.callEndIcon" loading="lazy" alt="" src="/call-end@2x.png" />
-                    </div>
-                    <img :class="$style.callEndIcon" loading="lazy" alt="" src="/call-end@2x.png" />
-                    <div :class="$style.location">
-                      <Home :size="48" />
-                    </div>
+                      <div :class="$style.details">
+                        LINE@線上聊：LINE搜尋 @youthplus_cwlf
+                      </div>
+                    </ProgramColumn>
+                    <ProgramColumn iconSrc="/icon-call.png" title="創傷專線">
+                      <div :class="$style.details">
+                        專線電話：0800-250585（愛我理我幫我）
+                      </div>
+                    </ProgramColumn>
+                    <ProgramColumn iconSrc="/icon-home.png" title="少年＋據點"
+                      titleHref="https://www.children.org.tw/service/index/3366/2493">
+                      <div :class="$style.details">
+                        提供完善的設備空間、多元課程與營隊，
+                      </div>
+                      <div :class="$style.details">
+                        讓少年體驗正向的人際互動。 
+                      </div>
+                    </ProgramColumn>
                   </div>
                 </div>
               </div>
@@ -372,8 +370,9 @@ const partnerIconFiles = [
   margin: 3% 0;
 }
 
-.programColumn .content .details {
+.details {
   font-size: clamp(12px, 3vw, 16px);
+  line-height: 200%;
   align-self: stretch;
   display: flex;
   align-items: center;
@@ -443,7 +442,7 @@ const partnerIconFiles = [
   gap: 29px;
 }
 
-.learningPane {
+.linksPane {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -826,7 +825,7 @@ const partnerIconFiles = [
     line-height: 32px;
   }
 
-  .learningPane {
+  .linksPane {
     gap: 21px;
   }
 

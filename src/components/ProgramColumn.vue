@@ -4,7 +4,16 @@
             <img :alt="iconAlt" :src="iconSrc" />
         </div>
         <div :class="$style.content">
-            <div :class="$style.title" v-html="title"></div>
+            <div :class="$style.title">
+                <template v-if="titleHref">
+                    <a :href="titleHref" :class="$style.titleLink">
+                        <span v-html="title"></span>
+                    </a>
+                </template>
+                <template v-else>
+                    <span v-html="title"></span>
+                </template>
+            </div>
             <slot />
         </div>
     </section>
@@ -15,6 +24,7 @@ const props = defineProps({
     iconSrc: { type: String, required: true },
     iconAlt: { type: String, default: '' },
     title: { type: String, required: true },
+    titleHref: { type: String, default: '' },
 })
 </script>
 
@@ -45,5 +55,10 @@ const props = defineProps({
 .title {
     font-size: clamp(16px, 3vw, 20px);
     line-height: 200%;
+}
+
+.titleLink {
+    color: inherit;
+    text-decoration: underline;
 }
 </style>

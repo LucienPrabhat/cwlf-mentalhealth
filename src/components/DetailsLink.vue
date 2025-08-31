@@ -17,6 +17,7 @@ const props = defineProps({
 <style module>
 .details {
     font-size: clamp(12px, 3vw, 16px);
+    line-height: 200%;
     align-self: stretch;
     display: flex;
     align-items: center;
@@ -27,7 +28,7 @@ const props = defineProps({
     position: relative;
     text-decoration: underline;
     letter-spacing: 0.04em;
-    line-height: 157.24%;
+    line-height: 200%;
     text-transform: uppercase;
     color: inherit;
     display: inline;
