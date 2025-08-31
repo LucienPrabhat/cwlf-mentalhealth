@@ -837,12 +837,6 @@ const partnerIconFiles = [
 
 @media screen and (max-width: 401px) {
 
-  /* Stack the two sections vertically */
-  .externalResourcesParent {
-    flex-direction: column;
-    align-items: center;
-  }
-
   /* Center the title block in the middle of the screen */
   .accompanyQuoteParent {
     display: flex;

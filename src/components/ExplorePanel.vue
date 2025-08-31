@@ -57,6 +57,12 @@ const explorePanelStyle = computed(() => ({
   font-family: var(--font-gensenrounded2-tw);
 }
 
+@media screen and (max-width: 1200px) {
+  .explorePanel {
+    justify-content: center;
+  }
+}
+
 @media screen and (max-width: 401px) {
   .h2 {
     font-size: var(--font-size-19);
