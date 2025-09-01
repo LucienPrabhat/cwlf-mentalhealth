@@ -110,7 +110,7 @@
                   <div :class="$style.container">
                     <h3 :class="$style.h31">鬧卡</h3>
                     <div :class="$style.div6">
-                      <p :class="$style.p">兒福聯盟以情緒教育為核心設計，透過插畫與情境文字，引導覺察感受、調節情緒，穩定自己，也理解他人！</p>
+                      <p :class="$style.p">以情緒教育為核心設計，透過插畫與情境文字，引導覺察感受、調節情緒，穩定自己，也理解他人！</p>
                     </div>
                   </div>
                 </section>
@@ -120,7 +120,7 @@
                     <h3 :class="$style.h31">療癒香氛蠟燭</h3>
                     <div :class="$style.div6">
                       <p :class="$style.p">
-                        兒盟秉持先照顧好自己，才有能量照顧好他人的理念，邀請您用氣味療癒紓壓，擁抱自己的內心感受。</p>
+                        先照顧好自己，才有能量照顧好他人，邀請您用氣味療癒紓壓，擁抱自己的內心感受。</p>
                     </div>
                   </div>
                 </section>

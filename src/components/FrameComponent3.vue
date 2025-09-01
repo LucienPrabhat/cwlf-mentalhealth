@@ -40,8 +40,12 @@
                         text="放學不回家" />
                     </ProgramColumn>
 
-                    <ProgramColumn iconSrc="/icon-folder.png" title="公益報告書：伴成長之路<br>2025 兒福聯盟少年服務現場紀實"
-                      titleHref="https://www.children.org.tw/publication_research/publication/2934">
+                    <ProgramColumn iconSrc="/icon-folder.png" title="公益報告書">
+                      <div :class="$style.details">
+                        伴成長之路
+                      </div>
+                      <DetailsLink href="https://www.children.org.tw/publication_research/publication/2934"
+                        text="2025 兒福聯盟少年服務現場紀實" />
                     </ProgramColumn>
                   </div>
                 </div>
@@ -61,7 +65,8 @@
                         LINE@線上聊：LINE搜尋 @youthplus_cwlf
                       </div>
                     </ProgramColumn>
-                    <ProgramColumn iconSrc="/icon-call.png" title="創傷專線">
+                    <ProgramColumn iconSrc="/icon-call.png" title="創傷專線"
+                      titleHref="https://www.children.org.tw/service/index/39/700">
                       <div :class="$style.details">
                         專線電話：0800-250585（愛我理我幫我）
                       </div>
