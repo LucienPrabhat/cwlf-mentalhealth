@@ -22,11 +22,12 @@
           </section>
           <div :class="$style.qiconAreaDiv">
             <div v-for="bubble in messages" :key="bubble.id" :class="$style.bubbleInstance"
-              :style="{ left: bubble.left, animationDuration: bubble.duration + 's' }"
+              :style="{ left: bubble.left, animationDuration: bubble.duration + 's', '--tx': bubble.tx || 0 }"
               @animationend="removeBubble(bubble.id)">
               <QuestionBubble :maxWidth="'520px'" :minWidth="'180px'"
-                :background="'rgba(255,255,255,' + (bubble.priority ? 1 : bubble.opacity) + ')'"><span
-                  :class="$style.commentDescriptionTxt">{{ bubble.text }}</span></QuestionBubble>
+                :background="'rgba(255,255,255,' + (bubble.priority ? 1 : bubble.opacity) + ')'">
+                <span>{{ bubble.text }}</span>
+              </QuestionBubble>
             </div>
           </div>
         </div>
@@ -90,14 +91,17 @@ const PREDEFINED_TEXTS = [
 ]
 
 const randomBetween = (min, max) => Math.random() * (max - min) + min
+const clamp = (min, max, value) => Math.min(max, Math.max(min, value))
 
 const spawnFloatBubble = (text, opts = {}) => {
   const id = Date.now() + Math.random()
-  const leftPercent = randomBetween(-10, 100) // allow overflow to be clipped
-  const duration = opts.durationSec || Math.floor(randomBetween(15, 25))
+  const isCenter = !!opts.center
+  const leftPercent = isCenter ? 50 : clamp(10, 50, randomBetween(0, 100))
+  const duration = opts.durationSec || Math.floor(randomBetween(4.5, 6))
   const opacity = typeof opts.opacity === 'number' ? opts.opacity : Number(randomBetween(0.2, 0.6).toFixed(2))
   const priority = !!opts.priority
-  messages.value.push({ id, text, left: leftPercent + '%', duration, opacity, priority })
+  const tx = isCenter ? '-50%' : '0'
+  messages.value.push({ id, text, left: leftPercent + '%', duration, opacity, priority, tx })
 }
 
 const removeBubble = (id) => {
@@ -107,7 +111,8 @@ const removeBubble = (id) => {
 
 let spawnTimer = null
 const scheduleSpawn = () => {
-  const delay = Math.floor(randomBetween(1200, 3600))
+  // const delay = Math.floor(randomBetween(1200, 3600))
+  const delay = 3000
   spawnTimer = setTimeout(() => {
     const text = PREDEFINED_TEXTS[Math.floor(Math.random() * PREDEFINED_TEXTS.length)]
     spawnFloatBubble(text)
@@ -170,8 +175,8 @@ const onSend = async () => {
   overlayVisible.value = true
   const timestamp = formatNow()
   await playOverlay()
-  // priority bubble: fully opaque, appears immediately
-  spawnFloatBubble(text, { priority: true, opacity: 1, durationSec: Math.floor(randomBetween(25, 35)) })
+  // priority bubble: fully opaque, appears immediately, centered
+  spawnFloatBubble(text, { priority: true, opacity: 1, durationSec: 25, center: true })
   inputText.value = ''
   overlayVisible.value = false
   isSending = false
@@ -260,7 +265,7 @@ onMounted(() => {
 
 @keyframes riseFade {
   0% {
-    transform: translateY(0);
+    transform: translate(var(--tx, 0), 0);
     opacity: 0;
   }
 
@@ -273,7 +278,7 @@ onMounted(() => {
   }
 
   100% {
-    transform: translateY(-48vh);
+    transform: translate(var(--tx, 0), -48vh);
     opacity: 0;
   }
 }

@@ -16,11 +16,11 @@ import { computed } from 'vue'
 const props = defineProps({
     maxWidth: { type: [String, Number], default: '360px' },
     minWidth: { type: [String, Number], default: '140px' },
-    padding: { type: String, default: '14px 18px' },
+    padding: { type: String, default: '10%' },
     background: { type: String, default: '#ffffff' },
     textColor: { type: String, default: 'var(--color-cadetblue-300)' },
-    fontSize: { type: [String, Number], default: '18px' },
-    lineHeight: { type: [String, Number], default: 1.4 },
+    fontSize: { type: [String, Number], default: '12px' },
+    lineHeight: { type: [String, Number], default: 1.2 },
 })
 
 const toCssSize = (v) => typeof v === 'number' ? `${v}px` : String(v)
@@ -61,9 +61,15 @@ const tailStyle = computed(() => ({
 }
 
 .content {
-    font-weight: 600;
     text-align: center;
     word-break: break-word;
+    font-size: clamp(12px, 3vw, 16px);
+    font-weight: 100;
+    position: relative;
+    letter-spacing: 0.04em;
+    line-height: 100%;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px #fff;
 }
 
 .tail {
