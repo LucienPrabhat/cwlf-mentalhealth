@@ -549,7 +549,7 @@
 }
 
 .tmpFrameWrapper img {
-  width: 100%;
+  width: 101%;
   height: auto;
   display: block;
 }

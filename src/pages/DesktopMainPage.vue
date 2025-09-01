@@ -43,12 +43,14 @@ import FrameComponent3 from "../components/FrameComponent3.vue"
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+  background-color: #498A90;
 }
 
 .titleFrame img {
-  width: 100%;
+  width: 101%;
   height: auto;
   display: block;
+  transform: translate(-1px, -1px);
 }
 
 .icon {
