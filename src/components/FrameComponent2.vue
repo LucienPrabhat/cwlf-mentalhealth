@@ -619,7 +619,7 @@ onMounted(() => {
 }
 
 .inputIconArea {
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
