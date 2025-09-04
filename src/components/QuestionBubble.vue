@@ -14,13 +14,14 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-    maxWidth: { type: [String, Number], default: '360px' },
-    minWidth: { type: [String, Number], default: '140px' },
+    width: { type: [String, Number], default: '30vw' },
+    maxWidth: { type: [String, Number], default: '50vw' },
+    minWidth: { type: [String, Number], default: '200px' },
     padding: { type: String, default: '10%' },
     background: { type: String, default: '#ffffff' },
     textColor: { type: String, default: 'var(--color-cadetblue-300)' },
-    fontSize: { type: [String, Number], default: '12px' },
-    lineHeight: { type: [String, Number], default: 1.2 },
+    fontSize: { type: [String, Number], default: 'clamp(12px, 4vw, 24px)' },
+    lineHeight: { type: [String, Number], default: 1.5 },
 })
 
 const toCssSize = (v) => typeof v === 'number' ? `${v}px` : String(v)
