@@ -24,6 +24,7 @@
     <E />
     <FrameComponent2 />
     <FrameComponent3 />
+    <PartnersSection />
   </div>
 </template>
 <script setup>
@@ -36,6 +37,7 @@ import D from "../components/D.vue"
 import E from "../components/E.vue"
 import FrameComponent2 from "../components/FrameComponent2.vue"
 import FrameComponent3 from "../components/FrameComponent3.vue"
+import PartnersSection from "../components/PartnersSection.vue"
 </script>
 <style module>
 .titleFrame {
