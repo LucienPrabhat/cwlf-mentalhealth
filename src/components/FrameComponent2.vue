@@ -1,5 +1,5 @@
 <template>
-  <section :class="$style.f">
+  <section :id="$attrs.id" :class="$style.f">
     <div :class="$style.back">
       <div :class="$style.backgroundBlueParent">
         <div :class="$style.imageBackGroud">

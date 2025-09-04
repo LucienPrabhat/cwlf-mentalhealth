@@ -20,6 +20,14 @@ const routes = [
     component: DesktopMainPage,
   },
   {
+    path: "/garden",
+    name: "Garden",
+    component: DesktopMainPage,
+    meta: {
+      scrollTo: "garden"
+    }
+  },
+  {
     path: "/po",
     name: "Po",
     component: Po,
@@ -44,6 +52,22 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.meta.scrollTo) {
+      // Use setTimeout to ensure component is fully rendered
+      setTimeout(() => {
+        const element = document.getElementById(to.meta.scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 200);
+      return { top: 0 }; // Return top: 0 to prevent Vue Router's default behavior
+    }
+    return { top: 0 };
+  },
 });
 
 router.beforeEach((toRoute, _, next) => {

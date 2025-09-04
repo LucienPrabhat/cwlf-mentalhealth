@@ -22,12 +22,14 @@
     </section>
     <D />
     <E />
-    <FrameComponent2 />
+    <FrameComponent2 id="garden" />
     <FrameComponent3 />
     <PartnersSection />
   </div>
 </template>
 <script setup>
+import { onMounted, nextTick, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import Frame from "../components/Frame.vue"
 import GroupComponent from "../components/GroupComponent.vue"
 import B from "../components/B.vue"
@@ -38,6 +40,33 @@ import E from "../components/E.vue"
 import FrameComponent2 from "../components/FrameComponent2.vue"
 import FrameComponent3 from "../components/FrameComponent3.vue"
 import PartnersSection from "../components/PartnersSection.vue"
+
+const route = useRoute()
+
+// Handle scroll to garden section
+const handleScrollToGarden = () => {
+  nextTick(() => {
+    const element = document.getElementById('garden')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  })
+}
+
+// Watch for route changes and handle garden scroll
+watch(() => route.path, (newPath) => {
+  if (newPath === '/garden') {
+    // Add delay to ensure component is fully rendered
+    setTimeout(handleScrollToGarden, 300)
+  }
+}, { immediate: true })
+
+// Also handle initial load
+onMounted(() => {
+  if (route.path === '/garden') {
+    setTimeout(handleScrollToGarden, 300)
+  }
+})
 </script>
 <style module>
 .titleFrame {
