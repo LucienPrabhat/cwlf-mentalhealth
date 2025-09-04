@@ -49,6 +49,9 @@ const handleScrollToGarden = () => {
     const element = document.getElementById('garden')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      console.log('Scrolled to garden element')
+    } else {
+      console.log('Garden element not found')
     }
   })
 }
@@ -56,15 +59,16 @@ const handleScrollToGarden = () => {
 // Watch for route changes and handle garden scroll
 watch(() => route.path, (newPath) => {
   if (newPath === '/garden') {
-    // Add delay to ensure component is fully rendered
-    setTimeout(handleScrollToGarden, 300)
+    console.log('Route changed to /garden, scrolling...')
+    setTimeout(handleScrollToGarden, 500)
   }
-}, { immediate: true })
+}, { immediate: false })
 
-// Also handle initial load
+// Handle initial load
 onMounted(() => {
   if (route.path === '/garden') {
-    setTimeout(handleScrollToGarden, 300)
+    console.log('Initial load with /garden route, scrolling...')
+    setTimeout(handleScrollToGarden, 500)
   }
 })
 </script>
