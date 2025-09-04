@@ -22,7 +22,7 @@
           </section>
           <div :class="$style.qiconAreaDiv">
             <div v-for="bubble in messages" :key="bubble.id" :class="$style.bubbleInstance"
-              :style="{ left: bubble.left, animationDuration: bubble.duration + 's', '--tx': bubble.tx || 0 }"
+              :style="{ left: bubble.left, animationDuration: bubble.duration + 's', '--tx': bubble.tx || 0, zIndex: bubble.priority ? 999 : 1 }"
               @animationend="removeBubble(bubble.id)">
               <QuestionBubble :maxWidth="bubble.priority ? '50vw' : '35vw'"
                 :minWidth="bubble.priority ? '240px' : '200px'"
@@ -101,7 +101,7 @@ const spawnFloatBubble = (text, opts = {}) => {
   const isCenter = !!opts.center
   const leftPercent = isCenter ? 50 : clamp(10, 35, randomBetween(10, 35))
   const duration = opts.durationSec || Math.floor(randomBetween(4.5, 6))
-  const opacity = typeof opts.opacity === 'number' ? opts.opacity : Number(randomBetween(0.2, 0.6).toFixed(2))
+  const opacity = typeof opts.opacity === 'number' ? opts.opacity : Number(randomBetween(0.2, 0.2).toFixed(2))
   const priority = !!opts.priority
   const tx = isCenter ? '-50%' : '0'
   messages.value.push({ id, text, left: leftPercent + '%', duration, opacity, priority, tx })
