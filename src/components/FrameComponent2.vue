@@ -24,7 +24,7 @@
             <div v-for="bubble in messages" :key="bubble.id" :class="$style.bubbleInstance"
               :style="{ left: bubble.left, animationDuration: bubble.duration + 's', '--tx': bubble.tx || 0 }"
               @animationend="removeBubble(bubble.id)">
-              <QuestionBubble :maxWidth="'520px'" :minWidth="'180px'"
+              <QuestionBubble :maxWidth="'50vw'" :minWidth="'200px'"
                 :background="'rgba(255,255,255,' + (bubble.priority ? 1 : bubble.opacity) + ')'">
                 <span>{{ bubble.text }}</span>
               </QuestionBubble>
@@ -112,7 +112,7 @@ const removeBubble = (id) => {
 let spawnTimer = null
 const scheduleSpawn = () => {
   // const delay = Math.floor(randomBetween(1200, 3600))
-  const delay = 3000
+  const delay = 5000
   spawnTimer = setTimeout(() => {
     const text = PREDEFINED_TEXTS[Math.floor(Math.random() * PREDEFINED_TEXTS.length)]
     spawnFloatBubble(text)
