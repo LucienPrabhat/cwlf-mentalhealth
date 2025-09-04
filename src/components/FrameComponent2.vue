@@ -24,7 +24,10 @@
             <div v-for="bubble in messages" :key="bubble.id" :class="$style.bubbleInstance"
               :style="{ left: bubble.left, animationDuration: bubble.duration + 's', '--tx': bubble.tx || 0 }"
               @animationend="removeBubble(bubble.id)">
-              <QuestionBubble :maxWidth="'35vw'" :minWidth="'200px'"
+              <QuestionBubble :maxWidth="bubble.priority ? '50vw' : '35vw'"
+                :minWidth="bubble.priority ? '240px' : '200px'"
+                :fontSize="bubble.priority ? 'clamp(14px, 4.5vw, 28px)' : 'clamp(12px, 3.5vw, 20px)'"
+                :padding="bubble.priority ? '12%' : '10%'"
                 :background="'rgba(255,255,255,' + (bubble.priority ? 1 : bubble.opacity) + ')'">
                 <span>{{ bubble.text }}</span>
               </QuestionBubble>
