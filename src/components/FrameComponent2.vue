@@ -24,7 +24,7 @@
             <div v-for="bubble in messages" :key="bubble.id" :class="$style.bubbleInstance"
               :style="{ left: bubble.left, animationDuration: bubble.duration + 's', '--tx': bubble.tx || 0 }"
               @animationend="removeBubble(bubble.id)">
-              <QuestionBubble :maxWidth="'50vw'" :minWidth="'200px'"
+              <QuestionBubble :maxWidth="'35vw'" :minWidth="'200px'"
                 :background="'rgba(255,255,255,' + (bubble.priority ? 1 : bubble.opacity) + ')'">
                 <span>{{ bubble.text }}</span>
               </QuestionBubble>
@@ -96,7 +96,7 @@ const clamp = (min, max, value) => Math.min(max, Math.max(min, value))
 const spawnFloatBubble = (text, opts = {}) => {
   const id = Date.now() + Math.random()
   const isCenter = !!opts.center
-  const leftPercent = isCenter ? 50 : clamp(10, 50, randomBetween(0, 100))
+  const leftPercent = isCenter ? 50 : clamp(10, 35, randomBetween(10, 35))
   const duration = opts.durationSec || Math.floor(randomBetween(4.5, 6))
   const opacity = typeof opts.opacity === 'number' ? opts.opacity : Number(randomBetween(0.2, 0.6).toFixed(2))
   const priority = !!opts.priority

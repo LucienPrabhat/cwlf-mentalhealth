@@ -14,8 +14,8 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-    width: { type: [String, Number], default: '30vw' },
-    maxWidth: { type: [String, Number], default: '50vw' },
+    width: { type: [String, Number], default: '25vw' },
+    maxWidth: { type: [String, Number], default: '35vw' },
     minWidth: { type: [String, Number], default: '200px' },
     padding: { type: String, default: '10%' },
     background: { type: String, default: '#ffffff' },
@@ -53,7 +53,6 @@ const tailStyle = computed(() => ({
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
 }
 
 .bubble {
