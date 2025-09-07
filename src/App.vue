@@ -6,7 +6,15 @@
       <span class="overlay-text">立即<br>行動</span>
     </a>
   </div>
+
+  <div v-if="loadingState.isLoading" class="loading-mask">
+    <img class="loading-gif" src="/cwlf_mentalhealth_blossom_animate.gif" alt="Loading" />
+  </div>
 </template>
+
+<script setup>
+import { loadingState } from "./utils/loading";
+</script>
 
 <style scoped>
 .floating-icon {
@@ -48,5 +56,24 @@
   .overlay-text {
     font-size: 14px;
   }
+}
+
+.loading-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.loading-gif {
+  width: 150px;
+  max-width: 60vw;
+  height: auto;
 }
 </style>
