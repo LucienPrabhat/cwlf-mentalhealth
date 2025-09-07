@@ -57,6 +57,7 @@
             <div :class="$style.overlayContent">
               <div ref="lottieContainer" :class="$style.lottieBox"></div>
             </div>
+            <div :class="$style.loadingText">載入中... ...</div>
           </div>
         </transition>
       </div>
@@ -310,8 +311,9 @@ onMounted(() => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 9999;
@@ -329,10 +331,17 @@ onMounted(() => {
 }
 
 .lottieBox {
-  width: 50vw;
-  height: 50vw;
-  max-height: 90vh;
-  pointer-events: none;
+  width: 200px;
+  max-width: 50vw;
+  height: auto;
+}
+
+.loadingText {
+  margin: 20px 0 0 0;
+  font-size: clamp(14px, 2vw, 20px);
+  line-height: 150%;
+  text-align: center;
+  color: white;
 }
 
 .pngIcon,

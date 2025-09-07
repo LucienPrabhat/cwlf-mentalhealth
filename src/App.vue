@@ -8,12 +8,74 @@
   </div>
 
   <div v-if="loadingState.isLoading" class="loading-mask">
-    <img class="loading-gif" src="/cwlf_mentalhealth_blossom_animate.gif" alt="Loading" />
+    <img v-if="showGif" class="loading-gif" src="/cwlf_mentalhealth_blossom_animate.gif" alt="Loading" />
+    <div v-show="lottieReady" ref="lottieEl" class="loading-lottie"></div>
+    <div class="loading-text">載入中... ...</div>
   </div>
 </template>
 
 <script setup>
 import { loadingState } from "./utils/loading";
+import { ref, watch, onBeforeUnmount } from "vue";
+
+const lottieEl = ref(null);
+const showGif = ref(true);
+const lottieReady = ref(false);
+const lottieLoadedOnce = ref(false);
+let lottieInstance = null;
+let lottieModule = null;
+
+const loadLottieIfNeeded = async () => {
+  if (lottieLoadedOnce.value) return;
+  try {
+    const [mod, json] = await Promise.all([
+      import("lottie-web"),
+      fetch("/cwlf_mentalhealth_blossom_animate.json").then((r) => r.json()),
+    ]);
+    lottieModule = mod.default || mod;
+    if (!lottieEl.value) return;
+    lottieInstance = lottieModule.loadAnimation({
+      container: lottieEl.value,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: json,
+    });
+    lottieReady.value = true;
+    showGif.value = false;
+    lottieLoadedOnce.value = true;
+  } catch (err) {
+    // Keep GIF if Lottie fails to load
+  }
+};
+
+watch(
+  () => loadingState.isLoading,
+  (isLoading) => {
+    if (isLoading) {
+      // When mask shows, kick off lottie load if not yet ready
+      // Use microtask to ensure container exists in DOM
+      Promise.resolve().then(() => {
+        if (lottieEl.value) {
+          loadLottieIfNeeded();
+        }
+      });
+    } else {
+      // Optional: stop animation when hidden to save CPU
+      if (lottieInstance) {
+        lottieInstance.stop();
+      }
+    }
+  },
+  { immediate: false }
+);
+
+onBeforeUnmount(() => {
+  if (lottieInstance) {
+    lottieInstance.destroy();
+    lottieInstance = null;
+  }
+});
 </script>
 
 <style scoped>
@@ -66,14 +128,29 @@ import { loadingState } from "./utils/loading";
   bottom: 0;
   background: rgba(255, 255, 255, 1);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 2000;
 }
 
 .loading-gif {
-  width: 150px;
-  max-width: 60vw;
+  width: 200px;
+  max-width: 50vw;
   height: auto;
+}
+
+.loading-lottie {
+  width: 200px;
+  max-width: 50vw;
+  height: auto;
+}
+
+.loading-text {
+  margin: 20px 0 0 0;
+  font-size: clamp(14px, 2vw, 20px);
+  line-height: 150%;
+  text-align: center;
+  color: var(--color-cadetblue-300);
 }
 </style>
