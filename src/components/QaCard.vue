@@ -5,7 +5,8 @@
             <div class="qa-title" :title="title">{{ title }}</div>
             <img class="qa-arrow" :class="{ rotated: isOpen }" src="/icon-down-arrow-green.png" alt="toggle" />
         </div>
-        <transition name="qa-expand">
+        <transition :css="false" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter"
+            @before-leave="beforeLeave" @leave="leave" @after-leave="afterLeave">
             <div v-show="isOpen" class="qa-content">
                 <slot>
                     <p v-if="content" class="qa-content-text">{{ content }}</p>
@@ -35,6 +36,52 @@ function toggleOpen(): void {
 
 // Expose for potential parent access if needed
 defineExpose({ isOpen })
+
+// Height-based drawer transition hooks for smooth push layout
+function beforeEnter(el: Element): void {
+    const element = el as HTMLElement
+    element.style.height = '0px'
+    element.style.opacity = '0'
+    element.style.overflow = 'hidden'
+}
+
+function enter(el: Element): void {
+    const element = el as HTMLElement
+    element.style.transition = 'height 250ms ease, opacity 200ms ease'
+    // Force reflow before changing height
+    void element.offsetHeight
+    element.style.height = `${element.scrollHeight}px`
+    element.style.opacity = '1'
+}
+
+function afterEnter(el: Element): void {
+    const element = el as HTMLElement
+    element.style.transition = ''
+    element.style.height = 'auto'
+    element.style.overflow = ''
+}
+
+function beforeLeave(el: Element): void {
+    const element = el as HTMLElement
+    element.style.height = `${element.scrollHeight}px`
+    element.style.opacity = '1'
+    element.style.overflow = 'hidden'
+}
+
+function leave(el: Element): void {
+    const element = el as HTMLElement
+    element.style.transition = 'height 250ms ease, opacity 200ms ease'
+    // Force reflow before collapsing
+    void element.offsetHeight
+    element.style.height = '0px'
+    element.style.opacity = '0'
+}
+
+function afterLeave(el: Element): void {
+    const element = el as HTMLElement
+    element.style.transition = ''
+    element.style.overflow = ''
+}
 </script>
 
 <style scoped>
@@ -94,9 +141,6 @@ defineExpose({ isOpen })
     min-width: 356px;
     width: 100%;
     max-width: 600px;
-    min-height: 67px;
-    height: auto;
-    max-height: 120px;
     padding: 12px 16px 16px 16px;
 }
 
@@ -106,21 +150,5 @@ defineExpose({ isOpen })
     color: #51613A;
 }
 
-/* Expand / collapse animation */
-.qa-expand-enter-active,
-.qa-expand-leave-active {
-    transition: max-height 0.25s ease, opacity 0.2s ease;
-}
-
-.qa-expand-enter-from,
-.qa-expand-leave-to {
-    max-height: 0;
-    opacity: 0;
-}
-
-.qa-expand-enter-to,
-.qa-expand-leave-from {
-    max-height: 400px;
-    opacity: 1;
-}
+/* CSS-based classes removed in favor of JS hooks for precise height animation */
 </style>
