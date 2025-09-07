@@ -26,7 +26,7 @@ interface Props {
     content?: string
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 
 const isOpen = ref(false)
 
