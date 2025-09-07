@@ -7,7 +7,7 @@
     </a>
   </div>
 
-  <div v-if="loadingState.isLoading" class="loading-mask">
+  <div v-show="loadingState.isLoading" class="loading-mask">
     <img v-if="showGif" class="loading-gif" src="/cwlf_mentalhealth_blossom_animate.gif" alt="Loading" />
     <div v-show="lottieReady" ref="lottieEl" class="loading-lottie"></div>
     <div class="loading-text">載入中... ...</div>
@@ -53,6 +53,11 @@ watch(
   () => loadingState.isLoading,
   (isLoading) => {
     if (isLoading) {
+      // If already initialized, resume playback; else init (once)
+      if (lottieInstance) {
+        try { lottieInstance.play(); } catch { }
+        return;
+      }
       // When mask shows, kick off lottie load if not yet ready
       // Use microtask to ensure container exists in DOM
       Promise.resolve().then(() => {
