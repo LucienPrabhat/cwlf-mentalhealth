@@ -12,6 +12,7 @@ import Po from "./pages/po.vue";
 import Xin from "./pages/xin.vue";
 import Yu from "./pages/yu.vue";
 import Yan from "./pages/yan.vue";
+import Qa from "./pages/qa.vue";
 import "./global.css";
 
 const routes = [
@@ -47,6 +48,11 @@ const routes = [
     path: "/yan",
     name: "Yan",
     component: Yan,
+  },
+  {
+    path: "/qa",
+    name: "Qa",
+    component: Qa,
   },
 ];
 
