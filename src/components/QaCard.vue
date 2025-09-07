@@ -59,7 +59,7 @@ defineExpose({ isOpen })
     display: flex;
     align-items: center;
     padding: 0 16px;
-    gap: 16px;
+    gap: 12px;
     cursor: pointer;
 }
 
@@ -98,6 +98,7 @@ defineExpose({ isOpen })
     height: auto;
     max-height: 120px;
     padding: 12px 16px 16px 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .qa-content-text {
