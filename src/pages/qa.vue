@@ -38,11 +38,73 @@
                 </p>
                 <br>
                 <div>
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
-                    <div>5</div>
+                    <div class="donation-panel">
+                        <div class="donation-panel-header">
+                            <div class="donation-panel-title">如何響應「兒少療心計畫」</div>
+                            <div class="donation-panel-subtitle">—— 捐款方式如下 ——</div>
+                        </div>
+
+                        <div class="donation-panel-content">
+                            <div class="donation-item">
+                                <div class="donation-item-row">
+                                    <div class="donation-item-title">※ 線上信用卡</div>
+                                    <a class="donation-link"
+                                        href="https://www.children.org.tw/donate/donate_project/mentalhealth"
+                                        target="_blank" rel="noopener noreferrer">立即捐款</a>
+                                </div>
+                                <div class="donation-note">（捐款成功後信箱會收到通知信喔！）</div>
+                            </div>
+
+                            <div class="donation-divider"></div>
+
+                            <div class="donation-item">
+                                <div class="donation-item-row">
+                                    <div class="donation-item-title">※ LINE PAY<br>APP捐款</div>
+                                    <a class="donation-link"
+                                        href="https://liff.line.me/1431716824-ozgL7 KGq/710f5c68474a4d06bd102d1d4cfff328"
+                                        target="_blank" rel="noopener noreferrer">透過LINE PAY捐款</a>
+                                </div>
+                            </div>
+
+                            <div class="donation-divider"></div>
+
+                            <div class="donation-item">
+                                <div class="donation-item-title">※ ATM轉帳或匯款</div>
+                                <div class="donation-list">
+                                    <div>銀行：012台北富邦銀行</div>
+                                    <div>帳號：00454-102-301979</div>
+                                    <div>戶名：財團法人中華民國<br>兒童福利聯盟基金會</div>
+                                </div>
+                                <div class="donation-hint">如需捐款收據，請務必寫明傳真至<br>(02)2657-8181；並來電(02)2799-0333#1</div>
+                            </div>
+
+                            <div class="donation-divider"></div>
+
+                            <div class="donation-item">
+                                <div class="donation-item-title">※ 郵局劃撥</div>
+                                <div class="donation-list">
+                                    <div>帳號：18431672</div>
+                                    <div>戶名：財團法人中華民國<br>兒童福利聯盟基金會</div>
+                                </div>
+                            </div>
+
+                            <div class="donation-divider"></div>
+
+                            <div class="donation-item">
+                                <div class="donation-item-title">※ 奇摩愛心捐款</div>
+                                <div class="donation-list">
+                                    <div>您可至奇摩公益勸募專區進行線上捐款</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="donation-panel-footer">
+                            <div>更多其他捐款方式</div>
+                            <div>請上兒盟官網查詢</div>
+                            <a class="donation-site" href="https://www.children.org.tw" target="_blank"
+                                rel="noopener noreferrer">(WWW.CHILDREN.ORG.TW)</a>
+                        </div>
+                    </div>
                 </div>
             </QaCard>
             <QaCard :index="4" title="目前哪些地區有這樣的服務？">
@@ -183,8 +245,6 @@ import QaCard from '../components/QaCard.vue'
     line-height: 180%;
 }
 
-.index9-content-row-desc {}
-
 @media screen and (max-width: 450px) {
     .index9-content-row {
         flex-direction: column;
@@ -201,6 +261,113 @@ import QaCard from '../components/QaCard.vue'
         display: inline-block;
         margin-left: 5em;
         font-size: 13px;
+    }
+}
+
+/* Donation panel styles */
+.donation-panel {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    color: #51613A;
+}
+
+.donation-panel-content {
+    width: 100%;
+    padding: 12px 12px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.donation-panel-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: #CBE099;
+    border-radius: 8px 8px 0 0;
+    padding: 10px 8px;
+    margin-bottom: 12px;
+}
+
+.donation-panel-title {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.donation-panel-subtitle {
+    font-size: 12px;
+}
+
+.donation-item {
+    padding: 10px 6px;
+}
+
+.donation-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.donation-item-title {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.donation-link {
+    color: #6A994E;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.donation-note {
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+.donation-list {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.donation-hint {
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+.donation-divider {
+    height: 1px;
+    background: #D6E7C3;
+    margin: 0 4px;
+}
+
+.donation-panel-footer {
+    margin-top: 12px;
+    background: #CBE099;
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 12px;
+}
+
+.donation-site {
+    display: inline-block;
+    margin-top: 4px;
+    color: #2C5A1A;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 451px) {
+    .donation-panel {
+        max-width: 360px;
     }
 }
 </style>
