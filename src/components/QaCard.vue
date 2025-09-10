@@ -129,7 +129,7 @@ function afterLeave(el: Element): void {
 .qa-arrow {
     max-width: 12px;
     width: 100%;
-    max-height: 862px;
+    max-height: 46px;
     height: auto;
     flex: 0 0 auto;
     transition: transform 0.2s ease;
@@ -142,7 +142,7 @@ function afterLeave(el: Element): void {
 .qa-content {
     min-width: 356px;
     width: 100%;
-    max-width: 600px;
+    max-width: 862px;
     padding: 12px 16px 16px 16px;
     color: #51613A;
     font-size: 15px;

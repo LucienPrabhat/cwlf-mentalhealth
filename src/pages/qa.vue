@@ -86,10 +86,10 @@
             <QaCard :index="9" title="我需要心理健康相關協助，<br>請問我可以找誰幫忙？">
                 <div class="index9-content-row">
                     <div class="index9-content-row-icon">少年專線</div>
-                    <div>
+                    <div class="index9-content-row-txt">
                         <p>
                             服務時間：每週二到週六下午4:30-7:30
-                            <span class="indent-5">（國定例假日除外）</span>
+                            <span class="index9-content-row-desc">（國定例假日除外）</span>
                             <br>
                             專線電話：0800-001769
                         </p>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="index9-content-row">
                     <div class="index9-content-row-icon">LINE@線上聊</div>
-                    <div>
+                    <div class="index9-content-row-txt">
                         <p>
                             在LINE搜尋 @youthplus_cwlf
                         </p>
@@ -105,7 +105,7 @@
                 </div>
                 <div class="index9-content-row">
                     <div class="index9-content-row-icon">創傷專線</div>
-                    <div>
+                    <div class="index9-content-row-txt">
                         <p>
                             服務時間：每週一至週五 9:00~17:00
                             <br>
@@ -183,6 +183,8 @@ import QaCard from '../components/QaCard.vue'
     line-height: 180%;
 }
 
+.index9-content-row-desc {}
+
 @media screen and (max-width: 450px) {
     .index9-content-row {
         flex-direction: column;
@@ -190,9 +192,15 @@ import QaCard from '../components/QaCard.vue'
         justify-content: flex-start;
         gap: 12px;
     }
-}
 
-.indent-5 {
-    text-indent: 5em;
+    .index9-content-row-txt {
+        padding: 0 8px;
+    }
+
+    .index9-content-row-desc {
+        display: inline-block;
+        margin-left: 5em;
+        font-size: 13px;
+    }
 }
 </style>
