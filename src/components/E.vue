@@ -85,8 +85,7 @@
                         </span>
                       </a>
                     </div>
-                    <a :class="$style.qaLink" href="https://lihi.cc/MzRnf" target="_blank"
-                      rel="noopener noreferrer">捐款Ｑ＆Ａ</a>
+                    <RouterLink :class="$style.qaLink" to="/qa">捐款Ｑ＆Ａ</RouterLink>
                   </div>
                 </div>
               </section>
