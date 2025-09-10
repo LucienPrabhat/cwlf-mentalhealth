@@ -189,11 +189,24 @@
                 </div>
             </QaCard>
         </div>
+        <div class="mobileReturn">
+            <img src="/storyMobile/return.png" @click="goBack"></img>
+        </div>
     </div>
 </template>
 
 <script setup>
 import QaCard from '../components/QaCard.vue'
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+function goBack() {
+    if (window.history.length > 1) {
+        router.back();
+    } else {
+        router.push({ name: "DesktopMainPage" });
+    }
+}
 </script>
 
 <style scoped>
@@ -412,6 +425,21 @@ import QaCard from '../components/QaCard.vue'
     text-decoration: underline;
 }
 
+.mobileReturn {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobileReturn img {
+    width: 100%;
+    min-width: 125px;
+    max-width: 203px;
+    margin-top: 160px;
+}
+
 @media screen and (max-width: 450px) {
     .qa-page h1 {
         font-size: 15px
@@ -440,6 +468,11 @@ import QaCard from '../components/QaCard.vue'
 
     .donation-hint {
         text-align: center;
+    }
+
+    .mobileReturn img {
+        width: 125px;
+        margin-top: 80px;
     }
 }
 </style>
