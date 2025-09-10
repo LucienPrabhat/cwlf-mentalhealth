@@ -28,9 +28,7 @@
                 :minWidth="bubble.priority ? '240px' : '200px'"
                 :fontSize="bubble.priority ? 'clamp(14px, 4.5vw, 28px)' : 'clamp(12px, 3.5vw, 20px)'"
                 :padding="bubble.priority ? '12%' : '10%'"
-                :background="'rgba(255,255,255,' + (bubble.priority ? 1 : bubble.opacity) + ')'">
-                <span>{{ bubble.text }}</span>
-              </QuestionBubble>
+                :background="'rgba(255,255,255,' + (bubble.priority ? 1 : bubble.opacity) + ')'" :text="bubble.text" />
             </div>
           </div>
         </div>
@@ -39,8 +37,7 @@
             <div :class="$style.inputContent">
               <div :class="$style.inputFieldWrapper">
                 <div :class="$style.inputBox" />
-                <input :class="$style.textInput" v-model="inputText" type="text" :maxlength="30"
-                  placeholder="輸入最多30字..." />
+                <input :class="$style.textInput" v-model="inputText" type="text" placeholder="輸入內容..." />
               </div>
               <div :class="$style.inputIconArea" @click="onSend">
                 <img :class="$style.icon1" alt="" src="/icon-1.svg" />

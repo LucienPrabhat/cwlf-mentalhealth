@@ -2,7 +2,10 @@
     <div :class="$style.wrapper" :style="wrapperStyle">
         <div :class="$style.bubble" :style="bubbleStyle">
             <div :class="$style.content" :style="contentStyle">
-                <slot />
+                <template v-if="props.text">
+                    {{ displayText }}
+                </template>
+                <slot v-else />
             </div>
         </div>
         <div :class="$style.tail" :style="tailStyle"></div>
@@ -22,6 +25,7 @@ const props = defineProps({
     textColor: { type: String, default: 'var(--color-cadetblue-300)' },
     fontSize: { type: [String, Number], default: 'clamp(12px, 4vw, 24px)' },
     lineHeight: { type: [String, Number], default: 1.5 },
+    text: { type: String, default: '' },
 })
 
 const toCssSize = (v) => typeof v === 'number' ? `${v}px` : String(v)
@@ -45,6 +49,11 @@ const contentStyle = computed(() => ({
 const tailStyle = computed(() => ({
     borderTopColor: props.background,
 }))
+
+const displayText = computed(() => {
+    const t = props.text || ''
+    return t.length > 30 ? `${t.slice(0, 30)}...` : t
+})
 </script>
 
 <style module>
