@@ -9,7 +9,7 @@
             @before-leave="beforeLeave" @leave="leave" @after-leave="afterLeave">
             <div v-show="isOpen" class="qa-content">
                 <slot>
-                    <p v-if="content" class="qa-content-text">{{ content }}</p>
+                    <p v-if="content">{{ content }}</p>
                 </slot>
             </div>
         </transition>
@@ -97,10 +97,10 @@ function afterLeave(el: Element): void {
 .qa-card-header {
     min-width: 356px;
     width: 100%;
-    max-width: 600px;
+    max-width: 862px;
     min-height: 67px;
     height: auto;
-    max-height: 120px;
+    max-height: 96px;
     border-radius: 10px;
     background: #ffffff;
     display: flex;
@@ -127,7 +127,9 @@ function afterLeave(el: Element): void {
 }
 
 .qa-arrow {
-    width: 18px;
+    max-width: 12px;
+    width: 100%;
+    max-height: 862px;
     height: auto;
     flex: 0 0 auto;
     transition: transform 0.2s ease;
@@ -142,12 +144,11 @@ function afterLeave(el: Element): void {
     width: 100%;
     max-width: 600px;
     padding: 12px 16px 16px 16px;
-}
-
-.qa-content-text {
-    margin: 0;
-    font-size: 15px;
     color: #51613A;
+    font-size: 15px;
+    font-weight: 100;
+    letter-spacing: 0.04em;
+    line-height: 180%;
 }
 
 /* CSS-based classes removed in favor of JS hooks for precise height animation */
