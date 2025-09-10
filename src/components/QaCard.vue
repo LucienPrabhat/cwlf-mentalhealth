@@ -2,7 +2,7 @@
     <div class="qa-card" @click="toggleOpen">
         <div class="qa-card-header">
             <div class="qa-index">{{ index }}</div>
-            <div class="qa-title" :title="title">{{ title }}</div>
+            <div class="qa-title" :title="plainTitle" v-html="title"></div>
             <img class="qa-arrow" :class="{ rotated: isOpen }" src="/icon-down-arrow-green.png" alt="toggle" />
         </div>
         <transition :css="false" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter"
@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 interface Props {
     index: string | number
@@ -26,7 +26,7 @@ interface Props {
     content?: string
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
 const isOpen = ref(false)
 
@@ -36,6 +36,9 @@ function toggleOpen(): void {
 
 // Expose for potential parent access if needed
 defineExpose({ isOpen })
+
+// Plain text for tooltip (strip any HTML like <br>)
+const plainTitle = computed(() => props.title.replace(/<[^>]*>/g, ''))
 
 // Height-based drawer transition hooks for smooth push layout
 function beforeEnter(el: Element): void {
@@ -124,6 +127,25 @@ function afterLeave(el: Element): void {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+/* Hide manual line breaks on desktop (v-html content needs deep selector) */
+.qa-title :deep(br) {
+    display: none;
+}
+
+/* On mobile, allow line breaks (including <br>) and wrap */
+@media (max-width: 450px) {
+    .qa-title {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    /* Re-enable line breaks for mobile */
+    .qa-title :deep(br) {
+        display: inline;
+    }
 }
 
 .qa-arrow {
