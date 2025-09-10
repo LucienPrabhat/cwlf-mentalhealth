@@ -1,6 +1,14 @@
 <template>
     <div class="qa-page">
-        <h1>常見問答 Q&A</h1>
+        <div class="qa-page-background">
+            <img src="/qa-bg.png" alt="qa-bg"></img>
+        </div>
+        <div class="qa-cards-header">
+            <h1>常見 Q&A</h1>
+            <div class="qa-cards-header-icon">
+                <img src="/qa-icon.png" alt="qa-icon"></img>
+            </div>
+        </div>
         <div class="qa-cards">
             <QaCard :index="1" title="為什麼有<br>「青春不該emo一樣｜兒少療心計畫」？">
                 <p>
@@ -59,7 +67,9 @@
 
                             <div class="donation-item">
                                 <div class="donation-item-row">
-                                    <div class="donation-item-title">※ LINE PAY<br>APP捐款</div>
+                                    <div class="donation-item-title">※ LINE PAY <br>
+                                        <span class="donation-item-title-app">APP捐款</span>
+                                    </div>
                                     <a class="donation-link"
                                         href="https://liff.line.me/1431716824-ozgL7 KGq/710f5c68474a4d06bd102d1d4cfff328"
                                         target="_blank" rel="noopener noreferrer">透過LINE PAY捐款</a>
@@ -73,7 +83,7 @@
                                 <div class="donation-list">
                                     <div>銀行：012台北富邦銀行</div>
                                     <div>帳號：00454-102-301979</div>
-                                    <div>戶名：財團法人中華民國<br>兒童福利聯盟基金會</div>
+                                    <div>戶名：財團法人中華民國兒童福利聯盟基金會</div>
                                 </div>
                                 <div class="donation-hint">如需捐款收據，請務必寫明傳真至<br>(02)2657-8181；並來電(02)2799-0333#1</div>
                             </div>
@@ -83,8 +93,8 @@
                             <div class="donation-item">
                                 <div class="donation-item-title">※ 郵局劃撥</div>
                                 <div class="donation-list">
-                                    <div>帳號：18431672</div>
-                                    <div>戶名：財團法人中華民國<br>兒童福利聯盟基金會</div>
+                                    <div>帳號：18413672</div>
+                                    <div>戶名：財團法人中華民國兒童福利聯盟基金會</div>
                                 </div>
                             </div>
 
@@ -93,7 +103,9 @@
                             <div class="donation-item">
                                 <div class="donation-item-title">※ 奇摩愛心捐款</div>
                                 <div class="donation-list">
-                                    <div>您可至奇摩公益勸募專區進行線上捐款</div>
+                                    <div>您可至奇摩公益勸募專區進行<a href="https://tw.charity.yahoo.com/org_project.html?org_id=115"
+                                            target="_blank" rel="noopener noreferrer" class="donation-link">線上捐款</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -195,11 +207,26 @@ import QaCard from '../components/QaCard.vue'
     margin: 0 auto;
     padding: 24px 16px;
     background-color: #FBF7F3;
+    position: relative;
+}
+
+.qa-page-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background-color: #FBF7F3;
+}
+
+.qa-page-background img {
+    width: 100%;
 }
 
 .qa-page h1 {
     color: #51613A;
-    font-size: clamp(15px, 4vw, 40px);
+    font-size: 40px;
     font-weight: 700;
     letter-spacing: 0.05em;
     line-height: 150%;
@@ -216,6 +243,33 @@ import QaCard from '../components/QaCard.vue'
     display: flex;
     flex-direction: column;
     gap: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.qa-cards-header {
+    width: 100%;
+    max-width: 862px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 24px 16px;
+    margin-top: 150px;
+    position: relative;
+    z-index: 1;
+}
+
+.qa-cards-header-icon {
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.qa-cards-header-icon img {
+    min-width: 138px;
+    width: 100%;
+    max-width: 406px;
 }
 
 .index9-content-row {
@@ -245,33 +299,18 @@ import QaCard from '../components/QaCard.vue'
     line-height: 180%;
 }
 
-@media screen and (max-width: 450px) {
-    .index9-content-row {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 12px;
-    }
-
-    .index9-content-row-txt {
-        padding: 0 8px;
-    }
-
-    .index9-content-row-desc {
-        display: inline-block;
-        margin-left: 5em;
-        font-size: 13px;
-    }
-}
-
 /* Donation panel styles */
 .donation-panel {
     width: 100%;
-    max-width: 320px;
+    max-width: 500px;
     margin: 0 auto;
     background: white;
     border-radius: 10px;
     color: #51613A;
+    font-size: clamp(15px, 4vw, 20px);
+    font-weight: 100;
+    letter-spacing: 0.04em;
+    line-height: 180%;
 }
 
 .donation-panel-content {
@@ -296,16 +335,16 @@ import QaCard from '../components/QaCard.vue'
 }
 
 .donation-panel-title {
-    font-size: 14px;
+    font-size: clamp(16px, 4vw, 20px);
     font-weight: 700;
 }
 
 .donation-panel-subtitle {
-    font-size: 12px;
+    font-size: clamp(12px, 4vw, 16px);
 }
 
 .donation-item {
-    padding: 10px 6px;
+    width: 80%;
 }
 
 .donation-item-row {
@@ -317,36 +356,44 @@ import QaCard from '../components/QaCard.vue'
 
 .donation-item-title {
     font-weight: 700;
-    font-size: 13px;
+    font-size: clamp(13px, 4vw, 16px);
     line-height: 1.4;
+}
+
+.donation-item-title-app {
+    display: inline-block;
+    margin-left: 1.5em;
 }
 
 .donation-link {
     color: #6A994E;
     text-decoration: underline;
-    font-size: 13px;
+    font-size: clamp(13px, 4vw, 16px);
 }
 
 .donation-note {
     margin-top: 6px;
     font-size: 12px;
+    text-align: center;
 }
 
 .donation-list {
     margin-top: 6px;
-    font-size: 13px;
+    font-size: clamp(12px, 4vw, 15px);
     line-height: 1.6;
 }
 
 .donation-hint {
-    margin-top: 6px;
+    margin-top: 18px;
     font-size: 12px;
+    text-align: left;
 }
 
 .donation-divider {
-    height: 1px;
-    background: #D6E7C3;
-    margin: 0 4px;
+    width: 100%;
+    height: 1.5px;
+    background: #CBE099;
+    margin: 20px 4px;
 }
 
 .donation-panel-footer {
@@ -355,7 +402,7 @@ import QaCard from '../components/QaCard.vue'
     border-radius: 0 0 8px 8px;
     text-align: center;
     padding: 10px 8px;
-    font-size: 12px;
+    font-size: clamp(12px, 4vw, 15px);
 }
 
 .donation-site {
@@ -365,9 +412,34 @@ import QaCard from '../components/QaCard.vue'
     text-decoration: underline;
 }
 
-@media screen and (min-width: 451px) {
-    .donation-panel {
-        max-width: 360px;
+@media screen and (max-width: 450px) {
+    .qa-page h1 {
+        font-size: 15px
+    }
+
+    .qa-cards-header {
+        margin-top: 30px;
+    }
+
+    .index9-content-row {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .index9-content-row-txt {
+        padding: 0 8px;
+    }
+
+    .index9-content-row-desc {
+        display: inline-block;
+        margin-left: 5em;
+        font-size: 13px;
+    }
+
+    .donation-hint {
+        text-align: center;
     }
 }
 </style>
