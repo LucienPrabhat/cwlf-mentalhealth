@@ -134,20 +134,6 @@ function afterLeave(el: Element): void {
     display: none;
 }
 
-/* On mobile, allow line breaks (including <br>) and wrap */
-@media (max-width: 450px) {
-    .qa-title {
-        white-space: normal;
-        overflow: visible;
-        text-overflow: clip;
-    }
-
-    /* Re-enable line breaks for mobile */
-    .qa-title :deep(br) {
-        display: inline;
-    }
-}
-
 .qa-arrow {
     max-width: 12px;
     width: 100%;
@@ -171,6 +157,24 @@ function afterLeave(el: Element): void {
     font-weight: 100;
     letter-spacing: 0.04em;
     line-height: 180%;
+}
+
+/* On mobile, allow line breaks (including <br>) and wrap */
+@media (max-width: 450px) {
+    .qa-card-header {
+        gap: 8px;
+    }
+
+    .qa-title {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    /* Re-enable line breaks for mobile */
+    .qa-title :deep(br) {
+        display: inline;
+    }
 }
 
 /* CSS-based classes removed in favor of JS hooks for precise height animation */
