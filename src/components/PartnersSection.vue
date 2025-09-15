@@ -32,6 +32,7 @@ const partnerIconFiles = [
     '10.png',
     '11.jpg',
     '12.png',
+    'jillion.png',
     '13.jpg',
     '14.jpg',
     '15.jpg',

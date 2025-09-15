@@ -80,6 +80,15 @@
                         讓少年體驗正向的人際互動。 
                       </div>
                     </ProgramColumn>
+                    <ProgramColumn iconSrc="/icon-home.png" title="少年心理健康服務"
+                      titleHref="https://www.children.org.tw/service/index/3381/2792">
+                      <div :class="$style.details">
+                        台中諮詢電話：（04）2371-0501分機 2
+                      </div>
+                      <div :class="$style.details">
+                        新竹諮詢電話：（03）667-0022
+                      </div>
+                    </ProgramColumn>
                   </div>
                 </div>
               </div>
