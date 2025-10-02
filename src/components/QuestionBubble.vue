@@ -52,7 +52,7 @@ const tailStyle = computed(() => ({
 
 const displayText = computed(() => {
     const t = props.text || ''
-    return t.length > 30 ? `${t.slice(0, 30)}...` : t
+    return t.length > 50 ? `${t.slice(0, 50)}...` : t
 })
 </script>
 
