@@ -99,37 +99,37 @@
                   <img :class="$style.giftImg" loading="lazy" alt="" src="/-1-1@2x.png" />
                   <div :class="$style.container">
                     <h3 :class="$style.h31">服務年刊</h3>
-                    <div :class="$style.div6">
+                    <!-- <div :class="$style.div6">
                       <p :class="$style.p">每年一次的服務成果分享，看見陪伴與成長。</p>
-                    </div>
+                    </div> -->
                   </div>
                 </section>
                 <section :class="$style.releaseData">
                   <img :class="$style.giftImg" loading="lazy" alt="" src="/dscf5791@2x.png" />
                   <div :class="$style.container">
                     <h3 :class="$style.h31">鬧卡</h3>
-                    <div :class="$style.div6">
+                    <!-- <div :class="$style.div6">
                       <p :class="$style.p">以情緒教育為核心設計，透過插畫與情境文字，引導覺察感受、調節情緒，穩定自己，也理解他人！</p>
-                    </div>
+                    </div> -->
                   </div>
                 </section>
                 <section :class="$style.releaseData">
                   <img :class="$style.giftImg" loading="lazy" alt="" src="/-1-11@2x.png" />
                   <div :class="$style.container">
                     <h3 :class="$style.h31">療癒香氛蠟燭</h3>
-                    <div :class="$style.div6">
+                    <!-- <div :class="$style.div6">
                       <p :class="$style.p">
                         先照顧好自己，才有能量照顧好他人，邀請您用氣味療癒紓壓，擁抱自己的內心感受。</p>
-                    </div>
+                    </div> -->
                   </div>
                 </section>
                 <section :class="$style.releaseData">
                   <img :class="$style.giftImg" loading="lazy" alt="" src="/all-2@2x.png" />
                   <div :class="$style.container">
                     <h3 :class="$style.h31">兒福聯盟 × plain-me水桶包</h3>
-                    <div :class="$style.div6">
+                    <!-- <div :class="$style.div6">
                       <p :class="$style.p">心情不好的時候就背起包包出門走走吧，一切都會慢慢好起來的。(顏色將隨機出貨)</p>
-                    </div>
+                    </div> -->
                   </div>
                 </section>
               </div>
